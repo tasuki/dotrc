@@ -1,6 +1,6 @@
 # tasuki's bashrc
 
-function dotrc-get { svn export --force http://svn.github.com/tasuk/dotrc.git . }
+function dotrc-get { svn export --force http://svn.github.com/tasuk/dotrc.git . ; }
 
 # Delete this and sky will fall on your head
 [ -z "$PS1" ] && return
