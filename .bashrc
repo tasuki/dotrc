@@ -25,10 +25,10 @@ PATH="~/.bin:${PATH}"
 export HOSTFILE=$HOME/.hosts # Put a list of remote hosts in ~/.hosts
 
 # Colors
-CYAN='\e[1;36m'
-BLUE='\e[1;34m'
-RED='\e[1;31m'
-NC='\e[0m'
+CYAN='\[\e[1;36m\]'
+BLUE='\[\e[1;34m\]'
+RED='\[\e[1;31m\]'
+NC='\[\e[0m\]'
 
 #echo -e "${CYAN}$USER@$HOSTNAME ${NC}"
 date
