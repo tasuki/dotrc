@@ -107,10 +107,11 @@ export EDITOR=vim
 
 alias gf='grep function'
 
-shopt -s histappend
-
 export HISTSIZE=1000
 export HISTFILESIZE=1000
+export HISTCONTROL=ignoreboth
+
+shopt -s histappend
 
 alias online='ping 4.2.2.2'
 
