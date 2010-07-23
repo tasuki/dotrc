@@ -11,6 +11,7 @@ set directory=~/.vim/swap " don't put swap files all over the place
 set viminfo='20,\"50	  " read/write a .viminfo file, don't store more than 50 lines of registers
 set history=50		" keep 50 lines of command line history
 set ruler		    " show the cursor position all the time
+set nopaste         " do not start in paste mode
 
 " Suffixes that get lower priority when doing tab completion for filenames.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
