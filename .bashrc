@@ -115,6 +115,28 @@ shopt -s histappend
 
 alias online='ping 4.2.2.2'
 
+type -P colordiff &>/dev/null && alias diff='colordiff' # use colordiff if it's available
+
+# colorful man pages
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+# if we have grc, moar colors!
+if type -P grc &>/dev/null; then
+	alias head='grc head'
+	alias tail='grc tail'
+	alias netstat='grc netstat'
+	alias ping='grc ping'
+	alias traceroute='grc traceroute'
+	alias diff='grc diff'
+	alias svn='grc svn'
+fi
+
 
 
 
