@@ -9,19 +9,14 @@ function dotrc-get { svn export --force http://svn.github.com/tasuk/dotrc.git . 
 LANG="en_US.utf8"
 LC_ALL="en_US.utf8"
 
-# source global bashrc
-if [ -f /etc/bash.bashrc ]; then
-	. /etc/bash.bashrc
-fi
+# Source global bashrc
+[ -f /etc/bash.bashrc ] && . /etc/bash.bashrc
 
-# clever tab completion
-if [ -f /etc/bash_completion ]; then
-	. /etc/bash_completion
-fi
+# Clever tab completion
+[ -f /etc/bash_completion ] && . /etc/bash_completion
 
 PATH="~/.bin:${PATH}"
 
-#export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
 export HOSTFILE=$HOME/.hosts # Put a list of remote hosts in ~/.hosts
 
 # Colors
@@ -30,11 +25,9 @@ BLUE='\[\e[1;34m\]'
 RED='\[\e[1;31m\]'
 NC='\[\e[0m\]'
 
-#echo -e "${CYAN}$USER@$HOSTNAME ${NC}"
+# Welcome message
 date
-if [ -f /usr/games/fortune ]; then
-	/usr/games/fortune wisdom people
-fi
+[ -f /usr/games/fortune ] && /usr/games/fortune wisdom people
 
 if [[ $EUID -eq 0 ]]; then
 	PS1="${RED}\u${NC}@${CYAN}\h ${BLUE}\w ${RED}# ${NC}"  # root prompt
@@ -75,6 +68,7 @@ alias dus='du | sort -n'        # disk usage - sort everything by size
 alias dfh='df -kTh'             # human readable df
 alias ps='ps -eH'               # all processes with threads
 alias routen='route -n'         # gimme routes fast
+type -P colordiff &>/dev/null && alias diff='colordiff' # use colordiff if it's available
 
 alias c='cd'                    # lazy
 alias v='vim'                   # I need my editor REAL FAST
@@ -115,8 +109,6 @@ shopt -s histappend
 
 alias online='ping 4.2.2.2'
 
-type -P colordiff &>/dev/null && alias diff='colordiff' # use colordiff if it's available
-
 # colorful man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
@@ -156,4 +148,3 @@ alias web6='ssh vit.brunner@web6'
 alias web18='ssh vit.brunner@web18'
 alias web19='ssh vit.brunner@web19'
 alias shstaging='ssh vit.brunner@shstaging'
-
