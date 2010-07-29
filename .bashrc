@@ -123,11 +123,12 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 if type -P grc &>/dev/null; then
 	alias head='grc head'
 	alias tail='grc tail'
+	alias cat='grc cat'
 	alias netstat='grc netstat'
 	alias ping='grc ping'
 	alias traceroute='grc traceroute'
 	alias diff='grc diff'
-	alias svn='grc svn'
+	alias sv='grc svn'
 fi
 
 
