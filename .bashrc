@@ -143,13 +143,3 @@ alias gvimftp='gvim ftp://tasuki.org@ftp4.profitux.cz//'
 # ssh aliases
 alias domu='ssh vita@doma'
 alias darken='ssh tasuki@darken.gbas.sk'
-
-alias dev='ssh vit.brunner@dev'
-alias dev2='ssh vit.brunner@dev2'
-alias web6='ssh vit.brunner@web6'
-alias web18='ssh vit.brunner@web18'
-alias web19='ssh vit.brunner@web19'
-alias web20='ssh vit.brunner@web20'
-alias staging='ssh vit.brunner@staging'
-alias shstaging='ssh vit.brunner@shstaging'
-alias eudev='ssh vit.brunner@eudev'
