@@ -95,7 +95,7 @@ alias lt='ls -ltr'              # sort by date
 alias tree='tree -Csu'          # nice alternative to 'ls'
 
 alias less='less -r'
-alias grep='grep --color=always'
+alias grep='grep --color=auto'
 alias rgrep='grep -r'
 
 export EDITOR=vim
