@@ -68,7 +68,7 @@ alias dus='du | sort -n'        # disk usage - sort everything by size
 alias dfh='df -kTh'             # human readable df
 alias ps='ps -eH'               # all processes with threads
 alias routen='route -n'         # gimme routes fast
-type -P colordiff &>/dev/null && alias diff='colordiff' # use colordiff if it's available
+export IGNOREEOF='1'            # require CTRL+D twice to exit
 
 alias c='cd'                    # lazy
 alias v='vim'                   # I need my editor REAL FAST
@@ -118,6 +118,8 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
+
+type -P colordiff &>/dev/null && alias diff='colordiff' # use colordiff if it's available
 
 # if we have grc, moar colors!
 if type -P grc &>/dev/null; then
