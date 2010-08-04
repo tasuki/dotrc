@@ -1,0 +1,22 @@
+[user]
+	name = Vit Brunner
+	email = vit.brunner@gmail.com
+
+[core]
+	excludesfile = ~/.gitignore
+
+[color]
+	ui = auto
+
+[alias]
+	b = branch
+	ba = branch -a
+	bd = branch -D
+	st = status
+	ci = commit
+	cia = commit -a
+	co = checkout
+	l = log --summary
+	lf = log --full-diff -p
+	d = diff
+	dc = diff --cached
