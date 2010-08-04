@@ -62,45 +62,6 @@ A       Append files to opposite files
 	  shift
 	done
 
-+ t r & ! t t
-d       Delete file if a copy exists in the other directory.
-	if [ "%d" = "%D" ]; then
-	  echo "The two directores must be different"
-	  exit 1
-	fi
-  	if [ -f %D/%f ]; then        # if two of them, then
-          if cmp -s %D/%f %f; then
-            rm %f && echo %f: DELETED
-          else
-            echo "%f and %D/%f differ: NOT deleted"
-            echo -n "Press RETURN "
-            read key
-          fi
-	else
-	  echo %f: No copy in %D/%f: NOT deleted.
-        fi
-
-+ t t
-D       Delete tagged files if a copy exists in the other directory.
-	if [ "%d" = "%D" ]; then
-	  echo "The two directores must be different"
-	  exit 1
-	fi 
-        for i in %t
-        do 
-          if [ -f %D/$i ]; then
-            SUM1="`sum $i`"
-            SUM2="`sum %D/$i`"
-            if [ "$SUM1" = "$SUM2" ]; then
-	      rm $i && echo ${i}: DELETED
-	    else
-	      echo $i and %D/$i differ: NOT deleted.
-	    fi
-	  else
-	    echo %f has no copy in %D/%f: NOT deleted.
-          fi
-        done
-
 m       View manual page
 	MAN=%{Enter manual name}
 	%view man -P cat $MAN
@@ -334,3 +295,26 @@ o       Open next a free console
 x       Extract the contents of a Debian source package
         dpkg-source -x %f
 
++ t r & ! t t
+d       Diff against file of same name in other directory
+        if [ "%d" = "%D" ]; then
+          echo "The two directores must be different"
+          exit 1
+        fi
+        if [ -f %D/%f ]; then        # if two of them, then
+          diff -up %f %D/%f | sed -e 's/\(^-.*\)/\x1b[1;31m\1\x1b[0m/g' \
+                                  -e 's/\(^\+.*\)/\x1b[1;32m\1\x1b[0m/g' \
+                                  -e 's/\(^@.*\)/\x1b[36m\1\x1b[0m/g' | less -R
+        else
+          echo %f: No copy in %D/%f
+        fi
+
+D       Diff current directory against other directory
+        if [ "%d" = "%D" ]; then
+          echo "The two directores must be different"
+          exit 1
+        fi
+        diff -up %d %D | sed -e 's/\(^-.*\)/\x1b[1;31m\1\x1b[0m/g' \
+                             -e 's/\(^\+.*\)/\x1b[1;32m\1\x1b[0m/g' \
+                             -e 's/\(^@.*\)/\x1b[36m\1\x1b[0m/g' | less -R
+        fi

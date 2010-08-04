@@ -1,4 +1,5 @@
 ENTRY "profitux" URL "/#ftp:tasuki.org@ftp4.profitux.cz"
-ENTRY "moje ftp" URL "/#ftp:anonymous@localhost"
-ENTRY "tukan" URL "/#sh:vita@tukan/home/vita"
+ENTRY "eudev" URL "/#sh:vit.brunner@eudev"
+ENTRY "dev" URL "/#sh:vit.brunner@dev"
 ENTRY "web6" URL "/#sh:vit.brunner@web6"
+ENTRY "staging" URL "/#sh:vit.brunner@staging"

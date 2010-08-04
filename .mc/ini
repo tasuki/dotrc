@@ -105,10 +105,6 @@ filetype_mode=1
 
 free_space=1
 
-[Dirs]
-other_dir=/#ftp:edb@orwen.org/css
-current_is_left=1
-
 [New Left Panel]
 display=listing
 reverse=0
@@ -155,8 +151,3 @@ color_terminals=
 
 [HotlistConfig]
 expanded_view_of_groups=0
-
-[Panelize]
-Najít odmítnuté části záplat (*.rej)=find . -name \\*.rej -print
-Najít programy SUID a SGID.=find . \\( \\( -perm -04000 -a -perm +011 \\) -o \\( -perm -02000 -a -perm +01 \\) \\) -print
-Najít všechny soubory *.orig=find . -name \\*.orig -print
