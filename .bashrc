@@ -119,17 +119,16 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-type -P colordiff &>/dev/null && alias diff='colordiff' # use colordiff if it's available
+type -P colordiff &>/dev/null && alias dif='colordiff' # use colordiff if it's available
 
 # if we have grc, moar colors!
 if type -P grc &>/dev/null; then
-	alias head='grc head'
-	alias tail='grc tail'
-	alias cat='grc cat'
+	alias t='grc tail'
+	alias ct='grc cat'
 	alias netstat='grc netstat'
 	alias ping='grc ping'
 	alias traceroute='grc traceroute'
-	alias diff='grc diff'
+	alias dif='grc diff'
 	alias sv='grc svn'
 fi
 
