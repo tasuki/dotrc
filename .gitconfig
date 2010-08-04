@@ -9,14 +9,15 @@
 	ui = auto
 
 [alias]
-	b = branch
+	br = branch
 	ba = branch -a
 	bd = branch -D
 	st = status
 	ci = commit
 	cia = commit -a
 	co = checkout
-	l = log --summary
+	lg = log --summary
 	lf = log --full-diff -p
 	d = diff
 	dc = diff --cached
+	pom = push origin master
