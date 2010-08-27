@@ -50,6 +50,7 @@ alias rmrf='rm -rf'             # force delete recursively
 alias cp='cp -i'                # ask before overwrite
 alias cpr='cp -ir'              # recursive copy
 alias mv='mv -i'                # ask before overwrite
+alias lns='ln -s'               # symlink faster
 alias mkdir='mkdir -p'          # no error if existing, make parent directories as needed
 
 alias h='history'
