@@ -130,7 +130,9 @@ if type -P grc &>/dev/null; then
 	alias ping='grc ping'
 	alias traceroute='grc traceroute'
 	alias dif='grc diff'
-	alias sv='grc svn'
+	function sv { grc svn $@ | less -F; } # less, quit if one screen
+else # if we don't have grc, at least repair long svn output
+	function sv { svn $@ | less -F; }
 fi
 
 
