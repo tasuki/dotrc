@@ -135,15 +135,5 @@ else # if we don't have grc, at least repair long svn output
 	function sv { svn $@ | less -F; }
 fi
 
-
-
-
-# TMP: anything below can change anytime
-alias external='mount -t vboxsf vita ~/external'
-
-alias vimftp='vim ftp://tasuki.org@ftp4.profitux.cz//'
-alias gvimftp='gvim ftp://tasuki.org@ftp4.profitux.cz//'
-
-# ssh aliases
-alias domu='ssh vita@doma'
-alias darken='ssh tasuki@darken.gbas.sk'
+# Source temporary bashrc additions
+[ -f ~/.tmp-bashrc ] && . ~/.tmp-bashrc
