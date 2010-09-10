@@ -129,9 +129,10 @@ if type -P grc &>/dev/null; then
 	alias netstat='grc netstat'
 	alias ping='grc ping'
 	alias traceroute='grc traceroute'
-	alias dif='grc diff'
+	function dif { grc diff $@ | less -F; }
 	function sv { grc svn $@ | less -F; } # less, quit if one screen
-else # if we don't have grc, at least repair long svn output
+else # if we don't have grc, at least repair long output
+	function dif { diff $@ | less -F; }
 	function sv { svn $@ | less -F; }
 fi
 
