@@ -99,6 +99,8 @@ alias less='less -r'
 alias grep='grep --color=auto'
 alias rgrep='grep -r'
 
+alias scr='screen -d -RR -U'
+
 export EDITOR=vim
 
 alias gf='grep function'
