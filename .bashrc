@@ -122,8 +122,6 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-type -P colordiff &>/dev/null && alias dif='colordiff' # use colordiff if it's available
-
 # if we have grc, moar colors!
 if type -P grc &>/dev/null; then
 	alias t='grc tail'
@@ -133,8 +131,13 @@ if type -P grc &>/dev/null; then
 	alias traceroute='grc traceroute'
 	function dif { grc diff $@ | less -F; }
 	function sv { grc svn $@ | less -F; } # less, quit if one screen
-else # if we don't have grc, at least repair long output
-	function dif { diff $@ | less -F; }
+
+else # if we don't have grc, try colordiff, or at least repair long output
+	if type -P colordiff &>/dev/null; then
+		function dif { colordiff $@ | less -F; }
+	else
+		function dif { diff $@ | less -F; }
+	fi
 	function sv { svn $@ | less -F; }
 fi
 
