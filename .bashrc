@@ -101,6 +101,12 @@ alias rgrep='grep -r'
 
 alias scr='screen -d -RR -U'
 
+# change user and group recursively; quote * (or use .)
+function chr { chown -R $1:$1 $2; }
+
+# change folder/file access rights to defaults
+function chmdef { find . -type d -exec chmod 755 {} \; ; find . -type f -exec chmod 644 {} \; ; }
+
 export EDITOR=vim
 
 alias gf='grep function'
