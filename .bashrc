@@ -124,7 +124,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 # if we have grc, moar colors!
 if type -P grc &>/dev/null; then
-	alias t='grc tail'
+	alias t='grc tail -f'
 	alias ct='grc cat'
 	alias netstat='grc netstat'
 	alias ping='grc ping'
@@ -138,6 +138,7 @@ else # if we don't have grc, try colordiff, or at least repair long output
 	else
 		function dif { diff $@ | less -F; }
 	fi
+	alias t='tail -f'
 	function sv { svn $@ | less -F; }
 fi
 
