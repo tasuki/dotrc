@@ -108,7 +108,8 @@ alias scr='screen -d -RR -U'
 function chr { chown -R $1:$1 $2; }
 
 # change folder/file access rights to defaults
-function chmdef { find . -type d -exec chmod 755 {} \; ; find . -type f -exec chmod 644 {} \; ; }
+function chmdef { find . -type d -exec chmod 755 {} \; ; \
+                  find . -type f -exec chmod 644 {} \; ; }
 
 export EDITOR=vim
 
