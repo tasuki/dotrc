@@ -43,8 +43,8 @@ case "$TERM" in
 		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD}\007"'
 		;;
 	screen)
-		# show last three folders of the current dir
-		PROMPT_COMMAND='echo -ne "\033k`echo $PWD | sed "s:.*/\(.*/.*/.*\):\1:g"`\033\\"'
+		# show last two folders of the current dir path
+		PROMPT_COMMAND='echo -ne "\033k`echo $PWD | sed "s:.*/\(.*/.*\):\1:g"`\033\\"'
 		;;
 esac
 
