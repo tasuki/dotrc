@@ -42,6 +42,16 @@ set hlsearch        " highlight searches
 set fileencodings=utf-8,iso-8859-2,win-1250
 set encoding=utf-8
 
+" set title for term and screen
+autocmd BufEnter * let &titlestring = "vi " . expand("%:t")
+if &term == "screen"
+  set t_ts=k
+  set t_fs=\
+endif
+if &term == "screen" || &term == "xterm"
+  set title
+endif
+
 " ,# perl # comments
 map ,# :s/^/#/<CR>
 " " ,/ C/C++/C#/Java // comments
