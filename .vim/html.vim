@@ -61,13 +61,7 @@ vmap ,li <Esc>`>a</li><Esc>`<i<li><Esc>
 " magical close, stolen somewhere
 imap ,. <Esc>F<yef>pa><Esc>F<a/<Left><Left>
 
-" no idea what this is good for...
-"map <M-Right> f>
-"imap <M-Right> <C-O>f><Right>
-"map <M-Left> F<
-"imap <M-Left> <C-O>F<
-
-imap ,starthtml <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"<CR>"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><CR><html xmlns="http://www.w3.org/1999/xhtml"><CR><head><CR><title></title><CR><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><CR></head><CR><body><CR><CR></body><CR></html><Esc>2ki
+imap ,html <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"<CR>"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><CR><html xmlns="http://www.w3.org/1999/xhtml"><CR><head><CR><title></title><CR><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><CR></head><CR><body><CR><CR></body><CR></html><Esc>2ki
 
 
 " entitties (pun fully intended)
@@ -83,10 +77,18 @@ imap ,rq $rdquo;
 """""""""""""""""""""""""
 " php stuff starts here:
 
-imap ,if if () {<CR>}<Esc>2k$2hi
-imap ,while while () {<CR>}<Esc>2k$2hi
-imap ,for for () {<CR>}<Esc>2k$2hi
-imap ,switch switch () {<CR>}<Esc>2k$2hi
+imap ,doc /**<CR> *<CR>*/<Esc>k$
+imap ,cla class <CR>{<CR>}<Esc>2k$i
+imap ,puf public function ()<CR>{<CR>}<Esc>2k$hi
+imap ,prf protected function ()<CR>{<CR>}<Esc>2k$hi
+imap ,pus public static function ()<CR>{<CR>}<Esc>2k$hi
+imap ,prs protected static function ()<CR>{<CR>}<Esc>2k$hi
+
+imap ,if if () {<CR>}<Esc>k$2hi
+imap ,whi while () {<CR>}<Esc>k$2hi
+imap ,for for () {<CR>}<Esc>k$2hi
+imap ,fea foreach () {<CR>}<Esc>k$2hi
+imap ,swi switch () {<CR>}<Esc>k$2hi
 
 "imap " ""<Esc>i
 "imap ( ()<Esc>i
