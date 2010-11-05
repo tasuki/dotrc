@@ -7,12 +7,15 @@ set autoindent		" always set autoindenting on
 set smartindent     " try to guess indentation
 set textwidth=0		" Don't wrap words by default
 set nobackup		" Don't keep a backup file
-set directory=~/.vim/swap " don't put swap files all over the place
+set nowb            " no backup when saving
+set noswapfile      " swap files are overrated
 set viminfo='20,\"50	  " read/write a .viminfo file, don't store more than 50 lines of registers
 set history=50		" keep 50 lines of command line history
 set ruler		    " show the cursor position all the time
 set nopaste         " do not start in paste mode
 set nofoldenable    " oh how I hate folding
+set wildmenu        " show options for <tab>
+set hidden          " change buffer without saving
 
 " Suffixes that get lower priority when doing tab completion for filenames.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
