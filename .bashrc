@@ -1,9 +1,6 @@
 # tasuki's bashrc
 
-alias dotrc-get='wget -cO dotrc.tgz http://github.com/tasuk/dotrc/tarball/master && tar -xzf dotrc.tgz && cp -rf tasuk-*/.??* . && rm -r tasuk-* && rm dotrc.tgz && echo "ok, have fun!"'
-
-# dear GitHub, please fix svn export so I can get rid of the ugly thing above
-# alias dotrc-get='svn export --force http://svn.github.com/tasuk/dotrc.git .'
+alias dotrc-get='svn export --force http://svn.github.com/tasuk/dotrc.git .'
 
 # Delete this and sky will fall on your head
 [ -z "$PS1" ] && return
