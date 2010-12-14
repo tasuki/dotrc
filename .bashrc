@@ -149,5 +149,5 @@ else # if we don't have grc, colour by hand and repair long output
 	function sv { svn $@ | less -F; }
 fi
 
-# Source temporary bashrc additions
-[ -f ~/.tmp-bashrc ] && . ~/.tmp-bashrc
+# source local bashrc additions
+[ -f ~/.bashrc.local ] && . ~/.bashrc.local

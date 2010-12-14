@@ -98,4 +98,6 @@ autocmd BufRead,BufNewFile *.php* source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.phtml* source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
 
-"source ~/.vim/minibufexpl.vim
+if filereadable(expand("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
