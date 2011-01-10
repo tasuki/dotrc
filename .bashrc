@@ -99,7 +99,7 @@ alias less='less -r'
 alias grep='grep --color=auto'
 alias rgrep='grep -r'
 
-alias scr='screen -d -RR -U'
+alias scr='screen -U -d -R'
 
 # change user and group recursively; quote * (or use .)
 function chr { chown -R $1:$1 $2; }
