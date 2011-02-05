@@ -6,6 +6,10 @@ set completion-query-items 350
 # the below was stolen somewhere
 $if mode=emacs
 
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
 # for linux console and RH/Debian xterm
 # allow the use of the Home/End keys
 "\e[1~": beginning-of-line
