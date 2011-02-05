@@ -1,11 +1,10 @@
 # expand my tab immediately!
 set show-all-if-ambiguous on
 set completion-query-items 350
-
+set completion-ignore-case on
 
 # the below was stolen somewhere
 $if mode=emacs
-
 
 "\e[A": history-search-backward
 "\e[B": history-search-forward
