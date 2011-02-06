@@ -64,6 +64,7 @@ alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
 alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^-][^\/]*\//—/g' -e 's/^/ /' -e 's/-/|/'"
+alias biggest="find . -type f -printf '%s\t%p\n' | sort -g" # find biggest files
 alias path='echo -e ${PATH//:/\\n}'
 alias duh='du -kh'              # disk usage - human readable
 alias dus='du | sort -n'        # disk usage - sort everything by size
