@@ -302,7 +302,9 @@ d       Diff against file of same name in other directory
           exit 1
         fi
         if [ -f %D/%f ]; then        # if two of them, then
-          dif %f %D/%f
+          diff -up %f %D/%f | sed -e 's/\(^-.*\)/\x1b[1;31m\1\x1b[0m/g' \
+                                  -e 's/\(^\+.*\)/\x1b[1;32m\1\x1b[0m/g' \
+                                  -e 's/\(^@.*\)/\x1b[36m\1\x1b[0m/g' | less -R
         else
           echo %f: No copy in %D/%f
         fi
@@ -312,4 +314,7 @@ D       Diff current directory against other directory
           echo "The two directores must be different"
           exit 1
         fi
-        dif -r %d %D
+        diff -up %d %D | sed -e 's/\(^-.*\)/\x1b[1;31m\1\x1b[0m/g' \
+                             -e 's/\(^\+.*\)/\x1b[1;32m\1\x1b[0m/g' \
+                             -e 's/\(^@.*\)/\x1b[36m\1\x1b[0m/g' | less -R
+        fi
