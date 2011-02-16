@@ -131,6 +131,11 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
+alias colorize="sed \
+	-e 's/\(^-.*\)/\x1b[1;31m\1\x1b[0m/g' \
+	-e 's/\(^\+.*\)/\x1b[1;32m\1\x1b[0m/g' \
+	-e 's/\(^@.*\)/\x1b[36m\1\x1b[0m/g'"
+
 # if we have grc, moar colors!
 if type -P grc &>/dev/null; then
 	alias t='grc tail -f'
@@ -142,13 +147,9 @@ if type -P grc &>/dev/null; then
 	function sv { grc svn $@ | less -F; } # less, quit if one screen
 
 else # if we don't have grc, colour by hand and repair long output
-	function dif { diff -up $@ | sed \
-		-e 's/\(^-.*\)/\x1b[1;31m\1\x1b[0m/g' \
-		-e 's/\(^\+.*\)/\x1b[1;32m\1\x1b[0m/g' \
-		-e 's/\(^@.*\)/\x1b[36m\1\x1b[0m/g' \
-		| less -F; }
 	alias t='tail -f'
-	function sv { svn $@ | less -F; }
+	function dif { diff -up $@ | colorize | less -F; }
+	function sv { svn $@ | colorize | less -F; }
 fi
 
 # source local bashrc additions
