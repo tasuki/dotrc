@@ -1,21 +1,21 @@
 " tasuki's .vimrc
 
-set nocompatible	" Use Vim defaults instead of 100% vi compatibility
-set backspace=indent,eol,start	" more powerful backspacing
+set nocompatible     " Use Vim defaults instead of 100% vi compatibility
+set backspace=indent,eol,start " more powerful backspacing
 
-set autoindent		" always set autoindenting on
-set smartindent     " try to guess indentation
-set textwidth=0		" Don't wrap words by default
-set nobackup		" Don't keep a backup file
-set nowb            " no backup when saving
-set noswapfile      " swap files are overrated
-set viminfo='20,\"50	  " read/write a .viminfo file, don't store more than 50 lines of registers
-set history=50		" keep 50 lines of command line history
-set ruler		    " show the cursor position all the time
-set nopaste         " do not start in paste mode
-set nofoldenable    " oh how I hate folding
-set wildmenu        " show options for <tab>
-set hidden          " change buffer without saving
+set autoindent       " always set autoindenting on
+set smartindent      " try to guess indentation
+set textwidth=0      " Don't wrap words by default
+set nobackup         " Don't keep a backup file
+set nowb             " no backup when saving
+set noswapfile       " swap files are overrated
+set viminfo='20,\"50 " read/write a .viminfo file, don't store more than 50 lines of registers
+set history=50       " keep 50 lines of command line history
+set ruler            " show the cursor position all the time
+set nopaste          " do not start in paste mode
+set nofoldenable     " oh how I hate folding
+set wildmenu         " show options for <tab>
+set hidden           " change buffer without saving
 
 " Suffixes that get lower priority when doing tab completion for filenames.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
@@ -23,9 +23,8 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 " Make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
-syntax on " syntax highlighting
-
-filetype plugin on " file type detection
+syntax on           " syntax highlighting
+filetype plugin on  " file type detection
 
 set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
