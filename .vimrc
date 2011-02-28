@@ -97,6 +97,11 @@ autocmd BufRead,BufNewFile *.php* source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.phtml* source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
 
+set tags+=tags;/ " search for tags file recursively
+if executable('exuberant-ctags') || executable('ctags') || executable('tags')
+	source ~/.vim/taglist.vim
+endif
+
 if filereadable(expand("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
