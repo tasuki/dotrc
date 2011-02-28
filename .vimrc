@@ -37,8 +37,6 @@ set linebreak
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-"set et             "expand tab, nothing good...
-"set noexpandtab
 set so=10           " show 10 lines of context (above and below)
 set hlsearch        " highlight searches
 set fileencodings=utf-8,iso-8859-2,win-1250
@@ -84,10 +82,6 @@ set tm=400 " timeout for shortcuts
 " pressing j and k together escapes
 inoremap jk <esc>
 inoremap kj <esc>
-
-" set gt and gT to switch between buffers instead of tabs
-"map gt :bn<CR>
-"map gT :bp<CR>
 
 map <F2> :bp<CR>
 map <F3> :bn<CR>
