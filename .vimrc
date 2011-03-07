@@ -45,11 +45,11 @@ set encoding=utf-8
 " set title for term and screen
 autocmd BufEnter * let &titlestring = "vi " . expand("%:t")
 if &term == "screen"
-  set t_ts=k
-  set t_fs=\
+	set t_ts=k
+	set t_fs=\
 endif
 if &term == "screen" || &term == "xterm"
-  set title
+	set title
 endif
 
 " ,# perl # comments
