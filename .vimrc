@@ -42,6 +42,12 @@ set hlsearch        " highlight searches
 set fileencodings=utf-8,iso-8859-2,win-1250
 set encoding=utf-8
 
+" window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 " set title for term and screen
 autocmd BufEnter * let &titlestring = "vi " . expand("%:t")
 if &term == "screen"
