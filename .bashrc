@@ -143,13 +143,13 @@ if type -P grc &>/dev/null; then
 	alias netstat='grc netstat'
 	alias ping='grc ping'
 	alias traceroute='grc traceroute'
-	function dif { grc diff -up $@ | less -F; }
-	function sv { grc svn $@ | less -F; } # less, quit if one screen
+	function dif { grc diff -up $@ | less -FX; }
+	function sv { grc svn $@ | less -FX; } # less, quit if one screen
 
 else # if we don't have grc, colour by hand and repair long output
 	alias t='tail -f'
-	function dif { diff -up $@ | colorize | less -F; }
-	function sv { svn $@ | colorize | less -F; }
+	function dif { diff -up $@ | colorize | less -FX; }
+	function sv { svn $@ | colorize | less -FX; }
 fi
 
 # source local bashrc additions
