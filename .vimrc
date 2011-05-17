@@ -23,9 +23,8 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 " Make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
-syntax on            " syntax highlighting
-filetype plugin on   " file type detection
-colorscheme dante256 " slightly modified dante colorscheme
+syntax on           " syntax highlighting
+filetype plugin on  " file type detection
 
 set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
@@ -51,9 +50,11 @@ map <C-l> <C-w>l
 
 " set title for term and screen
 autocmd BufEnter * let &titlestring = "vi " . expand("%:t")
-if &term == "screen" || &term == "xterm-256color"
+if &term == "screen"
 	set t_ts=k
 	set t_fs=\
+endif
+if &term == "screen" || &term == "xterm"
 	set title
 endif
 

@@ -45,10 +45,6 @@ case "$TERM" in
 		;;
 esac
 
-# exporting TERM to fake value is a very bad thing
-# need it for vim colors in gnome-terminal
-export TERM="xterm-256color"
-
 alias rmr='rm -r'               # delete recursively
 alias rmrf='rm -rf'             # force delete recursively
 alias cp='cp -i'                # ask before overwrite
