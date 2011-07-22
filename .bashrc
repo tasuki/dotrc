@@ -76,6 +76,7 @@ export IGNOREEOF='1'            # require CTRL+D twice to exit
 alias c='cd'                    # lazy
 alias v='vim'                   # I need my editor REAL FAST
 alias g='gvim'                  # fancy GUI?
+alias ..l='cd .. && ls'
 
 function lcd { cd $@ && ls; }     # cd && ls
 function mkcd { mkdir $@ && cd $@; } # create directory and jump into it
