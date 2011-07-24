@@ -10,14 +10,15 @@
 
 [alias]
 	br = branch
-	ba = branch -a
-	bd = branch -D
+	bra = branch -a
+	brd = branch -D
 	st = status
 	ci = commit
 	cia = commit -a
 	co = checkout
 	lg = log --summary
 	lf = log --full-diff -p
+	tree = log --graph --pretty=oneline --decorate
 	d = diff
 	dc = diff --cached
 	pom = push origin master
