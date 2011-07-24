@@ -58,14 +58,15 @@ if &term == "screen" || &term == "xterm"
 	set title
 endif
 
+let mapleader = ","
 " ,# perl # comments
-map ,# :s/^/#/<CR>
+map <leader># :s/^/#/<CR>
 " " ,/ C/C++/C#/Java // comments
-map ,/ :s/^/\/\//<CR>
+map <leader>/ :s/^/\/\//<CR>
 " ,< HTML comment
-map ,< :s/^\(.*\)$/<!-- \1 -->/<CR><Esc>:nohlsearch<CR>
+map <leader>< :s/^\(.*\)$/<!-- \1 -->/<CR><Esc>:nohlsearch<CR>
 " c++ java style comments
-map ,* :s/^\(.*\)$/\/\* \1 \*\//<CR><Esc>:nohlsearch<CR>
+map <leader>* :s/^\(.*\)$/\/\* \1 \*\//<CR><Esc>:nohlsearch<CR>
 
 
 " tab completion when previous char is not a whitespace
