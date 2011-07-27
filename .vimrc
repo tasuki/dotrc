@@ -86,6 +86,9 @@ inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
 
 set tm=400 " timeout for shortcuts
 
+" make Y consistent with D and C
+nmap Y y$
+
 " pressing j and k together escapes
 inoremap jk <esc>
 inoremap kj <esc>
