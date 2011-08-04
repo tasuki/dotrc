@@ -105,10 +105,23 @@ autocmd BufRead,BufNewFile *.php* source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.phtml* source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
 
-set tags+=tags;/ " search for tags file recursively
+" pathogen
+let g:pathogen_disabled = []
 if executable('exuberant-ctags') || executable('ctags') || executable('tags')
-	source ~/.vim/taglist.vim
+	" search for tags file recursively
+	set tags+=tags;/
+else
+	call add(g:pathogen_disabled, 'taglist')
 endif
+
+call pathogen#runtime_append_all_bundles()
+
+map <F5> :NERDTreeToggle<CR>
+map <F6> :TlistToggle<CR>
+let Tlist_Use_Right_Window = 1
+let Tlist_Enable_Fold_Column = 0
+let Tlist_Show_One_File = 1
+let tlist_php_settings = 'php;c:class;f:function;d:constant;v:variable'
 
 if filereadable(expand("~/.vimrc.local"))
 	source ~/.vimrc.local
