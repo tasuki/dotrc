@@ -105,6 +105,7 @@ alias grep='grep --color=auto'
 alias rgrep='grep -r'
 
 alias scr='screen -U -d -R'
+alias sudo='sudo '              # preserve aliases when sudoing
 
 # change user and group recursively; quote * (or use .)
 function chr { chown -R $1:$1 $2; }
