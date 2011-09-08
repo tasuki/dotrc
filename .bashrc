@@ -115,8 +115,6 @@ function chmdef { find . -type d -exec chmod 755 {} \; ; \
 
 export EDITOR=vim
 
-alias gf='grep function'
-
 export HISTSIZE=1000
 export HISTFILESIZE=1000
 export HISTCONTROL=ignoreboth
