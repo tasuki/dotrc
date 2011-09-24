@@ -121,6 +121,7 @@ let Tlist_Show_One_File = 1
 let tlist_php_settings = 'php;c:class;f:function;d:constant;v:variable'
 
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 map <F5> :NERDTreeToggle<CR>
 map <F6> :TlistToggle<CR>
