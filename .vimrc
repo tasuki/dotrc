@@ -99,7 +99,9 @@ inoremap kj <esc>
 map <F2> :bp<CR>
 map <F3> :bn<CR>
 
-autocmd BufEnter * lcd %:p:h " change pwd to current file directory
+" change pwd to current file directory
+map <F8> :cd %:p:h<CR>
+
 autocmd BufRead,BufNewFile *.htm* source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.php* source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.phtml* source ~/.vim/html.vim
