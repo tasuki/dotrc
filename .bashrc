@@ -88,7 +88,7 @@ eval `dircolors -b`             # colours!
 
 # 'ls' family
 alias l='ls'                    # too lazy
-alias ls='ls --color=always'    # add colors for filetype recognition
+alias ls='ls --color=auto'      # add colors for filetype recognition
 alias ll='ls -l'                # show details
 alias la='ls -al'               # show hidden files
 alias lx='ls -lXB'              # sort by extension
