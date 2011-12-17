@@ -1,3 +1,21 @@
+[submodule ".vim/bundle/ack"]
+	path = .vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule ".vim/bundle/lusty"]
+	path = .vim/bundle/lusty
+	url = https://github.com/sjbach/lusty
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/snipmate"]
+	path = .vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
 [submodule ".vim/bundle/supertab"]
 	path = .vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/taglist"]
+	path = .vim/bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
