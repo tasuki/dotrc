@@ -59,14 +59,6 @@ if &term == "screen" || &term == "xterm"
 endif
 
 let mapleader = ","
-" ,# perl # comments
-map <leader># :s/^/#/<CR>
-" " ,/ C/C++/C#/Java // comments
-map <leader>/ :s/^/\/\//<CR>
-" ,< HTML comment
-map <leader>< :s/^\(.*\)$/<!-- \1 -->/<CR><Esc>:nohlsearch<CR>
-" c++ java style comments
-map <leader>* :s/^\(.*\)$/\/\* \1 \*\//<CR><Esc>:nohlsearch<CR>
 
 set tm=400 " timeout for shortcuts
 
