@@ -84,6 +84,7 @@ autocmd BufRead,BufNewFile *.phtml* source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
 
 " pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
 let g:pathogen_disabled = []
 if executable('exuberant-ctags') || executable('ctags') || executable('tags')
 	" search for tags file recursively
