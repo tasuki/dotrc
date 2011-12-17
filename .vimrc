@@ -68,22 +68,6 @@ map <leader>< :s/^\(.*\)$/<!-- \1 -->/<CR><Esc>:nohlsearch<CR>
 " c++ java style comments
 map <leader>* :s/^\(.*\)$/\/\* \1 \*\//<CR><Esc>:nohlsearch<CR>
 
-
-" tab completion when previous char is not a whitespace
-function! InsertTabWrapper(direction)
-	let col = col('.') - 1
-	" !col || strpart(getline('.'), col-1, col) =~ '\s'
-	if !col || getline('.')[col - 1] !~ '\k'
-		return "\<tab>"
-	elseif "backward" == a:direction
-		return "\<c-p>"
-	else
-		return "\<c-n>"
-	endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper ("forward")<cr>
-inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
-
 set tm=400 " timeout for shortcuts
 
 " make Y consistent with D and C
