@@ -1,0 +1,79 @@
+#############
+# div & span
+snippet div
+	<div class="${1}">
+		${2}
+	</div>
+	${3}
+snippet diid
+	<div id="${1}">
+		${2}
+	</div>
+	${3}
+snippet span
+	<span class="${1}">${2}</span>${3}
+snippet spaid
+	<span id="${1}">${2}</span>${3}
+###########
+# headings
+snippet ha
+	<h1>${1}</h1>
+snippet hb
+	<h2>${1}</h2>
+snippet hc
+	<h3>${1}</h3>
+snippet hd
+	<h4>${1}</h4>
+########
+# fonts
+snippet bb
+	<strong>${1}</strong>${2}
+snippet ii
+	<em>${1}</em>${2}
+snippet pre
+	<pre>
+	${1}
+	</pre>
+	${2}
+########
+# links
+snippet aa
+	<a href="${1:#}">${2}</a>${3}
+#############
+# paragraphs
+snippet pp
+	<p>${1}</p>
+snippet br
+	<br/>
+#####################
+# tables, img, lists
+snippet tab
+	<table${1}>
+		<tr>${2}</tr>
+	</table>
+snippet tr
+	<tr>${1}</tr>
+snippet th
+	<th>${1}</th>
+snippet td
+	<td>${1}</td>
+snippet img
+	<img src="${1}" alt="${2}"/>
+snippet ul
+	<ul>
+		<li>${1}</li>
+	</ul>
+snippet ol
+	<ol>
+		<li>${1}</li>
+	</ol>
+snippet li
+	<li>${1}</li>
+###########
+# entities
+snippet amp
+	&amp;
+snippet ndash
+	&ndash;
+snippet mdash
+	&mdash;

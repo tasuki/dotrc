@@ -5,15 +5,14 @@ vmap <leader>bb <Esc>`>a}<Esc>`<i{\bf <Esc>%
 imap <leader>ii {\it }<Left>
 vmap <leader>ii <Esc>`>a}<Esc>`<i{\it <Esc>%
 
-
-"uzavøení do uvozovek
+"enclose in czech quotes
 imap <leader>uv \uv{}<Left>
 vmap <leader>uv <Esc>`>a}<Esc>`<i\uv{<Esc>%
 
-"uzavøení; napi¹te \begin{cosi} a pou¾ijte ,.
+"close open \begin{something} by <leader>.
 imap <leader>. <Esc>F{lyt}f}a\end{}<Esc>PF\i
 
-"poskakuje pøed (\) a za (}) TeXovské konstrukce
+"jump before (\) and after (}) TeX constructs
 map <M-Right> f}
 imap <M-Right> <C-O>f}<Right>
 map <M-Left> F\

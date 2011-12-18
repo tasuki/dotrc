@@ -59,10 +59,10 @@ set fileencodings=utf-8,iso-8859-2,win-1250
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,
 	\.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
-" load extras based on filename
-autocmd BufRead,BufNewFile *.htm* source ~/.vim/html.vim
-autocmd BufRead,BufNewFile *.php* source ~/.vim/html.vim
-autocmd BufRead,BufNewFile *.phtml* source ~/.vim/html.vim
+" extras based on filename
+autocmd BufRead,BufNewFile *.{htm,php,phtml}*
+	\ set filetype=php.html |
+	\ source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
 
 " sudo write
