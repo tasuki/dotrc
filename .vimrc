@@ -32,6 +32,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" scroll faster with ctrl+p and ctrl+n
+map <C-p> 5k
+map <C-n> 5j
+
 " switch prev/next buffer
 map <F2> :bp<CR>
 map <F3> :bn<CR>
