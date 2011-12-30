@@ -116,8 +116,7 @@ let g:LustyJugglerSuppressRubyWarning = 1
 " taglist
 let Tlist_Use_Right_Window = 1
 let Tlist_Enable_Fold_Column = 0
-let Tlist_Show_One_File = 1
-let tlist_php_settings = 'php;c:class;f:function;d:constant;v:variable'
+let tlist_php_settings = 'php;c:class;f:function;d:constant'
 
 """"""""""""""""""
 " local overrides
