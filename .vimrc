@@ -91,9 +91,6 @@ inoremap kj <esc>
 " make Y consistent with D and C
 nmap Y y$
 
-" make p in Visual mode replace the selected text with the "" register.
-vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
-
 """"""""""""""""""
 " plugin settings
 " pathogen
