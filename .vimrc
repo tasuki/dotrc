@@ -108,9 +108,6 @@ endif
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" lusty juggler
-let g:LustyJugglerSuppressRubyWarning = 1
-
 " taglist
 let Tlist_Use_Right_Window = 1
 let Tlist_Enable_Fold_Column = 0
