@@ -66,7 +66,7 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,
 
 " extras based on filename
 autocmd BufRead,BufNewFile *.{htm,php,phtml}*
-	\ set filetype=php |
+	\ set filetype=php.html |
 	\ source ~/.vim/html.vim |
 	\ source ~/.vim/bundle/phpcomplete/ftplugin/phpcomplete.vim
 autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
@@ -113,6 +113,9 @@ call pathogen#helptags()
 let Tlist_Use_Right_Window = 1
 let Tlist_Enable_Fold_Column = 0
 let tlist_php_settings = 'php;c:class;f:function;d:constant'
+
+" snipmate - disable default snippets; only load custom
+let g:snippets_dir = '~/.vim/snippets/'
 
 """"""""""""""""""
 " local overrides
