@@ -67,7 +67,8 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,
 " extras based on filename
 autocmd BufRead,BufNewFile *.{htm,php,phtml}*
 	\ set filetype=php |
-	\ source ~/.vim/html.vim
+	\ source ~/.vim/html.vim |
+	\ source ~/.vim/bundle/phpcomplete/ftplugin/phpcomplete.vim
 autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
 
 " sudo write
