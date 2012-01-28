@@ -3,9 +3,9 @@
 # Return if shell is non-interactive
 [ -z "$PS1" ] && return
 
-# Please keep me sane
-LANG="en_US.utf8"
-LC_ALL="en_US.utf8"
+# Export environment variables
+export LANG="en_US.utf8"
+export LC_ALL="en_US.utf8"
 
 # Colors
 CYAN='\[\e[1;36m\]'
