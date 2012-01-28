@@ -9,12 +9,16 @@
 	ui = auto
 
 [alias]
+	a = add
+	ap = add -p
 	br = branch
 	bra = branch -a
 	brd = branch -D
 	st = status
 	ci = commit
+	cim = commit -m
 	cia = commit -a
+	ciam = commit -am
 	co = checkout
 	lg = log --summary
 	lf = log --full-diff -p
