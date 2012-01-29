@@ -1,32 +1,8 @@
+! after changing this file, run: xrdb .Xresources
+
 ! Ubuntu fonts rock
 *faceName:     Ubuntu Mono
 *faceSize:     14
 
-! Dante colorscheme merged with customized Tango
-*cursorColor:  #CDAF95
-*foreground:   #CDAF95
-*background:   #0A0A0A
-! black
-*color0:       #000000
-*color8:       #000000
-! red
-*color1:       #CD2626
-*color9:       #CC6666
-! green
-*color2:       #66CD00
-*color10:      #96CC66
-! brown/yellow
-*color3:       #CDAD00
-*color11:      #CCCC66
-! blue
-*color4:       #008B8B
-*color12:      #6699CC
-! magenta
-*color5:       #104E8B
-*color13:      #CC66BE
-! cyan
-*color6:       #6E8B3D
-*color14:      #66CCBF
-! white
-*color7:       #CCCCCC
-*color15:      #E6E6E6
+! include style
+#include ".xcolors/dante"
