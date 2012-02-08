@@ -117,6 +117,9 @@ let tlist_php_settings = 'php;c:class;f:function;d:constant'
 " snipmate - disable default snippets; only load custom
 let g:snippets_dir = '~/.vim/snippets/'
 
+" easymotion - single leader
+let g:EasyMotion_leader_key = '<Leader>'
+
 """"""""""""""""""
 " local overrides
 if filereadable(expand("~/.vimrc.local"))
