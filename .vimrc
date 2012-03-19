@@ -40,6 +40,8 @@ map <C-n> 5j
 " switch prev/next buffer
 map <F2> :bp<CR>
 map <F3> :bn<CR>
+" switch to previously edited buffer
+map <F4> <C-^>
 
 " open/close tree and tags
 map <F5> :NERDTreeToggle<CR>
