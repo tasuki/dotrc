@@ -4,6 +4,9 @@
 [submodule ".vim/bundle/addonutils"]
 	path = .vim/bundle/addonutils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule ".vim/bundle/easymotion"]
+	path = .vim/bundle/easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -31,6 +34,3 @@
 [submodule ".vim/bundle/tlib"]
 	path = .vim/bundle/tlib
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule ".vim/bundle/easymotion"]
-	path = .vim/bundle/easymotion
-	url = https://github.com/Lokaltog/vim-easymotion.git
