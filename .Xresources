@@ -4,5 +4,8 @@
 *faceName:     Ubuntu Mono
 *faceSize:     14
 
+! UTF-8 anyhow anywhere anytime
+*utf8: 1
+
 ! include style
 #include ".xcolors/dante"
