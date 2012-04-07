@@ -34,7 +34,7 @@ parse_git_info() {
 }
 if [[ $EUID -eq 0 ]]; then
 	USR="${RED}\u${NONE}"
-	PROMPT="${RED}#"
+	PROMPT="${RED}#${NONE}"
 else
 	USR="\u"
 	PROMPT="${NONE}\$"
