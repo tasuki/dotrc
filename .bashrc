@@ -117,6 +117,7 @@ alias grep='grep --color=auto'  # if stuck with grep, colorize
 alias acki='ack -i'             # case insensitive
 alias rgrep='grep -r'
 alias online='ping 4.2.2.2'     # check if online
+alias pyprofile='python -m cProfile -s time'
 export IGNOREEOF='1'            # require CTRL+D twice to exit
 export HOSTFILE=$HOME/.hosts    # put a list of remote hosts in ~/.hosts
 PATH="~/.bin:${PATH}"
