@@ -8,10 +8,15 @@ export LANG="en_US.utf8"
 export LC_ALL="en_US.utf8"
 
 # Colors
-CYAN='\[\e[1;36m\]'
-BLUE='\[\e[1;34m\]'
-RED='\[\e[1;31m\]'
-NC='\[\e[0m\]'
+  NONE='\[\e[0m\]'
+  GRAY='\[\e[1;30m\]'
+   RED='\[\e[1;31m\]'
+ GREEN='\[\e[1;32m\]'
+YELLOW='\[\e[1;33m\]'
+  BLUE='\[\e[1;34m\]'
+PURPLE='\[\e[1;35m\]'
+  CYAN='\[\e[1;36m\]'
+ WHITE='\[\e[1;37m\]'
 
 # Source global bashrc
 [ -f /etc/bash.bashrc ] && . /etc/bash.bashrc
@@ -23,11 +28,18 @@ NC='\[\e[0m\]'
 date
 [ -f /usr/games/fortune ] && /usr/games/fortune wisdom people
 
+# Set prompt
+parse_git_info() {
+	git name-rev HEAD 2> /dev/null | awk '{ print $2, "" }'
+}
 if [[ $EUID -eq 0 ]]; then
-	PS1="${RED}\u${NC}@${CYAN}\h ${BLUE}\w ${RED}# ${NC}"  # root prompt
+	USR="${RED}\u${NONE}"
+	PROMPT="${RED}#"
 else
-	PS1="\u@${CYAN}\h ${BLUE}\w ${NC}\$ "  # user prompt
+	USR="\u"
+	PROMPT="${NONE}\$"
 fi
+PS1="${USR}@${CYAN}\h ${BLUE}\w ${PURPLE}\$(parse_git_info)${PROMPT} "
 
 case "$TERM" in
 	xterm*|rxvt|Eterm|eterm)
