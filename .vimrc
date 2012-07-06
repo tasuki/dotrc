@@ -47,6 +47,9 @@ map <F4> <C-^>
 map <F5> :NERDTreeToggle<CR>
 map <F6> :TlistToggle<CR>
 
+" stop highlighting search
+map <F7> :noh<CR>
+
 " change pwd to current file directory
 map <F8> :cd %:p:h<CR>
 
