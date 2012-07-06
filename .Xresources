@@ -3,9 +3,11 @@
 ! Ubuntu fonts rock
 *faceName:     Ubuntu Mono
 *faceSize:     14
+! Bold does not
+*colorBDMode:  true
 
 ! UTF-8 anyhow anywhere anytime
 *utf8: 1
 
 ! include style
-#include ".xcolors/dante"
+#include ".xcolors/solarized"

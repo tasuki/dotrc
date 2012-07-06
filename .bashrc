@@ -9,14 +9,14 @@ export LC_ALL="en_US.utf8"
 
 # Colors
   NONE='\[\e[0m\]'
-  GRAY='\[\e[1;30m\]'
-   RED='\[\e[1;31m\]'
- GREEN='\[\e[1;32m\]'
-YELLOW='\[\e[1;33m\]'
-  BLUE='\[\e[1;34m\]'
-PURPLE='\[\e[1;35m\]'
-  CYAN='\[\e[1;36m\]'
- WHITE='\[\e[1;37m\]'
+  GRAY='\[\e[30m\]'
+   RED='\[\e[31m\]'
+ GREEN='\[\e[32m\]'
+YELLOW='\[\e[33m\]'
+  BLUE='\[\e[34m\]'
+PURPLE='\[\e[35m\]'
+  CYAN='\[\e[36m\]'
+ WHITE='\[\e[37m\]'
 
 # Source global bashrc
 [ -f /etc/bash.bashrc ] && . /etc/bash.bashrc
@@ -84,7 +84,7 @@ alias vo='vim -O'               # vertically split buffers
 alias g='gvim'                  # fancy GUI?
 
 # info about files
-eval `dircolors -b`             # set bash colours
+eval `dircolors .xcolors/solarized-dircolors` # set bash colours
 alias l='ls'                    # too lazy
 alias ls='ls --color=auto'      # add colors for filetype recognition
 alias ll='ls -l'                # show details

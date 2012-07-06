@@ -122,6 +122,11 @@ let g:snippets_dir = '~/.vim/snippets/'
 " easymotion - single leader
 let g:EasyMotion_leader_key = '<Leader>'
 
+set background=dark
+let g:solarized_termtrans=1
+let g:solarized_bold=0
+colorscheme solarized
+
 """"""""""""""""""
 " local overrides
 if filereadable(expand("~/.vimrc.local"))
