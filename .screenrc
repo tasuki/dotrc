@@ -3,4 +3,4 @@ defscrollback 10000
 startup_message off
 vbell off
 hardstatus alwayslastline
-hardstatus string '%{= kd}[ %H ][%= %?%-Lw%?%{W}%n*%f%t%?(%u)%?%{d}%?%+Lw%?%?%= ][ %Y-%m-%d %c ]'
+hardstatus string '%{= kd}%-w%{W}%n %t%{d}%+w%= %Y-%m-%d %c'
