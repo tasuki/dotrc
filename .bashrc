@@ -84,7 +84,7 @@ alias vo='vim -O'               # vertically split buffers
 alias g='gvim'                  # fancy GUI?
 
 # info about files
-eval `dircolors .xcolors/solarized-dircolors` # set bash colours
+eval `dircolors ~/.xcolors/solarized-dircolors` # set bash colours
 alias l='ls'                    # too lazy
 alias ls='ls --color=auto'      # add colors for filetype recognition
 alias ll='ls -l'                # show details
