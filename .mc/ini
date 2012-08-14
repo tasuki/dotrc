@@ -87,6 +87,9 @@ skin=default
 keymap=mc.keymap
 auto_save_setup_panels=1
 
+[Panels]
+navigate_with_arrows=true
+
 [Layout]
 equal_split=1
 message_visible=0
