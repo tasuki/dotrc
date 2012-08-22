@@ -39,7 +39,7 @@ else
 	USR="\u"
 	PROMPT="${NONE}\$"
 fi
-PS1="${USR}@${CYAN}\h ${BLUE}\w ${PURPLE}\$(parse_git_info)${PROMPT} "
+PS1="${NONE}${USR}@${CYAN}\h ${BLUE}\w ${PURPLE}\$(parse_git_info)${PROMPT} "
 
 case "$TERM" in
 	xterm*|rxvt|Eterm|eterm)
