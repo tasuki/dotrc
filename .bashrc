@@ -81,7 +81,7 @@ function chmdef { find . -type d -exec chmod 755 {} \; ; \
 export EDITOR=vim               # 'cause I'm a real man
 alias v='vim'                   # lazy
 alias vo='vim -O'               # vertically split buffers
-alias g='gvim'                  # fancy GUI?
+alias gv='gvim'                 # fancy GUI?
 
 # info about files
 eval `dircolors ~/.xcolors/solarized-dircolors` # set bash colours
@@ -110,6 +110,7 @@ alias h='history'
 # update dot files
 alias dotrc-get='svn export --force http://svn.github.com/tasuk/dotrc.git .'
 # utilities
+alias g='git'                   # git is invading my life
 alias sudo='sudo '              # preserve aliases when sudoing
 alias scr='screen -U -d -R'     # utf, reattach (append session name)
 alias less='less -r'            # display raw control chars
