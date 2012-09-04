@@ -15,6 +15,7 @@ set hlsearch         " highlight searches
 set linebreak
 set showbreak=+
 set scrolloff=10     " show 10 lines of context (above and below)
+set exrc             " allow current directory .vimrc overrides
 syntax on            " syntax highlighting
 
 " window title for term and screen
