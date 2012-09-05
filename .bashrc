@@ -101,7 +101,8 @@ alias duh='du -kh'              # disk usage - human readable
 alias dus='du | sort -n'        # disk usage - sort by size
 
 # info about system
-alias ps='ps -eH'               # all processes with threads
+alias pse='ps -e'               # all processes with threads
+alias psf='ps -e --forest'      # show forest tree
 alias dfh='df -Th'              # human readable df
 alias routen='route -n'         # gimme routes fast
 alias path='echo -e ${PATH//:/\\n}'
