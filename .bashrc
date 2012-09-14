@@ -30,7 +30,7 @@ date
 
 # Set prompt
 parse_git_info() {
-	git name-rev HEAD 2> /dev/null | awk '{ print $2, "" }'
+	git branch 2> /dev/null | sed -n '/^\*/s/^\* \(.*\)/\1 /p'
 }
 if [[ $EUID -eq 0 ]]; then
 	USR="${RED}\u${NONE}"
