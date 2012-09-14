@@ -120,10 +120,6 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Enable_Fold_Column = 0
 let tlist_php_settings = 'php;c:class;f:function;d:constant'
 
-" snipmate - disable default snippets; only load custom
-let g:snipMate = {}
-let g:snipMate['snippet_dirs'] = funcref#Function('return ["~/.vim"]')
-
 " easymotion - single leader
 let g:EasyMotion_leader_key = '<Leader>'
 
