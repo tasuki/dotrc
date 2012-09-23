@@ -18,6 +18,9 @@ set scrolloff=10     " show 10 lines of context (above and below)
 set exrc             " allow current directory .vimrc overrides
 syntax on            " syntax highlighting
 
+" close preview windows on leaving insert mode
+autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
+
 " window title for term and screen
 autocmd BufEnter * let &titlestring = "vi " . expand("%:t")
 if &term == "screen"
@@ -46,7 +49,7 @@ map <F4> <C-^>
 
 " open/close tree and tags
 map <F5> :NERDTreeToggle<CR>
-map <F6> :TlistToggle<CR>
+map <F6> :TagbarToggle<CR>
 
 " stop highlighting search
 map <F7> :noh<CR>
@@ -73,8 +76,7 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,
 " extras based on filename
 autocmd BufRead,BufNewFile *.{htm,php,phtml}*
 	\ set filetype=php.html |
-	\ source ~/.vim/html.vim |
-	\ source ~/.vim/bundle/phpcomplete/ftplugin/phpcomplete.vim
+	\ source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
 
 " sudo write
@@ -115,14 +117,19 @@ endif
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" taglist
-let Tlist_Use_Right_Window = 1
-let Tlist_Enable_Fold_Column = 0
-let tlist_php_settings = 'php;c:class;f:function;d:constant'
-
 " easymotion - single leader
 let g:EasyMotion_leader_key = '<Leader>'
 
+" neocomplcache
+"let g:neocomplcache_enable_at_startup = 1
+
+" turn syntastic off by default
+let g:syntastic_mode_map = { 'mode': 'passive' }
+
+" PIV configuration
+let g:DisableAutoPHPFolding = 1
+
+" solarized
 set background=dark
 let g:solarized_termtrans=1
 let g:solarized_bold=0
