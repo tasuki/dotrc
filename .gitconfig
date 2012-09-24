@@ -14,15 +14,17 @@
 	br = branch
 	bra = branch -a
 	brd = branch -D
-	st = status
 	ci = commit
 	cim = commit -m
 	cia = commit -a
 	ciam = commit -am
 	co = checkout
-	lg = log --summary
-	lf = log --full-diff -p
-	tree = log --graph --pretty=oneline --decorate
+	cob = checkout -b
+	cot = checkout --track
 	d = diff
 	dc = diff --cached
-	pom = push origin master
+	lg = log --summary --name-status
+	lf = log --full-diff -p
+	s = status
+	tree = log --graph --pretty=oneline --decorate
+	unstage = reset HEAD
