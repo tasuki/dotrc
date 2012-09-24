@@ -108,8 +108,6 @@ alias routen='route -n'         # gimme routes fast
 alias path='echo -e ${PATH//:/\\n}'
 alias h='history'
 
-# update dot files
-alias dotrc-get='svn export --force http://svn.github.com/tasuk/dotrc.git .'
 # utilities
 alias g='git'                   # git is invading my life
 alias sudo='sudo '              # preserve aliases when sudoing
