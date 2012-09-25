@@ -120,6 +120,9 @@ call pathogen#helptags()
 " easymotion - single leader
 let g:EasyMotion_leader_key = '<Leader>'
 
+" ctrlp - need to find a good reason for choosing C-m
+let g:ctrlp_map = '<C-m>'
+
 " neocomplcache
 "let g:neocomplcache_enable_at_startup = 1
 
