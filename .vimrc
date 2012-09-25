@@ -124,6 +124,12 @@ let g:EasyMotion_leader_key = '<Leader>'
 " ctrlp - need to find a good reason for choosing C-m
 let g:ctrlp_map = '<C-m>'
 
+" nerdtree ascii arrows
+let g:NERDTreeDirArrows = 0
+
+" tagbar ascii arrows
+let g:tagbar_iconchars = ['+', '-']
+
 " neocomplcache
 "let g:neocomplcache_enable_at_startup = 1
 
