@@ -109,7 +109,6 @@ alias path='echo -e ${PATH//:/\\n}'
 alias h='history'
 
 # utilities
-alias g='git'                   # git is invading my life
 alias sudo='sudo '              # preserve aliases when sudoing
 alias scr='screen -U -d -R'     # utf, reattach (append session name)
 alias less='less -r'            # display raw control chars
@@ -121,6 +120,11 @@ alias pyprofile='python -m cProfile -s time'
 export IGNOREEOF='1'            # require CTRL+D twice to exit
 export HOSTFILE=$HOME/.hosts    # put a list of remote hosts in ~/.hosts
 PATH="~/.bin:${PATH}"
+
+# git shortcut and its autocompletion
+alias g='git'
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
+	|| complete -o default -o nospace -F _git g 2>/dev/null
 
 # history
 export HISTSIZE=1000
