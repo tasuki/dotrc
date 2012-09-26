@@ -32,6 +32,11 @@ date
 parse_git_info() {
 	git branch 2> /dev/null | sed -n '/^\*/s/^\* \(.*\)/\1 /p'
 }
+parse_chroot_info() {
+	if [ "$debian_chroot" ]; then
+		echo "${debian_chroot} "
+	fi
+}
 if [[ $EUID -eq 0 ]]; then
 	USR="${RED}\u${NONE}"
 	PROMPT="${RED}#${NONE}"
@@ -39,7 +44,7 @@ else
 	USR="\u"
 	PROMPT="${NONE}\$"
 fi
-PS1="${NONE}${USR}@${CYAN}\h ${BLUE}\w ${PURPLE}\$(parse_git_info)${PROMPT} "
+PS1="${NONE}${USR}@${CYAN}\h ${YELLOW}\$(parse_chroot_info)${BLUE}\w ${PURPLE}\$(parse_git_info)${PROMPT} "
 
 case "$TERM" in
 	xterm*|rxvt|Eterm|eterm)
