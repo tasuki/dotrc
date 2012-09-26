@@ -129,6 +129,13 @@ let g:NERDTreeDirArrows = 0
 
 " tagbar ascii arrows
 let g:tagbar_iconchars = ['+', '-']
+let g:tagbar_type_php  = { 'kinds' : [
+	\ 'i:interfaces',
+	\ 'c:classes',
+	\ 'd:constant definitions',
+	\ 'f:functions',
+	\ 'j:javascript functions:1'
+\ ] }
 
 " neocomplcache
 "let g:neocomplcache_enable_at_startup = 1
