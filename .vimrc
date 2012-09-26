@@ -15,6 +15,7 @@ set hlsearch         " highlight searches
 set linebreak
 set showbreak=+
 set scrolloff=10     " show 10 lines of context (above and below)
+set updatetime=300   " mostly for tagbar
 set mouse=a          " enable mouse, for the cat to chase
 set exrc             " allow current directory .vimrc overrides
 syntax on            " syntax highlighting
