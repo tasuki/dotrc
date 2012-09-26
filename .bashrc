@@ -30,7 +30,8 @@ date
 
 # Set prompt
 parse_git_info() {
-	git branch 2> /dev/null | sed -n '/^\*/s/^\* \(.*\)/\1 /p'
+	# catch all characters and add a space at the end
+	git branch 2> /dev/null | sed -n '/^\*/s/^\* \(.*\)$/\1 /p'
 }
 parse_chroot_info() {
 	if [ "$debian_chroot" ]; then
