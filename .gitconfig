@@ -10,6 +10,7 @@
 
 [alias]
 	a = add
+	ai = add -i
 	ap = add -p
 	br = branch
 	bra = branch -a
@@ -23,8 +24,10 @@
 	cot = checkout --track
 	d = diff
 	dc = diff --cached
+	f = fetch
+	tree = log --graph --pretty=oneline --decorate
 	lg = log --summary --name-status
 	lf = log --full-diff -p
+	p = push
 	s = status
-	tree = log --graph --pretty=oneline --decorate
 	unstage = reset HEAD
