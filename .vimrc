@@ -119,8 +119,10 @@ endif
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" easymotion - single leader
+" easymotion: single leader + space and backspace shortcuts
 let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_mapping_f = '<Space>'
+let g:EasyMotion_mapping_F = '<Backspace>'
 
 " ctrlp - need to find a good reason for choosing C-m
 let g:ctrlp_map = '<C-m>'
