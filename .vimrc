@@ -145,8 +145,8 @@ let g:syntastic_mode_map = { 'mode': 'passive' }
 
 " PIV configuration
 let g:DisableAutoPHPFolding = 1
-" bring back { in visual mode, which PIV so helpfully remaps
-autocmd BufReadPost *.{htm,php,phtml}* silent! vunmap <buffer> {
+" disable piv ftplugin
+let loaded_piv = 1
 
 " solarized
 set background=dark
