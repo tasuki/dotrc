@@ -140,9 +140,6 @@ let g:tagbar_type_php  = { 'kinds' : [
 	\ 'j:javascript functions:1'
 \ ] }
 
-" neocomplcache
-"let g:neocomplcache_enable_at_startup = 1
-
 " turn syntastic off by default
 let g:syntastic_mode_map = { 'mode': 'passive' }
 
