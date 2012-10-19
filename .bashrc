@@ -149,24 +149,13 @@ export LESS_TERMCAP_us=$'\e[36m'
 
 # colorize diff from stdin
 alias colorize="sed \
-	-e 's/\(^-.*\)/\x1b[1;31m\1\x1b[0m/g' \
-	-e 's/\(^\+.*\)/\x1b[1;32m\1\x1b[0m/g' \
+	-e 's/\(^-.*\)/\x1b[31m\1\x1b[0m/g' \
+	-e 's/\(^\+.*\)/\x1b[32m\1\x1b[0m/g' \
 	-e 's/\(^@.*\)/\x1b[36m\1\x1b[0m/g'"
 
-# if we have grc, moar colors!
-if type -P grc &>/dev/null; then
-	alias t='grc tail -f'
-	alias ct='grc cat'
-	alias netstat='grc netstat'
-	alias ping='grc ping'
-	alias traceroute='grc traceroute'
-	function dif { grc diff -up $@ | less -FX; }
-	function sv { grc svn $@ | less -FX; } # less, quit if one screen
-else # if we don't have grc, colour by hand and repair long output
-	alias t='tail -f'
-	function dif { diff -up $@ | colorize | less -FX; }
-	function sv { svn $@ | colorize | less -FX; }
-fi
+alias t='tail -f'
+function dif { diff -up $@ | colorize | less -FX; }
+function sv { svn $@ | colorize | less -FX; }
 
 # source local bashrc additions
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
