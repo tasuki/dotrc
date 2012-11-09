@@ -130,7 +130,9 @@ let g:ctrlp_map = '<Enter>'
 " nerdtree ascii arrows
 let g:NERDTreeDirArrows = 0
 
-" tagbar ascii arrows
+" tagbar
+" sort by file order; ascii arrows; don't show php vars
+let g:tagbar_sort = 0
 let g:tagbar_iconchars = ['+', '-']
 let g:tagbar_type_php  = { 'kinds' : [
 	\ 'i:interfaces',
