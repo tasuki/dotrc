@@ -141,7 +141,10 @@ let g:tagbar_type_php  = { 'kinds' : [
 \ ] }
 
 " turn syntastic off by default
-let g:syntastic_mode_map = { 'mode': 'passive' }
+if !exists("g:syntastic_mode_map")
+	let g:syntastic_mode_map = {}
+endif
+let g:syntastic_mode_map['mode'] = 'passive'
 
 " PIV configuration
 let g:DisableAutoPHPFolding = 1
