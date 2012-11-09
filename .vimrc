@@ -17,8 +17,10 @@ set showbreak=+
 set scrolloff=10     " show 10 lines of context (above and below)
 set updatetime=300   " mostly for tagbar
 set mouse=a          " enable mouse, for the cat to chase
+set nowrap           " wrapping is usually evil
 set exrc             " allow current directory .vimrc overrides
 syntax on            " syntax highlighting
+let mapleader=","    " start shortcuts with coma
 
 " close preview windows on leaving insert mode
 autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -55,9 +57,11 @@ map <F6> :TagbarToggle<CR>
 
 " stop highlighting search
 map <F7> :noh<CR>
+" wrapping is not always evil
+map <F8> :set wrap!<CR>
 
 " change pwd to current file directory
-map <F8> :cd %:p:h<CR>
+map <Leader>cd :cd %:p:h<CR>
 
 """"""""""""""""""
 " file operations
@@ -94,7 +98,6 @@ set nopaste          " do not start in paste mode
 set tabstop=4        " show tabs as 4 spaces
 set shiftwidth=4     " shift tab width
 set timeoutlen=400   " timeout for shortcuts
-let mapleader = ","  " start shortcuts with coma
 
 " j + k = normal mode
 inoremap jk <esc>
