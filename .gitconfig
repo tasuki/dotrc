@@ -4,6 +4,7 @@
 
 [core]
 	excludesfile = ~/.gitignore
+	quotepath = off
 
 [color]
 	ui = auto
@@ -31,3 +32,6 @@
 	p = push
 	s = status
 	unstage = reset HEAD
+[i18n]
+	logoutputencoding = utf8
+	commitencoding = utf8
