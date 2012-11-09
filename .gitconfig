@@ -8,6 +8,11 @@
 
 [color]
 	ui = auto
+[color "diff"]
+	meta = white
+
+[diff]
+	noprefix = true
 
 [alias]
 	a = add
@@ -26,7 +31,8 @@
 	d = diff
 	dc = diff --cached
 	f = fetch
-	tree = log --graph --pretty=oneline --decorate
+	lol = log --graph --pretty=oneline --decorate --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	lg = log --summary --name-status
 	lf = log --full-diff -p
 	p = push
@@ -35,3 +41,6 @@
 [i18n]
 	logoutputencoding = utf8
 	commitencoding = utf8
+
+[push]
+	default = current
