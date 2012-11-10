@@ -29,10 +29,6 @@ date
 [ -f /usr/games/fortune ] && /usr/games/fortune wisdom people
 
 # Set prompt
-parse_git_info() {
-	# catch all characters and add a space at the end
-	git branch 2> /dev/null | sed -n '/^\*/s/^\* \(.*\)$/\1 /p'
-}
 parse_chroot_info() {
 	if [ "$debian_chroot" ]; then
 		echo "${debian_chroot} "
@@ -45,7 +41,7 @@ else
 	USR="\u"
 	PROMPT="${NONE}\$"
 fi
-PS1="${NONE}${USR}@${CYAN}\h ${YELLOW}\$(parse_chroot_info)${BLUE}\w ${PURPLE}\$(parse_git_info)${PROMPT} "
+PS1="${NONE}${USR}@${CYAN}\h ${YELLOW}\$(parse_chroot_info)${BLUE}\w ${PURPLE}\$(__git_ps1 '%s ')${PROMPT} "
 
 case "$TERM" in
 	xterm*|rxvt|Eterm|eterm)
