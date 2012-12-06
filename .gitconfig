@@ -31,13 +31,14 @@
 	d = diff
 	dc = diff --cached
 	f = fetch
-	lol = log --graph --pretty=oneline --decorate --abbrev-commit
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	l = log --graph --decorate --pretty=oneline --abbrev-commit
+	la = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	lg = log --summary --name-status
 	lf = log --full-diff -p
 	p = push
 	s = status
 	unstage = reset HEAD
+
 [i18n]
 	logoutputencoding = utf8
 	commitencoding = utf8
