@@ -130,8 +130,9 @@ let g:EasyMotion_mapping_F = '<Backspace>'
 " ctrlp
 let g:ctrlp_map = '<Enter>'
 
-" nerdtree ascii arrows
+" nerdtree
 let g:NERDTreeDirArrows = 0
+let g:NERDTreeChDirMode = 2
 
 " tagbar
 " sort by file order; ascii arrows; don't show php vars
