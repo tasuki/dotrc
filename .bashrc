@@ -34,6 +34,13 @@ parse_chroot_info() {
 		echo "${debian_chroot} "
 	fi
 }
+parse_git_info() {
+	if type -t __git_ps1 | grep -q 'function'; then
+		__git_ps1 '%s '
+	else
+		git branch 2> /dev/null | sed -n '/^\*/s/^\* \(.*\)$/\1 /p'
+	fi
+}
 if [[ $EUID -eq 0 ]]; then
 	USR="${RED}\u${NONE}"
 	PROMPT="${RED}#${NONE}"
@@ -41,7 +48,7 @@ else
 	USR="\u"
 	PROMPT="${NONE}\$"
 fi
-PS1="${NONE}${USR}@${CYAN}\h ${YELLOW}\$(parse_chroot_info)${BLUE}\w ${PURPLE}\$(__git_ps1 '%s ')${PROMPT} "
+PS1="${NONE}${USR}@${CYAN}\h ${YELLOW}\$(parse_chroot_info)${BLUE}\w ${PURPLE}\$(parse_git_info)${PROMPT} "
 
 case "$TERM" in
 	xterm*|rxvt|Eterm|eterm)
