@@ -59,6 +59,9 @@ map <F7> :noh<CR>
 " wrapping is not always evil
 map <F8> :set wrap!<CR>
 
+" neither is toothpaste
+map <F9> :set paste!<CR>
+
 " change pwd to current file directory
 map <Leader>cd :cd %:p:h<CR>
 
