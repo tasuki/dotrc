@@ -119,6 +119,9 @@ alias acki='ack -i'             # case insensitive
 alias rgrep='grep -r'
 alias online='ping 4.2.2.2'     # check if online
 alias pyprofile='python -m cProfile -s time'
+alias ctags-symfony='find src vendor \
+	-name Tests -prune -o -name Features -prune -o -name "*.php" \
+	-print > /tmp/ctagslist; ctags -L /tmp/ctagslist; rm /tmp/ctagslist'
 export IGNOREEOF='1'            # require CTRL+D twice to exit
 export HOSTFILE=$HOME/.hosts    # put a list of remote hosts in ~/.hosts
 PATH="~/.bin:${PATH}"
