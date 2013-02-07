@@ -159,6 +159,12 @@ let g:DisableAutoPHPFolding = 1
 " disable piv ftplugin
 let loaded_piv = 1
 
+" Rainbows
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 " solarized
 set background=dark
 let g:solarized_termtrans=1
