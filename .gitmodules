@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/rainbow-parentheses"]
 	path = .vim/bundle/rainbow-parentheses
 	url = https://github.com/kien/rainbow_parentheses.vim
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
