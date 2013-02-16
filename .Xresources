@@ -6,11 +6,6 @@
 ! Bold does not
 *colorBDMode:  true
 
-URxvt*scrollBar: false
-URxvt*font: xft:Ubuntu Mono:size=14:antialias=true:hinting=true
-URxvt*boldFont: xft:Ubuntu Mono:antialias=true:hinting=true
-URxvt*letterSpace: -1
-
 ! UTF-8 anyhow anywhere anytime
 *utf8: 1
 
