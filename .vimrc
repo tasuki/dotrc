@@ -15,6 +15,7 @@ set hlsearch         " highlight searches
 set linebreak
 set showbreak=+
 set scrolloff=10     " show 10 lines of context (above and below)
+set fillchars+=vert:\  " no bars in vertical split
 set updatetime=300   " mostly for tagbar
 set nowrap           " wrapping is usually evil
 set exrc             " allow current directory .vimrc overrides
