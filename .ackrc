@@ -1,2 +1,3 @@
 --type-set=smarty=.tpl
 --type-set=inc=.inc
+--type-set=feature=.feature
