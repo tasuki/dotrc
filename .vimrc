@@ -165,6 +165,9 @@ let g:DisableAutoPHPFolding = 1
 " disable piv ftplugin
 let loaded_piv = 1
 
+" Fugitive
+autocmd QuickFixCmdPost *grep* cwindow
+
 " Rainbows
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
