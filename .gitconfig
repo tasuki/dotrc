@@ -37,7 +37,7 @@
 	lg = log --summary --name-status
 	lf = log --full-diff -p
 	p = push
-	s = status
+	s = status --short --branch
 	unstage = reset HEAD
 
 [i18n]
