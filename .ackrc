@@ -1,3 +1,5 @@
 --type-set=smarty=.tpl
 --type-set=inc=.inc
 --type-set=feature=.feature
+--type-set=markdown=.md
+--type-set=restructured=.rst
