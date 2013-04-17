@@ -40,6 +40,10 @@
 	s = status --short --branch
 	unstage = reset HEAD
 
+	assume   = update-index --assume-unchanged
+	assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+	unassume = update-index --no-assume-unchanged
+
 [i18n]
 	logoutputencoding = utf8
 	commitencoding = utf8
