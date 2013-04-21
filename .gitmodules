@@ -24,7 +24,7 @@
 	url = https://github.com/garbas/vim-snipmate.git
 [submodule ".vim/bundle/snipmate-snippets"]
 	path = .vim/bundle/snipmate-snippets
-	url = https://github.com/honza/snipmate-snippets.git
+	url = https://github.com/honza/vim-snippets.git
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
