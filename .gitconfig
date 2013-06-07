@@ -32,8 +32,9 @@
 	dc = diff --cached
 	f = fetch
 	fa = fetch --all
-	l = log --graph --decorate --pretty=oneline --abbrev-commit
-	la = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	l  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
+	la = log --graph --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --all
+	lm = log --graph --format=format:'%C(yellow)%h%C(white) %aD%Creset %Cgreen(%ar)%Creset%C(bold red)%d%Creset%n''        %s%C(blue) <%an>%Creset' --all
 	lg = log --summary --name-status
 	lf = log --full-diff -p
 	p = push
