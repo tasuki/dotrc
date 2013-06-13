@@ -4,12 +4,24 @@
 [submodule ".vim/bundle/addonutils"]
 	path = .vim/bundle/addonutils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule ".vim/bundle/coffee-script"]
+	path = .vim/bundle/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule ".vim/bundle/easymotion"]
 	path = .vim/bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/jade"]
+	path = .vim/bundle/jade
+	url = https://github.com/digitaltoad/vim-jade.git
+[submodule ".vim/bundle/less"]
+	path = .vim/bundle/less
+	url = https://github.com/groenewege/vim-less.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -19,6 +31,9 @@
 [submodule ".vim/bundle/piv"]
 	path = .vim/bundle/piv
 	url = https://github.com/spf13/PIV.git
+[submodule ".vim/bundle/rainbow-parentheses"]
+	path = .vim/bundle/rainbow-parentheses
+	url = https://github.com/kien/rainbow_parentheses.vim
 [submodule ".vim/bundle/snipmate"]
 	path = .vim/bundle/snipmate
 	url = https://github.com/garbas/vim-snipmate.git
@@ -37,12 +52,3 @@
 [submodule ".vim/bundle/tlib"]
 	path = .vim/bundle/tlib
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule ".vim/bundle/rainbow-parentheses"]
-	path = .vim/bundle/rainbow-parentheses
-	url = https://github.com/kien/rainbow_parentheses.vim
-[submodule ".vim/bundle/fugitive"]
-	path = .vim/bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/coffee-script"]
-	path = .vim/bundle/coffee-script
-	url = https://github.com/kchmck/vim-coffee-script
