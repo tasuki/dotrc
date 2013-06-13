@@ -93,6 +93,9 @@ autocmd BufRead,BufNewFile *.{htm,php,phtml}*
 	\ source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
 
+" .md is markdown fer shure
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
 " sudo write
 cmap w!! w !sudo tee % >/dev/null
 
