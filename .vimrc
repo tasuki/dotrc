@@ -127,7 +127,7 @@ else
 	call add(g:pathogen_disabled, 'taglist')
 endif
 
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 
 " easymotion: single leader + space and backspace shortcuts
