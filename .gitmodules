@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/tlib"]
 	path = .vim/bundle/tlib
 	url = https://github.com/tomtom/tlib_vim.git
+[submodule ".vim/bundle/stylus"]
+	path = .vim/bundle/stylus
+	url = https://github.com/wavded/vim-stylus.git
