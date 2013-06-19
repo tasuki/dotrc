@@ -28,6 +28,7 @@
 	co = checkout
 	cob = checkout -b
 	cot = checkout --track
+	cop = checkout -p
 	d = diff
 	dc = diff --cached
 	f = fetch
