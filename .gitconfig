@@ -46,6 +46,8 @@
 	assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
 	unassume = update-index --no-assume-unchanged
 
+	oldest-ancestor = !bash -c 'diff --old-line-format='' --new-line-format='' <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
+
 [i18n]
 	logoutputencoding = utf8
 	commitencoding = utf8
