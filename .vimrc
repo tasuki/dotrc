@@ -107,6 +107,7 @@ set smartindent      " try to guess indentation
 set textwidth=0      " Don't wrap words by default
 set nopaste          " do not start in paste mode
 set tabstop=4        " show tabs as 4 spaces
+set softtabstop=4    " show tabs as 4 spaces
 set shiftwidth=4     " shift tab width
 set timeoutlen=400   " timeout for shortcuts
 
