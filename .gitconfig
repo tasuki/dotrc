@@ -13,6 +13,7 @@
 
 [diff]
 	noprefix = true
+	algorithm = patience
 
 [alias]
 	a = add
