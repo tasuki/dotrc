@@ -38,6 +38,7 @@
 	l  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
 	la = log --graph --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --all
 	lm = log --graph --format=format:'%C(yellow)%h%C(white) %aD%Creset %Cgreen(%ar)%Creset%C(bold red)%d%Creset%n''        %s%C(blue) <%an>%Creset' --all
+	ll = log --graph --decorate --pretty=oneline --abbrev-commit
 	lg = log --summary --name-status
 	lf = log --full-diff -p
 	p = push
