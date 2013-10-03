@@ -12,7 +12,6 @@
 	meta = white
 
 [diff]
-	noprefix = true
 	algorithm = patience
 
 [alias]
@@ -30,8 +29,8 @@
 	cob = checkout -b
 	cot = checkout --track
 	cop = checkout -p
-	d = diff
-	dc = diff --cached
+	d  = diff --no-prefix
+	dc = diff --no-prefix --cached
 	f = fetch
 	fa = fetch --all
 	fap = fetch --all -p
