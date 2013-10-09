@@ -67,6 +67,7 @@ map <F8> :set wrap!<CR>
 
 " neither is toothpaste
 map <F9> :set paste!<CR>
+map <F10> :NERDTreeFind<CR>
 
 " change pwd to current file directory
 map <Leader>cd :cd %:p:h<CR>
