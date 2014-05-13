@@ -40,3 +40,23 @@ snippet die
 	die(${1});
 snippet dien
 	die("\n");
+snippet setter
+	public function set${1:Foo}($${2:foo})
+	{
+		$this->${3:$2} = $${4:$2};
+	}
+snippet getter
+	public function get${1:Foo}()
+	{
+		return $this->${2:$1};
+	}
+snippet getset
+	public function set${1:Foo}($${2:foo})
+	{
+		$this->${3:$2} = $${4:$2};
+	}
+
+	public function get${5:$1}()
+	{
+		return $this->${6:$2};
+	}
