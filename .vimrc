@@ -149,6 +149,7 @@ let g:EasyMotion_mapping_F = '<Backspace>'
 
 " ctrlp
 let g:ctrlp_map = '<Enter>'
+let g:ctrlp_max_files = 0
 
 " nerdtree
 let g:NERDTreeDirArrows = 0
