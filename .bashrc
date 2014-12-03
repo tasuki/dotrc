@@ -136,6 +136,7 @@ PATH="~/.bin:${PATH}"
 
 # git shortcut and its autocompletion
 alias g='git'
+[ -f /usr/share/bash-completion/completions/git ] && . /usr/share/bash-completion/completions/git
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
 	|| complete -o default -o nospace -F _git g 2>/dev/null
 
