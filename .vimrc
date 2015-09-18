@@ -173,10 +173,6 @@ if !exists("g:syntastic_mode_map")
 endif
 let g:syntastic_mode_map['mode'] = 'passive'
 
-" PIV configuration
-let g:DisableAutoPHPFolding = 1
-" disable piv ftplugin
-let loaded_piv = 1
 
 " Fugitive
 autocmd QuickFixCmdPost *grep* cwindow
