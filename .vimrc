@@ -193,6 +193,9 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" PHP manual
+let g:php_manual_online_search_shortcut = 'H'
+
 " solarized
 set background=dark
 let g:solarized_termtrans=1
