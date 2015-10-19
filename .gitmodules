@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/php-manual"]
 	path = .vim/bundle/php-manual
 	url = https://github.com/alvan/vim-php-manual.git
+[submodule ".vim/bundle/twig"]
+	path = .vim/bundle/twig
+	url = https://github.com/evidens/vim-twig.git
