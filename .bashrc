@@ -95,7 +95,12 @@ alias gv='gvim'                 # fancy GUI?
 # info about files
 eval `dircolors ~/.xcolors/solarized-dircolors` # set bash colours
 alias l='ls'                    # too lazy
-alias ls='ls --color=auto'      # add colors for filetype recognition
+# add colors for filetype recognition
+if uname -s | grep -q 'Darwin'; then
+	alias ls='ls -G'
+else
+	alias ls='ls --color=auto'
+fi
 alias ll='ls -l'                # show details
 alias la='ls -al'               # show hidden files
 alias lx='ls -lXB'              # sort by extension
