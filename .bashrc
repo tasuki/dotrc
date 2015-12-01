@@ -93,7 +93,7 @@ alias vo='vim -O'               # vertically split buffers
 alias gv='gvim'                 # fancy GUI?
 
 # info about files
-eval `dircolors ~/.xcolors/solarized-dircolors` # set bash colours
+type -t dircolors && eval `dircolors ~/.xcolors/solarized-dircolors` # set bash colours
 alias l='ls'                    # too lazy
 # add colors for filetype recognition
 if uname -s | grep -q 'Darwin'; then
