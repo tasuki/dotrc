@@ -141,10 +141,11 @@ endif
 call pathogen#infect()
 call pathogen#helptags()
 
-" easymotion: single leader + space and backspace shortcuts
-let g:EasyMotion_leader_key = '<Leader>'
-let g:EasyMotion_mapping_f = '<Space>'
-let g:EasyMotion_mapping_F = '<Backspace>'
+" vim-ack
+if executable("ag")
+	let g:ackprg = 'ag -U --nogroup --nocolor --column'
+	let g:ctrlp_user_command = 'ag %s --files-with-matches --skip-vcs-ignores --nocolor -g ""'
+endif
 
 " ctrlp
 let g:ctrlp_map = '<Enter>'

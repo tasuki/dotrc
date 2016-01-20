@@ -1,4 +1,6 @@
 tags
+.ackrc
+.agignore
 .vimrc
 .ruby-version
 .rbenv-version

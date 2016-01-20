@@ -128,6 +128,7 @@ alias scr='screen -U -d -R'     # utf, reattach (append session name)
 alias less='less -r'            # display raw control chars
 alias grep='grep --color=auto'  # if stuck with grep, colorize
 alias acki='ack -i'             # case insensitive
+alias ag='ag -U'                # ignore .gitignore
 alias rgrep='grep -r'
 alias online='ping 4.2.2.2'     # check if online
 alias pyprofile='python -m cProfile -s time'
