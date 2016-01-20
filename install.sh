@@ -16,9 +16,9 @@ git submodule init && git submodule update &&
 cd .. &&
 
 # link
-for DOTFILE in `ls -dA "$DOTRC_DIR"/.??* | grep -v "\(.gitmodules\|.git$\)"`; do
+for DOTFILE in `ls -dA "$DOTRC_DIR"/.??* | grep -v "\(.gitmodules\|.git$\|.editorconfig\)"`; do
 	# original existing file
-	ORIG=`echo "$DOTFILE" | sed "s:$DOTRC_DIR/::g"`
+		ORIG=`echo "$DOTFILE" | sed "s:$DOTRC_DIR/::g"`
 	if [ -h "$ORIG" ]; then
 		# original is a symlink
 		continue
