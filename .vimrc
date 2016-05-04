@@ -166,13 +166,6 @@ let g:tagbar_type_php  = { 'kinds' : [
 	\ 'j:javascript functions:1'
 \ ] }
 
-" turn syntastic off by default
-if !exists("g:syntastic_mode_map")
-	let g:syntastic_mode_map = {}
-endif
-let g:syntastic_mode_map['mode'] = 'passive'
-
-
 " Fugitive
 autocmd QuickFixCmdPost *grep* cwindow
 
