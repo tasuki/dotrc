@@ -195,6 +195,12 @@ au Syntax * RainbowParenthesesLoadBraces
 " PHP manual
 let g:php_manual_online_search_shortcut = 'H'
 
+" Ensime
+au BufWritePost *.scala :EnTypeCheck
+au FileType scala nnoremap <Leader>t :EnType<CR>
+au FileType scala nnoremap <Leader>d :EnDeclaration<CR>
+au FileType scala nnoremap <Leader>r :EnRename<CR>
+
 " solarized
 set background=dark
 let g:solarized_termtrans=1

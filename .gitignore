@@ -4,3 +4,6 @@ tags
 .vimrc
 .ruby-version
 .rbenv-version
+.idea
+.ensime
+.ensime_cache
