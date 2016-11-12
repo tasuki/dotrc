@@ -54,6 +54,9 @@
 	logoutputencoding = utf8
 	commitencoding = utf8
 
+[url "git@github.com:"]
+	insteadOf = gh:
+
 [push]
 	default = current
 [credential]
