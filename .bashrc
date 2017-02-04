@@ -161,6 +161,10 @@ export LESS_TERMCAP_so=$'\e[31m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[36m'
 
+# docker
+alias dockerrm='docker ps -a -q | xargs docker rm'
+alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs docker rmi'
+
 # colorize diff from stdin
 alias colorize="sed \
 	-e 's/\(^-.*\)/\x1b[31m\1\x1b[0m/g' \
