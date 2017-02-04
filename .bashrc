@@ -129,7 +129,6 @@ alias sudo='sudo '              # preserve aliases when sudoing
 alias scr='screen -U -d -R'     # utf, reattach (append session name)
 alias tn='tmux new -s'          # tmux new session (append session name)
 alias ta='tmux attach -t'       # tmux attach (append session name)
-alias less='less -r'            # display raw control chars
 alias grep='grep --color=auto'  # if stuck with grep, colorize
 alias acki='ack -i'             # case insensitive
 alias ag='ag -U'                # ignore .gitignore
@@ -140,6 +139,11 @@ alias pyprofile3='python3 -m cProfile -s time'
 alias ctags-symfony='find src vendor \
 	-name Tests -prune -o -name Features -prune -o -name "*.php" \
 	-print > /tmp/ctagslist; ctags -L /tmp/ctagslist; rm /tmp/ctagslist'
+
+# pager
+export PAGER=less
+export LESS="-FiXRSMx4"         # quit one screen, ignorecase, noinit, display color codes, chop
+
 export IGNOREEOF='1'            # require CTRL+D twice to exit
 export HOSTFILE=$HOME/.hosts    # put a list of remote hosts in ~/.hosts
 PATH="~/.bin:${PATH}"
