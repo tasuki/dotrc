@@ -127,6 +127,8 @@ alias h='history'
 # utilities
 alias sudo='sudo '              # preserve aliases when sudoing
 alias scr='screen -U -d -R'     # utf, reattach (append session name)
+alias tn='tmux new -s'          # tmux new session (append session name)
+alias ta='tmux attach -t'       # tmux attach (append session name)
 alias less='less -r'            # display raw control chars
 alias grep='grep --color=auto'  # if stuck with grep, colorize
 alias acki='ack -i'             # case insensitive
