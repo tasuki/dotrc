@@ -13,7 +13,7 @@ set smartcase        " case sensitive matching on mixed case
 set incsearch        " incremental search
 set hlsearch         " highlight searches
 set linebreak
-set showbreak=>>>\   " nicer long line breaks, also see https://retracile.net/wiki/VimBreakIndent
+"set showbreak=>>>\   " nicer long line breaks, also see https://retracile.net/wiki/VimBreakIndent
 set scrolloff=10     " show 10 lines of context (above and below)
 set fillchars+=vert:\  " no bars in vertical split
 set updatetime=300   " mostly for tagbar
