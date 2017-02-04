@@ -60,6 +60,8 @@ case "$TERM" in
 		;;
 esac
 
+
+
 # getting around
 alias c='cd'                    # lazy
 alias ..='cd ..'                # let me go up and up and up
@@ -108,11 +110,11 @@ alias lk='ls -lSr'              # sort by size
 alias lh='ls -lSrh'             # sort by size, human readable
 alias lr='ls -lR'               # recursive ls
 alias lt='ls -ltr'              # sort by date
-
 alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^-][^\/]*\//—/g' -e 's/^/ /' -e 's/-/|/'"
 alias biggest="find . -type f -printf '%s\t%p\n' | sort -g" # find biggest files
 alias duh='du -kh'              # disk usage - human readable
 alias dus='du | sort -n'        # disk usage - sort by size
+alias t='tail -f'               # follow
 
 # info about system
 alias pse='ps -e'               # all processes with threads
@@ -123,42 +125,23 @@ alias dfh='df -Th'              # human readable df
 alias routen='route -n'         # gimme routes fast
 alias path='echo -e ${PATH//:/\\n}'
 alias h='history'
+alias online='ping 4.2.2.2'     # check if online
 
-# utilities
-alias sudo='sudo '              # preserve aliases when sudoing
+# multiplexers
 alias scr='screen -U -d -R'     # utf, reattach (append session name)
 alias tn='tmux new -s'          # tmux new session (append session name)
 alias ta='tmux attach -t'       # tmux attach (append session name)
+
+# searching
 alias grep='grep --color=auto'  # if stuck with grep, colorize
 alias acki='ack -i'             # case insensitive
 alias ag='ag -U'                # ignore .gitignore
+alias agi='ag -Ui'              # ignore case
 alias rgrep='grep -r'
-alias online='ping 4.2.2.2'     # check if online
-alias pyprofile='python -m cProfile -s time'
-alias pyprofile3='python3 -m cProfile -s time'
-alias ctags-symfony='find src vendor \
-	-name Tests -prune -o -name Features -prune -o -name "*.php" \
-	-print > /tmp/ctagslist; ctags -L /tmp/ctagslist; rm /tmp/ctagslist'
 
 # pager
 export PAGER=less
 export LESS="-FiXRSMx4"         # quit one screen, ignorecase, noinit, display color codes, chop
-
-export IGNOREEOF='1'            # require CTRL+D twice to exit
-export HOSTFILE=$HOME/.hosts    # put a list of remote hosts in ~/.hosts
-PATH="~/.bin:${PATH}"
-
-# git shortcut and its autocompletion
-alias g='git'
-[ -f /usr/share/bash-completion/completions/git ] && . /usr/share/bash-completion/completions/git
-complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
-	|| complete -o default -o nospace -F _git g 2>/dev/null
-
-# history
-export HISTSIZE=1000
-export HISTFILESIZE=1000
-export HISTCONTROL=ignoreboth
-shopt -s histappend
 
 # colorful man pages
 export LESS_TERMCAP_mb=$'\e[32m'
@@ -169,9 +152,35 @@ export LESS_TERMCAP_so=$'\e[31m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[36m'
 
+# history
+export HISTSIZE=1000
+export HISTFILESIZE=1000
+export HISTCONTROL=ignoreboth
+shopt -s histappend
+
+# random
+alias sudo='sudo '              # preserve aliases when sudoing
+export IGNOREEOF='1'            # require CTRL+D twice to exit
+export HOSTFILE=$HOME/.hosts    # put a list of remote hosts in ~/.hosts
+PATH="~/.bin:${PATH}"
+
+
+# git shortcut and its autocompletion
+alias g='git'
+[ -f /usr/share/bash-completion/completions/git ] && . /usr/share/bash-completion/completions/git
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
+	|| complete -o default -o nospace -F _git g 2>/dev/null
+
 # docker
 alias dockerrm='docker ps -a -q | xargs docker rm'
 alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs docker rmi'
+
+# programming
+alias pyprofile='python -m cProfile -s time'
+alias pyprofile3='python3 -m cProfile -s time'
+alias ctags-symfony='find src vendor \
+	-name Tests -prune -o -name Features -prune -o -name "*.php" \
+	-print > /tmp/ctagslist; ctags -L /tmp/ctagslist; rm /tmp/ctagslist'
 
 # colorize diff from stdin
 alias colorize="sed \
@@ -179,9 +188,8 @@ alias colorize="sed \
 	-e 's/\(^\+.*\)/\x1b[32m\1\x1b[0m/g' \
 	-e 's/\(^@.*\)/\x1b[36m\1\x1b[0m/g'"
 
-alias t='tail -f'
 function dif { diff -up $@ | colorize | less -FX; }
-function sv { svn $@ | colorize | less -FX; }
+
 
 # source local bashrc additions
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
