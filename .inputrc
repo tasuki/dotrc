@@ -3,8 +3,7 @@ set show-all-if-ambiguous on
 set completion-query-items 350
 set completion-ignore-case on
 
-# the below was stolen somewhere
-$if mode=emacs
+set editing-mode vi
 
 "\e[A": history-search-backward
 "\e[B": history-search-forward
@@ -39,4 +38,3 @@ $if mode=emacs
 # for freebsd console
 "\e[H": beginning-of-line
 "\e[F": end-of-line
-$endif
