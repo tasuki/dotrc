@@ -117,6 +117,8 @@ alias dus='du | sort -n'        # disk usage - sort by size
 # info about system
 alias pse='ps -e'               # all processes with threads
 alias psf='ps -e --forest'      # show forest tree
+alias psa='ps aux --forest'     # show forest with details
+alias psv='ps aux --sort vsz'   # sort by memory
 alias dfh='df -Th'              # human readable df
 alias routen='route -n'         # gimme routes fast
 alias path='echo -e ${PATH//:/\\n}'
