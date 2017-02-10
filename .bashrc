@@ -92,6 +92,7 @@ function chmdef { find . -type d -exec chmod 755 {} \; ; \
 export EDITOR=vim               # 'cause I'm a real man
 alias v='vim'                   # lazy
 alias vo='vim -O'               # vertically split buffers
+alias vd='vim -'                # vim from stdin
 alias gv='gvim'                 # fancy GUI?
 
 # info about files
