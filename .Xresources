@@ -2,7 +2,7 @@
 
 ! Ubuntu fonts rock
 *faceName:     Ubuntu Mono
-*faceSize:     14
+*faceSize:     12
 ! Bold does not
 *colorBDMode:  true
 
