@@ -192,6 +192,7 @@ let g:php_manual_online_search_shortcut = 'H'
 au BufWritePost *.scala :EnTypeCheck
 au FileType scala nnoremap <Leader>t :EnType<CR>
 au FileType scala nnoremap <Leader>i :EnInspectType<CR>
+au FileType scala nnoremap <Leader>s :EnSuggestImport<CR>
 au FileType scala nnoremap <Leader>d :EnDeclaration<CR>
 au FileType scala nnoremap <Leader>r :EnRename<CR>
 
