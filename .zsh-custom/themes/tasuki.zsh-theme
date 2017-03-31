@@ -65,13 +65,12 @@ prompt_context() {
 prompt_git() {
 	(( $+commands[git] )) || return
 
-	local ref dirty mode repo_path
+	local ref mode repo_path
 	repo_path=$(git rev-parse --git-dir 2>/dev/null)
 
 	if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-		dirty=$(parse_git_dirty)
-		ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="ref $(git rev-parse --short HEAD 2> /dev/null)"
-		if [[ -n $dirty ]]; then
+		ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="$(git rev-parse --short HEAD 2> /dev/null)"
+		if [[ -n $(parse_git_dirty) ]]; then
 			prompt_segment default yellow
 		else
 			prompt_segment default green
