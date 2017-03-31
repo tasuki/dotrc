@@ -154,8 +154,8 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[36m'
 
 # history
-export HISTSIZE=1000
-export HISTFILESIZE=1000
+export HISTSIZE=10000
+export HISTFILESIZE=10000
 export HISTCONTROL=ignoreboth
 shopt -s histappend
 
