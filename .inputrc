@@ -5,6 +5,7 @@ set completion-ignore-case on
 
 set editing-mode vi
 
+# Up/Down for history search
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
