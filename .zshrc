@@ -9,10 +9,9 @@ ZSH_THEME="tasuki"
 DISABLE_AUTO_UPDATE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-#source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 ### User configuration
