@@ -44,6 +44,7 @@
 	lf = log --full-diff -p
 	p = push
 	s = status --short --branch
+	st = status
 	unstage = reset HEAD
 
 	assume   = update-index --assume-unchanged
