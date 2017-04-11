@@ -8,7 +8,7 @@ set guioptions=
 set guicursor=a:blinkon0
 
 " friendlier than MS Consolas
-set guifont=Ubuntu\ Mono\ 14
+set guifont=Ubuntu\ Mono\ 12
 
 " ctrl+insert and shift-insert for copying and pasting
 map <S-Ins> <MiddleMouse>
