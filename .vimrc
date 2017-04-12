@@ -105,6 +105,9 @@ autocmd BufNewFile,BufRead *.feature setlocal ts=2 sts=2 sw=2
 " sudo write
 cmap w!! w !sudo tee % >/dev/null
 
+" copy to system clipboard
+vnoremap <c-c> !tee >(xsel -i -b)<cr>
+
 """"""""""
 " editing
 set backspace=indent,eol,start " more powerful backspacing

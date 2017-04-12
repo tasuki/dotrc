@@ -102,6 +102,7 @@ alias h='history'
 alias t='tail -f'               # tail logs
 alias online='ping 4.2.2.2'     # check if online
 alias sudo='sudo '              # preserve aliases when sudoing
+alias clip="xsel --clipboard"   # copy to clipboard
 
 # multiplexers
 alias scr='screen -U -d -R'     # utf, reattach (append session name)
