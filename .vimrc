@@ -200,6 +200,10 @@ au FileType scala nnoremap <Leader>s :EnSuggestImport<CR>
 au FileType scala nnoremap <Leader>d :EnDeclaration<CR>
 au FileType scala nnoremap <Leader>r :EnRename<CR>
 
+" Sideways
+nnoremap <Leader>h :SidewaysLeft<cr>
+nnoremap <Leader>l :SidewaysRight<cr>
+
 " solarized
 set background=dark
 let g:solarized_termtrans=1
