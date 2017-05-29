@@ -38,6 +38,8 @@ export LESS="-FiXRSMx4"         # quit one screen, ignorecase, noinit, display c
 # vi mode
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+bindkey -M viins 'jk' vi-cmd-mode
+bindkey -M viins 'kj' vi-cmd-mode
 
 [[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" history-beginning-search-backward
 [[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" history-beginning-search-forward
@@ -73,6 +75,8 @@ alias vo='vim -O'               # vertically split buffers
 alias vd='vim -'                # vim from stdin
 
 # listing files
+type dircolors > /dev/null && eval `dircolors ~/.xcolors/solarized-dircolors`
+
 alias l='ls'                    # too lazy
 if uname -s | grep -q 'Darwin'; then
 	alias ls='ls -G'
