@@ -5,6 +5,13 @@ set completion-ignore-case on
 
 set editing-mode vi
 
+$if mode=vi
+	# remap escape
+	set keymap vi-insert
+	"jk": vi-movement-mode
+	"kj": vi-movement-mode
+$endif
+
 # Up/Down for history search
 "\e[A": history-search-backward
 "\e[B": history-search-forward
