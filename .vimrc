@@ -50,24 +50,17 @@ map gn :tabnew<CR>
 map <C-p> 5k
 map <C-n> 5j
 
-" switch prev/next buffer
-map <F2> :bp<CR>
-map <F3> :bn<CR>
 " switch to previously edited buffer
 map <F4> <C-^>
-
-" open/close tree and tags
-map <F5> :NERDTreeToggle<CR>
-map <F6> :TagbarToggle<CR>
-
 " stop highlighting search
 map <F7> :noh<CR>
-" wrapping is not always evil
-map <F8> :set wrap!<CR>
 
-" neither is toothpaste
-map <F9> :set paste!<CR>
-map <F10> :NERDTreeFind<CR>
+" open/close tree
+map <Leader>n :NERDTreeToggle<CR>
+map <Leader>f :NERDTreeFind<CR>
+
+map <Leader>w :set wrap!<CR>
+map <Leader>p :set paste!<CR>
 
 " change pwd to current file directory
 map <Leader>cd :cd %:p:h<CR>
