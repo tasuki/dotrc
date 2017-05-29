@@ -147,6 +147,9 @@ let g:ctrlp_map = '<Enter>'
 let g:ctrlp_max_files = 0
 let g:ctrlp_switch_buffer = 0
 
+" easymotion
+let g:EasyMotion_leader_key = '<Space>'
+
 " nerdtree
 let g:NERDTreeDirArrows = 0
 let g:NERDTreeChDirMode = 2
