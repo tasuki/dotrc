@@ -110,8 +110,8 @@ alias clip="xsel --clipboard"   # copy to clipboard
 
 # multiplexers
 alias scr='screen -U -d -R'     # utf, reattach (append session name)
-alias tn='tmux new -s'          # tmux new session (append session name)
-alias ta='tmux attach -t'       # tmux attach (append session name)
+function tm { tmux attach -t $@ || tmux new -s $@ } # tmux attach of create session
+alias tmls='tmux ls'
 
 # searching
 alias grep='grep --color=auto'  # if stuck with grep, colorize
