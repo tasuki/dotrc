@@ -4,7 +4,7 @@
 DOTRC_DIR="dotrc"
 
 # clone
-git clone https://github.com/tasuk/dotrc.git "$DOTRC_DIR" &&
+git clone https://github.com/tasuki/dotrc.git "$DOTRC_DIR" &&
 
 # change
 cd "$DOTRC_DIR" &&
