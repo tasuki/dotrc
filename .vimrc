@@ -140,6 +140,7 @@ call pathogen#helptags()
 if executable("ag")
 	let g:ackprg = 'ag -U --nogroup --nocolor --column'
 	let g:ctrlp_user_command = 'ag %s --files-with-matches --skip-vcs-ignores --nocolor -g ""'
+	nnoremap <Leader>a * :Ack<cr>
 endif
 
 " ctrlp
