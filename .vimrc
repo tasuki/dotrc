@@ -20,7 +20,7 @@ set updatetime=300   " mostly for tagbar
 set nowrap           " wrapping is usually evil
 set exrc             " allow current directory .vimrc overrides
 syntax on            " syntax highlighting
-let mapleader=","    " start shortcuts with coma
+let mapleader=" "    " start shortcuts with a space
 
 " close preview windows on leaving insert mode
 autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -55,12 +55,9 @@ map <F4> <C-^>
 " stop highlighting search
 map <F7> :noh<CR>
 
-" open/close tree
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>f :NERDTreeFind<CR>
-
 map <Leader>w :set wrap!<CR>
 map <Leader>p :set paste!<CR>
+map <Leader>q :q<CR>
 
 " change pwd to current file directory
 map <Leader>cd :cd %:p:h<CR>
@@ -148,10 +145,9 @@ let g:ctrlp_map = '<Enter>'
 let g:ctrlp_max_files = 0
 let g:ctrlp_switch_buffer = 0
 
-" easymotion
-let g:EasyMotion_leader_key = '<Space>'
-
 " nerdtree
+map <Leader>n :NERDTreeToggle<CR>
+map <Leader>f :NERDTreeFind<CR>
 let g:NERDTreeDirArrows = 0
 let g:NERDTreeChDirMode = 2
 
