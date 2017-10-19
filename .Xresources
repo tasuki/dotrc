@@ -2,7 +2,7 @@
 
 ! Ubuntu fonts rock
 *faceName:     Ubuntu Mono
-*faceSize:     12
+*faceSize:     15
 ! Bold does not
 *colorBDMode:  true
 
@@ -14,3 +14,6 @@ xterm*eightBitInput: false
 
 ! include style
 #include ".xcolors/solarized"
+
+! here comes the sun...
+! #include ".xcolors/solarized-contrast"
