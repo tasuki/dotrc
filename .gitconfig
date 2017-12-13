@@ -42,6 +42,8 @@
 	ll = log --graph --decorate --pretty=oneline --abbrev-commit
 	lg = log --summary --name-status
 	lf = log --full-diff -p
+	mod = merge origin/develop
+	mom = merge origin/master
 	p = push
 	s = status --short --branch
 	st = status
