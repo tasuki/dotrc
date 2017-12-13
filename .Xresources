@@ -18,8 +18,5 @@ URxvt.scrollBar: false
 ! make alt+f/b work
 xterm*eightBitInput: false
 
-! include style
-#include ".xcolors/solarized"
-
 ! here comes the sun...
-! #include ".xcolors/solarized-contrast"
+#include ".xcolors/solarized-contrast"
