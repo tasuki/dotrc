@@ -6,6 +6,12 @@
 ! Bold does not
 *colorBDMode:  true
 
+! URxvt
+URxvt.font: xft:Ubuntu Mono:size=15
+URxvt.boldFont:
+URxvt.scrollBar: false
+
+
 ! UTF-8 anyhow anywhere anytime
 *utf8: 1
 
