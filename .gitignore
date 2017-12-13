@@ -7,3 +7,5 @@ tags
 .idea
 .ensime
 .ensime_cache
+*.iml
+*.egg-info
