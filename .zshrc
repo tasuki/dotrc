@@ -10,7 +10,7 @@ ZSH_THEME="tasuki"
 DISABLE_AUTO_UPDATE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -129,5 +129,8 @@ alias pyprofile3='python3 -m cProfile -s time'
 alias ctags-symfony='find src vendor \
 	-name Tests -prune -o -name Features -prune -o -name "*.php" \
 	-print > /tmp/ctagslist; ctags -L /tmp/ctagslist; rm /tmp/ctagslist'
+
+# autosuggest
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
 [ -f ~/.zshrc.local ] && . ~/.zshrc.local
