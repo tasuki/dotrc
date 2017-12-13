@@ -57,7 +57,7 @@ prompt_time() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
 	if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-		prompt_segment default default "%(!.%{%F{red}%}.)$USER%{%F{9}%}@%{%F{cyan}%}%m "
+		prompt_segment default default "%(!.%{%F{red}%}.)$USER%{%F{default}%}@%{%F{cyan}%}%m "
 	fi
 }
 

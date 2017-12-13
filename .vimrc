@@ -168,15 +168,14 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 " Rainbows
 let g:rbpt_colorpairs = [
-	\ ['DarkRed',      '#dc322f'],
-	\ ['DarkMagenta',  '#d33682'],
-	\ ['LightMagenta', '#6c71c4'],
-	\ ['DarkBlue',     '#268bd2'],
-	\ ['DarkCyan',     '#2aa198'],
-	\ ['DarkGreen',    '#719e07'],
-	\ ['DarkYellow',   '#b58900'],
-	\ ['LightRed',     '#cb4b16'],
-	\ ]
+    \ ['darkyellow', 'x'],
+    \ ['darkred', 'x'],
+    \ ['darkmagenta', 'x'],
+    \ ['magenta', 'x'],
+    \ ['darkblue', 'x'],
+    \ ['darkcyan', 'x'],
+    \ ['darkgreen', 'x'],
+    \ ]
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare

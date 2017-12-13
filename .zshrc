@@ -24,6 +24,7 @@ date
 # Global
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export TERM="screen-256color"
 export EDITOR='vim'
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export KEYTIMEOUT=1
