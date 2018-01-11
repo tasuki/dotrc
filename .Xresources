@@ -10,6 +10,7 @@
 URxvt.font: xft:Ubuntu Mono:size=15
 URxvt.boldFont:
 URxvt.scrollBar: false
+URxvt.fading: 0
 
 
 ! UTF-8 anyhow anywhere anytime
