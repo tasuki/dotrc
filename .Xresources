@@ -8,6 +8,7 @@
 
 ! URxvt
 URxvt.font: xft:Ubuntu Mono:size=15
+URxvt.letterSpace: 0
 URxvt.boldFont:
 URxvt.scrollBar: false
 URxvt.fading: 0
