@@ -167,15 +167,20 @@ let g:tagbar_type_php  = { 'kinds' : [
 autocmd QuickFixCmdPost *grep* cwindow
 
 " Rainbows
+"
+" yellow, red, magenta, violet, blue, cyan, green
+" only '3' works for yellow in rxvt
+" only 'magenta' works for magenta in xterm
 let g:rbpt_colorpairs = [
-    \ ['darkyellow', 'x'],
-    \ ['darkred', 'x'],
-    \ ['darkmagenta', 'x'],
-    \ ['magenta', 'x'],
-    \ ['darkblue', 'x'],
-    \ ['darkcyan', 'x'],
-    \ ['darkgreen', 'x'],
+    \ [ 3, '#b58900'],
+    \ [ 1, '#dc322f'],
+    \ [ 5, '#d33682'],
+    \ ['magenta', '#6c71c4'],
+    \ [ 4, '#268bd2'],
+    \ [ 6, '#2aa198'],
+    \ [ 2, '#859900'],
     \ ]
+
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
