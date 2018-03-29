@@ -7,8 +7,8 @@ set guioptions=
 " (http://www.jurta.org/en/prog/noblink)
 set guicursor=a:blinkon0
 
-" friendlier than MS Consolas
-set guifont=Ubuntu\ Mono\ 12
+" favourite fixed width typeface
+set guifont=Ubuntu\ Mono\ 15
 
 " ctrl+insert and shift-insert for copying and pasting
 map <S-Ins> <MiddleMouse>
