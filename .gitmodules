@@ -67,9 +67,6 @@
 [submodule ".vim/bundle/editorconfig"]
 	path = .vim/bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim
-[submodule ".vim/bundle/ensime"]
-	path = .vim/bundle/ensime
-	url = https://github.com/ensime/ensime-vim.git
 [submodule ".vim/bundle/typescript-vim"]
 	path = .vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
