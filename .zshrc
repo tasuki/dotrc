@@ -29,7 +29,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 export KEYTIMEOUT=1
 export REPORTTIME=10            # display execution time over 10 seconds
 export HOSTFILE="$HOME/.hosts"  # put a list of remote hosts in ~/.hosts
-export PATH="~/.bin:${PATH}"
+export PATH="$HOME/.bin:${PATH}"
 
 # pager
 export PAGER=less
