@@ -1,0 +1,31 @@
+set scrolloff=10
+
+let mapleader=" "
+
+" j + k = normal mode
+inoremap jk <esc>
+inoremap kj <esc>
+
+" shortcut timeout
+set timeoutlen=300
+
+" window navigation
+map <C-h> <C-w>h
+map <C-l> <C-w>l
+
+" tabs
+map gh gT
+map gl gt
+
+" bring back IDE features
+map <C-b> :action GotoDeclaration<CR>
+map <C-e> :action RecentFiles<CR>
+map <C-j> :action InsertLiveTemplate<CR>
+map <C-n> :action GotoClass<CR>
+map <C-p> :action ParameterInfo<CR>
+
+" easy system clipboard copy/paste
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+noremap <leader>p "*p
+noremap <leader>P "*P
