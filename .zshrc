@@ -25,7 +25,7 @@ date
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR='vim'
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export KEYTIMEOUT=1
 export REPORTTIME=10            # display execution time over 10 seconds
 export HOSTFILE="$HOME/.hosts"  # put a list of remote hosts in ~/.hosts
