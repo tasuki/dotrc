@@ -117,6 +117,11 @@ inoremap kj <esc>
 " make Y consistent with D and C
 nmap Y y$
 
+" copying and pasting
+map <Leader>v "*p
+vmap <Leader>c "*y
+
+
 """"""""""""""""""
 " plugin settings
 " pathogen

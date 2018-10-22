@@ -9,7 +9,3 @@ set guicursor=a:blinkon0
 
 " favourite fixed width typeface
 set guifont=Ubuntu\ Mono\ 15
-
-" ctrl+insert and shift-insert for copying and pasting
-map <S-Ins> <MiddleMouse>
-vmap <C-Ins> "+y
