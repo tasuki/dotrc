@@ -124,6 +124,7 @@ alias dockerrm='docker ps -a -q | xargs docker rm'
 alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs docker rmi'
 
 # programming
+export PYTHONDONTWRITEBYTECODE=1
 alias pyprofile='python -m cProfile -s time'
 alias pyprofile3='python3 -m cProfile -s time'
 alias ctags-symfony='find src vendor \
