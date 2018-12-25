@@ -11,6 +11,8 @@ set timeoutlen=300
 
 " window navigation
 map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " tabs
@@ -29,3 +31,5 @@ noremap <leader>y "*y
 noremap <leader>yy "*Y
 noremap <leader>p "*p
 noremap <leader>P "*P
+
+noremap <leader>f :action SelectInProjectView<CR>
