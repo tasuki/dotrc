@@ -10,7 +10,7 @@ ZSH_THEME="tasuki"
 DISABLE_AUTO_UPDATE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(vi-mode git zsh-syntax-highlighting zsh-autosuggestions colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,5 +133,8 @@ alias ctags-symfony='find src vendor \
 
 # autosuggest
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+
+# autocomplete
+zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
 [ -f ~/.zshrc.local ] && . ~/.zshrc.local
