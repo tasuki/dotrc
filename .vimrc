@@ -45,6 +45,7 @@ map <C-l> <C-w>l
 map gh gT
 map gl gt
 map gn :tabnew<CR>
+map gc :tabclose<CR>
 
 " scroll faster with ctrl+p and ctrl+n
 map <C-p> 5k
