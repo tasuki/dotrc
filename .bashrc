@@ -165,6 +165,9 @@ export IGNOREEOF='1'            # require CTRL+D twice to exit
 export HOSTFILE=$HOME/.hosts    # put a list of remote hosts in ~/.hosts
 PATH="~/.bin:${PATH}"
 
+function mans {
+	man $1 | less -p "^ +$2"    # man search parameter
+}
 
 # git shortcut and its autocompletion
 alias g='git'
