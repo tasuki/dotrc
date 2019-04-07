@@ -85,3 +85,6 @@
 [submodule ".vim/bundle/kotlin-vim"]
 	path = .vim/bundle/kotlin-vim
 	url = https://github.com/udalov/kotlin-vim
+[submodule ".vim/bundle/elm"]
+	path = .vim/bundle/elm
+	url = https://github.com/ElmCast/elm-vim.git
