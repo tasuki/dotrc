@@ -37,6 +37,9 @@ prompt_end() {
 		echo -n "%{%F{default}%}"
 	fi
 
+	# insert newline
+	echo ""
+
 	# root prompt with #
 	if [[ $UID -eq 0 ]]; then
 		echo -n "#"
@@ -101,6 +104,8 @@ prompt_git() {
 
 # Dir: current working directory
 prompt_dir() {
+	# only show last two dirs
+	# prompt_segment default blue '%2~ '
 	prompt_segment default blue '%~ '
 }
 
