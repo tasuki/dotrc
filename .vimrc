@@ -211,6 +211,13 @@ hi TablineSel  cterm=bold gui=bold ctermfg=0 ctermbg=7
 hi Tabline     cterm=bold gui=bold ctermfg=7 ctermbg=0
 hi TablineFill cterm=bold gui=bold ctermfg=7 ctermbg=0
 
+" snipmate
+
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['markdown'] = 'html'
+
+
 """"""""""""""""""
 " local overrides
 if filereadable(expand("~/.vimrc.local"))
