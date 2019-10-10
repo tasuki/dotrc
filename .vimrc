@@ -217,6 +217,9 @@ let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['markdown'] = 'html'
 
+" elm
+let g:elm_format_autosave = 0 " currently broken for Elm 0.19
+
 
 """"""""""""""""""
 " local overrides
