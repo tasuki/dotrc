@@ -2,6 +2,7 @@ tags
 .ackrc
 .agignore
 .vimrc
+.vim/view
 .ruby-version
 .rbenv-version
 .idea
@@ -9,3 +10,4 @@ tags
 .ensime_cache
 *.iml
 *.egg-info
+python-services/docker-compose-dev.yml

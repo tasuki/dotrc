@@ -141,7 +141,7 @@ call pathogen#helptags()
 
 " vim-ack
 if executable("ag")
-	let g:ackprg = 'ag -U --nogroup --nocolor --column'
+	let g:ackprg = 'ag -U --nogroup --nocolor --column --ignore target'
 	let g:ctrlp_user_command = 'ag %s --files-with-matches --skip-vcs-ignores --nocolor -g ""'
 	nnoremap <Leader>a * :Ack<cr>
 endif
