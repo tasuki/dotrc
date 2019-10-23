@@ -55,12 +55,6 @@
 [submodule ".vim/bundle/stylus"]
 	path = .vim/bundle/stylus
 	url = https://github.com/wavded/vim-stylus.git
-[submodule ".vim/bundle/phpcomplete"]
-	path = .vim/bundle/phpcomplete
-	url = https://github.com/shawncplus/phpcomplete.vim.git
-[submodule ".vim/bundle/php-manual"]
-	path = .vim/bundle/php-manual
-	url = https://github.com/alvan/vim-php-manual.git
 [submodule ".vim/bundle/twig"]
 	path = .vim/bundle/twig
 	url = https://github.com/evidens/vim-twig.git
