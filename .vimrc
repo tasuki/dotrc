@@ -192,9 +192,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" PHP manual
-let g:php_manual_online_search_shortcut = 'H'
-
 " Sideways
 nnoremap <Leader>h :SidewaysLeft<cr>
 nnoremap <Leader>l :SidewaysRight<cr>
@@ -218,8 +215,8 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['markdown'] = 'html'
 
 " elm
-let g:elm_format_autosave = 0 " currently broken for Elm 0.19
-
+let g:elm_format_autosave = 1
+let g:elm_format_fail_silently = 0
 
 """"""""""""""""""
 " local overrides
