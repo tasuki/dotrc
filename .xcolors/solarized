@@ -27,6 +27,7 @@
 #define S_base1         #93a1a1
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
+
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
 #define S_red           #dc322f
