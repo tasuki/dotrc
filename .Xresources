@@ -21,4 +21,4 @@ URxvt.fading: 0
 xterm*eightBitInput: false
 
 ! here comes the sun...
-#include ".xcolors/solarized-contrast"
+#include ".xcolors/solarized-light"
