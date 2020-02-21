@@ -1,24 +1,35 @@
-! after changing this file, run: xrdb .Xresources
+! after changing this file, run: xrdb ~/.Xresources
+
+! Larger font when more pixels
+#if WIDTH > 3800
+#define FONTSIZE 22
+#else
+#define FONTSIZE 15
+#endif
 
 ! Ubuntu fonts rock
-*faceName:     Ubuntu Mono
-*faceSize:     15
+#define FONTFACE Ubuntu Mono
+
+
+*faceName: FONTFACE
+*faceSize: FONTSIZE
 ! Bold does not
-*colorBDMode:  true
+*colorBDMode: true
+
+! UTF-8 anyhow anywhere anytime
+*utf8: 1
+
+! here comes the sun...
+#include ".xcolors/solarized-light"
+
 
 ! URxvt
-URxvt.font: xft:Ubuntu Mono:size=15
+URxvt.font: xft:FONTFACE:size=FONTSIZE
 URxvt.letterSpace: 0
 URxvt.boldFont:
 URxvt.scrollBar: false
 URxvt.fading: 0
 
 
-! UTF-8 anyhow anywhere anytime
-*utf8: 1
-
 ! make alt+f/b work
 xterm*eightBitInput: false
-
-! here comes the sun...
-#include ".xcolors/solarized-light"
