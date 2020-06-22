@@ -105,7 +105,7 @@ alias routen='route -n'         # gimme routes fast
 alias h='history'
 alias t='tail -f'               # tail logs
 alias online='ping 4.2.2.2'     # check if online
-alias sudo='sudo '              # preserve aliases when sudoing
+alias sudo='sudo -E'            # preserve aliases when sudoing
 alias clip="xsel --clipboard"   # copy to clipboard
 function mans {
 	man $1 | less -p "^ +$2"    # man search parameter
