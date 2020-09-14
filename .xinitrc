@@ -5,3 +5,6 @@
 
 # faster typing
 type xset > /dev/null && xset r rate 200 40
+
+# disable dpms / energy star
+type xset > /dev/null && xset -dpms
