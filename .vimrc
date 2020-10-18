@@ -184,10 +184,10 @@ let g:rbpt_colorpairs = [
     \ [ 2, '#859900'],
     \ ]
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+au VimEnter * if &ft != "vimwiki" | RainbowParenthesesToggle
+au Syntax * if &ft != "vimwiki" | RainbowParenthesesLoadRound
+au Syntax * if &ft != "vimwiki" | RainbowParenthesesLoadSquare
+au Syntax * if &ft != "vimwiki" | RainbowParenthesesLoadBraces
 
 " Sideways
 nnoremap <Leader>h :SidewaysLeft<cr>
@@ -206,7 +206,6 @@ hi Tabline     cterm=bold gui=bold ctermfg=7 ctermbg=0
 hi TablineFill cterm=bold gui=bold ctermfg=7 ctermbg=0
 
 " snipmate
-
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['markdown'] = 'html'
@@ -216,7 +215,6 @@ let g:elm_format_autosave = 1
 let g:elm_format_fail_silently = 0
 
 " vimwiki
-
 let g:vimwiki_global_ext = 0 " don't hijack all markdown
 let g:vimwiki_list = [{'path': '~/data/prog/vitwiki', 'syntax': 'markdown', 'ext': '.md'}]
 
