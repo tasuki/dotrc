@@ -82,3 +82,6 @@
 [submodule ".vim/bundle/elm"]
 	path = .vim/bundle/elm
 	url = https://github.com/ElmCast/elm-vim.git
+[submodule ".vim/bundle/vimwiki"]
+	path = .vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
