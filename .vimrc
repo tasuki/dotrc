@@ -87,6 +87,7 @@ autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
 
 " .md is markdown fer shure
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.md source ~/.vim/md.vim
 
 " don't outdent # in python
 autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
