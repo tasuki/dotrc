@@ -84,15 +84,10 @@ autocmd BufRead,BufNewFile *.{htm,php,phtml}*
 	\ set filetype=php |
 	\ source ~/.vim/html.vim
 autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
-
-" .md is markdown fer shure
-autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.md source ~/.vim/md.vim
 
 " don't outdent # in python
 autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
-
-autocmd BufNewFile,BufRead *.feature setlocal ts=2 sts=2 sw=2
 
 " sudo write
 cmap w!! w !sudo tee % >/dev/null
