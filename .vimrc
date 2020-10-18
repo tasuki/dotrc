@@ -120,6 +120,7 @@ inoremap kj <esc>
 nmap Y y$
 
 " copying and pasting
+map <Leader>fp :let @" = expand("%")<CR>
 map <Leader>v "*p
 vmap <Leader>c "*y
 
