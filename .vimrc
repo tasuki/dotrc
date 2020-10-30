@@ -76,7 +76,7 @@ set noswapfile       " swap files are overrated
 set history=50       " keep 50 lines of command line history
 set viminfo='20,\"50 " don't store more than 50 lines in viminfo
 set encoding=utf-8   " output encoding
-set fileencodings=utf-8,iso-8859-2,win-1250
+set fileencodings=utf-8
 " suffixes to get lower priority when doing tab completion
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,
 	\.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
