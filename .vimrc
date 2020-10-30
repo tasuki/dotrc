@@ -43,7 +43,9 @@ map <C-l> <C-w>l
 
 " tabs
 map gh gT
+map gH :tabm -1<CR>
 map gl gt
+map gL :tabm +1<CR>
 map gn :tabnew<CR>
 map gc :tabclose<CR>
 
