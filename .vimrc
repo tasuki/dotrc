@@ -194,8 +194,8 @@ nnoremap <Leader>h :SidewaysLeft<cr>
 nnoremap <Leader>l :SidewaysRight<cr>
 
 " solarized
-set background=dark
-let g:solarized_termtrans=1
+set background=dark         " this is actually light - Xresources is inverted
+let g:solarized_termtrans=1 " without this, vim background is weird
 let g:solarized_bold=0
 colorscheme solarized
 
