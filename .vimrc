@@ -145,10 +145,28 @@ if executable("ag")
 	nnoremap <Leader>a * :Ack<cr>
 endif
 
-" ctrlp
-let g:ctrlp_map = '<Enter>'
-let g:ctrlp_max_files = 0
-let g:ctrlp_switch_buffer = 0
+
+" FZF
+let fzf_layout = "'down': '30%'"
+
+if executable("fd")
+	let fzf_finder = "fd --type f"
+	let fzf_hidden = "fd --type f --hidden"
+	let fzf_all = "fd --type f --hidden --no-ignore"
+elseif executable("fdfind")
+	let fzf_finder = "fdfind --type f"
+	let fzf_hidden = "fdfind --type f --hidden"
+	let fzf_all = "fdfind --type f --hidden --no-ignore"
+else
+	let fzf_finder = "find -type f"
+	let fzf_hidden = "find -type f"
+	let fzf_all = "find -type f"
+endif
+
+execute 'nmap         <Enter> :call fzf#run({"source": "' . fzf_finder . '", ' . fzf_layout . '})<Enter>'
+execute 'nmap <Leader><Enter> :call fzf#run({"source": "' . fzf_hidden . '", ' . fzf_layout . '})<Enter>'
+execute 'nmap <Leader><Backspace> :call fzf#run({"source": "' . fzf_all . '", ' . fzf_layout . '})<Enter>'
+
 
 " nerdtree
 map <Leader>n :NERDTreeToggle<CR>

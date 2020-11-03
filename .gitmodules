@@ -4,15 +4,21 @@
 [submodule ".vim/bundle/addonutils"]
 	path = .vim/bundle/addonutils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule ".vim/bundle/ctrlp"]
-	path = .vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule ".vim/bundle/easymotion"]
 	path = .vim/bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule ".vim/bundle/editorconfig"]
+	path = .vim/bundle/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule ".vim/bundle/elm"]
+	path = .vim/bundle/elm
+	url = https://github.com/ElmCast/elm-vim.git
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/fzf"]
+	path = .vim/bundle/fzf
+	url = https://github.com/junegunn/fzf.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -22,6 +28,9 @@
 [submodule ".vim/bundle/rainbow-parentheses"]
 	path = .vim/bundle/rainbow-parentheses
 	url = https://github.com/kien/rainbow_parentheses.vim
+[submodule ".vim/bundle/sideways"]
+	path = .vim/bundle/sideways
+	url = https://github.com/AndrewRadev/sideways.vim.git
 [submodule ".vim/bundle/snipmate"]
 	path = .vim/bundle/snipmate
 	url = https://github.com/garbas/vim-snipmate.git
@@ -34,12 +43,9 @@
 [submodule ".vim/bundle/tlib"]
 	path = .vim/bundle/tlib
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule ".vim/bundle/editorconfig"]
-	path = .vim/bundle/editorconfig
-	url = https://github.com/editorconfig/editorconfig-vim
-[submodule ".vim/bundle/sideways"]
-	path = .vim/bundle/sideways
-	url = https://github.com/AndrewRadev/sideways.vim.git
+[submodule ".vim/bundle/vimwiki"]
+	path = .vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
@@ -49,9 +55,3 @@
 [submodule ".zsh-custom/plugins/zsh-autosuggestions"]
 	path = .zsh-custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule ".vim/bundle/elm"]
-	path = .vim/bundle/elm
-	url = https://github.com/ElmCast/elm-vim.git
-[submodule ".vim/bundle/vimwiki"]
-	path = .vim/bundle/vimwiki
-	url = https://github.com/vimwiki/vimwiki.git
