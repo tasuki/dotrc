@@ -147,7 +147,7 @@ endif
 
 
 " FZF
-let fzf_layout = "'down': '30%'"
+let fzf_layout = '"down": "30%"'
 
 if executable("fd")
 	let fzf_finder = "fd --type f"
@@ -163,10 +163,9 @@ else
 	let fzf_all = "find -type f"
 endif
 
-execute 'nmap         <Enter> :call fzf#run({"source": "' . fzf_finder . '", ' . fzf_layout . '})<Enter>'
-execute 'nmap <Leader><Enter> :call fzf#run({"source": "' . fzf_hidden . '", ' . fzf_layout . '})<Enter>'
-execute 'nmap <Leader><Backspace> :call fzf#run({"source": "' . fzf_all . '", ' . fzf_layout . '})<Enter>'
-
+execute 'nmap         <Enter> :call fzf#run(fzf#wrap({"source": "' . fzf_finder . '", ' . fzf_layout . '}))<Enter>'
+execute 'nmap <Leader><Enter> :call fzf#run(fzf#wrap({"source": "' . fzf_hidden . '", ' . fzf_layout . '}))<Enter>'
+execute 'nmap <Leader><Backspace> :call fzf#run(fzf#wrap({"source": "' . fzf_all . '", ' . fzf_layout . '}))<Enter>'
 
 " nerdtree
 map <Leader>n :NERDTreeToggle<CR>
