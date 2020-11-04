@@ -140,4 +140,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 # autocomplete
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
+# fzf
+source $HOME/.vim/bundle/fzf/shell/key-bindings.zsh
+source $HOME/.vim/bundle/fzf/shell/completion.zsh
+
 [ -f ~/.zshrc.local ] && . ~/.zshrc.local
