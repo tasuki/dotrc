@@ -82,10 +82,8 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,
 	\.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
 " extras based on filename
-autocmd BufRead,BufNewFile *.{htm,php,phtml}*
-	\ set filetype=php |
-	\ source ~/.vim/html.vim
-autocmd BufRead,BufNewFile *.tex source ~/.vim/tex.vim
+autocmd BufNewFile,BufRead *.{html,php} source ~/.vim/html.vim
+autocmd BufNewFile,BufRead *.tex source ~/.vim/tex.vim
 autocmd BufNewFile,BufRead *.md source ~/.vim/md.vim
 
 " don't outdent # in python
@@ -225,9 +223,7 @@ hi Tabline     cterm=bold gui=bold ctermfg=7 ctermbg=0
 hi TablineFill cterm=bold gui=bold ctermfg=7 ctermbg=0
 
 " snipmate
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['markdown'] = 'html'
+let g:snippets_dir = '~/.vim/snippets/'
 
 " elm
 let g:elm_format_autosave = 1
