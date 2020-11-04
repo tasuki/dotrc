@@ -1,11 +1,11 @@
 ! after changing this file, run: xrdb ~/.Xresources
 
-! Larger font when more pixels
-#if WIDTH > 3800
-#define FONTSIZE 22
-#else
+! Disabled larger font on larger screens - scaling seems transparent
+!#if WIDTH > 3800
+!#define FONTSIZE 22
+!#else
 #define FONTSIZE 15
-#endif
+!#endif
 
 ! Ubuntu fonts rock
 #define FONTFACE Ubuntu Mono
