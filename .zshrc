@@ -44,6 +44,20 @@ bindkey -M viins 'kj' vi-cmd-mode
 [[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" history-beginning-search-backward
 [[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" history-beginning-search-forward
 
+# fzf
+if type fd > /dev/null; then
+	export FZF_DEFAULT_COMMAND='fd --type f'
+	export FZF_ALT_C_COMMAND='fd --type d'
+elif type fdfind > /dev/null; then
+	export FZF_DEFAULT_COMMAND='fdfind --type f'
+	export FZF_ALT_C_COMMAND='fdfind --type d'
+else
+	export FZF_DEFAULT_COMMAND='find -type f'
+	export FZF_ALT_C_COMMAND='find -type d'
+fi
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+
 ## Aliases
 
 # getting around
