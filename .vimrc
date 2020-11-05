@@ -139,7 +139,6 @@ call pathogen#helptags()
 " vim-ack
 if executable("ag")
 	let g:ackprg = 'ag -U --nogroup --nocolor --column --ignore target'
-	let g:ctrlp_user_command = 'ag %s --files-with-matches --skip-vcs-ignores --nocolor -g ""'
 	nnoremap <Leader>a * :Ack<cr>
 endif
 
@@ -170,18 +169,6 @@ map <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
 let g:NERDTreeDirArrows = 0
 let g:NERDTreeChDirMode = 2
-
-" tagbar
-" sort by file order; ascii arrows; don't show php vars
-let g:tagbar_sort = 0
-let g:tagbar_iconchars = ['+', '-']
-let g:tagbar_type_php  = { 'kinds' : [
-	\ 'i:interfaces',
-	\ 'c:classes',
-	\ 'd:constant definitions',
-	\ 'f:functions',
-	\ 'j:javascript functions:1'
-\ ] }
 
 " Fugitive
 autocmd QuickFixCmdPost *grep* cwindow
