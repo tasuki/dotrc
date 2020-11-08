@@ -137,11 +137,16 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " vim-ack
-if executable("ag")
-	let g:ackprg = 'ag -U --nogroup --nocolor --column --ignore target'
-	nnoremap <Leader>a * :Ack<cr>
+let g:ackhighlight = 1
+
+if executable("rg")
+	let g:ackprg = 'rg --vimgrep'
+elseif executable("ag")
+	let g:ackprg = 'ag -U --vimgrep'
 endif
 
+nnoremap <Leader>/ :Ack!<Space>
+nnoremap <Leader>a :Ack! --smart-case<Space>
 
 " FZF
 let fzf_layout = '"down": "30%"'
