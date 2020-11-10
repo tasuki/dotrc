@@ -148,6 +148,14 @@ endif
 nnoremap <Leader>/ :Ack!<Space>
 nnoremap <Leader>a :Ack! --smart-case<Space>
 
+" easymotion
+hi link EasyMotionTarget PreProc
+hi link EasyMotionShade Comment
+
+let g:EasyMotion_mapping_f = '<Leader>j'
+let g:EasyMotion_mapping_F = '<Leader>k'
+
+
 " FZF
 let fzf_layout = '"down": "30%"'
 
