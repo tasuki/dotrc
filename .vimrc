@@ -189,18 +189,18 @@ autocmd QuickFixCmdPost *grep* cwindow
 " Rainbows
 "
 " yellow, red, magenta, violet, blue, cyan, green
-" only '3' works for yellow in rxvt
-" only 'magenta' works for magenta in xterm
+" :help cterm-colors, see the NR-8 column, add 8 for light
 let g:rbpt_colorpairs = [
     \ [ 3, '#b58900'],
-    \ [ 1, '#dc322f'],
+    \ [ 9, '#cb4b16'],
     \ [ 5, '#d33682'],
-    \ ['magenta', '#6c71c4'],
+    \ [13, '#6c71c4'],
     \ [ 4, '#268bd2'],
     \ [ 6, '#2aa198'],
     \ [ 2, '#859900'],
     \ ]
 
+" turn off rainbows for vimwiki
 au VimEnter * if &ft != "vimwiki" | RainbowParenthesesToggle
 au Syntax * if &ft != "vimwiki" | RainbowParenthesesLoadRound
 au Syntax * if &ft != "vimwiki" | RainbowParenthesesLoadSquare
