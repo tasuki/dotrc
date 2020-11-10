@@ -10,7 +10,7 @@ ZSH_THEME="tasuki"
 DISABLE_AUTO_UPDATE="true"
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(vi-mode git zsh-syntax-highlighting zsh-autosuggestions colored-man-pages)
+plugins=(vi-mode git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,6 +34,15 @@ export PATH="$HOME/.bin:${PATH}"
 # pager
 export PAGER=less
 export LESS="-FiXRSMx4"         # quit one screen, ignorecase, noinit, display color codes, chop
+
+# colorful man pages
+export LESS_TERMCAP_mb=$'\e[0m\e[31m'
+export LESS_TERMCAP_md=$'\e[0m\e[32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[43m\e[1;30m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[0m\e[36m'
 
 # vi mode
 bindkey -v
