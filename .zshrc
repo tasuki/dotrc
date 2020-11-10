@@ -66,6 +66,11 @@ else
 fi
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+export FZF_DEFAULT_OPTS='
+--color fg:12,bg:8,hl:3,fg+:15,bg+:0,hl+:1
+--color info:9,prompt:6,pointer:6,marker:6,spinner:6
+'
+
 
 ## Aliases
 
