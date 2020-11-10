@@ -10,11 +10,8 @@
 ! Ubuntu fonts rock
 #define FONTFACE Ubuntu Mono
 
-
 *faceName: FONTFACE
 *faceSize: FONTSIZE
-! Bold does not
-*colorBDMode: true
 
 ! UTF-8 anyhow anywhere anytime
 *utf8: 1
@@ -24,12 +21,22 @@
 
 
 ! URxvt
-URxvt.font: xft:FONTFACE:size=FONTSIZE
-URxvt.letterSpace: 0
-URxvt.boldFont:
+URxvt.font: xft:FONTFACE:style=Regular:size=FONTSIZE
+URxvt.boldFont: xft:FONTFACE:style=Bold:size=FONTSIZE
+URxvt.italicFont: xft:FONTFACE:style=Italic:size=FONTSIZE
+URxvt.boldItalicFont: xft:FONTFACE:style=Bold Italic:size=FONTSIZE
 URxvt.scrollBar: false
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
 URxvt.fading: 0
 
+! disable hijacking ctrl+shift
+URxvt.iso14755_52: false
+URxvt.iso14755: false
 
-! make alt+f/b work
-xterm*eightBitInput: false
+! magic: map ctrl+shift to ctrl+shift
+URxvt.keysym.C-S-Left: string:\033[1;6D
+URxvt.keysym.C-S-Right: string:\033[1;6C
+
+! fix bright/bold colors
+URxvt.intensityStyles: false
