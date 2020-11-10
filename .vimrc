@@ -180,7 +180,6 @@ execute 'nmap <Leader><Backspace> :call fzf#run(fzf#wrap({"source": "' . fzf_all
 " nerdtree
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
-let g:NERDTreeDirArrows = 0
 let g:NERDTreeChDirMode = 2
 
 " Fugitive
