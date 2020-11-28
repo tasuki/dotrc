@@ -224,6 +224,11 @@ let g:elm_format_fail_silently = 0
 " vimwiki
 let g:vimwiki_global_ext = 0 " don't hijack all markdown
 let g:vimwiki_list = [{'path': '~/data/prog/vitwiki', 'syntax': 'markdown', 'ext': '.md'}]
+hi def link VimwikiLink pandocLinkLabel
+hi def link VimwikiList pandocListMarker
+hi def link VimwikiHeader1 pandocHeading
+hi def link VimwikiHeader2 pandocHeadingMarker
+
 
 """"""""""""""""""
 " local overrides
