@@ -1,5 +1,4 @@
 #!/bin/bash
-# clone change update return link clean exit
 
 DOTRC_DIR="dotrc/"
 DOTRC_FULL="$HOME/$DOTRC_DIR"
@@ -19,15 +18,15 @@ fi
 # update modules
 git submodule init && git submodule update
 
-# return
-cd .. &&
+# return home
+cd ..
 
 # link
 SKIP="skipping:   %-17s already points to   %s\n"
 BACK="backing up: %-17s moving to           %s\n"
 LINK="linking:    %-17s                     %s\n"
 
-for DOTFILE in `ls -dA "$DOTRC_DIR".??* | grep -v "\(.gitmodules\|.git$\|.editorconfig\)"`; do
+for DOTFILE in `ls -dA "$DOTRC_DIR".??*`; do
 	# original existing file
 	ORIG=`echo "$DOTFILE" | sed "s:$DOTRC_DIR::g"`
 	if [ -h "$ORIG" ]; then
@@ -38,15 +37,15 @@ for DOTFILE in `ls -dA "$DOTRC_DIR".??* | grep -v "\(.gitmodules\|.git$\|.editor
 	fi
 
 	if [ -e "$ORIG" ]; then
-		# original exists - move to .orig
-		printf "$BACK" "$ORIG" "$ORIG.orig"
-		mv "$ORIG"{,.orig}
+		if [ -d "$ORIG" ]; then
+			printf "dunno " "$ORIG"
+		else
+			# original file exists - move to .orig
+			printf "$BACK" "$ORIG" "$ORIG.orig"
+			mv "$ORIG"{,.orig}
+		fi
 	fi
-	printf "$LINK" "" "$DOTFILE"
-	ln -s "$DOTFILE"
 done
 
-# clean
-unset DOTRC_DIR DOTRC_FULL DOTFILE SKIP BACK LINK ORIG DST
-
-# exit
+cd "$DOTRC_FULL"
+stow --verbose --ignore="install.sh|.gitmodules|.git$|.editorconfig" .
