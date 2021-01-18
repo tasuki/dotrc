@@ -24,7 +24,7 @@ cd ..
 # link
 SKIP="skipping:   %-17s already points to   %s\n"
 BACK="backing up: %-17s moving to           %s\n"
-LINK="linking:    %-17s                     %s\n"
+BDIR="skip dir:   %-17s you might have to move it manually\n"
 
 for DOTFILE in `ls -dA "$DOTRC_DIR".??*`; do
 	# original existing file
@@ -38,7 +38,7 @@ for DOTFILE in `ls -dA "$DOTRC_DIR".??*`; do
 
 	if [ -e "$ORIG" ]; then
 		if [ -d "$ORIG" ]; then
-			printf "dunno " "$ORIG"
+			printf "$BDIR" "$ORIG"
 		else
 			# original file exists - move to .orig
 			printf "$BACK" "$ORIG" "$ORIG.orig"
