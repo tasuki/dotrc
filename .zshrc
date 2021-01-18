@@ -112,7 +112,7 @@ else
 	alias ls='ls --color=auto'
 fi
 alias ll='ls -l'                # show details
-alias la='(LC_ALL=C; ls -al --group-directories-first)' # show hidden files
+alias la='ls -la --group-directories-first' # show hidden files
 alias lx='ls -lXB'              # sort by extension
 alias lk='ls -lSr'              # sort by size
 alias lh='ls -lSrh'             # sort by size, human readable
