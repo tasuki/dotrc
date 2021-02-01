@@ -143,6 +143,11 @@ function mans {
 alias scr='screen -U -d -R'     # utf, reattach (append session name)
 function tm { tmux attach -t $@ || tmux new -s $@ } # tmux attach of create session
 alias tmls='tmux ls'
+function tmux-pane-percent {
+	WW=$(tmux display -p '#{window_width}')
+	COLS=$(expr $WW \* $@ / 100)
+	tmux resize-pane -t $TMUX_PANE -x $COLS
+}
 
 # searching
 alias grep='grep --color=auto'  # if stuck with grep, colorize
