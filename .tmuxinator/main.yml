@@ -1,0 +1,26 @@
+name: main
+root: ~/
+
+windows:
+    - dotrc:
+        layout: main-vertical
+        panes:
+            - git:
+                - cd ~/dotrc/
+                - tmux-pane-percent 38
+                - g s
+            - vim:
+                - cd ~/dotrc/
+                - sleep 1
+                - vim README.md
+    - wiki:
+        layout: main-vertical
+        panes:
+            - git:
+                - cd ~/data/prog/vitwiki/
+                - tmux-pane-percent 38
+                - g s
+            - vim:
+                - cd ~/data/prog/vitwiki/
+                - sleep 1
+                - vim -c 'VimwikiIndex'
