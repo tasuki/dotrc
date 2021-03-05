@@ -34,4 +34,4 @@ noremap <leader>p "*p
 noremap <leader>P "*P
 
 noremap <leader>f :action SelectInProjectView<CR>
-noremap :Gblame :action Annotate<CR>
+noremap <leader>b :action Annotate<CR>
