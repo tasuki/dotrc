@@ -125,14 +125,6 @@ vmap <Leader>c "*y
 " pathogen
 runtime bundle/pathogen/autoload/pathogen.vim
 
-" disable taglist if ctags not present
-let g:pathogen_disabled = []
-if executable('exuberant-ctags') || executable('ctags') || executable('tags')
-	set tags+=tags;/ " search for tags file recursively
-else
-	call add(g:pathogen_disabled, 'taglist')
-endif
-
 call pathogen#infect()
 call pathogen#helptags()
 
