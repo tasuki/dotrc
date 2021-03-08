@@ -64,6 +64,16 @@ prompt_context() {
 	fi
 }
 
+# Checks if working tree is dirty
+function parse_git_dirty() {
+	STATUS=$(command git status --porcelain 2> /dev/null | tail -n1)
+	if [[ -n $STATUS ]]; then
+		echo "*"
+	else
+		echo ""
+	fi
+}
+
 # Git: branch/detached head, dirty status
 prompt_git() {
 	(( $+commands[git] )) || return
@@ -87,7 +97,6 @@ prompt_git() {
 			mode=" >R>"
 		fi
 
-		setopt promptsubst
 		autoload -Uz vcs_info
 
 		zstyle ':vcs_info:*' enable git
@@ -119,4 +128,5 @@ build_prompt() {
 	prompt_end
 }
 
+setopt prompt_subst
 PROMPT='%{%f%b%k%}$(build_prompt) '

@@ -3,23 +3,25 @@
 # Return if shell is non-interactive
 [ -z "$PS1" ] && return
 
-export ZSH=$HOME/.oh-my-zsh
-ZSH_CUSTOM=$HOME/.zsh-custom
-
-ZSH_THEME="tasuki"
-DISABLE_AUTO_UPDATE="true"
-HIST_STAMPS="yyyy-mm-dd"
-
-plugins=(vi-mode git zsh-syntax-highlighting zsh-autosuggestions)
-
-source $ZSH/oh-my-zsh.sh
-
 ### Welcome message
 date
 [ -f /usr/games/fortune ] && /usr/games/fortune wisdom people
 
 
 ### User configuration
+
+# History
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=$HISTSIZE
+HIST_STAMPS="yyyy-mm-dd"
+setopt extended_history
+setopt inc_append_history
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
 
 # Global
 export LANG=en_US.UTF-8
@@ -49,6 +51,10 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey -M viins 'jk' vi-cmd-mode
 bindkey -M viins 'kj' vi-cmd-mode
+
+zle -N edit-command-line
+autoload -Uz edit-command-line
+bindkey -M vicmd 'v' edit-command-line
 
 [[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" history-beginning-search-backward
 [[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" history-beginning-search-forward
@@ -161,20 +167,32 @@ alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs do
 
 # programming
 export PYTHONDONTWRITEBYTECODE=1
+alias g='git'
 alias pyprofile='python -m cProfile -s time'
 alias pyprofile3='python3 -m cProfile -s time'
 alias ctags-symfony='find src vendor \
 	-name Tests -prune -o -name Features -prune -o -name "*.php" \
 	-print > /tmp/ctagslist; ctags -L /tmp/ctagslist; rm /tmp/ctagslist'
 
-# autosuggest
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
-
 # autocomplete
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu select
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
+
+## plugins
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+ZSH_CUSTOM=$HOME/.zsh-custom
+source $ZSH_CUSTOM/themes/tasuki.zsh-theme
+source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # fzf
 source $HOME/.vim/bundle/fzf/shell/key-bindings.zsh
 source $HOME/.vim/bundle/fzf/shell/completion.zsh
 
+# local overrides
 [ -f ~/.zshrc.local ] && . ~/.zshrc.local
