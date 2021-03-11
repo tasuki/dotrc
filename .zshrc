@@ -139,6 +139,7 @@ alias routen='route -n'         # gimme routes fast
 alias h='history'
 alias t='tail -f'               # tail logs
 alias online='ping 4.2.2.2'     # check if online
+alias s='sudo -E'               # preserve aliases when sudoing
 alias sudo='sudo -E'            # preserve aliases when sudoing
 alias clip="xsel --clipboard"   # copy to clipboard
 function mans {
@@ -168,6 +169,7 @@ alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs do
 # programming
 export PYTHONDONTWRITEBYTECODE=1
 alias g='git'
+alias m='make'
 alias pyprofile='python -m cProfile -s time'
 alias pyprofile3='python3 -m cProfile -s time'
 alias ctags-symfony='find src vendor \
