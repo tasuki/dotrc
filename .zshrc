@@ -63,9 +63,6 @@ bindkey -M vicmd 'v' edit-command-line
 if type fd > /dev/null; then
 	export FZF_DEFAULT_COMMAND='fd --type f'
 	export FZF_ALT_C_COMMAND='fd --type d'
-elif type fdfind > /dev/null; then
-	export FZF_DEFAULT_COMMAND='fdfind --type f'
-	export FZF_ALT_C_COMMAND='fdfind --type d'
 else
 	export FZF_DEFAULT_COMMAND='find -type f'
 	export FZF_ALT_C_COMMAND='find -type d'
@@ -168,6 +165,7 @@ alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs do
 
 # programming
 export PYTHONDONTWRITEBYTECODE=1
+export BAT_THEME="GitHub"
 alias g='git'
 alias m='make'
 alias pyprofile='python -m cProfile -s time'

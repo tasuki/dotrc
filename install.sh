@@ -18,8 +18,7 @@ fi
 # update modules
 git submodule init && git submodule update
 
-# return home
-cd ..
+cd "$HOME"
 
 # link
 SKIP="skipping:   %-17s already points to   %s\n"
@@ -48,4 +47,6 @@ for DOTFILE in `ls -dA "$DOTRC_DIR".??*`; do
 done
 
 cd "$DOTRC_FULL"
-stow --verbose --ignore="install.sh|.gitmodules|.git$|.editorconfig" .
+stow --verbose --ignore=".sh$|.gitmodules|.git$|.editorconfig" .
+
+source fixnames.sh
