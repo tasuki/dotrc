@@ -184,11 +184,11 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
 ## plugins
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 ZSH_CUSTOM=$HOME/.zsh-custom
 source $ZSH_CUSTOM/themes/tasuki.zsh-theme
 source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
 # fzf
 source $HOME/.vim/bundle/fzf/shell/key-bindings.zsh
