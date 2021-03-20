@@ -1,0 +1,95 @@
+#!/bin/sh
+#
+# Copyright 1999-2002,2003 by Thomas E. Dickey
+# 2020 Vit Brunner
+#
+# All Rights Reserved
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the
+# "Software"), to deal in the Software without restriction, including
+# without limitation the rights to use, copy, modify, merge, publish,
+# distribute, sublicense, and/or sell copies of the Software, and to
+# permit persons to whom the Software is furnished to do so, subject to
+# the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE ABOVE LISTED COPYRIGHT HOLDER(S) BE LIABLE FOR ANY
+# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
+# Except as contained in this notice, the name(s) of the above copyright
+# holders shall not be used in advertising or otherwise to promote the
+# sale, use or other dealings in this Software without prior written
+# authorization.
+# -----------------------------------------------------------------------------
+# Show a simple 8-color test pattern
+
+CMD='echo'
+OPT='-n'
+
+echo "[0m"
+for AT in 0 1 3; do
+	case $AT in
+		0) attr="normal ";;
+		1) attr="bold   ";;
+		2) attr="faint  ";;
+		3) attr="italic ";;
+		4) attr="under  ";;
+		7) attr="reverse";;
+	esac
+
+	for FG in 39 30 31 32 33 34 35 36 37 90 91 92 93 94 95 96 97; do
+		case $FG in
+			39) fcolor="def  ";;
+			30) fcolor="blk  ";;
+			31) fcolor="red  ";;
+			32) fcolor="grn  ";;
+			33) fcolor="yel  ";;
+			34) fcolor="blu  ";;
+			35) fcolor="mag  ";;
+			36) fcolor="cya  ";;
+			37) fcolor="whi  ";;
+			90) fcolor="blk+ ";;
+			91) fcolor="red+ ";;
+			92) fcolor="grn+ ";;
+			93) fcolor="yel+ ";;
+			94) fcolor="blu+ ";;
+			95) fcolor="mag+ ";;
+			96) fcolor="cya+ ";;
+			97) fcolor="whi+ ";;
+		esac
+		$CMD $OPT "[0;${AT}m[0;${AT}m $attr "
+		$CMD $OPT "[${FG}m[${FG}m $fcolor   "
+
+		for BG in 49 40 41 42 43 44 45 46 47 100 101 102 103 104 105 106 107; do
+			case $BG in
+				49) bcolor="def  ";;
+				40) bcolor="blk  ";;
+				41) bcolor="red  ";;
+				42) bcolor="grn  ";;
+				43) bcolor="yel  ";;
+				44) bcolor="blu  ";;
+				45) bcolor="mag  ";;
+				46) bcolor="cya  ";;
+				47) bcolor="whi  ";;
+				100) bcolor="blk+ ";;
+				101) bcolor="red+ ";;
+				102) bcolor="grn+ ";;
+				103) bcolor="yel+ ";;
+				104) bcolor="blu+ ";;
+				105) bcolor="mag+ ";;
+				106) bcolor="cya+ ";;
+				107) bcolor="whi+ ";;
+			esac
+			$CMD $OPT "[${BG}m [${BG}m $bcolor"
+		done
+		echo "[0m"
+	done
+done

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Change numbering of a list of files to be sensible while preserving order
+
+if [ -t 0 ]; then
+	echo "Please pass files to be renumbered in STDIN."
+	exit
+fi
+
+ARGS=''
+COUNT=0
+while read LINE; do
+	ARGS="$ARGS $LINE"
+	((COUNT++))
+done
+
+LENGTH="${#COUNT}"
+CURRENT=1
+
+for FILE in $ARGS; do
+	CUR="$CURRENT"
+	PREPEND=$(($LENGTH - ${#CURRENT}))
+	for i in `seq 1 $PREPEND`; do CUR="0$CUR"; done
+
+	mv $FILE `echo $FILE | sed s/^[0-9]*/$CUR/`
+	((CURRENT++))
+done
