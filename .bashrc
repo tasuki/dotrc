@@ -3,10 +3,6 @@
 # Return if shell is non-interactive
 [ -z "$PS1" ] && return
 
-# Export environment variables
-export LANG="en_US.utf8"
-export LC_ALL="en_US.utf8"
-
 # Colors
   NONE='\[\e[0m\]'
   GRAY='\[\e[30m\]'

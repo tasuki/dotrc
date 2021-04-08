@@ -24,8 +24,6 @@ setopt hist_ignore_space
 setopt hist_verify
 
 # Global
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 export EDITOR='vim'
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export KEYTIMEOUT=1
