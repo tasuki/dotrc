@@ -47,6 +47,6 @@ for DOTFILE in `ls -dA "$DOTRC_DIR".??*`; do
 done
 
 cd "$DOTRC_FULL"
-stow --verbose --ignore=".sh$|.gitmodules|.git$|.editorconfig" .
+stow --verbose --dotfiles --ignore=".sh$|.gitmodules|.git$|.editorconfig" .
 
 source fixnames.sh

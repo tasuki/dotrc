@@ -6,8 +6,5 @@ tags
 .ruby-version
 .rbenv-version
 .idea
-.ensime
-.ensime_cache
 *.iml
 *.egg-info
-python-services/docker-compose-dev.yml
