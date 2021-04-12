@@ -15,6 +15,9 @@ CLOCKS="[
 # wrap each item in object with 'location' key
 WORLD_CLOCKS=$(echo "$CLOCKS" | sed "s/\(<(.*)>)>\)/{'location': \1}/g")
 
+
+## Gnome
+
 gsettings set org.gnome.clocks world-clocks "$WORLD_CLOCKS"
 
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'pl'), ('xkb', 'cz+qwerty')]"
@@ -42,7 +45,16 @@ gsettings set org.gnome.shell disabled-extensions "['desktop-icons@csoriano']"
 gsettings set org.gnome.shell.world-clocks locations "$CLOCKS"
 
 
-# Extensions
+## Extensions
+
+# System extensions
+gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.5
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position "BOTTOM"
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+
+
+# Custom extensions
 
 function schema { echo "--schemadir $HOME/.local/share/gnome-shell/extensions/$@/schemas/"; }
 
@@ -67,6 +79,7 @@ done
 
 # Schemaless
 # Use `dconf dump / > dump.dconf` to get the current values
+# Use `dconf reset -f /org/gnome/shell/extensions/extension-name/` to clear all settings there
 
 dconf write /org/gnome/shell/extensions/wsmatrix/show-overview-grid true
 
