@@ -5,6 +5,17 @@
 [core]
 	excludesfile = ~/.gitignore
 	quotepath = off
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	syntax-theme = Solarized (light)
+	commit-decoration-style = bold yellow overline
+	file-style = bold white
+	file-decoration-style = bold brightcyan box
+	hunk-header-decoration-style = cyan
 
 [color]
 	ui = auto

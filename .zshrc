@@ -163,7 +163,7 @@ alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs do
 
 # programming
 export PYTHONDONTWRITEBYTECODE=1
-export BAT_THEME="GitHub"
+export BAT_THEME="Solarized (light)"
 alias g='git'
 alias m='make'
 alias pyprofile='python -m cProfile -s time'
