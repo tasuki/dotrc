@@ -5,7 +5,7 @@
 set -euo pipefail
 
 sudo apt install curl bash git stow `# required packages for my dotrc` \
-	mosh tmux tmuxinator zsh vim htop jq fzf fd-find ripgrep bat units `# cli tools` \
+	mosh tmux tmuxinator zsh vim htop jq fzf fd-find ripgrep bat units nethogs `# cli tools` \
 	kitty redshift-gtk vim-gtk3 vlc geeqie clementine flameshot gparted xsel `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks `# gnome` \
 	dnsmasq firehol `# system tools` \
@@ -22,3 +22,5 @@ else
 	curl -Lo /tmp/git-delta.deb https://github.com/dandavison/delta/releases/download/0.7.1/git-delta_0.7.1_amd64.deb
 	sudo apt install /tmp/git-delta.deb
 fi
+
+[ -f /bin/zsh ] && chsh -s /bin/zsh
