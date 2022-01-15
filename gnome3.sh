@@ -40,6 +40,7 @@ gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false
 gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 gsettings set org.gnome.desktop.peripherals.touchpad speed 0.8
 gsettings set org.gnome.desktop.peripherals.touchpad two-finger-scrolling-enabled true
+gsettings set org.gnome.desktop.privacy remember-recent-files false
 gsettings set org.gnome.desktop.wm.preferences focus-mode "sloppy"
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
 gsettings set org.gnome.desktop.wm.preferences titlebar-font "Ubuntu $GNOME_FONT_SIZE"
@@ -90,3 +91,4 @@ done
 dconf write /org/gnome/shell/extensions/wsmatrix/show-overview-grid true
 
 dconf write /org/gnome/desktop/notifications/application/kitty/enable false
+dconf write /org/gnome/desktop/notifications/application/org-gnome-shell-extensions/enable false
