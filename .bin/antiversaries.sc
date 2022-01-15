@@ -4,6 +4,7 @@
 //
 // Basic usage:
 // amm ~/.bin/antiversaries.sc --people "Name 2020-02-02" "Another Name 2020-02-20 02:02"
+// amm ~/.bin/antiversaries.sc --from "2020-01-01" --till "2100-01-01" --out ical --people "Name 2020-02-02"
 //
 // Stats for how many times which event occurs
 // amm ~/.bin/antiversaries.sc --people "Name 2020-02-02" | tr -s ' ' | cut -d' ' -f4 | sort | uniq -c | sort -n
@@ -16,6 +17,8 @@ import scala.util.Try
 
 // data
 
+val icalDTF = DateTimeFormatter.ofPattern("YYYYMMdd'T'Hms")
+
 case class Person(name: String, dob: LocalDateTime)
 
 case class Antiversary(
@@ -24,9 +27,21 @@ case class Antiversary(
   units: String,
   dateTime: LocalDateTime,
 ) {
+  val len = String.format("%,d", length)
+
   override def toString() = {
-    val len = String.format("%,d", length)
     f"$name%15s $len%15s $units%8s  $dateTime"
+  }
+
+  def ical() = {
+    val icalDateTime = icalDTF.format(dateTime)
+
+    s"""
+      |BEGIN:VEVENT
+      |DTSTART: $icalDateTime
+      |SUMMARY: $name $len $units
+      |END:VEVENT
+      |""".stripMargin
   }
 }
 
@@ -106,13 +121,24 @@ def withinRange(from: LocalDateTime, till: LocalDateTime)(anv: Antiversary): Boo
   anv.dateTime.isAfter(from) && anv.dateTime.isBefore(till)
 
 @main
-def main(from: Option[String], till: Option[String], people: String*) = {
+def main(from: Option[String], till: Option[String], out: Option[String], people: String*) = {
   val fromDate = from.flatMap(readDate).getOrElse(LocalDateTime.now)
   val tillDate = till.flatMap(readDate).getOrElse(LocalDateTime.now.plusYears(100))
 
   val persons = people.flatMap(readPerson)
-  persons.flatMap(antiweirdsaries)
+  val events = persons.flatMap(antiweirdsaries)
     .filter(withinRange(fromDate, tillDate))
     .sortBy(_.dateTime)
-    .foreach(println)
+
+  out match {
+    case Some("ical") =>
+      print(
+      """|BEGIN:VCALENDAR
+         |VERSION:2.0
+         |PRODID:-//org.tasuki//antiversaries//EN
+         |""".stripMargin
+         ++ events.map(_.ical()).mkString ++ "END:VCALENDAR\n")
+    case _ =>
+      events.foreach(println)
+  }
 }
