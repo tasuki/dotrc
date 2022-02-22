@@ -7,7 +7,7 @@ function link_name {
 		echo "$2 not found!"
 		if command -v "$1" > /dev/null 2>&1; then
 			echo "  ...and $1 found, linking to $HOME/.bin/$2"
-			ln -s `command -v "$1"` "$HOME/.bin/$2"
+			ln -s "$(command -v "$1")" "$HOME/.bin/$2"
 		fi
 	fi
 }

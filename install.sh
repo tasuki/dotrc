@@ -7,29 +7,29 @@ if [ ! -d "$DOTRC_FULL" ]; then
 	# clone & change dir
 	echo "Cloning..."
 	git clone https://github.com/tasuki/dotrc.git "$DOTRC_FULL"
-	cd "$DOTRC_FULL"
+	cd "$DOTRC_FULL" || exit 1
 else
 	# change dir & update
 	echo "Updating..."
-	cd "$DOTRC_FULL"
+	cd "$DOTRC_FULL" || exit 1
 	git pull
 fi
 
 # update modules
 git submodule init && git submodule update
 
-cd "$HOME"
+cd "$HOME" || exit 1
 
 # link
 SKIP="skipping:   %-17s already points to   %s\n"
 BACK="backing up: %-17s moving to           %s\n"
 BDIR="skip dir:   %-17s you might have to move it manually\n"
 
-for DOTFILE in `ls -dA "$DOTRC_DIR".??*`; do
+for DOTFILE in $(ls -dA "$DOTRC_DIR".??*); do
 	# original existing file
-	ORIG=`echo "$DOTFILE" | sed "s:$DOTRC_DIR::g"`
+	ORIG=$(echo "$DOTFILE" | sed "s:$DOTRC_DIR::g")
 	if [ -h "$ORIG" ]; then
-		DST=`readlink $ORIG`
+		DST=$(readlink "$ORIG")
 		# original is a symlink
 		printf "$SKIP" "$ORIG" "$DST"
 		continue
@@ -46,7 +46,7 @@ for DOTFILE in `ls -dA "$DOTRC_DIR".??*`; do
 	fi
 done
 
-cd "$DOTRC_FULL"
+cd "$DOTRC_FULL" || exit 1
 stow --verbose --dotfiles --ignore=".sh$|.gitmodules|.git$|.editorconfig" .
 
 source fixnames.sh
