@@ -106,7 +106,7 @@ prompt_git() {
 		zstyle ':vcs_info:*' stagedstr '+'
 		zstyle ':vcs_info:*' formats ' %u%c'
 		zstyle ':vcs_info:*' actionformats ' %u%c'
-		vcs_info
+		vcs_info 2> /dev/null
 		echo -n "${ref/refs\/heads\//}${vcs_info_msg_0_%% }${mode} "
 	fi
 }
