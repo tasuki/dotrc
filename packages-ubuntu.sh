@@ -5,7 +5,7 @@
 set -euo pipefail
 
 sudo apt install curl bash git stow `# required packages for my dotrc` \
-	mosh tmux tmuxinator zsh vim htop jq fzf fd-find ripgrep bat units nethogs `# cli tools` \
+	mosh tmux tmuxinator zsh vim htop jq fzf fd-find ripgrep units nethogs `# cli tools` \
 	kitty redshift-gtk vim-gtk3 vlc geeqie clementine flameshot gparted xsel `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks `# gnome` \
 	dnsmasq firehol `# system tools` \
@@ -14,13 +14,16 @@ sudo apt install curl bash git stow `# required packages for my dotrc` \
 echo ""
 echo "Installing brittle things"
 
-if (command -v delta > /dev/null 2>&1); then
-	echo "delta is already installed"
-else
-	# yes sure hardcode the architecture what could possibly ever go wrong?
-	# in defense: `uname -m` outputs `x86_64` so no way to automate this easily?
-	curl -Lo /tmp/git-delta.deb https://github.com/dandavison/delta/releases/download/0.7.1/git-delta_0.7.1_amd64.deb
-	sudo apt install /tmp/git-delta.deb
-fi
+function install {
+	if (command -v "$1" > /dev/null 2>&1); then
+		echo "$1 is already installed"
+	else
+		curl -Lo "/tmp/$1.deb" "$2"
+		sudo apt install "/tmp/$1.deb"
+	fi
+}
+
+install delta https://github.com/dandavison/delta/releases/download/0.12.1/git-delta_0.12.1_amd64.deb
+install bat https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb
 
 [ -f /bin/zsh ] && chsh -s /bin/zsh
