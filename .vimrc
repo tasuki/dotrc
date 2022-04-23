@@ -85,6 +85,7 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,
 autocmd BufNewFile,BufRead *.{html,php} source ~/.vim/html.vim
 autocmd BufNewFile,BufRead *.tex source ~/.vim/tex.vim
 autocmd BufNewFile,BufRead *.md source ~/.vim/md.vim
+autocmd BufNewFile,BufRead *.sc set filetype=scala
 
 " don't outdent # in python
 autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
