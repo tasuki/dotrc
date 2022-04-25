@@ -1,0 +1,37 @@
+name: lsg
+root: ~/data/prog/
+
+windows:
+    - www:
+        layout: main-vertical
+        panes:
+            - git:
+                - cd lsg
+                - tmux-pane-percent 38
+                - g s
+            - vim:
+                - cd lsg
+                - sleep 1
+                - vim README.md
+    - announce:
+        layout: main-vertical
+        panes:
+            - git:
+                - cd lsg-announcements
+                - tmux-pane-percent 38
+                - g s
+            - vim:
+                - cd lsg-announcements
+                - sleep 1
+                - vim README.md
+    - szyfry:
+        layout: main-vertical
+        panes:
+            - git:
+                - cd lsg-szyfry
+                - tmux-pane-percent 38
+                - g s
+            - vim:
+                - cd lsg-szyfry
+                - sleep 1
+                - vim README.md
