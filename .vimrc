@@ -205,7 +205,6 @@ nnoremap <Leader>l :SidewaysRight<cr>
 
 " solarized
 set background=dark         " this is actually light - Xresources is inverted
-let g:solarized_termtrans=1 " without this, vim background is wrong in Xterm
 colorscheme solarized
 
 " snipmate
