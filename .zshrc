@@ -24,7 +24,7 @@ setopt hist_ignore_space
 setopt hist_verify
 
 # Global
-export EDITOR='vim'
+export EDITOR='nvim'
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export KEYTIMEOUT=1
 export REPORTTIME=10            # display execution time over 10 seconds
@@ -99,9 +99,9 @@ function chmdef { find . -type d -exec chmod 755 {} \; ; \
                   find . -type f -exec chmod 644 {} \; ; }
 
 # editing files
-alias v='vim'                   # lazy
-alias vo='vim -O'               # vertically split buffers
-alias vd='vim -'                # vim from stdin
+alias v='nvim'                   # lazy
+alias vo='nvim -O'               # vertically split buffers
+alias vd='nvim -'                # vim from stdin
 
 # listing files
 type dircolors > /dev/null && eval `dircolors ~/.xcolors/solarized-dircolors`
