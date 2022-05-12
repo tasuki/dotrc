@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 DOTRC_DIR="dotrc/"
 DOTRC_FULL="$HOME/$DOTRC_DIR"
@@ -41,7 +41,7 @@ for DOTFILE in $(ls -dA "$DOTRC_DIR".??*); do
 		else
 			# original file exists - move to .orig
 			printf "$BACK" "$ORIG" "$ORIG.orig"
-			mv "$ORIG"{,.orig}
+			mv "$ORIG" "$ORIG.orig"
 		fi
 	fi
 done
@@ -49,4 +49,4 @@ done
 cd "$DOTRC_FULL" || exit 1
 stow --verbose --dotfiles --ignore=".sh$|.gitmodules|.git$|.editorconfig" .
 
-source fixnames.sh
+. ./fixnames.sh

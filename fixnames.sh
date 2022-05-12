@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 # Links the second parameter to the first one.
 # If the second parameter doesn't exist && the first one does.
-function link_name {
+link_name() {
 	if ! (command -v "$2" > /dev/null 2>&1); then
 		echo "$2 not found!"
 		if command -v "$1" > /dev/null 2>&1; then
