@@ -222,6 +222,9 @@ hi def link VimwikiList pandocListMarker
 hi def link VimwikiHeader1 pandocHeading
 hi def link VimwikiHeader2 pandocHeadingMarker
 
+hi def link htmlH1 pandocHeading
+hi def link htmlH2 pandocHeadingMarker
+hi def link htmlH3 Title
 
 """"""""""""""""""
 " local overrides
