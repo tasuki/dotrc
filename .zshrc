@@ -150,7 +150,7 @@ function tmux-pane-percent {
 	COLS=$(expr $WW \* $@ / 100)
 	tmux resize-pane -t $TMUX_PANE -x $COLS
 }
-alias cdsplit='cd $(fd --type d | fzf); tmux split-window -h -p 62'
+alias cdsplit='cd $(fd --type d | fzf); tmux rename-window $(basename $PWD); tmux split-window -h -p 62'
 
 # searching
 alias grep='grep --color=auto'  # if stuck with grep, colorize
