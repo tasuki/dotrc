@@ -1,4 +1,4 @@
-# tasuki's ~/.* files
+# tasuki's `~/.*` files
 
 A personal collection of dotfiles. Let me know if I'm missing anything cool!
 
