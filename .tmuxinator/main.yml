@@ -13,6 +13,7 @@ windows:
                 - cd ~/dotrc/
                 - sleep 1
                 - vim README.md
+
     - wiki:
         layout: main-vertical
         panes:
@@ -24,3 +25,15 @@ windows:
                 - cd ~/data/prog/vitwiki/
                 - sleep 1
                 - vim -c 'VimwikiIndex'
+
+    - blog:
+        layout: main-vertical
+        panes:
+            - git:
+                - cd ~/data/prog/blog/
+                - tmux-pane-percent 38
+                - g s
+            - vim:
+                - cd ~/data/prog/blog/
+                - sleep 1
+                - vim README.md
