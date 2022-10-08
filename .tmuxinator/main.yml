@@ -12,7 +12,7 @@ windows:
             - vim:
                 - cd ~/dotrc/
                 - sleep 1
-                - vim README.md
+                - v README.md
 
     - wiki:
         layout: main-vertical
@@ -24,7 +24,7 @@ windows:
             - vim:
                 - cd ~/data/prog/vitwiki/
                 - sleep 1
-                - vim -c 'VimwikiIndex'
+                - v -c 'VimwikiIndex'
 
     - blog:
         layout: main-vertical
@@ -36,4 +36,4 @@ windows:
             - vim:
                 - cd ~/data/prog/blog/
                 - sleep 1
-                - vim README.md
+                - v README.md

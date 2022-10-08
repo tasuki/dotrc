@@ -12,7 +12,7 @@ windows:
             - vim:
                 - cd lsg
                 - sleep 1
-                - vim README.md
+                - v README.md
     - announce:
         layout: main-vertical
         panes:
@@ -23,7 +23,7 @@ windows:
             - vim:
                 - cd lsg-announcements
                 - sleep 1
-                - vim README.md
+                - v README.md
     - szyfry:
         layout: main-vertical
         panes:
@@ -34,4 +34,4 @@ windows:
             - vim:
                 - cd lsg-szyfry
                 - sleep 1
-                - vim README.md
+                - v README.md
