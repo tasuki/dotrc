@@ -1,0 +1,4 @@
+theme = "solarized_light"
+
+[keys.insert]
+j = { k = "normal_mode" } # `jk` to exit insert mode
