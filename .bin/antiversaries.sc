@@ -1,6 +1,6 @@
 // Round multiples of seconds/minutes/hours/days/weeks/months/years from a start date
 //
-// Tested working with: Ammonite Repl 2.3.8 (Scala 2.13.3 Java 11.0.10)
+// Tested working with: Ammonite Repl 2.5.5, Scala 2.13
 //
 // Basic usage:
 // amm ~/.bin/antiversaries.sc --people "Name 2020-02-02" "Another Name 2020-02-20 02:02"
