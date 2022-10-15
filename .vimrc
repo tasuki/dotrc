@@ -166,8 +166,8 @@ else
 	let fzf_all = "find -type f"
 endif
 
-execute 'nmap         <Enter> :call fzf#run(fzf#wrap({"source": "' . fzf_finder . '", ' . fzf_layout . '}))<Enter>'
-execute 'nmap <Leader><Enter> :call fzf#run(fzf#wrap({"source": "' . fzf_hidden . '", ' . fzf_layout . '}))<Enter>'
+execute 'nmap <Leader><Enter>     :call fzf#run(fzf#wrap({"source": "' . fzf_finder . '", ' . fzf_layout . '}))<Enter>'
+execute 'nmap <Leader>.           :call fzf#run(fzf#wrap({"source": "' . fzf_hidden . '", ' . fzf_layout . '}))<Enter>'
 execute 'nmap <Leader><Backspace> :call fzf#run(fzf#wrap({"source": "' . fzf_all . '", ' . fzf_layout . '}))<Enter>'
 
 " nerdtree
