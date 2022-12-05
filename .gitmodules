@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/idris2-vim"]
 	path = .vim/bundle/idris2-vim
 	url = https://github.com/edwinb/idris2-vim
+[submodule ".vim/bundle/purescript"]
+	path = .vim/bundle/purescript
+	url = https://github.com/purescript-contrib/purescript-vim
