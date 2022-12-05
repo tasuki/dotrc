@@ -27,3 +27,11 @@ install delta https://github.com/dandavison/delta/releases/download/0.12.1/git-d
 install bat https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb
 
 [ -f /bin/zsh ] && chsh -s /bin/zsh
+
+echo ""
+echo "Installing some snaps"
+
+sudo snap install dbeaver-ce
+sudo snap install intellij-idea-community --channel=2022.3/stable
+sudo snap install node --channel=18/stable --classic
+sudo snap install nvim
