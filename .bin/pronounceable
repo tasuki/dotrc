@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# Generate pronounceable passwords.
+#
+# Length 16 has 53 bits of entropy:
+# log2((5*20)^8) = 53
+
+if [[ -z "$1" ]]; then
+	LENGTH=16
+else
+	LENGTH=$1
+fi
+
+VOWELS=(a e i o u y)
+CONSONANTS=(b c d f g h j k l m n p q r s t v w x z)
+PASSWORD=""
+
+for ((i=0; i < $LENGTH / 2; i++)); do
+	PASSWORD+="${CONSONANTS[$RANDOM % ${#CONSONANTS[@]}]}"
+	PASSWORD+="${VOWELS[$RANDOM % ${#VOWELS[@]}]}"
+done
+
+echo "$PASSWORD"
