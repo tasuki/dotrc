@@ -5,11 +5,17 @@
 set -euo pipefail
 
 sudo apt install curl bash git stow `# required packages for my dotrc` \
-	mosh tmux tmuxinator zsh vim htop rlwrap jq fzf fd-find ripgrep units nethogs `# cli tools` \
-	kitty redshift-gtk vim-gtk3 vlc geeqie clementine flameshot gparted xsel `# gui tools` \
+	mosh tmux tmuxinator zsh vim htop rlwrap jq fzf fd-find ripgrep units cloc `# cli tools` \
+	kitty redshift-gtk vlc geeqie clementine flameshot gparted xsel keepassxc `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks `# gnome` \
-	dnsmasq firehol `# system tools` \
+	nethogs dnsmasq firehol `# system tools` \
 	gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 `# system monitor`
+
+# tools to try on newer system:
+# exa jc
+
+# tools to keep an eye on:
+# miller jless frangipanni
 
 echo ""
 echo "Installing brittle things"
@@ -35,3 +41,9 @@ sudo snap install dbeaver-ce
 sudo snap install intellij-idea-community --channel=2022.3/stable
 sudo snap install node --channel=18/stable --classic
 sudo snap install nvim
+sudo snap install bottom
+
+sudo snap connect bottom:mount-observe
+sudo snap connect bottom:hardware-observe
+sudo snap connect bottom:system-observe
+sudo snap connect bottom:process-control
