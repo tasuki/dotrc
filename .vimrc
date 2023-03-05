@@ -93,9 +93,6 @@ autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
 " sudo write
 cmap w!! w !sudo tee % >/dev/null
 
-" copy to system clipboard
-vnoremap <c-c> !tee >(xsel -i -b)<cr>
-
 """"""""""
 " editing
 set backspace=indent,eol,start " more powerful backspacing
@@ -116,9 +113,10 @@ inoremap kj <esc>
 nmap Y y$
 
 " copying and pasting
-map <Leader>fp :let @" = expand("%")<CR>
-map <Leader>v "+p
-vmap <Leader>c "+y
+vnoremap <Leader>y "*y
+noremap <Leader>p "*p
+vnoremap <Leader>c "+y
+noremap <Leader>v "+p
 
 
 """"""""""""""""""
