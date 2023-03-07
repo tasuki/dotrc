@@ -13,10 +13,8 @@ set smartcase        " case sensitive matching on mixed case
 set incsearch        " incremental search
 set hlsearch         " highlight searches
 set linebreak
-"set showbreak=>>>\   " nicer long line breaks, also see https://retracile.net/wiki/VimBreakIndent
 set scrolloff=10     " show 10 lines of context (above and below)
 set fillchars+=vert:\  " no bars in vertical split
-set updatetime=300   " mostly for tagbar
 set nowrap           " wrapping is usually evil
 set exrc             " allow current directory .vimrc overrides
 syntax on            " syntax highlighting
@@ -55,15 +53,14 @@ map <C-n> 5j
 
 " switch to previously edited buffer
 map <F4> <C-^>
-" stop highlighting search
-map <F7> :noh<CR>
+" change pwd to current file directory
+map <F5>cd :cd %:p:h<CR>
+map <F7> :nohlsearch<CR>
+map <F12> :set paste!<CR>
 
 map <Leader>w :set wrap!<CR>
-map <Leader>p :set paste!<CR>
 map <Leader>q :q<CR>
 
-" change pwd to current file directory
-map <Leader>cd :cd %:p:h<CR>
 
 """"""""""""""""""
 " file operations
@@ -88,7 +85,7 @@ autocmd BufNewFile,BufRead *.md source ~/.vim/md.vim
 autocmd BufNewFile,BufRead *.sc set filetype=scala
 
 " don't outdent # in python
-autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
+filetype indent on
 
 " sudo write
 cmap w!! w !sudo tee % >/dev/null
@@ -146,10 +143,10 @@ hi link EasyMotionShade Comment
 let g:EasyMotion_mapping_f = '<Leader>j'
 let g:EasyMotion_mapping_F = '<Leader>k'
 
+" editorconfig: exclude fzf
+let g:EditorConfig_exclude_patterns = ['term://.*']
 
 " FZF
-let fzf_layout = '"down": "30%"'
-
 if executable("fd")
 	let fzf_finder = "fd --type f"
 	let fzf_hidden = "fd --type f --hidden"
@@ -164,11 +161,12 @@ else
 	let fzf_all = "find -type f"
 endif
 
-execute 'nmap <Leader><Enter>     :call fzf#run(fzf#wrap({"source": "' . fzf_finder . '", ' . fzf_layout . '}))<Enter>'
-execute 'nmap <Leader>.           :call fzf#run(fzf#wrap({"source": "' . fzf_hidden . '", ' . fzf_layout . '}))<Enter>'
-execute 'nmap <Leader><Backspace> :call fzf#run(fzf#wrap({"source": "' . fzf_all . '", ' . fzf_layout . '}))<Enter>'
+execute 'nmap <Leader><Enter>     :call fzf#run(fzf#wrap({"source": "' . fzf_finder . '"}))<Enter>'
+execute 'nmap <Leader>.           :call fzf#run(fzf#wrap({"source": "' . fzf_hidden . '"}))<Enter>'
+execute 'nmap <Leader><Backspace> :call fzf#run(fzf#wrap({"source": "' . fzf_all . '"}))<Enter>'
 
 " nerdtree
+"autocmd BufEnter NERD_tree_* call SomeFunctionToChangeTheTabLabel
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
 let g:NERDTreeChDirMode = 2
