@@ -5,7 +5,7 @@
 set -euo pipefail
 
 sudo apt install curl bash git stow `# required packages for my dotrc` \
-	mosh tmux tmuxinator zsh vim htop rlwrap entr jq fzf fd-find ripgrep units cloc `# cli tools` \
+	mosh tmux tmuxinator zsh vim htop rlwrap entr rename jq fzf fd-find ripgrep units cloc `# cli tools` \
 	kitty redshift-gtk vlc geeqie clementine flameshot gparted xsel keepassxc `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks `# gnome` \
 	nethogs dnsmasq firehol `# system tools` \
