@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=CGoban
+Type=Application
+Terminal=false
+Exec=/usr/bin/java -jar cgoban.jar
+Path=/home/vita/.local/bin/
+Icon=/home/vita/.local/share/applications/cgoban.png
