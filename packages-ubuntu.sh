@@ -42,6 +42,7 @@ sudo snap install intellij-idea-community --channel=2022.3/stable
 sudo snap install node --channel=18/stable --classic
 sudo snap install nvim
 sudo snap install bottom
+sudo snap install sabaki
 
 sudo snap connect bottom:mount-observe
 sudo snap connect bottom:hardware-observe
