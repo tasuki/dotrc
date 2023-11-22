@@ -48,3 +48,6 @@ sudo snap connect bottom:mount-observe
 sudo snap connect bottom:hardware-observe
 sudo snap connect bottom:system-observe
 sudo snap connect bottom:process-control
+
+# Remove old versions of snaps:
+# snap list --all | while read snapname ver rev trk pub notes; do if [[ $notes = *disabled* ]]; then snap remove "$snapname" --revision="$rev"; fi; done

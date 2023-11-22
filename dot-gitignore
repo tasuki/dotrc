@@ -3,3 +3,4 @@ tags
 .idea
 *.iml
 *.egg-info
+.ipynb_checkpoints/
