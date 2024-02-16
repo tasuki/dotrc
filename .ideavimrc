@@ -29,9 +29,9 @@ map <C-p> :action ParameterInfo<CR>
 
 " easy system clipboard copy/paste
 noremap <leader>y "*y
-noremap <leader>yy "*Y
 noremap <leader>p "*p
-noremap <leader>P "*P
+noremap <leader>c "+y
+noremap <leader>v "+p
 
 noremap <leader>f :action SelectInProjectView<CR>
 noremap <leader>b :action Annotate<CR>
