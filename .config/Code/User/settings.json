@@ -1,0 +1,54 @@
+{
+    "workbench.colorTheme": "Solarized Light",
+    "editor.cursorBlinking": "solid",
+    "editor.fontFamily": "'Rec Mono Duotone', 'monospace', monospace",
+
+    "vim.leader": "<space>",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [ "j", "k" ],
+            "after": [ "<Esc>" ]
+        },
+        {
+            "before": [ "k", "j" ],
+            "after": [ "<Esc>" ]
+        },
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [ "g", "h" ],
+            "commands": [ "workbench.action.previousEditor" ]
+        },
+        {
+            "before": [ "g", "l" ],
+            "commands": [ "workbench.action.nextEditor" ]
+        },
+        {
+            "before": [ "g", "c" ],
+            "commands": [ "workbench.action.closeActiveEditor" ]
+        },
+        {
+            "before": [ "<leader>", "f" ],
+            "commands": [ "workbench.files.action.showActiveFileInExplorer" ]
+        },
+        {
+            "before": [ "<leader>", "b" ],
+            "commands": [ "gitlens.toggleFileBlame" ]
+        },
+    ],
+
+    "[elm]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "elmTooling.elm-ls-vscode"
+    },
+    // "files.watcherExclude": {
+    //     "**/.bloop": true,
+    //     "**/.metals": true,
+    //     "**/.ammonite": true,
+    // },
+    "gitlens.showWelcomeOnInstall": false,
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.statusBar.enabled": false,
+}
