@@ -7,7 +7,7 @@ set -euo pipefail
 
 GNOME_FONT_SIZE=${GNOME_FONT_SIZE:-'12'}
 GNOME_SYSTEM_MONITOR_SERVICES=${GNOME_SYSTEM_MONITOR_SERVICES:-'cpu memory swap net disk'}
-GNOME_SYSTEM_MONITOR_GRAPH_WIDTH=${GNOME_SYSTEM_MONITOR_GRAPH_WIDTH:-'50'}
+GNOME_SYSTEM_MONITOR_GRAPH_WIDTH=${GNOME_SYSTEM_MONITOR_GRAPH_WIDTH:-'100'}
 
 # Preferences
 CLOCKS="[
@@ -49,26 +49,22 @@ gsettings set org.gnome.nautilus.preferences click-policy "single"
 
 gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 100
 
+gsettings set org.gnome.shell.app-switcher current-workspace-only true
 gsettings set org.gnome.shell disabled-extensions "['desktop-icons@csoriano']"
 gsettings set org.gnome.shell.world-clocks locations "$CLOCKS"
 
 
 ### Extensions
 
-# System extensions
-gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.5
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position "BOTTOM"
-gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
-
-
 # Custom extensions
 
 function schema { echo "--schemadir $HOME/.local/share/gnome-shell/extensions/$@/schemas/"; }
 
-# Superseded by unite@hardpixel.eu
-# SCHEMA=$(schema "no-title-bar@jonaspoehler.de")
-# gsettings $SCHEMA set org.gnome.shell.extensions.no-title-bar button-position "hidden"
+SCHEMA=$(schema "dash-to-dock@micxgx.gmail.com")
+gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock background-opacity 0.5
+gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock dock-position "BOTTOM"
+gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock extend-height false
 
 SCHEMA=$(schema "unite@hardpixel.eu")
 gsettings $SCHEMA set org.gnome.shell.extensions.unite extend-left-box false
@@ -81,7 +77,7 @@ gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor icon-display fal
 for SETTING in `echo "$GNOME_SYSTEM_MONITOR_SERVICES"`; do
 	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-display true
 	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-graph-width "$GNOME_SYSTEM_MONITOR_GRAPH_WIDTH"
-	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-refresh-time 1500
+	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-refresh-time 1000
 	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-show-text false
 done
 
