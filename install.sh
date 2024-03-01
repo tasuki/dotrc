@@ -46,7 +46,12 @@ for DOTFILE in $(ls -dA "$DOTRC_DIR".??*); do
 	fi
 done
 
+# link whole directories for vim and zsh
+[ ! -d .vim ] && ln -s dotrc/.vim/
+[ ! -d .zsh-custom ] && ln -s dotrc/.zsh-custom/
+
+# link individual files for the rest
 cd "$DOTRC_FULL" || exit 1
-stow --verbose --dotfiles --ignore=".sh$|.gitmodules|.git$|.editorconfig|runbooks$" .
+stow --no-folding --verbose --dotfiles --ignore=".sh$|.gitmodules|.git$|.editorconfig|.vim|.zsh-custom|runbooks$" .
 
 . ./fixnames.sh
