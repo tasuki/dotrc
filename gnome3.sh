@@ -30,8 +30,11 @@ gsettings set org.gnome.desktop.input-sources show-all-sources true
 gsettings set org.gnome.desktop.interface clock-format "12h"
 gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.desktop.interface cursor-blink false
+gsettings set org.gnome.desktop.interface cursor-theme "Yaru"
 gsettings set org.gnome.desktop.interface document-font-name "Ubuntu $GNOME_FONT_SIZE"
 gsettings set org.gnome.desktop.interface font-name "Ubuntu $GNOME_FONT_SIZE"
+gsettings set org.gnome.desktop.interface gtk-theme "Yaru"
+gsettings set org.gnome.desktop.interface icon-theme "Yaru"
 gsettings set org.gnome.desktop.interface monospace-font-name "Ubuntu Mono $((GNOME_FONT_SIZE + 2))"
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.desktop.peripherals.keyboard delay 200
