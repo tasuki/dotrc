@@ -20,26 +20,13 @@ git submodule init && git submodule update
 
 cd "$HOME" || exit 1
 
-# link
-SKIP="skipping:   %-17s already points to   %s\n"
-BACK="backing up: %-17s moving to           %s\n"
-BDIR="skip dir:   %-17s you might have to move it manually\n"
-
+# back up conflicting files
+BACK="backing up: %-17s moving to %s\n"
 for DOTFILE in $(ls -dA "$DOTRC_DIR".??*); do
-	# original existing file
+	# potential original existing file
 	ORIG=$(echo "$DOTFILE" | sed "s:$DOTRC_DIR::g")
-	if [ -h "$ORIG" ]; then
-		DST=$(readlink "$ORIG")
-		# original is a symlink
-		printf "$SKIP" "$ORIG" "$DST"
-		continue
-	fi
-
-	if [ -e "$ORIG" ]; then
-		if [ -d "$ORIG" ]; then
-			printf "$BDIR" "$ORIG"
-		else
-			# original file exists - move to .orig
+	if [ ! -h "$ORIG" ]; then # not a symlink
+		if [ -f "$ORIG" ]; then # is a file
 			printf "$BACK" "$ORIG" "$ORIG.orig"
 			mv "$ORIG" "$ORIG.orig"
 		fi
@@ -52,6 +39,6 @@ done
 
 # link individual files for the rest
 cd "$DOTRC_FULL" || exit 1
-stow --no-folding --verbose --dotfiles --ignore=".sh$|.gitmodules|.git$|.editorconfig|.vim|.zsh-custom|runbooks$" .
+stow --no-folding --verbose --dotfiles --ignore=".sh$|.gitmodules|.git$|.editorconfig|.vim$|.zsh-custom$|runbooks$" .
 
 . ./fixnames.sh
