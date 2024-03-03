@@ -1,0 +1,16 @@
+enabled_layouts tall:bias=62;full_size=1;mirrored=true,stack
+
+new_tab www
+cd ~/data/prog/lsg/
+launch zshi 'v README.md'
+launch zshi 'g s'
+
+new_tab announce
+cd ~/data/prog/lsg-announcements/
+launch zshi 'v README.md'
+launch zshi 'g s'
+
+new_tab szyfry
+cd ~/data/prog/lsg-szyfry/
+launch zshi 'v README.md'
+launch zshi 'g s'
