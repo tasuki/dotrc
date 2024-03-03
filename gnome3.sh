@@ -44,6 +44,10 @@ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 gsettings set org.gnome.desktop.peripherals.touchpad speed 0.8
 gsettings set org.gnome.desktop.peripherals.touchpad two-finger-scrolling-enabled true
 gsettings set org.gnome.desktop.privacy remember-recent-files false
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
 gsettings set org.gnome.desktop.wm.preferences focus-mode "sloppy"
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
 gsettings set org.gnome.desktop.wm.preferences titlebar-font "Ubuntu $GNOME_FONT_SIZE"
@@ -52,9 +56,10 @@ gsettings set org.gnome.nautilus.preferences click-policy "single"
 
 gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 100
 
-gsettings set org.gnome.shell.app-switcher current-workspace-only true
+gsettings set org.gnome.shell.app-switcher current-workspace-only false
 gsettings set org.gnome.shell disabled-extensions "['desktop-icons@csoriano']"
 gsettings set org.gnome.shell.world-clocks locations "$CLOCKS"
+gsettings set org.gnome.shell.window-switcher current-workspace-only true
 
 
 ### Extensions
