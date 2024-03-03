@@ -72,9 +72,10 @@ fi
 
 echo
 echo "4. Sabaki"
-if [ -f "$HOME"/.bin/sabaki ]; then
+if [ -f "$HOME"/.local/bin/sabaki ]; then
 	echo "Already installed"
 else
 	echo "Installing..."
-	wget -O "$HOME"/.bin/sabaki "https://github.com/SabakiHQ/Sabaki/releases/download/v0.52.2/sabaki-v0.52.2-linux-x64.AppImage"
+	mkdir -p "$HOME"/.local/bin/
+	wget -O "$HOME"/.local/bin/sabaki "https://github.com/SabakiHQ/Sabaki/releases/download/v0.52.2/sabaki-v0.52.2-linux-x64.AppImage"
 fi

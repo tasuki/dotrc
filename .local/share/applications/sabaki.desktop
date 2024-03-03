@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Sabaki
+Type=Application
+Terminal=false
+Exec=/home/vita/.local/bin/sabaki
+Icon=/home/vita/.local/share/applications/sabaki.png
