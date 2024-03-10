@@ -12,7 +12,7 @@ sudo snap install code --classic
 
 ```
 code --install-extension vscodevim.vim
-code --install-extension eamodio.gitlens
+code --install-extension ryu1kn.annotator
 code --install-extension elmtooling.elm-ls-vscode
 code --install-extension ionide.ionide-fsharp
 code --install-extension scala-lang.scala
