@@ -1,0 +1,22 @@
+[
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.previousEditor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.nextEditor",
+        "when": "editorTextFocus"
+    },
+]

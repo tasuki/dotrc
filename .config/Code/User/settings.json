@@ -2,6 +2,7 @@
     "workbench.colorTheme": "Solarized Light",
     "editor.cursorBlinking": "solid",
     "editor.fontFamily": "'Rec Mono Duotone', 'monospace', monospace",
+    "window.titleBarStyle": "custom",
 
     "vim.leader": "<space>",
     "vim.insertModeKeyBindings": [
