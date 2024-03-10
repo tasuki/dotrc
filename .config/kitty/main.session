@@ -18,4 +18,5 @@ launch zshi 'g s'
 new_tab valar
 cd ~/data/prog/valar-setup/
 launch zshi 'v README.md'
+launch zshi 'vagrant status'
 launch zshi 'g s'
