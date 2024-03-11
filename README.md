@@ -6,7 +6,7 @@ A personal collection of dotfiles. Let me know if I'm missing anything cool!
 
 Prereqs, on Debian-based systems: `sudo apt install curl bash git stow`
 
-    curl -s https://raw.githubusercontent.com/tasuki/dotrc/master/install.sh | bash
+	curl -s https://raw.githubusercontent.com/tasuki/dotrc/master/install.sh | bash
 
 Clones the repository into `./dotrc/` and links all the dotfiles to current directory.
 
