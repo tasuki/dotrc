@@ -29,8 +29,16 @@
             "commands": [ "workbench.action.closeActiveEditor" ]
         },
         {
+            "before": [ "<leader>", "<enter>" ],
+            "commands": [ "workbench.action.quickOpen" ]
+        },
+        {
             "before": [ "<leader>", "f" ],
             "commands": [ "workbench.files.action.showActiveFileInExplorer" ]
+        },
+        {
+            "before": [ "<leader>", "n" ],
+            "commands": [ "workbench.action.toggleSidebarVisibility" ]
         },
         {
             "before": [ "<leader>", "b" ],
