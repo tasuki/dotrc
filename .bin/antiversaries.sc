@@ -121,7 +121,7 @@ def withinRange(from: LocalDateTime, till: LocalDateTime)(anv: Antiversary): Boo
   anv.dateTime.isAfter(from) && anv.dateTime.isBefore(till)
 
 @main
-def main(from: Option[String], till: Option[String], out: Option[String], people: String*) = {
+def main(from: Option[String], till: Option[String], out: Option[String], people: Seq[String]) = {
   val fromDate = from.flatMap(readDate).getOrElse(LocalDateTime.now)
   val tillDate = till.flatMap(readDate).getOrElse(LocalDateTime.now.plusYears(100))
 
