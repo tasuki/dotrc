@@ -21,26 +21,8 @@ if [ "$(basename "$SHELL")" != "zsh" ]; then
 fi
 
 
-echo ""
-echo "2. Installing brittle things"
-
-function install {
-	if (command -v "$1" > /dev/null 2>&1); then
-		echo "$1 is already installed"
-	else
-		echo "Installing $1..."
-		curl -Lo "/tmp/$1.deb" "$2"
-		sudo apt install "/tmp/$1.deb"
-	fi
-}
-
-install btm https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb
-install delta https://github.com/dandavison/delta/releases/download/0.12.1/git-delta_0.12.1_amd64.deb
-install bat https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb
-
-
 echo
-echo "3. Adding custom repositories..."
+echo "2. Adding custom repositories..."
 
 [ ! -f /usr/share/keyrings/google.gpg.key ] &&
 	sudo wget -O /usr/share/keyrings/google.gpg.key  https://dl.google.com/linux/linux_signing_key.pub
@@ -70,12 +52,38 @@ else
 fi
 
 
+echo ""
+echo "2. Installing custom debs"
+
+function install_deb {
+	if (command -v "$1" > /dev/null 2>&1); then
+		echo "$1 is already installed"
+	else
+		echo "Installing $1..."
+		wget -O "/tmp/$1.deb" "$2"
+		sudo apt install "/tmp/$1.deb"
+	fi
+}
+
+install_deb btm "https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb"
+install_deb delta "https://github.com/dandavison/delta/releases/download/0.12.1/git-delta_0.12.1_amd64.deb"
+install_deb bat "https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb"
+
+
 echo
-echo "4. Sabaki"
-if [ -f "$HOME"/.local/bin/sabaki ]; then
-	echo "Already installed"
-else
-	echo "Installing..."
-	mkdir -p "$HOME"/.local/bin/
-	wget -O "$HOME"/.local/bin/sabaki "https://github.com/SabakiHQ/Sabaki/releases/download/v0.52.2/sabaki-v0.52.2-linux-x64.AppImage"
-fi
+echo "4. Installing custom binaries"
+mkdir -p "$HOME/.local/bin/"
+
+function install_binary {
+	DEST="$HOME/.local/bin/$1"
+	if [ -f "$DEST" ]; then
+		echo "$1 is already in $DEST"
+	else
+		echo "Installing $1..."
+		wget -O "$DEST" "$2"
+		chmod 755 "$DEST"
+	fi
+}
+
+install_binary sabaki "https://github.com/SabakiHQ/Sabaki/releases/download/v0.52.2/sabaki-v0.52.2-linux-x64.AppImage"
+install_binary amm "https://github.com/lihaoyi/ammonite/releases/download/2.5.5/2.13-2.5.5"
