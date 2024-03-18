@@ -10,7 +10,8 @@ sudo apt install curl bash git stow `# required packages for my dotrc` \
 	kitty redshift-gtk vlc geeqie clementine flameshot gparted xsel keepassxc `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks yaru-theme-gnome-shell yaru-theme-gtk yaru-theme-icon `# gnome` \
 	nethogs dnsmasq firehol `# system tools` \
-	gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 `# system monitor`
+	gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 `# system monitor` \
+	npm haskell-stack `# programming`
 
 # tools to keep an eye on:
 # miller jless frangipanni
