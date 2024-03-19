@@ -1,0 +1,35 @@
+#!/bin/bash
+# incremental backups using rsync
+# 2024, the year of the backup...
+
+set -euo pipefail
+
+if [[ "${BACKUP_DIR}" != */ ]]; then
+	BACKUP_DIR="${BACKUP_DIR}/"
+fi
+
+echo "Backing up to $BACKUP_DIR..."
+
+SOURCE_DIRS=(
+	"${HOME}/Sync/"
+	"${HOME}/data/hania/"
+	"${HOME}/data/photo/"
+	"${HOME}/data/audio/"
+)
+DATETIME="$(date '+%Y-%m-%d')"
+
+for SOURCE_DIR in "${SOURCE_DIRS[@]}"; do
+	DIR=`basename $SOURCE_DIR`
+	BACKUP_PATH="${BACKUP_DIR}${DIR}/${DATETIME}"
+	LATEST_LINK="${BACKUP_DIR}${DIR}/latest"
+
+	mkdir -p "${BACKUP_DIR}${DIR}"
+
+	rsync --progress -av --delete \
+		"${SOURCE_DIR}/" \
+		--link-dest "${LATEST_LINK}" \
+		"${BACKUP_PATH}"
+
+	rm -rf "${LATEST_LINK}"
+	ln -s "${BACKUP_PATH}" "${LATEST_LINK}"
+done
