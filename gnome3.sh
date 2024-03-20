@@ -54,6 +54,7 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font "Ubuntu $GNOME_FONT
 
 gsettings set org.gnome.nautilus.preferences click-policy "single"
 
+gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 100
 
 gsettings set org.gnome.shell.app-switcher current-workspace-only false
@@ -97,6 +98,8 @@ done
 # Use `dconf reset -f /org/gnome/shell/extensions/extension-name/` to clear all settings there
 
 dconf write /org/gnome/shell/extensions/wsmatrix/show-overview-grid true
+dconf write /org/gnome/shell/extensions/wsmatrix/num-columns 3
+dconf write /org/gnome/shell/extensions/wsmatrix/num-rows 2
 
 dconf write /org/gnome/desktop/notifications/application/kitty/enable false
 dconf write /org/gnome/desktop/notifications/application/org-gnome-shell-extensions/enable false
