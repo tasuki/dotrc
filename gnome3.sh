@@ -6,16 +6,16 @@ set -euo pipefail
 ### Customizable preferences
 
 GNOME_FONT_SIZE=${GNOME_FONT_SIZE:-'12'}
-GNOME_SYSTEM_MONITOR_SERVICES=${GNOME_SYSTEM_MONITOR_SERVICES:-'cpu memory swap net disk'}
-GNOME_SYSTEM_MONITOR_GRAPH_WIDTH=${GNOME_SYSTEM_MONITOR_GRAPH_WIDTH:-'100'}
+GNOME_SYSTEM_MONITOR_SERVICES=${GNOME_SYSTEM_MONITOR_SERVICES:-'cpu memory swap net disk thermal fan'}
+GNOME_SYSTEM_MONITOR_GRAPH_WIDTH=${GNOME_SYSTEM_MONITOR_GRAPH_WIDTH:-'70'}
 
 # Preferences
 CLOCKS="[
-	<(uint32 2, <('San Francisco', 'KOAK', true, [(0.65832848982162007, -2.133408063190589)], [(0.659296885757089, -2.1366218601153339)])>)>,
-	<(uint32 2, <('New York', 'KNYC', true, [(0.71180344078725644, -1.2909618758762367)], [(0.71059804659265924, -1.2916478949920254)])>)>,
-	<(uint32 2, <('London', 'EGWU', true, [(0.89971722940307675, -0.007272211034407213)], [(0.89884456477707964, -0.0020362232784242244)])>)>,
-	<(uint32 2, <('Prague', 'LKKB', true, [(0.87478393392930087, 0.25383384995537522)], [(0.87411906122272931, 0.25249097093961048)])>)>,
-	<(uint32 2, <('Tokyo', 'RJTI', true, [(0.62191898430954862, 2.4408429589140699)], [(0.62282074357417661, 2.4391218722853854)])>)>
+	<(uint32 2, <('San Francisco', 'KOAK', true, [(0.6583, -2.1334)], [(0.6592, -2.1366)])>)>,
+	<(uint32 2, <('New York', 'KNYC', true, [(0.7118, -1.2909)], [(0.7105, -1.2916)])>)>,
+	<(uint32 2, <('London', 'EGWU', true, [(0.8997, -0.0072)], [(0.8988, -0.0020)])>)>,
+	<(uint32 2, <('Prague', 'LKKB', true, [(0.8747, 0.2538)], [(0.8741, 0.2524)])>)>,
+	<(uint32 2, <('Tokyo', 'RJTI', true, [(0.6219, 2.4408)], [(0.6228, 2.4391)])>)>
 ]"
 # wrap each item in object with 'location' key
 WORLD_CLOCKS=$(echo "$CLOCKS" | sed "s/\(<(.*)>)>\)/{'location': \1}/g")
@@ -81,6 +81,8 @@ gsettings $SCHEMA set org.gnome.shell.extensions.unite notifications-position "c
 gsettings $SCHEMA set org.gnome.shell.extensions.unite show-window-buttons "never"
 
 SCHEMA=$(schema "system-monitor-next@paradoxxx.zero.gmail.com")
+gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor center-display false
+gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor compact-display false
 gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor icon-display false
 for SETTING in `echo "$GNOME_SYSTEM_MONITOR_SERVICES"`; do
 	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-display true
