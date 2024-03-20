@@ -41,6 +41,6 @@ done
 
 # link individual files for the rest
 cd "$DOTRC_FULL" || exit 1
-stow --no-folding --verbose --dotfiles --ignore=".sh$|.gitmodules|.git$|.editorconfig|.vim$|.zsh-custom$|runbooks$" .
+stow --no-folding --verbose --dotfiles --ignore=".sh$|^.gitmodules$|^.git$|^.editorconfig$|^.vim$|^.zsh-custom$|^runbooks$" .
 
 . ./fixnames.sh
