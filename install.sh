@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -euo pipefail
 
 DOTRC_DIR="dotrc/"
@@ -41,6 +40,6 @@ done
 
 # link individual files for the rest
 cd "$DOTRC_FULL" || exit 1
-stow --no-folding --verbose --dotfiles --ignore=".sh$|^.gitmodules$|^.git$|^.editorconfig$|^.vim$|^.zsh-custom$|^runbooks$" .
+stow --no-folding --verbose --dotfiles --ignore=".sh$|^install$|^.gitmodules$|^.git$|^.editorconfig$|^.vim$|^.zsh-custom$|^runbooks$" .
 
-. ./fixnames.sh
+. ./install/fixnames.sh
