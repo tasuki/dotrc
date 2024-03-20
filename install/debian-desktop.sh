@@ -9,8 +9,8 @@ source "$SCRIPT_DIR/functions.sh"
 
 echo "1. Installing things from the main repos"
 sudo apt install curl bash git stow `# required packages for my dotrc` \
-	mosh tmux tmuxinator zsh vim neovim htop rlwrap entr rename jq fzf fd-find ripgrep units cloc exa jc `# cli tools` \
-	kitty redshift-gtk vlc geeqie clementine flameshot gparted xsel keepassxc `# gui tools` \
+	mosh tmux zsh vim neovim htop rlwrap entr rename jq fzf fd-find ripgrep units cloc exa jc `# cli tools` \
+	kitty vlc geeqie clementine gparted xsel keepassxc `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks yaru-theme-gnome-shell yaru-theme-gtk yaru-theme-icon `# gnome` \
 	nethogs dnsmasq firehol `# system tools` \
 	gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 `# system monitor` \
