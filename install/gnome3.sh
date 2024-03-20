@@ -65,6 +65,11 @@ gsettings set org.gnome.shell.window-switcher current-workspace-only true
 
 ### Extensions
 
+# Built in
+
+gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
+gsettings set org.gnome.shell.extensions.user-theme name "Yaru"
+
 # Custom extensions
 
 function schema { echo "--schemadir $HOME/.local/share/gnome-shell/extensions/$@/schemas/"; }
