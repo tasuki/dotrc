@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -euo pipefail
 
 DOTRC_DIR="dotrc/"
 DOTRC_FULL="$HOME/$DOTRC_DIR"

@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -euo pipefail
 
 # Links the second parameter to the first one.
 # If the second parameter doesn't exist && the first one does.
