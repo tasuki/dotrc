@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=kitty-work
+Type=Application
+Terminal=false
+Exec=kitty --title kitty-main --session work.session
+Path=/home/vita/
+Icon=/home/vita/.local/share/applications/kitty-dark.png

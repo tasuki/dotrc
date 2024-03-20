@@ -1,0 +1,10 @@
+enabled_layouts tall:bias=62;full_size=1;mirrored=true,stack
+
+cd ~/data-big/flowerchecker/
+
+new_tab forest-defense
+cd ~/data-big/flowerchecker/forest_defense
+launch zshi 'v README.md'
+launch zshi 'conda activate forest_defense; jupyter lab'
+launch zshi 'g s'
+
