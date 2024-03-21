@@ -147,23 +147,23 @@ let g:EasyMotion_mapping_F = '<Leader>k'
 let g:EditorConfig_exclude_patterns = ['term://.*']
 
 " FZF
-if executable("fd")
-	let fzf_finder = "fd --type f"
-	let fzf_hidden = "fd --type f --hidden"
-	let fzf_all = "fd --type f --hidden --no-ignore"
-elseif executable("fdfind")
-	let fzf_finder = "fdfind --type f"
-	let fzf_hidden = "fdfind --type f --hidden"
-	let fzf_all = "fdfind --type f --hidden --no-ignore"
-else
-	let fzf_finder = "find -type f"
-	let fzf_hidden = "find -type f"
-	let fzf_all = "find -type f"
-endif
 
-execute 'nmap <Leader><Enter>     :call fzf#run(fzf#wrap({"source": "' . fzf_finder . '"}))<Enter>'
-execute 'nmap <Leader>.           :call fzf#run(fzf#wrap({"source": "' . fzf_hidden . '"}))<Enter>'
-execute 'nmap <Leader><Backspace> :call fzf#run(fzf#wrap({"source": "' . fzf_all . '"}))<Enter>'
+" git grep
+command! -bang -nargs=* GG
+	\ call fzf#vim#grep2(
+	\ 'git grep --ignore-case --line-number -- ',
+	\ <q-args>, 0, fzf#vim#with_preview(), <bang>0)
+
+" rip grep
+command! -bang -nargs=* RG
+	\ call fzf#vim#grep2(
+	\ "rg --column --line-number --no-heading --color=always --hidden --smart-case -- ",
+	\ <q-args>, 1, fzf#vim#with_preview(), <bang>0)
+
+nmap <Leader><Enter> :GFiles<CR>
+nmap <Leader>. :Files<CR>
+nmap <Leader>r :RG<CR>
+nmap <Leader>g :GG<CR>
 
 " nerdtree
 "autocmd BufEnter NERD_tree_* call SomeFunctionToChangeTheTabLabel

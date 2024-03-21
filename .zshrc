@@ -60,12 +60,16 @@ bindkey -M vicmd 'v' edit-command-line
 
 # fzf
 if type fd > /dev/null; then
-	export FZF_DEFAULT_COMMAND='fd --type f'
-	export FZF_ALT_C_COMMAND='fd --type d'
+	export FZF_DEFAULT_COMMAND='fd --type f --hidden'
+	export FZF_ALT_C_COMMAND='fd --type d --hidden'
 else
 	export FZF_DEFAULT_COMMAND='find -type f'
 	export FZF_ALT_C_COMMAND='find -type d'
 fi
+if type bat > /dev/null; then
+	export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
+fi
+
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export FZF_DEFAULT_OPTS='
