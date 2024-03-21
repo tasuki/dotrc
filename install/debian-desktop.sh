@@ -9,10 +9,12 @@ source "$SCRIPT_DIR/functions.sh"
 
 echo "1. Installing things from the main repos"
 sudo apt install curl bash git stow `# required packages for my dotrc` \
-	mosh tmux zsh vim neovim htop rlwrap entr rename jq fzf fd-find ripgrep units cloc exa jc `# cli tools` \
+	tmux zsh neovim fzf `# must have cli tools` \
+	bat cloc entr exa fd-find htop jc jq rename ripgrep rlwrap units `# cli tools` \
 	kitty vlc geeqie clementine gparted xsel keepassxc `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks yaru-theme-gnome-shell yaru-theme-gtk yaru-theme-icon `# gnome` \
-	nethogs dnsmasq firehol syncthing default-jre `# system tools` \
+	dnsmasq firehol mosh nethogs syncthing `# network tools` \
+	default-jre `# jre category by itself?` \
 	gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 `# system monitor` \
 
 # tools to keep an eye on:
@@ -53,12 +55,11 @@ code --install-extension vscodevim.vim
 code --install-extension ryu1kn.annotator
 
 
-echo ""
-echo "2. Installing custom debs"
+echo
+echo "3. Installing custom debs"
 
-install_deb btm   "https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb"
-install_deb delta "https://github.com/dandavison/delta/releases/download/0.12.1/git-delta_0.12.1_amd64.deb"
-install_deb bat   "https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb"
+install_deb btm   "https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb"   # coming in trixie: https://packages.debian.org/trixie/btm
+install_deb delta "https://github.com/dandavison/delta/releases/download/0.12.1/git-delta_0.12.1_amd64.deb" # coming in trixie: https://packages.debian.org/trixie/git-delta
 
 echo
 echo "4. Installing custom binaries"
