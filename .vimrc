@@ -54,7 +54,7 @@ map <C-n> 5j
 " switch to previously edited buffer
 map <F4> <C-^>
 " change pwd to current file directory
-map <F5>cd :cd %:p:h<CR>
+map <F5> :cd %:p:h<CR>
 map <F7> :nohlsearch<CR>
 map <F12> :set paste!<CR>
 
@@ -123,18 +123,6 @@ runtime bundle/pathogen/autoload/pathogen.vim
 
 call pathogen#infect()
 call pathogen#helptags()
-
-" vim-ack
-let g:ackhighlight = 1
-
-if executable("rg")
-	let g:ackprg = 'rg --vimgrep'
-elseif executable("ag")
-	let g:ackprg = 'ag -U --vimgrep'
-endif
-
-nnoremap <Leader>/ :Ack!<Space>
-nnoremap <Leader>a :Ack! --smart-case<Space>
 
 " easymotion
 hi link EasyMotionTarget PreProc
