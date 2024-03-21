@@ -194,10 +194,6 @@ colorscheme solarized
 " snipmate
 let g:snippets_dir = '~/.vim/snippets/'
 
-" elm
-let g:elm_format_autosave = 1
-let g:elm_format_fail_silently = 0
-
 " vimwiki
 let g:vimwiki_global_ext = 0 " don't hijack all markdown
 let g:vimwiki_list = [{'path': '~/data/prog/vitwiki', 'syntax': 'markdown', 'ext': '.md'}]

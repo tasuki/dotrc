@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/editorconfig"]
 	path = .vim/bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim
-[submodule ".vim/bundle/elm"]
-	path = .vim/bundle/elm
-	url = https://github.com/ElmCast/elm-vim.git
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -43,9 +40,3 @@
 [submodule ".zsh-custom/plugins/zsh-autosuggestions"]
 	path = .zsh-custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule ".vim/bundle/idris2-vim"]
-	path = .vim/bundle/idris2-vim
-	url = https://github.com/edwinb/idris2-vim
-[submodule ".vim/bundle/purescript"]
-	path = .vim/bundle/purescript
-	url = https://github.com/purescript-contrib/purescript-vim
