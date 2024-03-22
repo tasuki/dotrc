@@ -152,9 +152,9 @@ nmap <Leader><Enter> :GFiles<CR>
 nmap <Leader>. :Files<CR>
 nmap <Leader>r :RG<CR>
 nmap <Leader>g :GG<CR>
+nmap <Leader>/ :execute ':RG ' . expand('<cword>')<CR>
 
 " nerdtree
-"autocmd BufEnter NERD_tree_* call SomeFunctionToChangeTheTabLabel
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
 let g:NERDTreeChDirMode = 2

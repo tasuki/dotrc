@@ -35,6 +35,7 @@ export PATH="$HOME/.bin:$HOME/.local/bin:${PATH}"
 # pager
 export PAGER=less
 export LESS="-FiXRSMx4"         # quit one screen, ignorecase, noinit, display color codes, chop
+export BAT_THEME="Solarized (light)"
 
 # colorful man pages
 export LESS_TERMCAP_mb=$'\e[0m\e[31m'
@@ -135,7 +136,6 @@ alias psf='ps -e --forest'      # show forest tree
 alias psa='ps aux --forest'     # show forest with details
 alias psv='ps aux --sort vsz'   # sort by memory
 alias dfh='df -Th'              # human readable df
-alias routen='route -n'         # gimme routes fast
 alias h='history'
 alias t='tail -f'               # tail logs
 alias online='ping 4.2.2.2'     # check if online
@@ -146,22 +146,12 @@ function mans {
 	man $1 | less -p "^ +$2"    # man search parameter
 }
 
-# multiplexers
-alias scr='screen -U -d -R'     # utf, reattach (append session name)
+# tmux
 function tm { tmux attach -t $@ || tmux new -s $@ } # tmux attach of create session
 alias tmls='tmux ls'
-function tmux-pane-percent {
-	WW=$(tmux display -p '#{window_width}')
-	COLS=$(expr $WW \* $@ / 100)
-	tmux resize-pane -t $TMUX_PANE -x $COLS
-}
-alias cdsplit='cd $(fd --type d | fzf); tmux rename-window $(basename $PWD); tmux split-window -h -p 62'
 
 # searching
 alias grep='grep --color=auto'  # if stuck with grep, colorize
-alias ag='ag -U'                # ignore .gitignore
-alias agi='ag -Ui'              # ignore case
-alias rgrep='grep -r'
 
 # docker
 alias dockerrm='docker ps -a -q | xargs docker rm'
@@ -169,14 +159,8 @@ alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs do
 
 # programming
 export PYTHONDONTWRITEBYTECODE=1
-export BAT_THEME="Solarized (light)"
 alias g='git'
 alias m='make'
-alias pyprofile='python -m cProfile -s time'
-alias pyprofile3='python3 -m cProfile -s time'
-alias ctags-symfony='find src vendor \
-	-name Tests -prune -o -name Features -prune -o -name "*.php" \
-	-print > /tmp/ctagslist; ctags -L /tmp/ctagslist; rm /tmp/ctagslist'
 
 # autocomplete
 autoload -Uz compinit
