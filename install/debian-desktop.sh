@@ -73,3 +73,9 @@ install_binary cgoban.jar "https://files.gokgs.com/javaBin/cgoban.jar"
 echo
 echo "5. Installing vim plugins"
 source "$SCRIPT_DIR/vim.sh"
+
+
+echo
+echo "6. Linking weird command names to normal ones"
+link_name fdfind fd
+link_name batcat bat
