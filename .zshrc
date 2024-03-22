@@ -182,8 +182,8 @@ maybe_source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
 # fzf
-maybe_source $HOME/.vim/bundle/fzf/shell/key-bindings.zsh
-maybe_source $HOME/.vim/bundle/fzf/shell/completion.zsh
+maybe_source /usr/share/doc/fzf/examples/key-bindings.zsh
+maybe_source /usr/share/doc/fzf/examples/completion.zsh
 
 # local overrides
 maybe_source $HOME/.zshrc.local

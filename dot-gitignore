@@ -1,4 +1,6 @@
 tags
+.vim/autoload
+.vim/plugged
 .vim/view
 .idea/
 *.iml

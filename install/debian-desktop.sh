@@ -63,8 +63,13 @@ echo "3. Installing custom debs"
 install_deb btm   "https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb"   # coming in trixie: https://packages.debian.org/trixie/btm
 install_deb delta "https://github.com/dandavison/delta/releases/download/0.12.1/git-delta_0.12.1_amd64.deb" # coming in trixie: https://packages.debian.org/trixie/git-delta
 
+
 echo
 echo "4. Installing custom binaries"
 
 install_binary sabaki "https://github.com/SabakiHQ/Sabaki/releases/download/v0.52.2/sabaki-v0.52.2-linux-x64.AppImage"
 install_binary cgoban.jar "https://files.gokgs.com/javaBin/cgoban.jar"
+
+echo
+echo "5. Installing vim plugins"
+source "$SCRIPT_DIR/vim.sh"

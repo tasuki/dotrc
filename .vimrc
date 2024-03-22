@@ -115,14 +115,33 @@ noremap <Leader>p "*p
 vnoremap <Leader>c "+y
 noremap <Leader>v "+p
 
+" colour scheme
+set background=dark         " this is actually light - Xresources is inverted
+colorscheme solarized
+
 
 """"""""""""""""""
 " plugin settings
-" pathogen
-runtime bundle/pathogen/autoload/pathogen.vim
 
-call pathogen#infect()
-call pathogen#helptags()
+if filereadable("/usr/share/doc/fzf/examples/plugin/fzf.vim")
+	source /usr/share/doc/fzf/examples/plugin/fzf.vim
+endif
+
+" vim-plug, run `dotrc/install/vim.sh`
+call plug#begin('~/.vim/plugged')
+Plug 'AndrewRadev/sideways.vim', { 'tag': 'v0.4.0' }
+Plug 'easymotion/vim-easymotion', { 'tag': 'v3.0.1' }
+Plug 'editorconfig/editorconfig-vim', { 'tag': 'v1.2.0' }
+Plug 'garbas/vim-snipmate', { 'commit': 'f5a75d0' } " the old one with no deps
+Plug 'junegunn/fzf.vim', { 'commit': '87b60bb' }
+Plug 'kien/rainbow_parentheses.vim', { 'commit': 'eb8baa5' }
+Plug 'preservim/nerdtree', { 'tag': '7.1.2' }
+Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
+Plug 'tpope/vim-surround', { 'tag': 'v2.2' }
+Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
+call plug#end()
+
+delc PlugUpgrade	" don't accidentally upgrade vim-plug
 
 " easymotion
 hi link EasyMotionTarget PreProc
@@ -186,10 +205,6 @@ au Syntax * if &ft != "vimwiki" | RainbowParenthesesLoadBraces
 " Sideways
 nnoremap <Leader>h :SidewaysLeft<cr>
 nnoremap <Leader>l :SidewaysRight<cr>
-
-" solarized
-set background=dark         " this is actually light - Xresources is inverted
-colorscheme solarized
 
 " snipmate
 let g:snippets_dir = '~/.vim/snippets/'
