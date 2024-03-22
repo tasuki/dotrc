@@ -171,16 +171,19 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
+# theme
+source $HOME/.zsh-custom/themes/tasuki.zsh-theme
+
 ## plugins
-ZSH_CUSTOM=$HOME/.zsh-custom
-source $ZSH_CUSTOM/themes/tasuki.zsh-theme
-source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+function maybe_source { [ -f "$1" ] && source "$1" }
+
+maybe_source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+maybe_source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
 # fzf
-source $HOME/.vim/bundle/fzf/shell/key-bindings.zsh
-source $HOME/.vim/bundle/fzf/shell/completion.zsh
+maybe_source $HOME/.vim/bundle/fzf/shell/key-bindings.zsh
+maybe_source $HOME/.vim/bundle/fzf/shell/completion.zsh
 
 # local overrides
-[ -f ~/.zshrc.local ] && . ~/.zshrc.local
+maybe_source $HOME/.zshrc.local
