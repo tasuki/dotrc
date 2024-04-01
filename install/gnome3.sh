@@ -56,6 +56,7 @@ gsettings set org.gnome.nautilus.preferences click-policy "single"
 
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 100
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type "nothing"
 
 gsettings set org.gnome.shell.app-switcher current-workspace-only false
 gsettings set org.gnome.shell disabled-extensions "['desktop-icons@csoriano']"
