@@ -109,3 +109,6 @@ dconf write /org/gnome/shell/extensions/wsmatrix/num-rows 2
 
 dconf write /org/gnome/desktop/notifications/application/kitty/enable false
 dconf write /org/gnome/desktop/notifications/application/org-gnome-shell-extensions/enable false
+
+dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
+dconf write /org/gtk/settings/file-chooser/sort-directories-first true
