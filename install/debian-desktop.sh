@@ -55,6 +55,7 @@ fi
 code --install-extension vscodevim.vim
 code --install-extension ryu1kn.annotator
 code --install-extension EditorConfig.EditorConfig
+code --install-extension jock.svg
 
 
 echo
