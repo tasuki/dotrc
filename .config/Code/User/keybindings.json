@@ -19,4 +19,8 @@
         "command": "workbench.action.nextEditor",
         "when": "editorTextFocus"
     },
+    {
+        "key": "ctrl+m",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
 ]

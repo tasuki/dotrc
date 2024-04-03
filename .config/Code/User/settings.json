@@ -29,6 +29,10 @@
             "commands": [ "workbench.action.closeActiveEditor" ]
         },
         {
+            "before": [ "<leader>", "q" ],
+            "commands": [ "workbench.action.closeActiveEditor" ]
+        },
+        {
             "before": [ "<leader>", "<enter>" ],
             "commands": [ "workbench.action.quickOpen" ]
         },
