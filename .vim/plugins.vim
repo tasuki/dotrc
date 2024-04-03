@@ -57,7 +57,7 @@ let g:NERDTreeChDirMode = 2
 
 " Fugitive
 autocmd QuickFixCmdPost *grep* cwindow
-map <Leader>b :Gblame<CR>
+map <Leader>b :Git blame<CR>
 
 " Rainbows
 "
