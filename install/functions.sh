@@ -8,7 +8,7 @@ function repo_with_gpg_key {
 	[ -f "$KEYRING" ] ||
 		sudo wget -O "$KEYRING" "$2"
 	[ -f "$APT_SOURCE" ] ||
-		echo "dev [signed-by=$KEYRING] $4" | sudo tee "$APT_SOURCE"
+		echo "deb [signed-by=$KEYRING] $4" | sudo tee "$APT_SOURCE"
 }
 
 function repo_with_asc_key {
@@ -18,7 +18,7 @@ function repo_with_asc_key {
 	[ -f "$KEYRING" ] ||
 		curl -fsSL "$2" | sudo gpg --dearmor -o "$KEYRING"
 	[ -f "$APT_SOURCE" ] ||
-		echo "dev [signed-by=$KEYRING] $4" | sudo tee "$APT_SOURCE"
+		echo "deb [signed-by=$KEYRING] $4" | sudo tee "$APT_SOURCE"
 }
 
 function install_deb {
