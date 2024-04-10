@@ -1,6 +1,7 @@
 [user]
 	name = Vit Brunner
 	email = vit.brunner@gmail.com
+	signingkey = ~/.ssh/id_ed25519.pub
 
 [core]
 	excludesfile = ~/.gitignore
@@ -24,6 +25,13 @@
 
 [diff]
 	algorithm = patience
+
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed_ssh_signers
+[commit]
+	gpgsign = true
 
 [alias]
 	a = add
