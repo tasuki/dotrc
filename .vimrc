@@ -116,8 +116,8 @@ vnoremap <Leader>c "+y
 noremap <Leader>v "+p
 
 " colour scheme
-set background=dark         " this is actually light - Xresources is inverted
-colorscheme solarized
+set termguicolors
+colorscheme solar
 
 """"""""""""""""""
 " plugin settings

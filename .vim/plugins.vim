@@ -73,11 +73,14 @@ let g:rbpt_colorpairs = [
     \ [ 2, '#859900'],
     \ ]
 
-" turn off rainbows for vimwiki
-au VimEnter * if &ft != "vimwiki" | RainbowParenthesesToggle
-au Syntax * if &ft != "vimwiki" | RainbowParenthesesLoadRound
-au Syntax * if &ft != "vimwiki" | RainbowParenthesesLoadSquare
-au Syntax * if &ft != "vimwiki" | RainbowParenthesesLoadBraces
+" turn off rainbows for vimwiki and markdown
+function! HasRainbows()
+    return &ft != "vimwiki" && &ft != "markdown"
+endfunction
+au VimEnter * if HasRainbows() | RainbowParenthesesToggleAll
+au Syntax   * if HasRainbows() | RainbowParenthesesLoadRound
+au Syntax   * if HasRainbows() | RainbowParenthesesLoadSquare
+au Syntax   * if HasRainbows() | RainbowParenthesesLoadBraces
 
 " Sideways
 nnoremap <Leader>h :SidewaysLeft<cr>
@@ -89,11 +92,3 @@ let g:snippets_dir = '~/.vim/snippets/'
 " vimwiki
 let g:vimwiki_global_ext = 0 " don't hijack all markdown
 let g:vimwiki_list = [{'path': '~/data/prog/vitwiki', 'syntax': 'markdown', 'ext': '.md'}]
-hi def link VimwikiLink pandocLinkLabel
-hi def link VimwikiList pandocListMarker
-hi def link VimwikiHeader1 pandocHeading
-hi def link VimwikiHeader2 pandocHeadingMarker
-
-hi def link htmlH1 pandocHeading
-hi def link htmlH2 pandocHeadingMarker
-hi def link htmlH3 Title
