@@ -73,7 +73,7 @@ gsettings set org.gnome.shell.extensions.user-theme name "Yaru"
 
 # Custom extensions
 
-function schema { echo "--schemadir $HOME/.local/share/gnome-shell/extensions/$@/schemas/"; }
+function schema { echo "--schemadir $HOME/.local/share/gnome-shell/extensions/$*/schemas/"; }
 
 SCHEMA=$(schema "dash-to-dock@micxgx.gmail.com")
 gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock background-opacity 0.5
@@ -91,7 +91,7 @@ SCHEMA=$(schema "system-monitor-next@paradoxxx.zero.gmail.com")
 gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor center-display false
 gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor compact-display false
 gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor icon-display false
-for SETTING in `echo "$GNOME_SYSTEM_MONITOR_SERVICES"`; do
+for SETTING in $(echo "$GNOME_SYSTEM_MONITOR_SERVICES"); do
 	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-display true
 	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-graph-width "$GNOME_SYSTEM_MONITOR_GRAPH_WIDTH"
 	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-refresh-time 1000
@@ -107,7 +107,7 @@ dconf write /org/gnome/shell/extensions/wsmatrix/show-overview-grid true
 dconf write /org/gnome/shell/extensions/wsmatrix/num-columns 3
 dconf write /org/gnome/shell/extensions/wsmatrix/num-rows 2
 
-dconf write /org/gnome/desktop/notifications/application/kitty/enable false
+dconf write /org/gnome/desktop/notifications/application/kitty/enable true
 dconf write /org/gnome/desktop/notifications/application/org-gnome-shell-extensions/enable false
 
 dconf write /org/gtk/gtk4/settings/file-chooser/sort-directories-first true
