@@ -12,6 +12,9 @@ Plug 'preservim/nerdtree', { 'tag': '7.1.2' }
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
 Plug 'tpope/vim-surround', { 'tag': 'v2.2' }
 Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
+if has("nvim")
+	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
+endif
 call plug#end()
 
 delc PlugUpgrade	" don't accidentally upgrade vim-plug
@@ -88,6 +91,24 @@ nnoremap <Leader>l :SidewaysRight<cr>
 
 " snipmate
 let g:snippets_dir = '~/.vim/snippets/'
+
+
+if has("nvim")
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+	ensure_installed = { "bash", "css", "elm", "haskell", "html", "lua", "php", "python", "ruby", "vim" },
+
+	sync_install = false,
+	auto_install = false,
+
+	highlight = {
+		enable = true,
+	},
+
+	additional_vim_regex_highlighting = false,
+}
+EOF
+endif
 
 " vimwiki
 let g:vimwiki_global_ext = 0 " don't hijack all markdown
