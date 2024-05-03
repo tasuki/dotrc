@@ -12,6 +12,10 @@ Plug 'preservim/nerdtree', { 'tag': '7.1.2' }
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
 Plug 'tpope/vim-surround', { 'tag': 'v2.2' }
 Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
+if has("nvim")
+	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
+	Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }
+endif
 call plug#end()
 
 delc PlugUpgrade	" don't accidentally upgrade vim-plug
@@ -64,14 +68,14 @@ map <Leader>b :Git blame<CR>
 " yellow, red, magenta, violet, blue, cyan, green
 " :help cterm-colors, see the NR-8 column, add 8 for light
 let g:rbpt_colorpairs = [
-    \ [ 3, '#b58900'],
-    \ [ 9, '#cb4b16'],
-    \ [ 5, '#d33682'],
-    \ [13, '#6c71c4'],
-    \ [ 4, '#268bd2'],
-    \ [ 6, '#2aa198'],
-    \ [ 2, '#859900'],
-    \ ]
+	\ [ 3, '#b58900'],
+	\ [ 9, '#cb4b16'],
+	\ [ 5, '#d33682'],
+	\ [13, '#6c71c4'],
+	\ [ 4, '#268bd2'],
+	\ [ 6, '#2aa198'],
+	\ [ 2, '#859900'],
+	\ ]
 
 " turn off rainbows for vimwiki and markdown
 function! HasRainbows()
@@ -88,6 +92,37 @@ nnoremap <Leader>l :SidewaysRight<cr>
 
 " snipmate
 let g:snippets_dir = '~/.vim/snippets/'
+
+
+if has("nvim")
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+	ensure_installed = {
+		"bash", "vim", "lua", -- the system
+		"elm", "haskell", "scala", -- the good
+		"php", "python", "ruby", -- the bad
+		"html", "css", "javascript", -- the ugly
+	},
+
+	sync_install = false,
+	auto_install = false,
+
+	highlight = {
+		enable = true,
+	},
+
+	additional_vim_regex_highlighting = false,
+}
+
+require('aerial').setup {
+	on_attach = function(bufnr)
+		vim.api.nvim_buf_set_keymap(bufnr, 'n', '<F6>', '<cmd>AerialToggle!<CR>', {})
+		vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrev<CR>', {})
+		vim.api.nvim_buf_set_keymap(bufnr, 'n', ']]', '<cmd>AerialNext<CR>', {})
+	end
+}
+EOF
+endif
 
 " vimwiki
 let g:vimwiki_global_ext = 0 " don't hijack all markdown
