@@ -1,0 +1,3 @@
+.mode column
+.headers on
+.nullvalue __NULL__
