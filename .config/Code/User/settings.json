@@ -54,4 +54,5 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "elmTooling.elm-ls-vscode"
     },
+    "haskell.manageHLS": "GHCup",
 }
