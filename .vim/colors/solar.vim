@@ -111,13 +111,16 @@ exe "let s:fmt_revb     = ' gui=NONE".s:r.s:b."'"
 " Basic highlighting
 exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
 exe "hi! Comment"        .s:fmt_none   .s:fg_base01 .s:bg_none
-exe "hi! Constant"       .s:fmt_none   .s:fg_violet .s:bg_none
+exe "hi! Constant"       .s:fmt_none   .s:fg_magenta.s:bg_none
 exe "hi! String"         .s:fmt_none   .s:fg_cyan   .s:bg_none
-exe "hi! Identifier"     .s:fmt_none   .s:fg_blue   .s:bg_none
+exe "hi! Identifier"     .s:fmt_none   .s:fg_violet .s:bg_none
+exe "hi! Function"       .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! Statement"      .s:fmt_none   .s:fg_green  .s:bg_none
+hi! link Operator Statement
 exe "hi! PreProc"        .s:fmt_none   .s:fg_orange .s:bg_none
 exe "hi! Type"           .s:fmt_none   .s:fg_yellow .s:bg_none
 exe "hi! Special"        .s:fmt_none   .s:fg_red    .s:bg_none
+hi! link Delimiter Special
 exe "hi! Underlined"     .s:fmt_undr   .s:fg_base0  .s:bg_none
 exe "hi! Ignore"         .s:fmt_none   .s:fg_none   .s:bg_none
 exe "hi! Error"          .s:fmt_bold   .s:fg_red    .s:bg_none
@@ -147,6 +150,9 @@ exe "hi! FoldColumn"     .s:fmt_none   .s:fg_base0  .s:bg_base02
 exe "hi! DiffAdd"        .s:fmt_bold   .s:fg_green  .s:bg_base02 .s:sp_green
 exe "hi! DiffChange"     .s:fmt_bold   .s:fg_yellow .s:bg_base02 .s:sp_yellow
 exe "hi! DiffDelete"     .s:fmt_bold   .s:fg_red    .s:bg_base02
+hi! link Added DiffAdd
+hi! link Changed DiffChange
+hi! link Deleted DiffDelete
 exe "hi! DiffText"       .s:fmt_bold   .s:fg_blue   .s:bg_base02 .s:sp_blue
 exe "hi! SignColumn"     .s:fmt_none   .s:fg_base0
 exe "hi! Conceal"        .s:fmt_none   .s:fg_blue   .s:bg_none
