@@ -8,9 +8,9 @@ set -euo pipefail
 
 # install the plugins
 if (command -v nvim > /dev/null 2>&1); then
-	nvim +PlugInstall +PlugClean +qall
+	nvim +PlugUpdate +PlugClean +qall
 else
-	vim +PlugInstall +PlugClean +qall
+	vim +PlugUpdate +PlugClean +qall
 fi
 
 # hnng, don't want to fork this, but damn are the all caps tab names annoying
