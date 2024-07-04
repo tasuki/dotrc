@@ -53,9 +53,9 @@ map <C-n> 5j
 
 " switch to previously edited buffer
 map <F4> <C-^>
-" change pwd to current file directory
-map <F5> :cd %:p:h<CR>
 map <F7> :nohlsearch<CR>
+" change pwd to current file directory
+map <F8> :cd %:p:h<CR>
 map <F12> :set paste!<CR>
 
 map <Leader>w :set wrap!<CR>

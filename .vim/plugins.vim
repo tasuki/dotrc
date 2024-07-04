@@ -9,6 +9,7 @@ Plug 'garbas/vim-snipmate', { 'commit': 'f5a75d0' } " the old one with no deps
 Plug 'junegunn/fzf.vim', { 'commit': '87b60bb' }
 Plug 'kien/rainbow_parentheses.vim', { 'commit': 'eb8baa5' }
 Plug 'preservim/nerdtree', { 'tag': '7.1.2' }
+Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
 Plug 'tpope/vim-surround', { 'tag': 'v2.2' }
 Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
@@ -55,6 +56,7 @@ nmap <Leader>g :GG<CR>
 nmap <Leader>/ :execute ':RG ' . expand('<cword>')<CR>
 
 " nerdtree
+map <F5> :NERDTreeToggle<CR>
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
 let g:NERDTreeChDirMode = 2
@@ -62,6 +64,10 @@ let g:NERDTreeChDirMode = 2
 " Fugitive
 autocmd QuickFixCmdPost *grep* cwindow
 map <Leader>b :Git blame<CR>
+
+" Commentary
+nnoremap <C-/> :Commentary<CR>
+vnoremap <C-/> :Commentary<CR>
 
 " Rainbows
 "
@@ -79,7 +85,7 @@ let g:rbpt_colorpairs = [
 
 " turn off rainbows for vimwiki and markdown
 function! HasRainbows()
-    return &ft != "vimwiki" && &ft != "markdown"
+	return &ft != "vimwiki" && &ft != "markdown"
 endfunction
 au VimEnter * if HasRainbows() | RainbowParenthesesToggleAll
 au Syntax   * if HasRainbows() | RainbowParenthesesLoadRound
@@ -92,6 +98,10 @@ nnoremap <Leader>l :SidewaysRight<cr>
 
 " snipmate
 let g:snippets_dir = '~/.vim/snippets/'
+
+" vimwiki
+let g:vimwiki_global_ext = 0 " don't hijack all markdown
+let g:vimwiki_list = [{'path': '~/data/prog/vitwiki', 'syntax': 'markdown', 'ext': '.md'}]
 
 
 if has("nvim")
@@ -123,7 +133,3 @@ require('aerial').setup {
 }
 EOF
 endif
-
-" vimwiki
-let g:vimwiki_global_ext = 0 " don't hijack all markdown
-let g:vimwiki_list = [{'path': '~/data/prog/vitwiki', 'syntax': 'markdown', 'ext': '.md'}]
