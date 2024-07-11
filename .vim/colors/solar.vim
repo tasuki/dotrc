@@ -10,20 +10,20 @@ let g:colors_name="solar"
 " The colors
 let s:base3       = "#002b36"
 let s:base2       = "#073642"
-let s:base1       = "#586e75"
-let s:base0       = "#657b83"
-let s:base00      = "#839496"
-let s:base01      = "#93a1a1"
+let s:base1       = "#37565e"
+let s:base0       = "#62797a"
+let s:base00      = "#8f9c98"
+let s:base01      = "#bec2b6"
 let s:base02      = "#eee8d5"
 let s:base03      = "#fdf6e3"
-let s:yellow      = "#b58900"
-let s:orange      = "#cb4b16"
-let s:red         = "#dc322f"
-let s:magenta     = "#d33682"
-let s:violet      = "#6c71c4"
-let s:blue        = "#268bd2"
-let s:cyan        = "#2aa198"
-let s:green       = "#859900"
+let s:yellow      = "#aa8800"
+let s:orange      = "#cc6600"
+let s:red         = "#dd2244"
+let s:magenta     = "#cc3399"
+let s:violet      = "#7777dd"
+let s:blue        = "#2288cc"
+let s:cyan        = "#22aa99"
+let s:green       = "#889900"
 
 let s:back        = s:base03
 
@@ -110,7 +110,7 @@ exe "let s:fmt_revb     = ' gui=NONE".s:r.s:b."'"
 
 " Basic highlighting
 exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
-exe "hi! Comment"        .s:fmt_none   .s:fg_base01 .s:bg_none
+exe "hi! Comment"        .s:fmt_none   .s:fg_base00 .s:bg_none
 exe "hi! Constant"       .s:fmt_none   .s:fg_magenta.s:bg_none
 exe "hi! String"         .s:fmt_none   .s:fg_cyan   .s:bg_none
 exe "hi! Identifier"     .s:fmt_none   .s:fg_violet .s:bg_none
@@ -120,7 +120,7 @@ hi! link Operator Statement
 exe "hi! PreProc"        .s:fmt_none   .s:fg_orange .s:bg_none
 exe "hi! Type"           .s:fmt_none   .s:fg_yellow .s:bg_none
 exe "hi! Special"        .s:fmt_none   .s:fg_red    .s:bg_none
-hi! link Delimiter Special
+exe "hi! Delimiter"      .s:fmt_none   .s:fg_base1  .s:bg_none
 exe "hi! Underlined"     .s:fmt_undr   .s:fg_base0  .s:bg_none
 exe "hi! Ignore"         .s:fmt_none   .s:fg_none   .s:bg_none
 exe "hi! Error"          .s:fmt_bold   .s:fg_red    .s:bg_none
@@ -131,7 +131,7 @@ exe "hi! SpecialKey"     .s:fmt_bold   .s:fg_base00 .s:bg_base02
 exe "hi! NonText"        .s:fmt_bold   .s:fg_base00 .s:bg_none
 exe "hi! StatusLine"     .s:fmt_bold   .s:fg_base3  .s:bg_base02
 exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base1  .s:bg_base02
-exe "hi! Visual"         .s:fmt_none   .s:fg_base03 .s:bg_base01
+exe "hi! Visual"         .s:fmt_none   .s:fg_base03 .s:bg_base00
 exe "hi! Directory"      .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ErrorMsg"       .s:fmt_revr   .s:fg_red    .s:bg_none
 exe "hi! IncSearch"      .s:fmt_stnd   .s:fg_orange .s:bg_none

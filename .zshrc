@@ -179,7 +179,8 @@ function maybe_source { [ -f "$1" ] && source "$1" }
 
 maybe_source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 maybe_source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=11'
 
 # fzf
 maybe_source /usr/share/doc/fzf/examples/key-bindings.zsh
