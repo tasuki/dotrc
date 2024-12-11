@@ -104,7 +104,8 @@ let g:vimwiki_global_ext = 0 " don't hijack all markdown
 let g:vimwiki_list = [{'path': '~/data/prog/vitwiki', 'syntax': 'markdown', 'ext': '.md'}]
 
 
-if has("nvim")
+" treesitter goodness only nvim 0.5 and up
+if has("nvim-0.5")
 lua << EOF
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
