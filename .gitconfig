@@ -6,10 +6,9 @@
 [core]
 	excludesfile = ~/.gitignore
 	quotepath = off
-	pager = delta
 
 [interactive]
-	diffFilter = delta --color-only
+	diffFilter = git-diff-filter
 
 [delta]
 	syntax-theme = Solarized (light)

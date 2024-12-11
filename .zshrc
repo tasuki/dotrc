@@ -34,6 +34,7 @@ export PATH="$HOME/.bin:$HOME/.local/bin:${PATH}"
 
 # pager
 export PAGER=less
+export GIT_PAGER=$(command -v delta >/dev/null 2>&1 && echo delta || echo less)
 export LESS="-FiXRSMx4"         # quit one screen, ignorecase, noinit, display color codes, chop
 export BAT_THEME="Solarized (light)"
 
