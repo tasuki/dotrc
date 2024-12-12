@@ -59,7 +59,6 @@ exe "let s:bg_blue      = ' guibg=".s:blue   ."'"
 exe "let s:bg_cyan      = ' guibg=".s:cyan   ."'"
 
 exe "let s:fg_none      = ' guifg=".s:none   ."'"
-exe "let s:fg_back      = ' guifg=".s:back   ."'"
 exe "let s:fg_base03    = ' guifg=".s:base03 ."'"
 exe "let s:fg_base02    = ' guifg=".s:base02 ."'"
 exe "let s:fg_base01    = ' guifg=".s:base01 ."'"
@@ -78,7 +77,6 @@ exe "let s:fg_blue      = ' guifg=".s:blue   ."'"
 exe "let s:fg_cyan      = ' guifg=".s:cyan   ."'"
 
 exe "let s:sp_none      = ' guisp=".s:none   ."'"
-exe "let s:sp_back      = ' guisp=".s:back   ."'"
 exe "let s:sp_base03    = ' guisp=".s:base03 ."'"
 exe "let s:sp_base02    = ' guisp=".s:base02 ."'"
 exe "let s:sp_base01    = ' guisp=".s:base01 ."'"
@@ -109,7 +107,10 @@ exe "let s:fmt_revr     = ' gui=NONE".s:r    ."'"
 exe "let s:fmt_revb     = ' gui=NONE".s:r.s:b."'"
 
 " Basic highlighting
-exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
+" Normal with bg_none breaks in older tmuxes
+" Normal with bg_back breaks in gvim, choose
+" exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
+exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_none
 exe "hi! Comment"        .s:fmt_none   .s:fg_base00 .s:bg_none
 exe "hi! Constant"       .s:fmt_none   .s:fg_magenta.s:bg_none
 exe "hi! String"         .s:fmt_none   .s:fg_cyan   .s:bg_none
