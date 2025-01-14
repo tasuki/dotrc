@@ -163,6 +163,9 @@ export PYTHONDONTWRITEBYTECODE=1
 alias g='git'
 alias m='make'
 
+# geo
+export GDAL_NUM_THREADS=ALL_CPUS
+
 # autocomplete
 autoload -Uz compinit
 compinit
