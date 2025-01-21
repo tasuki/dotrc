@@ -49,6 +49,9 @@
             "commands": [ "annotator.annotate" ]
         },
     ],
+    "vim.handleKeys": {
+        "<C-f>": false,
+    },
 
     "[elm]": {
         "editor.formatOnSave": true,
