@@ -77,6 +77,7 @@ function parse_git_dirty() {
 # Git: branch/detached head, dirty status
 prompt_git() {
 	(( $+commands[git] )) || return
+	[[ -n $SKIP_GIT ]] && return
 
 	local ref mode repo_path
 	repo_path=$(git rev-parse --git-dir 2>/dev/null)
