@@ -60,6 +60,7 @@ map <F12> :set paste!<CR>
 
 map <Leader>w :set wrap!<CR>
 map <Leader>q :q<CR>
+map <Leader>x :wq<CR>
 
 
 """"""""""""""""""
