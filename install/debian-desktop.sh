@@ -12,7 +12,7 @@ sudo apt install curl bash git stow `# required packages for my dotrc` \
 	tmux neovim fzf `# must have cli tools` \
 	zsh zsh-autosuggestions zsh-syntax-highlighting `# zsh stuff` \
 	bat cloc entr exa fd-find htop jc jq rename ripgrep rlwrap units `# cli tools` \
-	kitty vlc geeqie clementine gparted xsel keepassxc `# gui tools` \
+	kitty gvim geeqie clementine vlc gparted xsel keepassxc `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks yaru-theme-gnome-shell yaru-theme-gtk yaru-theme-icon `# gnome` \
 	dnsmasq firehol mosh nethogs syncthing `# network tools` \
 	default-jre `# jre category by itself?` \

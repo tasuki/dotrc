@@ -109,8 +109,8 @@ exe "let s:fmt_revb     = ' gui=NONE".s:r.s:b."'"
 " Basic highlighting
 " Normal with bg_none breaks in older tmuxes
 " Normal with bg_back breaks in gvim, choose
-" exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
-exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_none
+" exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_none
+exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
 exe "hi! Comment"        .s:fmt_none   .s:fg_base00 .s:bg_none
 exe "hi! Constant"       .s:fmt_none   .s:fg_magenta.s:bg_none
 exe "hi! String"         .s:fmt_none   .s:fg_cyan   .s:bg_none
