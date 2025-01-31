@@ -17,6 +17,7 @@ set scrolloff=10     " show 10 lines of context (above and below)
 set fillchars+=vert:\  " no bars in vertical split
 set nowrap           " wrapping is usually evil
 set exrc             " allow current directory .vimrc overrides
+set mouse=nv         " mouse in normal and visual mode
 syntax on            " syntax highlighting
 let mapleader=" "    " start shortcuts with a space
 
