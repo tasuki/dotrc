@@ -123,6 +123,8 @@ alias ll='ls -l --group-directories-first'  # show details
 alias la='ls -la --group-directories-first' # show hidden files
 alias lx='ls -lXB'              # sort by extension
 alias lk='ls -lSr'              # sort by size
+alias lm='ls -lSr --block-size=M'
+alias lg='ls -lSr --block-size=G'
 alias lh='ls -lSrh'             # sort by size, human readable
 alias lr='ls -lR'               # recursive ls
 alias lt='ls -ltr'              # sort by date
