@@ -115,12 +115,12 @@ type dircolors > /dev/null && eval `dircolors ~/.xcolors/solarized-dircolors`
 
 alias l='ls'                    # too lazy
 if uname -s | grep -q 'Darwin'; then
-	alias ls='ls -G --group-directories-first'
+	alias ls='ls -vG --group-directories-first'
 else
-	alias ls='ls --color=auto --group-directories-first'
+	alias ls='ls -v --color=auto --group-directories-first'
 fi
-alias ll='ls -l --group-directories-first'  # show details
-alias la='ls -la --group-directories-first' # show hidden files
+alias ll='ls -lv --group-directories-first'  # show details
+alias la='ls -lva --group-directories-first' # show hidden files
 alias lx='ls -lXB'              # sort by extension
 alias lk='ls -lSr'              # sort by size
 alias lm='ls -lSr --block-size=M'
