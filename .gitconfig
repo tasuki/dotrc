@@ -53,13 +53,8 @@
 
 
 ; Remote
-[fetch]
-	prune = true
-	pruneTags = true
-	all = true
 [push]
-	default = simple
-	autoSetupRemote = true
+	default = current
 	followTags = true
 [url "git@github.com:"]
 	insteadOf = gh:
@@ -68,10 +63,10 @@
 ; Aliases
 [alias]
 	a = add
-	ai = add -i
-	ap = add -p
+	ai = add --interactive
+	ap = add --patch
 	br = branch
-	bra = branch -a
+	bra = branch --all
 	brd = branch -D
 	brt = "!git for-each-ref refs/heads --color=always --sort -committerdate --format='%(HEAD)%(color:reset);%(color:yellow)%(refname:short)%(color:reset);%(contents:subject);%(color:green)(%(committerdate:relative))%(color:blue);<%(authorname)>' | column -t -s ';'"
 	ci = commit
@@ -80,27 +75,24 @@
 	ciam = commit -am
 	co = checkout
 	cob = checkout -b
-	cot = checkout --track
-	cop = checkout -p
+	cop = checkout --patch
 	d  = diff --no-prefix
 	dc = diff --no-prefix --cached
 	f = fetch
 	fa = fetch --all
-	fap = fetch --all -p
-	fo = fetch origin
-	fop = fetch origin -p
+	fap = fetch --all --prune
 	l  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
 	ls = log --graph --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --stat
 	la = log --graph --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --all
-	lm = log --graph --format=format:'%C(yellow)%h%C(white) %aD%Creset %Cgreen(%ar)%Creset%C(bold red)%d%Creset%n''        %s%C(blue) <%an>%Creset' --all
+	lm = log --graph --format=format:'%C(yellow)%h%C(white) %cd%Creset %Cgreen(%cr)%Creset%C(bold red)%d%Creset%n''        %s%C(blue) <%an>%Creset' --date=format:'%Y-%m-%d %H:%M:%S' --all
 	ll = log --graph --decorate --pretty=oneline --abbrev-commit
 	lg = log --summary --name-status
-	lf = log --full-diff -p
+	lf = log --full-diff --patch
 	mod = merge origin/develop
 	mom = merge origin/master
 	p = push
+	pf = push --force
 	s = status --short --branch
-	st = status
 	unstage = reset HEAD
 
 	assume   = update-index --assume-unchanged
