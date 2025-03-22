@@ -12,7 +12,7 @@ sudo apt install curl bash git stow `# required packages for my dotrc` \
 	tmux neovim fzf `# must have cli tools` \
 	zsh zsh-autosuggestions zsh-syntax-highlighting `# zsh stuff` \
 	bat cloc entr exa fd-find htop jc jq rename ripgrep rlwrap units `# cli tools` \
-	kitty gvim geeqie clementine vlc gparted xsel keepassxc `# gui tools` \
+	kitty vim-gtk3 geeqie clementine vlc gparted xsel keepassxc `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks yaru-theme-gnome-shell yaru-theme-gtk yaru-theme-icon `# gnome` \
 	dnsmasq firehol mosh nethogs syncthing `# network tools` \
 	default-jre `# jre category by itself?` \
@@ -68,8 +68,13 @@ install_deb delta "https://github.com/dandavison/delta/releases/download/0.12.1/
 echo
 echo "4. Installing custom binaries"
 
-install_binary sabaki "https://github.com/SabakiHQ/Sabaki/releases/download/v0.52.2/sabaki-v0.52.2-linux-x64.AppImage"
-install_binary cgoban.jar "https://files.gokgs.com/javaBin/cgoban.jar"
+install_binary sabaki \
+	"https://github.com/SabakiHQ/Sabaki/releases/download/v0.52.2/sabaki-v0.52.2-linux-x64.AppImage" \
+	"c2e0a3e47bcd65cd8a39d7393b8f6ea4d4e81432a230c59ec7291cb478b9d446"
+
+install_binary cgoban.jar \
+	"https://files.gokgs.com/javaBin/cgoban.jar" \
+	"7a137f690536dd912d0e1ffeaf71f63c33c1ad6860a0c7e011f2aae6ad3c9056"
 
 echo
 echo "5. Installing vim plugins"

@@ -34,11 +34,20 @@ function install_deb {
 function install_binary {
 	mkdir -p "$HOME/.local/bin/"
 	DEST="$HOME/.local/bin/$1"
+	TMP_DEST="/tmp/$1"
 	if [ -f "$DEST" ]; then
 		echo "$1 is already in $DEST"
 	else
 		echo "Installing $1..."
-		wget -O "$DEST" "$2"
+		wget -O "$TMP_DEST" "$2"
+		HASH=$(sha256sum "$TMP_DEST" | awk '{print $1}')
+
+		if [[ "$HASH" != "$3" ]]; then
+			echo "Checksum verification failed!" >&2
+			exit 1
+		fi
+
+		mv "$TMP_DEST" "$DEST"
 		chmod 755 "$DEST"
 	fi
 }
