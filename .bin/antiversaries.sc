@@ -1,6 +1,8 @@
+#!/usr/bin/env amm
+//
 // Round multiples of seconds/minutes/hours/days/weeks/months/years from a start date
 //
-// Tested working with: Ammonite Repl 2.5.5, Scala 2.13
+// Tested working with: Ammonite Repl 3.0.2, Scala 3.5
 //
 // Basic usage:
 // amm ~/.bin/antiversaries.sc --people "Name 2020-02-02" "Another Name 2020-02-20 02:02"
@@ -65,13 +67,13 @@ def antiweirdsaries(person: Person): Seq[Antiversary] = {
   val dob = person.dob
 
   Seq(
-    ("seconds", (1 to 100).map(_ * 1E8), dob.plusSeconds _), // 316 years
-    ("minutes", (1 to 100).map(_ * 1E6), dob.plusMinutes _), // 190 years
-    ("hours"  , (1 to 100).map(_ * 1E4), dob.plusHours   _), // 228 years
-    ("days"   , (1 to 100).map(_ * 1E3), dob.plusDays    _), // 273 years
-    ("weeks"  , (1 to 100).map(_ * 1E2), dob.plusWeeks   _), // 191 years
-    ("months" , (1 to  20).map(_ * 1E2), dob.plusMonths  _), // 166 years
-    ("years"  , (1 to 200).map(_ * 1E0), dob.plusYears   _), // 200 years
+    ("seconds", (1 to 100).map(_ * 1E8), dob.plusSeconds ), // 316 years
+    ("minutes", (1 to 100).map(_ * 1E6), dob.plusMinutes ), // 190 years
+    ("hours"  , (1 to 100).map(_ * 1E4), dob.plusHours   ), // 228 years
+    ("days"   , (1 to 100).map(_ * 1E3), dob.plusDays    ), // 273 years
+    ("weeks"  , (1 to 100).map(_ * 1E2), dob.plusWeeks   ), // 191 years
+    ("months" , (1 to  20).map(_ * 1E2), dob.plusMonths  ), // 166 years
+    ("years"  , (1 to 200).map(_ * 1E0), dob.plusYears   ), // 200 years
   )
   .flatMap(Function.tupled(processOne(person)))
   .sortBy(_.dateTime)
