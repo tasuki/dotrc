@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# *REMOVE* files in current directory matching checksums.
+# Checksums from stdin, comparing: checksum + file size
+
+dir="."
+echo $dir
+
+input=$(cat)
+
+for i in `ls`; do
+	file_sums=$(cksum "$i" | awk '{print $1, $2}')
+	echo "$input" | grep -q "^$file_sums"
+	if [ $? -eq 0 ]; then
+		echo "Match found, removing ${i}"
+		rm "$i"
+	else
+		echo "No match found for ${i}!"
+	fi
+done

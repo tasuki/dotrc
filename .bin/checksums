@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Print checksums for all files in current (or passed in) dir.
+
+dir="${1:-.}"
+
+find "$dir" -type f | sort | grep -v checksums | while read -r file; do
+	cksum "$file"
+done
