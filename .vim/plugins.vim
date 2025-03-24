@@ -4,7 +4,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/sideways.vim', { 'tag': 'v0.4.0' }
 Plug 'editorconfig/editorconfig-vim', { 'tag': 'v1.2.0' }
-Plug 'garbas/vim-snipmate', { 'commit': 'f5a75d0' } " the old one with no deps
 Plug 'junegunn/fzf.vim', { 'commit': '87b60bb' }
 Plug 'kien/rainbow_parentheses.vim', { 'commit': 'eb8baa5' }
 Plug 'preservim/nerdtree', { 'tag': '7.1.2' }
@@ -76,20 +75,17 @@ let g:rbpt_colorpairs = [
 	\ ]
 
 " turn off rainbows for vimwiki and markdown
-function! HasRainbows()
-	return &ft != "vimwiki" && &ft != "markdown"
-endfunction
-au VimEnter * if HasRainbows() | RainbowParenthesesToggleAll
-au Syntax   * if HasRainbows() | RainbowParenthesesLoadRound
-au Syntax   * if HasRainbows() | RainbowParenthesesLoadSquare
-au Syntax   * if HasRainbows() | RainbowParenthesesLoadBraces
+" function! HasRainbows()
+" 	return &ft != "vimwiki" && &ft != "markdown"
+" endfunction
+" au VimEnter * if HasRainbows() | RainbowParenthesesToggleAll
+" au Syntax   * if HasRainbows() | RainbowParenthesesLoadRound
+" au Syntax   * if HasRainbows() | RainbowParenthesesLoadSquare
+" au Syntax   * if HasRainbows() | RainbowParenthesesLoadBraces
 
 " Sideways
 nnoremap <Leader>h :SidewaysLeft<cr>
 nnoremap <Leader>l :SidewaysRight<cr>
-
-" snipmate
-let g:snippets_dir = '~/.vim/snippets/'
 
 " vimwiki
 let g:vimwiki_global_ext = 0 " don't hijack all markdown
