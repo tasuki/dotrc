@@ -3,7 +3,6 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/sideways.vim', { 'tag': 'v0.4.0' }
-Plug 'easymotion/vim-easymotion', { 'tag': 'v3.0.1' }
 Plug 'editorconfig/editorconfig-vim', { 'tag': 'v1.2.0' }
 Plug 'garbas/vim-snipmate', { 'commit': 'f5a75d0' } " the old one with no deps
 Plug 'junegunn/fzf.vim', { 'commit': '87b60bb' }
@@ -20,13 +19,6 @@ endif
 call plug#end()
 
 delc PlugUpgrade	" don't accidentally upgrade vim-plug
-
-" easymotion
-hi link EasyMotionTarget PreProc
-hi link EasyMotionShade Comment
-
-let g:EasyMotion_mapping_f = '<Leader>j'
-let g:EasyMotion_mapping_F = '<Leader>k'
 
 " editorconfig: exclude fzf
 let g:EditorConfig_exclude_patterns = ['term://.*']
