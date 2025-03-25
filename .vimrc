@@ -81,9 +81,9 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,
 	\.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
 " extras based on filename
-autocmd BufNewFile,BufRead *.{html,php} source ~/.vim/html.vim
-autocmd BufNewFile,BufRead *.tex source ~/.vim/tex.vim
-autocmd BufNewFile,BufRead *.md source ~/.vim/md.vim
+autocmd BufNewFile,BufRead *.{html,php} source ~/.vim/mappings/html.vim
+autocmd BufNewFile,BufRead *.tex source ~/.vim/mappings/tex.vim
+autocmd BufNewFile,BufRead *.md source ~/.vim/mappings/md.vim
 autocmd BufNewFile,BufRead *.sc set filetype=scala
 
 " don't outdent # in python
