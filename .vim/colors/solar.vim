@@ -16,6 +16,7 @@ let s:base00      = "#8f9c98"
 let s:base01      = "#bec2b6"
 let s:base02      = "#eee8d5"
 let s:base03      = "#fdf6e3"
+
 let s:yellow      = "#aa8800"
 let s:orange      = "#cc6600"
 let s:red         = "#dd2244"

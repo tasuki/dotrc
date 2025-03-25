@@ -17,7 +17,7 @@
 *utf8: 1
 
 ! here comes the sun...
-#include ".xcolors/solarized-light"
+#include ".xcolors/solar"
 
 
 ! URxvt
