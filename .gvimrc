@@ -8,7 +8,7 @@ set guioptions=
 set guicursor=a:blinkon0
 
 " favourite fixed width typeface
-set guifont=Ubuntu\ Mono\ 15
+set guifont=Rec\ Mono\ Duotone\ 15
 
 " this should really be set in ~/.vimrc but that breaks things
 set background=light
