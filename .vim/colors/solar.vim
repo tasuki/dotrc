@@ -122,7 +122,7 @@ hi! link Operator Statement
 exe "hi! PreProc"        .s:fmt_none   .s:fg_orange .s:bg_none
 exe "hi! Type"           .s:fmt_none   .s:fg_yellow .s:bg_none
 exe "hi! Special"        .s:fmt_none   .s:fg_red    .s:bg_none
-exe "hi! Delimiter"      .s:fmt_none   .s:fg_base1  .s:bg_none
+exe "hi! Delimiter"      .s:fmt_none   .s:fg_base2  .s:bg_none
 exe "hi! Underlined"     .s:fmt_undr   .s:fg_base0  .s:bg_none
 exe "hi! Ignore"         .s:fmt_none   .s:fg_none   .s:bg_none
 exe "hi! Error"          .s:fmt_bold   .s:fg_red    .s:bg_none
@@ -136,6 +136,7 @@ exe "hi! StatusLineNC"   .s:fmt_none   .s:fg_base1  .s:bg_base02
 exe "hi! Visual"         .s:fmt_none   .s:fg_base03 .s:bg_base00
 exe "hi! Directory"      .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ErrorMsg"       .s:fmt_revr   .s:fg_red    .s:bg_none
+exe "hi! CurSearch"      .s:fmt_stnd   .s:fg_orange .s:bg_none
 exe "hi! IncSearch"      .s:fmt_stnd   .s:fg_orange .s:bg_none
 exe "hi! Search"         .s:fmt_revr   .s:fg_yellow .s:bg_none
 exe "hi! MoreMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
@@ -143,6 +144,7 @@ exe "hi! ModeMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! LineNr"         .s:fmt_none   .s:fg_base01 .s:bg_base02
 exe "hi! Question"       .s:fmt_bold   .s:fg_cyan   .s:bg_none
 exe "hi! VertSplit"      .s:fmt_revb   .s:fg_base02 .s:bg_base00
+exe "hi! WinSeparator"   .s:fmt_none   .s:fg_base01 .s:bg_base03
 exe "hi! Title"          .s:fmt_bold   .s:fg_base00 .s:bg_none
 exe "hi! VisualNOS"      .s:fmt_stnd   .s:fg_none   .s:bg_base02 .s:fmt_revb
 exe "hi! WarningMsg"     .s:fmt_bold   .s:fg_red    .s:bg_none
@@ -155,6 +157,7 @@ exe "hi! DiffDelete"     .s:fmt_bold   .s:fg_red    .s:bg_base02
 hi! link Added DiffAdd
 hi! link Changed DiffChange
 hi! link Deleted DiffDelete
+hi! link Removed DiffDelete
 exe "hi! DiffText"       .s:fmt_bold   .s:fg_blue   .s:bg_base02 .s:sp_blue
 exe "hi! SignColumn"     .s:fmt_none   .s:fg_base0
 exe "hi! Conceal"        .s:fmt_none   .s:fg_blue   .s:bg_none
@@ -175,12 +178,43 @@ exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! Cursor"         .s:fmt_none   .s:fg_base03 .s:bg_base0
 hi! link lCursor Cursor
 exe "hi! MatchParen"     .s:fmt_bold   .s:fg_red    .s:bg_base01
+exe "hi! NormalFloat"    .s:fmt_none   .s:fg_base2  .s:bg_none
+exe "hi! WinBar"         .s:fmt_bold   .s:fg_base2  .s:bg_base02
+exe "hi! WinBarNC"       .s:fmt_none   .s:fg_base2  .s:bg_base02
+
+if has("nvim-0.10")
+	" :h treesitter-highlight-groups
+	hi! link @variable Identifier
+	exe "hi! @comment.error"    .s:fmt_bold   .s:fg_red    .s:bg_none
+	exe "hi! @comment.warning"  .s:fmt_bold   .s:fg_orange .s:bg_none
+	exe "hi! @comment.note"     .s:fmt_bold   .s:fg_green  .s:bg_none
+	exe "hi! @markup.heading.1" .s:fmt_bold   .s:fg_orange .s:bg_none
+	exe "hi! @markup.heading.2" .s:fmt_bold   .s:fg_yellow .s:bg_none
+	exe "hi! @markup.quote"     .s:fmt_none   .s:fg_green  .s:bg_none
+	exe "hi! @markup.raw"       .s:fmt_none   .s:fg_green  .s:bg_none
+	exe "hi! @markup.raw.block" .s:fmt_none   .s:fg_green  .s:bg_none
+	exe "hi! @markup.link"      .s:fmt_undr   .s:fg_blue   .s:bg_none
+	exe "hi! @tag"              .s:fmt_none   .s:fg_blue   .s:bg_none
+	exe "hi! @tag.builtin"      .s:fmt_none   .s:fg_blue   .s:bg_none
+	exe "hi! @tag.attribute"    .s:fmt_none   .s:fg_yellow .s:bg_none
+	exe "hi! @tag.delimiter"    .s:fmt_none   .s:fg_base01 .s:bg_none
+
+	" :h diagnostic-highlights
+	exe "hi! DiagnosticError"   .s:fmt_none   .s:fg_red    .s:bg_none
+	exe "hi! DiagnosticWarn"    .s:fmt_none   .s:fg_orange .s:bg_none
+	exe "hi! DiagnosticInfo"    .s:fmt_none   .s:fg_yellow .s:bg_none
+	exe "hi! DiagnosticHint"    .s:fmt_none   .s:fg_base0  .s:bg_none
+	exe "hi! DiagnosticOk"      .s:fmt_none   .s:fg_green  .s:bg_none
+
+	exe "hi! DiagnosticUnderlineError"   .s:fmt_undr   .s:fg_red    .s:bg_none
+	exe "hi! DiagnosticUnderlineWarn"    .s:fmt_undr   .s:fg_orange .s:bg_none
+	exe "hi! DiagnosticUnderlineInfo"    .s:fmt_undr   .s:fg_yellow .s:bg_none
+	exe "hi! DiagnosticUnderlineHint"    .s:fmt_undr   .s:fg_base0  .s:bg_none
+	exe "hi! DiagnosticUnderlineOk"      .s:fmt_undr   .s:fg_green  .s:bg_none
+endif
 
 
-" Bare minimum language support
-
-" Haskell
-exe "hi! ConId"          .s:fmt_none   .s:fg_yellow .s:bg_none
+" Legacy language support
 
 " HTML
 exe "hi! htmlTag"            .s:fmt_none .s:fg_base01 .s:bg_none

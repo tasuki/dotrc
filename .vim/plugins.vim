@@ -11,7 +11,10 @@ Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
 Plug 'tpope/vim-surround', { 'tag': 'v2.2' }
 Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
-if has("nvim")
+if has("nvim-0.10")
+	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.9.3', 'do': ':TSUpdate' }
+	Plug 'stevearc/aerial.nvim', { 'tag': 'v2.5.0' }
+elseif has("nvim-0.5")
 	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
 	Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }
 endif
@@ -73,15 +76,6 @@ let g:rbpt_colorpairs = [
 	\ [ 6, '#2aa198'],
 	\ [ 2, '#859900'],
 	\ ]
-
-" turn off rainbows for vimwiki and markdown
-" function! HasRainbows()
-" 	return &ft != "vimwiki" && &ft != "markdown"
-" endfunction
-" au VimEnter * if HasRainbows() | RainbowParenthesesToggleAll
-" au Syntax   * if HasRainbows() | RainbowParenthesesLoadRound
-" au Syntax   * if HasRainbows() | RainbowParenthesesLoadSquare
-" au Syntax   * if HasRainbows() | RainbowParenthesesLoadBraces
 
 " Sideways
 nnoremap <Leader>h :SidewaysLeft<cr>
