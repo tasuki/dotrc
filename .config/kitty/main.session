@@ -2,21 +2,20 @@ enabled_layouts tall:bias=62;full_size=1;mirrored=true,stack
 
 new_tab dotrc
 cd ~/dotrc/
-launch zshi 'v README.md'
-launch zshi 'g s'
+launch nvim README.md
+launch zsh
 
 new_tab wiki
 cd ~/data/prog/vitwiki/
-launch zshi 'v -c VimwikiIndex'
-launch zshi 'g s'
+launch nvim -c VimwikiIndex
+launch zsh
 
 new_tab blog
 cd ~/data/prog/blog/
-launch zshi 'v README.md'
-launch zshi 'g s'
+launch nvim README.md
+launch zsh
 
 new_tab valar
 cd ~/data/prog/valar-setup/
-launch zshi 'v README.md'
-launch zshi 'vagrant status'
-launch zshi 'g s'
+launch nvim README.md
+launch zsh
