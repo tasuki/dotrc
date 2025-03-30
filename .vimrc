@@ -23,16 +23,6 @@ let mapleader=" "    " start shortcuts with a space
 " close preview windows on leaving insert mode
 autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
-" window title for term and screen
-autocmd BufEnter * let &titlestring = "vi " . expand("%:t")
-if &term == "screen"
-	set t_ts=k
-	set t_fs=\
-endif
-if &term == "screen" || &term == "xterm"
-	set title
-endif
-
 " window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
