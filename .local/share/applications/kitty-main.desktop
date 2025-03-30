@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=kitty-main
-Type=Application
-Terminal=false
-Exec=kitty --title kitty-main --session main.session
-Path=/home/vita/
-Icon=/home/vita/.local/share/applications/kitty-light.png

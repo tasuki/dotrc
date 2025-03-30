@@ -1,5 +1,0 @@
-#!/bin/zsh
-
-# run a command in zsh and Keep Running
-# from https://stackoverflow.com/a/64793707
-zsh -i --nozle <<< "$@; exec < /dev/tty; setopt zle"

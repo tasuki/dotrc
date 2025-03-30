@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=kitty-basic
-Type=Application
-Terminal=false
-Exec=kitty --title kitty-basic --config /home/vita/.config/kitty/basic.conf
-Path=/home/vita/
-Icon=/home/vita/.local/share/applications/kitty-light.png

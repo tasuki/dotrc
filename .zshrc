@@ -152,6 +152,20 @@ function mans {
 function tm { tmux attach -t $@ || tmux new -s $@ } # tmux attach of create session
 alias tmls='tmux ls'
 
+# kitty
+alias s='kitty +kitten ssh'
+tab() {
+	DIR=$(find . -type d | fzf --preview 'echo {}' --prompt "Select Directory: ")
+	if [[ -n "$DIR" ]]; then
+		ABS_DIR=$(realpath "$DIR")
+		TAB_TITLE=$(basename "$ABS_DIR")
+		kitty @ launch --type tab --cwd "$ABS_DIR" --tab-title "$TAB_TITLE" -- nvim README.md
+		kitty @ launch --type window --cwd "$ABS_DIR"
+	else
+		echo "No dir selected"
+	fi
+}
+
 # searching
 alias grep='grep --color=auto'  # if stuck with grep, colorize
 

@@ -9,13 +9,3 @@ new_tab wiki
 cd ~/data/prog/vitwiki/
 launch nvim -c VimwikiIndex
 launch zsh
-
-new_tab blog
-cd ~/data/prog/blog/
-launch nvim README.md
-launch zsh
-
-new_tab valar
-cd ~/data/prog/valar-setup/
-launch nvim README.md
-launch zsh

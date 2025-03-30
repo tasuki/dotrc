@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=kitty-lsg
+Name=kitty
 Type=Application
 Terminal=false
-Exec=kitty --title kitty-lsg --session lsg.session
+Exec=kitty --title kitty --session main.session
 Path=/home/vita/
 Icon=/home/vita/.local/share/applications/kitty-dark.png
