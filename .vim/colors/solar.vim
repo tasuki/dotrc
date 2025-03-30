@@ -182,6 +182,19 @@ exe "hi! NormalFloat"    .s:fmt_none   .s:fg_base2  .s:bg_none
 exe "hi! WinBar"         .s:fmt_bold   .s:fg_base2  .s:bg_base02
 exe "hi! WinBarNC"       .s:fmt_none   .s:fg_base2  .s:bg_base02
 
+" :h diagnostic-highlights
+exe "hi! DiagnosticError"   .s:fmt_none   .s:fg_red    .s:bg_none
+exe "hi! DiagnosticWarn"    .s:fmt_none   .s:fg_orange .s:bg_none
+exe "hi! DiagnosticInfo"    .s:fmt_none   .s:fg_yellow .s:bg_none
+exe "hi! DiagnosticHint"    .s:fmt_none   .s:fg_base0  .s:bg_none
+exe "hi! DiagnosticOk"      .s:fmt_none   .s:fg_green  .s:bg_none
+
+exe "hi! DiagnosticUnderlineError"   .s:fmt_undr   .s:fg_red    .s:bg_none
+exe "hi! DiagnosticUnderlineWarn"    .s:fmt_undr   .s:fg_orange .s:bg_none
+exe "hi! DiagnosticUnderlineInfo"    .s:fmt_undr   .s:fg_yellow .s:bg_none
+exe "hi! DiagnosticUnderlineHint"    .s:fmt_undr   .s:fg_base0  .s:bg_none
+exe "hi! DiagnosticUnderlineOk"      .s:fmt_undr   .s:fg_green  .s:bg_none
+
 if has("nvim-0.10")
 	" :h treesitter-highlight-groups
 	hi! link @variable Identifier
@@ -198,23 +211,10 @@ if has("nvim-0.10")
 	exe "hi! @tag.builtin"      .s:fmt_none   .s:fg_blue   .s:bg_none
 	exe "hi! @tag.attribute"    .s:fmt_none   .s:fg_yellow .s:bg_none
 	exe "hi! @tag.delimiter"    .s:fmt_none   .s:fg_base01 .s:bg_none
-
-	" :h diagnostic-highlights
-	exe "hi! DiagnosticError"   .s:fmt_none   .s:fg_red    .s:bg_none
-	exe "hi! DiagnosticWarn"    .s:fmt_none   .s:fg_orange .s:bg_none
-	exe "hi! DiagnosticInfo"    .s:fmt_none   .s:fg_yellow .s:bg_none
-	exe "hi! DiagnosticHint"    .s:fmt_none   .s:fg_base0  .s:bg_none
-	exe "hi! DiagnosticOk"      .s:fmt_none   .s:fg_green  .s:bg_none
-
-	exe "hi! DiagnosticUnderlineError"   .s:fmt_undr   .s:fg_red    .s:bg_none
-	exe "hi! DiagnosticUnderlineWarn"    .s:fmt_undr   .s:fg_orange .s:bg_none
-	exe "hi! DiagnosticUnderlineInfo"    .s:fmt_undr   .s:fg_yellow .s:bg_none
-	exe "hi! DiagnosticUnderlineHint"    .s:fmt_undr   .s:fg_base0  .s:bg_none
-	exe "hi! DiagnosticUnderlineOk"      .s:fmt_undr   .s:fg_green  .s:bg_none
 endif
 
 
-" Legacy language support
+" Language support for legacy vim
 
 " HTML
 exe "hi! htmlTag"            .s:fmt_none .s:fg_base01 .s:bg_none
