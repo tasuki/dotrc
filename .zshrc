@@ -154,12 +154,18 @@ alias tmls='tmux ls'
 
 # kitty
 alias s='kitty +kitten ssh'
-tab() {
-	DIR=$(find . -type d | fzf --preview 'echo {}' --prompt "Select Directory: ")
+function tab {
+	DIR=$(find "${1:-.}" -type d | fzf)
 	if [[ -n "$DIR" ]]; then
 		ABS_DIR=$(realpath "$DIR")
 		TAB_TITLE=$(basename "$ABS_DIR")
-		kitty @ launch --type tab --cwd "$ABS_DIR" --tab-title "$TAB_TITLE" -- nvim README.md
+		README=$(find "$ABS_DIR" -maxdepth 1 -type f -iname 'README*' | head -n 1)
+
+		if [[ -n "$README" ]]; then
+			kitty @ launch --type tab --cwd "$ABS_DIR" --tab-title "$TAB_TITLE" -- nvim "$README"
+		else
+			kitty @ launch --type tab --cwd "$ABS_DIR" --tab-title "$TAB_TITLE"
+		fi
 		kitty @ launch --type window --cwd "$ABS_DIR"
 	else
 		echo "No dir selected"
@@ -189,6 +195,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
+zstyle ':completion:*:complete:tab:*' file-patterns '*(/)'
 
 # theme
 source $HOME/.zsh-custom/themes/tasuki.zsh-theme
