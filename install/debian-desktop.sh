@@ -11,7 +11,7 @@ echo "1. Installing things from the main repos"
 sudo apt install curl bash git stow `# required packages for my dotrc` \
 	tmux neovim fzf `# must have cli tools` \
 	zsh zsh-autosuggestions zsh-syntax-highlighting `# zsh stuff` \
-	bat cloc entr exa fd-find htop jc jq rename ripgrep rlwrap units `# cli tools` \
+	bat cloc entr exa fd-find htop btop btm git-delta jc jq rename ripgrep rlwrap units `# cli tools` \
 	kitty vim-gtk3 geeqie clementine vlc gparted xsel keepassxc `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks yaru-theme-gnome-shell yaru-theme-gtk yaru-theme-icon `# gnome` \
 	dnsmasq firehol mosh nethogs syncthing `# network tools` \
@@ -61,8 +61,8 @@ code --install-extension jock.svg
 echo
 echo "3. Installing custom debs"
 
-install_deb btm   "https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb"   # coming in trixie: https://packages.debian.org/trixie/btm
-install_deb delta "https://github.com/dandavison/delta/releases/download/0.12.1/git-delta_0.12.1_amd64.deb" # coming in trixie: https://packages.debian.org/trixie/git-delta
+# install_deb btm   "https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb"   # coming in trixie: https://packages.debian.org/trixie/btm
+# install_deb delta "https://github.com/dandavison/delta/releases/download/0.12.1/git-delta_0.12.1_amd64.deb" # coming in trixie: https://packages.debian.org/trixie/git-delta
 
 
 echo
