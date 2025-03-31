@@ -4,8 +4,11 @@
 [ -z "$PS1" ] && return
 
 ### Welcome message
-date
-[ -f /usr/games/fortune ] && /usr/games/fortune wisdom people
+# date
+# # `strfile` to gen the .dat file
+# [ -f /usr/games/fortune ] && \
+# 	/usr/games/fortune ~/.local/share/games/fortunes/ | \
+# 	fmt -w $(( ${COLUMNS:-60} < 60 ? ${COLUMNS:-60} : 60 ))
 
 
 ### User configuration
