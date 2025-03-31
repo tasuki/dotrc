@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/sideways.vim', { 'tag': 'v0.4.0' }
 Plug 'editorconfig/editorconfig-vim', { 'tag': 'v1.2.0' }
 Plug 'junegunn/fzf.vim', { 'commit': '87b60bb' }
-Plug 'kien/rainbow_parentheses.vim', { 'commit': 'eb8baa5' }
 Plug 'preservim/nerdtree', { 'tag': '7.1.2' }
 Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
@@ -62,20 +61,6 @@ map <Leader>b :Git blame<CR>
 " Commentary
 nnoremap <C-/> :Commentary<CR>
 vnoremap <C-/> :Commentary<CR>
-
-" Rainbows
-"
-" yellow, red, magenta, violet, blue, cyan, green
-" :help cterm-colors, see the NR-8 column, add 8 for light
-let g:rbpt_colorpairs = [
-	\ [ 3, '#b58900'],
-	\ [ 9, '#cb4b16'],
-	\ [ 5, '#d33682'],
-	\ [13, '#6c71c4'],
-	\ [ 4, '#268bd2'],
-	\ [ 6, '#2aa198'],
-	\ [ 2, '#859900'],
-	\ ]
 
 " Sideways
 nnoremap <Leader>h :SidewaysLeft<cr>
