@@ -24,7 +24,7 @@ WORLD_CLOCKS=$(echo "$CLOCKS" | sed "s/\(<(.*)>)>\)/{'location': \1}/g")
 ### Gnome
 
 gsettings set org.gnome.clocks world-clocks "$WORLD_CLOCKS"
-gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'pl'), ('xkb', 'cz+hack')]"
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'pl'), ('xkb', 'cshack')]"
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps', 'grp:shifts_toggle']"
 gsettings set org.gnome.desktop.input-sources show-all-sources true
 gsettings set org.gnome.desktop.interface accent-color "orange"

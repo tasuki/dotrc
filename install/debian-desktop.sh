@@ -85,3 +85,6 @@ echo
 echo "6. Linking weird command names to normal ones"
 link_name fdfind fd
 link_name batcat bat
+
+echo "7. Register custom keyboard"
+sudo dpkg-reconfigure xkb-data # also Gnome logout/login 🤮
