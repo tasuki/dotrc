@@ -15,7 +15,4 @@ else
 	git pull
 fi
 
-# update modules
-git submodule init && git submodule update
-
 source ./install/link-files.sh
