@@ -41,8 +41,9 @@ export GIT_PAGER=$(command -v delta >/dev/null 2>&1 && echo delta || echo less)
 export LESS="-FiXRSMx4"         # quit one screen, ignorecase, noinit, display color codes, chop
 
 # colorful man pages
+export GROFF_NO_SGR=1
 export LESS_TERMCAP_mb=$'\e[0m\e[31m'
-export LESS_TERMCAP_md=$'\e[0m\e[32m'
+export LESS_TERMCAP_md=$'\e[1m\e[32m'
 export LESS_TERMCAP_me=$'\e[0m'
 export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[43m\e[1;30m'
