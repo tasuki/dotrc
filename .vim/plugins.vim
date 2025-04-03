@@ -13,6 +13,7 @@ Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
 if has("nvim-0.10")
 	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.9.3', 'do': ':TSUpdate' }
 	Plug 'stevearc/aerial.nvim', { 'tag': 'v2.5.0' }
+	Plug 'neovim/nvim-lspconfig', { 'tag': 'v1.7.0' }
 elseif has("nvim-0.5")
 	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
 	Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }
@@ -105,5 +106,24 @@ require('aerial').setup {
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', ']]', '<cmd>AerialNext<CR>', {})
 	end
 }
+EOF
+endif
+
+" lsp only nvim 0.10 and up
+if has("nvim-0.10")
+lua << EOF
+vim.keymap.set('n', '<leader>a', function()
+	vim.lsp.buf.code_action({
+		filter = function(action)
+			return action.title:match('Add inferred annotation')
+		end,
+		apply = true
+	})
+end, { desc = "Auto-add inferred annotation" })
+vim.keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', 'gr', ':lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<F2>', ':lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
+
+require'lspconfig'.elmls.setup{}
 EOF
 endif

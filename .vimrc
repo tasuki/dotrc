@@ -14,6 +14,9 @@ set exrc             " allow current directory .vimrc overrides
 set mouse=nv         " mouse in normal and visual mode
 let mapleader=" "    " start shortcuts with a space
 
+" close preview windows on leaving insert mode, useful for lsp
+autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
+
 " window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -68,6 +71,7 @@ set tabstop=4        " show tabs as 4 spaces
 set softtabstop=4    " show tabs as 4 spaces
 set shiftwidth=4     " shift tab width
 set timeoutlen=200   " timeout for shortcuts
+set completeopt=menu,menuone,preview,noselect " show menu and don't select anything
 
 " j + k = normal mode
 inoremap jk <esc>

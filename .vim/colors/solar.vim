@@ -108,6 +108,7 @@ exe "let s:fmt_revr     = ' gui=NONE".s:r    ."'"
 exe "let s:fmt_revb     = ' gui=NONE".s:r.s:b."'"
 
 " Basic highlighting
+" :h group-name  :h highlight-groups
 " Normal with bg_none breaks in older tmuxes
 " Normal with bg_back breaks in gvim, choose
 " exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_none
@@ -178,22 +179,22 @@ exe "hi! ColorColumn"    .s:fmt_none   .s:fg_none   .s:bg_base02
 exe "hi! Cursor"         .s:fmt_none   .s:fg_base03 .s:bg_base0
 hi! link lCursor Cursor
 exe "hi! MatchParen"     .s:fmt_bold   .s:fg_red    .s:bg_base01
-exe "hi! NormalFloat"    .s:fmt_none   .s:fg_base2  .s:bg_none
+exe "hi! NormalFloat"    .s:fmt_ital   .s:fg_base1  .s:bg_base02
 exe "hi! WinBar"         .s:fmt_bold   .s:fg_base2  .s:bg_base02
 exe "hi! WinBarNC"       .s:fmt_none   .s:fg_base2  .s:bg_base02
 
 " :h diagnostic-highlights
-exe "hi! DiagnosticError"   .s:fmt_none   .s:fg_red    .s:bg_none
-exe "hi! DiagnosticWarn"    .s:fmt_none   .s:fg_orange .s:bg_none
-exe "hi! DiagnosticInfo"    .s:fmt_none   .s:fg_yellow .s:bg_none
-exe "hi! DiagnosticHint"    .s:fmt_none   .s:fg_base0  .s:bg_none
-exe "hi! DiagnosticOk"      .s:fmt_none   .s:fg_green  .s:bg_none
+exe "hi! DiagnosticError"   .s:fmt_ital   .s:fg_red    .s:bg_none
+exe "hi! DiagnosticWarn"    .s:fmt_ital   .s:fg_orange .s:bg_none
+exe "hi! DiagnosticInfo"    .s:fmt_ital   .s:fg_yellow .s:bg_none
+exe "hi! DiagnosticHint"    .s:fmt_ital   .s:fg_base0  .s:bg_none
+exe "hi! DiagnosticOk"      .s:fmt_ital   .s:fg_green  .s:bg_none
 
-exe "hi! DiagnosticUnderlineError"   .s:fmt_undr   .s:fg_red    .s:bg_none
-exe "hi! DiagnosticUnderlineWarn"    .s:fmt_undr   .s:fg_orange .s:bg_none
-exe "hi! DiagnosticUnderlineInfo"    .s:fmt_undr   .s:fg_yellow .s:bg_none
-exe "hi! DiagnosticUnderlineHint"    .s:fmt_undr   .s:fg_base0  .s:bg_none
-exe "hi! DiagnosticUnderlineOk"      .s:fmt_undr   .s:fg_green  .s:bg_none
+exe "hi! DiagnosticUnderlineError"   .s:fmt_undi   .s:fg_red    .s:bg_none
+exe "hi! DiagnosticUnderlineWarn"    .s:fmt_undi   .s:fg_orange .s:bg_none
+exe "hi! DiagnosticUnderlineInfo"    .s:fmt_undi   .s:fg_yellow .s:bg_none
+exe "hi! DiagnosticUnderlineHint"    .s:fmt_undi   .s:fg_base0  .s:bg_none
+exe "hi! DiagnosticUnderlineOk"      .s:fmt_undi   .s:fg_green  .s:bg_none
 
 if has("nvim-0.10")
 	" :h treesitter-highlight-groups
