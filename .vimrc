@@ -104,3 +104,8 @@ endif
 if filereadable(expand("~/.vimrc.local"))
 	source ~/.vimrc.local
 endif
+
+" per-project overrides
+if filereadable(getcwd() . "/.vimrc.local")
+	execute "source " . getcwd() . "/.vimrc.local"
+endif
