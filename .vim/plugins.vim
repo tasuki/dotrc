@@ -119,10 +119,13 @@ vim.keymap.set('n', '<leader>a', function()
 		end,
 		apply = true
 	})
-end, { desc = "Auto-add inferred annotation" })
-vim.keymap.set('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', 'gr', ':lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<F2>', ':lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
+end)
+vim.keymap.set('n', '<leader>c', vim.lsp.buf.code_action, { noremap = true, silent = true })
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true, silent = true })
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, { noremap = true, silent = true })
+vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, { noremap = true, silent = true })
+vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { noremap = true, silent = true })
+vim.keymap.set('n', 'gm', vim.diagnostic.open_float, { noremap = true, silent = true })
 
 require'lspconfig'.elmls.setup{}
 EOF
