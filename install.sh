@@ -15,4 +15,6 @@ else
 	git pull
 fi
 
+chmod 444 ./.config/btop/btop.conf
+
 source ./install/link-files.sh
