@@ -1,5 +1,3 @@
-enabled_layouts tall:bias=62;full_size=1;mirrored=true,stack
-
 new_tab dotrc
 cd ~/dotrc/
 launch nvim README.md
