@@ -38,12 +38,8 @@ repo_with_gpg_key \
 	"dbeaver.gpg.key" "https://dbeaver.io/debs/dbeaver.gpg.key" \
 	"dbeaver.list"    "https://dbeaver.io/debs/dbeaver-ce /"
 
-repo_with_asc_key \
-	"microsoft.gpg" "https://packages.microsoft.com/keys/microsoft.asc" \
-	"vscode.list"   "https://packages.microsoft.com/repos/code stable main"
 
-
-CUSTOM_PACKAGES="code dbeaver-ce google-chrome-stable"
+CUSTOM_PACKAGES="dbeaver-ce google-chrome-stable"
 if dpkg -l $CUSTOM_PACKAGES > /dev/null; then
 	echo "Packages from custom repositories are already installed"
 else
@@ -51,11 +47,6 @@ else
 	sudo apt-get update
 	sudo apt-get install $CUSTOM_PACKAGES
 fi
-
-code --install-extension vscodevim.vim
-code --install-extension ryu1kn.annotator
-code --install-extension EditorConfig.EditorConfig
-code --install-extension jock.svg
 
 
 echo

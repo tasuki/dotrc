@@ -12,6 +12,3 @@ sudo apt update
 sudo apt install conda
 
 maybe_append_zshrc conda "source /opt/conda/etc/profile.d/conda.sh  # unbreak conda"
-
-code --install-extension ms-python.python
-code --install-extension ms-toolsai.jupyter

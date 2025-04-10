@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
 source "$SCRIPT_DIR/functions.sh"
 
-sudo apt install build-essential curl libffi-dev libffi8 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 zlib1g-dev  code
+sudo apt install build-essential curl libffi-dev libffi8 libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 zlib1g-dev
 
 if (command -v ghcup > /dev/null 2>&1); then
 	echo "GHCup is already installed"
@@ -13,5 +13,3 @@ else
 
 	maybe_append_zshrc ghcup '[ -f "/home/vita/.ghcup/env" ] && . "/home/vita/.ghcup/env" # ghcup-env'
 fi
-
-code --install-extension haskell.haskell
