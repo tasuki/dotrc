@@ -34,12 +34,7 @@ repo_with_gpg_key \
 	"google.gpg.key"     "https://dl.google.com/linux/linux_signing_key.pub" \
 	"google-chrome.list" "https://dl.google.com/linux/chrome/deb/ stable main"
 
-repo_with_gpg_key \
-	"dbeaver.gpg.key" "https://dbeaver.io/debs/dbeaver.gpg.key" \
-	"dbeaver.list"    "https://dbeaver.io/debs/dbeaver-ce /"
-
-
-CUSTOM_PACKAGES="dbeaver-ce google-chrome-stable"
+CUSTOM_PACKAGES="google-chrome-stable"
 if dpkg -l $CUSTOM_PACKAGES > /dev/null; then
 	echo "Packages from custom repositories are already installed"
 else
