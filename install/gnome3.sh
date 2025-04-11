@@ -77,12 +77,6 @@ gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock dock-position "BOTTOM"
 gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock extend-height false
 
-SCHEMA=$(schema "unite@hardpixel.eu")
-gsettings $SCHEMA set org.gnome.shell.extensions.unite extend-left-box false
-gsettings $SCHEMA set org.gnome.shell.extensions.unite hide-aggregate-menu-arrow true
-gsettings $SCHEMA set org.gnome.shell.extensions.unite notifications-position "center"
-gsettings $SCHEMA set org.gnome.shell.extensions.unite show-window-buttons "never"
-
 SCHEMA=$(schema "system-monitor-next@paradoxxx.zero.gmail.com")
 gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor center-display false
 gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor compact-display false
