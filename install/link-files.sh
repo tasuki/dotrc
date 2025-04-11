@@ -24,4 +24,4 @@ done
 
 # link individual files for the rest
 cd "$DOTRC_DIR"
-stow --no-folding --verbose --dotfiles --ignore=".sh$|^install$|^.gitmodules$|^.git$|^.editorconfig$|^.vim$|^.zsh-custom$|^runbooks$" .
+stow --no-folding --verbose --dotfiles --ignore=".sh$|^install$|^.git$|^.editorconfig$|^.vim$|^.zsh-custom$" .
