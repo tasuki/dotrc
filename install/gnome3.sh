@@ -64,6 +64,36 @@ gsettings set org.gnome.shell disabled-extensions "['desktop-icons@csoriano']"
 gsettings set org.gnome.shell.world-clocks locations "$CLOCKS"
 gsettings set org.gnome.shell.window-switcher current-workspace-only true
 
+# Gnome Terminal; an amazing amount of effort considering I don't even use it...
+hex_to_rgb() { printf "rgb(%d,%d,%d)\n" 0x${1:0:2} 0x${1:2:2} 0x${1:4:2}; }
+TERMINAL_PROFILE_ID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
+TERMINAL_PROFILE="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$TERMINAL_PROFILE_ID/"
+gsettings set $TERMINAL_PROFILE use-system-font false
+gsettings set $TERMINAL_PROFILE font 'Rec Mono Duotone 14'
+gsettings set $TERMINAL_PROFILE scrollbar-policy 'never'
+
+gsettings set $TERMINAL_PROFILE use-theme-colors false
+gsettings set $TERMINAL_PROFILE background-color $(hex_to_rgb "fdf6e3")
+gsettings set $TERMINAL_PROFILE foreground-color $(hex_to_rgb "62797a")
+gsettings set $TERMINAL_PROFILE palette \
+	"['"$(hex_to_rgb "eee8d5")"'
+	, '"$(hex_to_rgb "dd2244")"'
+	, '"$(hex_to_rgb "889900")"'
+	, '"$(hex_to_rgb "aa8800")"'
+	, '"$(hex_to_rgb "2288cc")"'
+	, '"$(hex_to_rgb "cc3399")"'
+	, '"$(hex_to_rgb "22aa99")"'
+	, '"$(hex_to_rgb "073642")"'
+	, '"$(hex_to_rgb "fdf6e3")"'
+	, '"$(hex_to_rgb "cc6600")"'
+	, '"$(hex_to_rgb "bec2b6")"'
+	, '"$(hex_to_rgb "8f9c98")"'
+	, '"$(hex_to_rgb "62797a")"'
+	, '"$(hex_to_rgb "7777dd")"'
+	, '"$(hex_to_rgb "37565e")"'
+	, '"$(hex_to_rgb "002b36")"'
+	]"
+
 
 ### Extensions
 
