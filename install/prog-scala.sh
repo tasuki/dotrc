@@ -6,6 +6,8 @@ source "$SCRIPT_DIR/functions.sh"
 
 sudo apt install default-jdk
 
-install_binary amm \
-	"https://github.com/com-lihaoyi/Ammonite/releases/download/3.0.2/3.5-3.0.2" \
-	"bf4cc5e27fbb278725093d43d57fc0ffd2f7f7fbbdc7f54a2d1237bac324aa9e"
+mise use --global coursier@2.1.24
+cs install scala:3.6.4 scalac:3.6.4 ammonite:3.0.2
+maybe_append_zshrc coursier 'export PATH="$PATH:$HOME/.local/share/coursier/bin"'
+
+command -v code > /dev/null 2>&1 && code --install-extension scalameta.metals
