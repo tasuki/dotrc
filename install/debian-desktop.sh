@@ -34,6 +34,11 @@ repo_with_gpg_key \
 	"google.gpg.key"     "https://dl.google.com/linux/linux_signing_key.pub" \
 	"google-chrome.list" "https://dl.google.com/linux/chrome/deb/ stable main"
 
+# Using install_binary for now...
+# repo_with_gpg_key \
+# 	"jdx-mise.gpg.key"   "https://mise.jdx.dev/gpg-key.pub" \
+# 	"jdx-mise.list"      "https://mise.jdx.dev/deb stable main"
+
 CUSTOM_PACKAGES="google-chrome-stable"
 if dpkg -l $CUSTOM_PACKAGES > /dev/null; then
 	echo "Packages from custom repositories are already installed"
@@ -53,6 +58,11 @@ echo "3. Installing custom debs"
 
 echo
 echo "4. Installing custom binaries"
+
+install_binary mise \
+	"https://github.com/jdx/mise/releases/download/v2025.4.1/mise-v2025.4.1-linux-x64" \
+	"670b182430d20a5c9dbfcce0af7ff64b87f62938b62663c5ca5f7661c067fe9b"
+mise use -g usage
 
 install_binary sabaki \
 	"https://github.com/SabakiHQ/Sabaki/releases/download/v0.52.2/sabaki-v0.52.2-linux-x64.AppImage" \

@@ -216,5 +216,10 @@ ZSH_HIGHLIGHT_STYLES[comment]='fg=11'
 maybe_source /usr/share/doc/fzf/examples/key-bindings.zsh
 maybe_source /usr/share/doc/fzf/examples/completion.zsh
 
+# mise
+command -v mise >/dev/null 2>&1 && \
+	eval "$(mise activate zsh)" && \
+	eval "$(mise completion zsh)"
+
 # local overrides
 maybe_source $HOME/.zshrc.local
