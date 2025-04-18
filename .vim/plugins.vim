@@ -86,7 +86,8 @@ require'nvim-treesitter.configs'.setup {
 		"bash", "vim", "lua", -- the system
 		"elm", "haskell", "scala", -- the good
 		"php", "python", "ruby", -- the bad
-		"html", "css", "javascript", -- the ugly
+		"html", "css", "javascript", "typescript", -- the ugly
+		"c", "cpp", -- the old skool
 	},
 
 	sync_install = false,
@@ -110,6 +111,7 @@ EOF
 endif
 
 " lsp only nvim 0.10 and up
+" https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 if has("nvim-0.10")
 lua << EOF
 vim.keymap.set('n', '<leader>a', function()
