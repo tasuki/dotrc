@@ -144,6 +144,7 @@ exe "hi! MoreMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! ModeMsg"        .s:fmt_none   .s:fg_blue   .s:bg_none
 exe "hi! LineNr"         .s:fmt_none   .s:fg_base01 .s:bg_base02
 exe "hi! Question"       .s:fmt_bold   .s:fg_cyan   .s:bg_none
+exe "hi! QuickFixLine"   .s:fmt_bold   .s:fg_base0  .s:bg_none
 exe "hi! VertSplit"      .s:fmt_revb   .s:fg_base02 .s:bg_base00
 exe "hi! WinSeparator"   .s:fmt_none   .s:fg_base01 .s:bg_base03
 exe "hi! Title"          .s:fmt_bold   .s:fg_base00 .s:bg_none
