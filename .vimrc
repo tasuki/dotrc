@@ -86,6 +86,10 @@ noremap <Leader>p "*p
 vnoremap <Leader>c "+y
 noremap <Leader>v "+p
 
+" quickfix
+autocmd QuickFixCmdPost *grep* cwindow
+autocmd FileType qf nnoremap <buffer> <silent> p <CR><C-w>p
+
 " colour scheme
 set termguicolors
 colorscheme solar

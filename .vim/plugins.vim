@@ -61,7 +61,6 @@ map <Leader>f :NERDTreeFind<CR>
 let g:NERDTreeChDirMode = 2
 
 " Fugitive
-autocmd QuickFixCmdPost *grep* cwindow
 map <Leader>b :Git blame<CR>
 
 " Commentary
