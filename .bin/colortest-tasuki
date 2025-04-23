@@ -31,64 +31,81 @@
 # -----------------------------------------------------------------------------
 # Show a simple 8-color test pattern
 
-CMD='echo'
-OPT='-n'
+FG_CODES="39 30 31 32 33 34 35 36 37  90  91  92  93  94  95  96  97"
+BG_CODES="49 40 41 42 43 44 45 46 47 100 101 102 103 104 105 106 107"
 
-echo "[0m"
+get_fg_str() {
+	case $1 in
+		39) echo "def ";;
+		30) echo "blk ";;
+		31) echo "red ";;
+		32) echo "grn ";;
+		33) echo "yel ";;
+		34) echo "blu ";;
+		35) echo "mag ";;
+		36) echo "cya ";;
+		37) echo "whi ";;
+		90) echo "blk+";;
+		91) echo "red+";;
+		92) echo "grn+";;
+		93) echo "yel+";;
+		94) echo "blu+";;
+		95) echo "mag+";;
+		96) echo "cya+";;
+		97) echo "whi+";;
+	esac
+}
+
+get_bg_str() {
+	case $1 in
+		 49) echo "def ";;
+		 40) echo "blk ";;
+		 41) echo "red ";;
+		 42) echo "grn ";;
+		 43) echo "yel ";;
+		 44) echo "blu ";;
+		 45) echo "mag ";;
+		 46) echo "cya ";;
+		 47) echo "whi ";;
+		100) echo "blk+ ";;
+		101) echo "red+ ";;
+		102) echo "grn+ ";;
+		103) echo "yel+ ";;
+		104) echo "blu+ ";;
+		105) echo "mag+ ";;
+		106) echo "cya+ ";;
+		107) echo "whi+ ";;
+	esac
+}
+
+CMD='echo -n'
+
+$CMD "[0m"
+$CMD "Font        Fg        "
+for BG in $BG_CODES; do
+	bcolor=$(get_bg_str $BG)
+	$CMD "  $bcolor"
+done
+echo ""
+
 for AT in 0 1 3; do
 	case $AT in
-		0) attr="normal ";;
-		1) attr="bold   ";;
-		2) attr="faint  ";;
-		3) attr="italic ";;
-		4) attr="under  ";;
-		7) attr="reverse";;
+		0) attr="norm";;
+		1) attr="bold";;
+		2) attr="fain";;
+		3) attr="ital";;
+		4) attr="undl";;
+		7) attr="rvrs";;
 	esac
 
-	for FG in 39 30 31 32 33 34 35 36 37 90 91 92 93 94 95 96 97; do
-		case $FG in
-			39) fcolor="def  ";;
-			30) fcolor="blk  ";;
-			31) fcolor="red  ";;
-			32) fcolor="grn  ";;
-			33) fcolor="yel  ";;
-			34) fcolor="blu  ";;
-			35) fcolor="mag  ";;
-			36) fcolor="cya  ";;
-			37) fcolor="whi  ";;
-			90) fcolor="blk+ ";;
-			91) fcolor="red+ ";;
-			92) fcolor="grn+ ";;
-			93) fcolor="yel+ ";;
-			94) fcolor="blu+ ";;
-			95) fcolor="mag+ ";;
-			96) fcolor="cya+ ";;
-			97) fcolor="whi+ ";;
-		esac
-		$CMD $OPT "[0;${AT}m[0;${AT}m $attr "
-		$CMD $OPT "[${FG}m[${FG}m $fcolor   "
+	for FG in $FG_CODES; do
+		fcolor=$(get_fg_str $FG)
 
-		for BG in 49 40 41 42 43 44 45 46 47 100 101 102 103 104 105 106 107; do
-			case $BG in
-				49) bcolor="def  ";;
-				40) bcolor="blk  ";;
-				41) bcolor="red  ";;
-				42) bcolor="grn  ";;
-				43) bcolor="yel  ";;
-				44) bcolor="blu  ";;
-				45) bcolor="mag  ";;
-				46) bcolor="cya  ";;
-				47) bcolor="whi  ";;
-				100) bcolor="blk+ ";;
-				101) bcolor="red+ ";;
-				102) bcolor="grn+ ";;
-				103) bcolor="yel+ ";;
-				104) bcolor="blu+ ";;
-				105) bcolor="mag+ ";;
-				106) bcolor="cya+ ";;
-				107) bcolor="whi+ ";;
-			esac
-			$CMD $OPT "[${BG}m [${BG}m $bcolor"
+		$CMD "[0;${AT}m[0;${AT}m $attr  "
+		$CMD "[${FG}m[${FG}m $fcolor "
+
+		for BG in $BG_CODES; do
+			$CMD "[${BG}m [${BG}m "
 		done
 		echo "[0m"
 	done
