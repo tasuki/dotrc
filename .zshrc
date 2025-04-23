@@ -37,7 +37,7 @@ export PATH="$HOME/.bin:$HOME/.local/bin:${PATH}"
 
 # pager
 export PAGER=less
-export GIT_PAGER=$(command -v delta >/dev/null 2>&1 && echo delta || echo less)
+export GIT_PAGER=$(command -v delta > /dev/null && echo delta || echo less)
 export LESS="-FiXRSMx4"         # quit one screen, ignorecase, noinit, display color codes, chop
 
 # colorful man pages
@@ -64,14 +64,14 @@ bindkey -M vicmd 'v' edit-command-line
 [[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" history-beginning-search-forward
 
 # fzf
-if type fd > /dev/null; then
+if command -v fd > /dev/null; then
 	export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 	export FZF_ALT_C_COMMAND='fd --type d --hidden'
 else
 	export FZF_DEFAULT_COMMAND='find -type f'
 	export FZF_ALT_C_COMMAND='find -type d'
 fi
-if type bat > /dev/null; then
+if command -v bat > /dev/null; then
 	export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}'"
 fi
 
@@ -217,7 +217,7 @@ maybe_source /usr/share/doc/fzf/examples/key-bindings.zsh
 maybe_source /usr/share/doc/fzf/examples/completion.zsh
 
 # mise
-command -v mise >/dev/null 2>&1 && \
+command -v mise > /dev/null && \
 	eval "$(mise activate zsh)" && \
 	eval "$(mise completion zsh)"
 
