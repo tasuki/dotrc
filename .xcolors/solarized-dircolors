@@ -1,46 +1,10 @@
-# Exact Solarized Dark color theme for the color GNU ls utility.
-# Designed for dircolors (GNU coreutils) 5.97
-#
-# This simple theme was simultaneously designed for these terminal color schemes:
-# - Solarized dark  (best)
-# - Solarized light
-# - default dark
-# - default light
-# with a slight optimization for Solarized Dark.
-#
-# How the colors were selected:
-# - Terminal emulators often have an option typically enabled by default that makes
-#   bold a different color.  It is important to leave this option enabled so that
-#   you can access the entire 16-color Solarized palette, and not just 8 colors.
-# - We favor universality over a greater number of colors.  So we limit the number
-#   of colors so that this theme will work out of the box in all terminals,
-#   Solarized or not, dark or light.
-# - We choose to have the following category of files:
-#   NORMAL & FILE, DIR, LINK, EXEC and
-#   editable text including source, unimportant text, binary docs & multimedia source
-#   files, viewable multimedia, archived/compressed, and unimportant non-text
-# - For uniqueness, we stay away from the Solarized foreground colors are -- either
-#   base00 (brightyellow) or base0 (brighblue).  However, they can be used if
-#   you know what the bg/fg colors of your terminal are, in order to optimize the display.
-# - 3 different options are provided: universal, solarized dark, and solarized light.
-#   The only difference between the universal scheme and one that's optimized for
-#   dark/light is the color of "unimportant" files, which should blend more with the
-#   background
-# - We note that blue is the hardest color to see on dark bg and yellow is the hardest
-#   color to see on light bg (with blue being particularly bad).  So we choose yellow
-#   for multimedia files which are usually accessed in a GUI folder browser anyway.
-#   And blue is kept for custom use of this scheme's user.
-# - See table below to see the assignments.
+# Adapted from https://github.com/seebi/dircolors-solarized
+# Run `colortest-solar` to see what's available.
 
-
-# Insatllation instructions:
-# This file goes in the /etc directory, and must be world readable.
-# You can copy this file to .dir_colors in your $HOME directory to override
-# the system defaults.
-
-# COLOR needs one of these arguments: 'tty' colorizes output to ttys, but not
-# pipes. 'all' adds color characters to all output. 'none' shuts colorization
-# off.
+# COLOR needs one of these arguments:
+# 'tty' colorizes output to ttys, but not pipes.
+# 'all' adds color characters to all output.
+# 'none' shuts colorization off.
 COLOR tty
 
 # If we're on a really dumb term, tough luck we get color codes anyway!
@@ -49,42 +13,8 @@ TERM *
 # EIGHTBIT, followed by '1' for on, '0' for off. (8-bit output)
 EIGHTBIT 1
 
+
 #############################################################################
-# Below are the color init strings for the basic file types. A color init
-# string consists of one or more of the following numeric codes:
-#
-# Attribute codes: 
-#   00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
-# Text color codes:
-#   30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
-# Background color codes:
-#   40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-#
-# NOTES:
-# - See http://www.oreilly.com/catalog/wdnut/excerpt/color_names.html
-# - Color combinations
-#   ANSI Color code       Solarized  Notes                Universal             SolDark              SolLight
-#   ~~~~~~~~~~~~~~~       ~~~~~~~~~  ~~~~~                ~~~~~~~~~             ~~~~~~~              ~~~~~~~~
-#   00    none                                            NORMAL, FILE          <SAME>               <SAME>
-#   30    black           base02                                                
-#   01;30 bright black    base03     bg of SolDark                                                                         
-#   31    red             red                             docs & mm src         <SAME>               <SAME>
-#   01;31 bright red      orange                          EXEC                  <SAME>               <SAME>
-#   32    green           green                           editable text         <SAME>               <SAME>
-#   01;32 bright green    base01                          unimportant text      <SAME>
-#   33    yellow          yellow     unclear in light bg  multimedia            <SAME>               <SAME>
-#   01;33 bright yellow   base00     fg of SolLight                             unimportant non-text
-#   34    blue            blue       unclear in dark bg   user customized       <SAME>               <SAME>
-#   01;34 bright blue     base0      fg in SolDark                                                   unimportant text
-#   35    magenta         magenta                         LINK                  <SAME>               <SAME>
-#   01;35 bright magenta  violet                          archive/compressed    <SAME>               <SAME>
-#   36    cyan            cyan                            DIR                   <SAME>               <SAME>
-#   01;36 bright cyan     base1                           unimportant non-text                       <SAME>
-#   37    white           base2                                                                      
-#   01;37 bright white    base3      bg in SolLight                                                                        
-#   05;37;41                         unclear in Putty dark
-
-
 ### By file type
 
 # global default
@@ -99,11 +29,11 @@ OTHER_WRITABLE 30;44
 LINK 36
 
 # pipe, socket, block device, character device (blue bg)
-FIFO 30;44
-SOCK 35;44
-DOOR 35;44 # Solaris 2.5 and later
-BLK  33;44
-CHR  37;44
+FIFO 30;46
+SOCK 30;46
+DOOR 30;46 # Solaris 2.5 and later
+BLK  30;46
+CHR  30;46
 
 
 #############################################################################
@@ -111,9 +41,9 @@ CHR  37;44
 
 # Orphaned symlinks (blinking white on red)
 # Blink may or may not work (works on iTerm dark or light, and Putty dark)
-ORPHAN  05;37;41
+ORPHAN  30;41
 # ... and the files that orphaned symlinks point to (blinking white on red)
-MISSING 05;37;41
+MISSING 30;41
 
 # files with execute permission
 EXEC 32  # Unix
@@ -275,46 +205,25 @@ EXEC 32  # Unix
 # Your customizations
 
 # Unimportant text files
-# For universal scheme, use brightgreen 01;32
-# For optimal on light bg (but too prominent on dark bg), use white 01;34
-.log 01;32
-*~ 01;32
-*# 01;32
-#.log 01;34
-#*~ 01;34
-#*# 01;34
+.log 93
+*~ 93
+*# 93
 
 # Unimportant non-text files
-# For universal scheme, use brightcyan 01;36
-# For optimal on dark bg (but too prominent on light bg), change to 01;33
-#.bak 01;36
-#.BAK 01;36
-#.old 01;36
-#.OLD 01;36
-#.org_archive 01;36
-#.off 01;36
-#.OFF 01;36
-#.dist 01;36
-#.DIST 01;36
-#.orig 01;36
-#.ORIG 01;36
-#.swp 01;36
-#.swo 01;36
-#*,v 01;36
-.bak 01;33
-.BAK 01;33
-.old 01;33
-.OLD 01;33
-.org_archive 01;33
-.off 01;33
-.OFF 01;33
-.dist 01;33
-.DIST 01;33
-.orig 01;33
-.ORIG 01;33
-.swp 01;33
-.swo 01;33
-*,v 01;33
+.bak 92
+.BAK 92
+.old 92
+.OLD 92
+.org_archive 92
+.off 92
+.OFF 92
+.dist 92
+.DIST 92
+.orig 92
+.ORIG 92
+.swp 92
+.swo 92
+*,v 92
 
 # The brightmagenta (Solarized: purple) color is free for you to use for your
 # custom file type
