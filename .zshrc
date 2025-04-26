@@ -116,22 +116,20 @@ alias vd='nvim -'                # vim from stdin
 # listing files
 type dircolors > /dev/null && eval `dircolors ~/.xcolors/solarized-dircolors`
 
-alias l='ls'                    # too lazy
-if uname -s | grep -q 'Darwin'; then
-	alias ls='ls -vG --group-directories-first'
+if command -v lsd > /dev/null; then
+	LS_CMD="lsd"
+	alias tree="lsd --tree"
 else
-	alias ls='ls -v --color=auto --group-directories-first'
+	LS_CMD="ls --color=auto"
+	alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^-][^\/]*\//—/g' -e 's/^/ /' -e 's/-/|/'"
 fi
-alias ll='ls -lv --group-directories-first'  # show details
-alias la='ls -lva --group-directories-first' # show hidden files
-alias lx='ls -lXB'              # sort by extension
-alias lk='ls -lSr'              # sort by size
-alias lm='ls -lSr --block-size=M'
-alias lg='ls -lSr --block-size=G'
-alias lh='ls -lSrh'             # sort by size, human readable
-alias lr='ls -lR'               # recursive ls
-alias lt='ls -ltr'              # sort by date
-alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^-][^\/]*\//—/g' -e 's/^/ /' -e 's/-/|/'"
+
+alias l="$LS_CMD -v --group-directories-first"    # too lazy
+alias ll="$LS_CMD -lv --group-directories-first"  # show details
+alias la="$LS_CMD -lvA --group-directories-first" # show hidden files
+alias lx="$LS_CMD -lX"                # sort by extension
+alias lh="$LS_CMD -lSrh"              # sort by size, human readable
+alias lt="$LS_CMD -ltr"               # sort by date
 alias biggest="find . -type f -printf '%s\t%p\n' | sort -g" # find biggest files
 alias duh='du -kh'              # disk usage - human readable
 alias dus='du | sort -n'        # disk usage - sort by size
