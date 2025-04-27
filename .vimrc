@@ -70,7 +70,7 @@ set smartindent      " try to guess indentation
 set tabstop=4        " show tabs as 4 spaces
 set softtabstop=4    " show tabs as 4 spaces
 set shiftwidth=4     " shift tab width
-set timeoutlen=300   " timeout for shortcuts
+set timeoutlen=400   " timeout for shortcuts
 set completeopt=menu,menuone,preview,noselect " show menu and don't select anything
 
 " j + k = normal mode

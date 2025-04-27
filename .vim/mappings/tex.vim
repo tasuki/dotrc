@@ -1,16 +1,16 @@
-imap <leader>tt {\tt }<Left>
-vmap <leader>tt <Esc>`>a}<Esc>`<i{\tt <Esc>%
-imap <leader>bb {\bf }<Left>
-vmap <leader>bb <Esc>`>a}<Esc>`<i{\bf <Esc>%
-imap <leader>ii {\it }<Left>
-vmap <leader>ii <Esc>`>a}<Esc>`<i{\it <Esc>%
+imap <buffer> <C-L>tt {\tt }<Left>
+vmap <buffer> <leader>tt <Esc>`>a}<Esc>`<i{\tt <Esc>%
+imap <buffer> <C-L>bb {\bf }<Left>
+vmap <buffer> <leader>bb <Esc>`>a}<Esc>`<i{\bf <Esc>%
+imap <buffer> <C-L>ii {\it }<Left>
+vmap <buffer> <leader>ii <Esc>`>a}<Esc>`<i{\it <Esc>%
 
 "enclose in czech quotes
-imap <leader>uv \uv{}<Left>
-vmap <leader>uv <Esc>`>a}<Esc>`<i\uv{<Esc>%
+imap <buffer> <C-L>uv \uv{}<Left>
+vmap <buffer> <leader>uv <Esc>`>a}<Esc>`<i\uv{<Esc>%
 
 "close open \begin{something} by <leader>.
-imap <leader>. <Esc>F{lyt}f}a\end{}<Esc>PF\i
+imap <buffer> <C-L>. <Esc>F{lyt}f}a\end{}<Esc>PF\i
 
 "jump before (\) and after (}) TeX constructs
 map <M-Right> f}
