@@ -82,11 +82,10 @@
 	fa = fetch --all
 	fap = fetch --all --prune
 	l  = log --graph --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
-	ls = log --graph --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --stat
 	la = log --graph --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --all
-	lm = log --graph --format=format:'%C(yellow)%h%C(white) %cd%Creset %Cgreen(%cr)%Creset%C(bold red)%d%Creset%n''        %s%C(blue) <%an>%Creset' --date=format:'%Y-%m-%d %H:%M:%S' --all
-	ll = log --graph --decorate --pretty=oneline --abbrev-commit
-	lg = log --summary --name-status
+	lt = log --graph --pretty=format:'%C(yellow)%h%C(white) %cd%Creset %Cgreen(%cr)%Creset%C(bold red)%d%Creset%n''        %s%C(blue) <%an>%Creset' --date=format:'%Y-%m-%d %H:%M:%S'
+	ls = log --stat --pretty=format:'%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset'
+	lg = log --stat --summary
 	lf = log --full-diff --patch
 	mod = merge origin/develop
 	mom = merge origin/master
