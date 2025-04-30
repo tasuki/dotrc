@@ -174,6 +174,14 @@ function tab {
 	fi
 }
 
+function icat {
+	if [ "$#" -eq 1 ]; then
+		kitty +kitten icat "$1"
+	elif [ "$#" -eq 2 ]; then
+		convert "$1" -resize "$2"x"$2" png:- | kitty +kitten icat --stdin
+	fi
+}
+
 # searching
 alias grep='grep --color=auto'  # if stuck with grep, colorize
 
