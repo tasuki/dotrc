@@ -36,6 +36,9 @@ imap <buffer> <C-L>aa <a href=""></a><Esc>F"i
 vmap <buffer> <leader>pp <Esc>`>a</p><Esc>`<i<p><Esc>
 imap <buffer> <C-L>pp <p></p><Esc>F<i
 
+" img
+imap <buffer> <C-L>im <img src="" alt=""/><Esc>3F"i
+
 " table, list
 vmap <buffer> <leader>tr <Esc>`>a</td></tr><Esc>`<i<tr><td><Esc>
 imap <buffer> <C-L>tr <tr><td></td></tr><Esc>2F<i

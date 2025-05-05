@@ -56,8 +56,9 @@ set noswapfile       " swap files are overrated
 
 " extras based on filename
 autocmd BufNewFile,BufRead *.{html,php} source ~/.vim/mappings/html.vim
+autocmd BufNewFile,BufRead *.md  source ~/.vim/mappings/md.vim
+autocmd BufNewFile,BufRead *.py  source ~/.vim/mappings/py.vim
 autocmd BufNewFile,BufRead *.tex source ~/.vim/mappings/tex.vim
-autocmd BufNewFile,BufRead *.md source ~/.vim/mappings/md.vim
 
 " sudo write
 " broken in nvim for 10 years: https://github.com/neovim/neovim/issues/1496
@@ -93,6 +94,14 @@ autocmd FileType qf nnoremap <buffer> <silent> p <CR><C-w>p
 " colour scheme
 set termguicolors
 colorscheme solar
+
+""""""""""""""""""""""""
+" per-language settings
+
+" :h ft-python-indent
+let g:python_indent = {}
+let g:python_indent.open_paren = 'shiftwidth()'
+let g:python_indent.closed_paren_align_last_line = v:false
 
 """"""""""""""""""
 " plugin settings
