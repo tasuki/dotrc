@@ -24,8 +24,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " tabs
-map gh :tabn<CR>
-map gl :tabp<CR>
+map gh :tabp<CR>
+map gl :tabn<CR>
 map gH :tabm -1<CR>
 map gL :tabm +1<CR>
 map gn :tabnew<CR>
