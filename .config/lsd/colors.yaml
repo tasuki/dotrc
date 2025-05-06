@@ -1,32 +1,32 @@
-user: blue
-group: blue
+user: 12
+group: 11
 permission:
-    read: dark_yellow
-    write: red
-    exec: dark_green
-    exec-sticky: dark_red
-    no-access: yellow
-    octal: dark_blue
-    acl: dark_blue
-    context: cyan
+    read: 3
+    write: 9
+    exec: 2
+    exec-sticky: 1
+    no-access: 11
+    octal: 4
+    acl: 4
+    context: 14
 date:
-    hour-old: white
-    day-old: blue
-    older: yellow
+    hour-old: 14
+    day-old: 12
+    older: 11
 size:
-    large: white
-    medium: blue
-    small: yellow
-    none: green
-tree-edge: blue
+    large: 14
+    medium: 12
+    small: 11
+    none: 10
+tree-edge: 12
 git-status:
-    default: blue
-    unmodified: blue
-    ignored: blue
-    new-in-index: dark_green
-    new-in-workdir: dark_green
-    typechange: dark_yellow
-    deleted: dark_red
-    renamed: dark_green
-    modified: dark_yellow
-    conflicted: dark_red
+    default: 12
+    unmodified: 12
+    ignored: 12
+    new-in-index: 2
+    new-in-workdir: 2
+    typechange: 3
+    deleted: 1
+    renamed: 2
+    modified: 3
+    conflicted: 1

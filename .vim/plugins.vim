@@ -29,7 +29,7 @@ let g:EditorConfig_exclude_patterns = ['term://.*']
 
 " copy-paste fzf solar colors, from .zshrc, for when running without shell
 let $FZF_DEFAULT_OPTS = "" .
-	\ "--color fg:12,bg:8,hl:3,fg+:15,bg+:0,hl+:1 " .
+	\ "--color fg:12,bg:0,hl:3,fg+:15,bg+:0,hl+:1 " .
 	\ "--color info:9,prompt:6,pointer:6,marker:6,spinner:6"
 
 if filereadable("/usr/share/doc/fzf/examples/plugin/fzf.vim")

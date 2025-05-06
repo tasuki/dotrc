@@ -3,7 +3,7 @@
 echo "Bases:"
 for BG in 030 040 102 103 104 106 047 107; do
 	echo -n "[0m${BG}: [${BG};91m "
-	for FG in 90 30 92 93 94 96 37 97; do
+	for FG in 30 92 93 94 96 37 97; do
 		echo -n "[${FG}m ${FG} "
 	done
 	echo
@@ -21,7 +21,7 @@ done
 
 echo "[0m"
 echo "(Wrapping) colorful backgrounds:"
-for FG in 90 30 92 93 94 96 37 97; do
+for FG in 30 92 93 94 96 37 97; do
 	echo -n "[0;${FG}m"
 	for BG in 042 043 101 041 045 105 044 046 042; do
 		echo -n "[${BG}m ${BG} "

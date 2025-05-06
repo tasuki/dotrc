@@ -84,7 +84,7 @@ gsettings set $TERMINAL_PROFILE palette \
 	, '"$(hex_to_rgb "cc3399")"'
 	, '"$(hex_to_rgb "22aa99")"'
 	, '"$(hex_to_rgb "073642")"'
-	, '"$(hex_to_rgb "fdf6e3")"'
+	, '"$(hex_to_rgb "bec2b6")"'
 	, '"$(hex_to_rgb "cc6600")"'
 	, '"$(hex_to_rgb "bec2b6")"'
 	, '"$(hex_to_rgb "8f9c98")"'
