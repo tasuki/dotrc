@@ -4,4 +4,5 @@ color:
 date: '+%Y-%m-%d %H:%M'
 
 icons:
+    when: never
     separator: "  "
