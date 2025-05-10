@@ -18,6 +18,9 @@ elseif has("nvim-0.5")
 	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
 	Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }
 endif
+if has("nvim-0.5")
+	Plug 'norcalli/nvim-colorizer.lua', { 'commit': 'a065833f35' }
+endif
 call plug#end()
 
 delc PlugUpgrade	" don't accidentally upgrade vim-plug
@@ -79,6 +82,8 @@ let g:vimwiki_key_mappings = {'lists': 0} " don't hijack gh/gl
 " treesitter goodness only nvim 0.5 and up
 if has("nvim-0.5")
 lua << EOF
+require'colorizer'.setup()
+
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
 		"bash", "vim", "lua", -- the system
