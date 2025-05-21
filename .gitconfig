@@ -31,11 +31,16 @@
 [interactive]
 	diffFilter = git-diff-filter
 [delta]
-	syntax-theme = Solarized (light)
+	syntax-theme = ansi
 	commit-decoration-style = bold yellow overline
 	file-style = bold white
 	file-decoration-style = bold brightcyan box
 	hunk-header-decoration-style = cyan
+	plus-style = green
+	minus-style = red
+	plus-emph-style = black green
+	minus-emph-style = black red
+	zero-style = normal
 [diff]
 	algorithm = histogram
 	colorMoved = plain
