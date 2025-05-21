@@ -1,30 +1,39 @@
 " Solarized, brought down to something more manageable
 
-set background=light
-hi clear
 if exists("syntax_on")
 	syntax reset
 endif
 let g:colors_name="solar"
 
 " The colors
-let s:base3       = "#002b36"
-let s:base2       = "#073642"
-let s:base1       = "#37565e"
-let s:base0       = "#62797a"
-let s:base00      = "#8f9c98"
-let s:base01      = "#bec2b6"
-let s:base02      = "#eee8d5"
-let s:base03      = "#fdf6e3"
+if &background == "dark"
+	let s:base03      = "#002b36"
+	let s:base02      = "#073642"
+	let s:base01      = "#37565e"
+	let s:base00      = "#62797a"
+	let s:base0       = "#8f9c98"
+	let s:base1       = "#bec2b6"
+	let s:base2       = "#eee8d5"
+	let s:base3       = "#fdf6e3"
+else
+	let s:base03      = "#fdf6e3"
+	let s:base02      = "#eee8d5"
+	let s:base01      = "#bec2b6"
+	let s:base00      = "#8f9c98"
+	let s:base0       = "#62797a"
+	let s:base1       = "#37565e"
+	let s:base2       = "#073642"
+	let s:base3       = "#002b36"
+endif
 
-let s:yellow      = "#aa8800"
-let s:orange      = "#cc6600"
 let s:red         = "#dd2244"
-let s:magenta     = "#cc3399"
-let s:violet      = "#7777dd"
-let s:blue        = "#2288cc"
-let s:cyan        = "#22aa99"
+let s:orange      = "#cc6600"
+let s:yellow      = "#aa8800"
 let s:green       = "#889900"
+let s:cyan        = "#22aa99"
+let s:blue        = "#2288cc"
+let s:violet      = "#7777dd"
+let s:magenta     = "#cc3399"
 
 let s:back        = s:base03
 

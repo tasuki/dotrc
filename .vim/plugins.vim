@@ -20,6 +20,7 @@ elseif has("nvim-0.5")
 endif
 if has("nvim-0.5")
 	Plug 'norcalli/nvim-colorizer.lua', { 'commit': 'a065833f35' }
+	Plug 'vimpostor/vim-lumen/', { 'tag': 'v1.0' }
 endif
 call plug#end()
 
