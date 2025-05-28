@@ -127,12 +127,17 @@ fi
 alias l="$LS_CMD -v --group-directories-first"    # too lazy
 alias ll="$LS_CMD -lv --group-directories-first"  # show details
 alias la="$LS_CMD -lvA --group-directories-first" # show hidden files
-alias lx="$LS_CMD -lX"                # sort by extension
-alias lh="$LS_CMD -lSrh"              # sort by size, human readable
-alias lt="$LS_CMD -ltr"               # sort by date
+alias lx="$LS_CMD -lX"                            # sort by extension
+alias lh="$LS_CMD -lSrh"                          # sort by size, human readable
+alias lt="$LS_CMD -ltr"                           # sort by date
 alias biggest="find . -type f -printf '%s\t%p\n' | sort -g" # find biggest files
-alias duh='du -kh'              # disk usage - human readable
-alias dus='du | sort -n'        # disk usage - sort by size
+alias duh='du -h --max-depth=1 | sort -h'         # disk usage - human readable
+alias dus='du | sort -h'                          # disk usage - sort by size
+alias dust='dus | tail -20'                       # only the biggest 20
+
+# plotting
+alias flip="awk '{print \$2, \$1}' OFS='\t'"
+alias flipprint="flip | uplot bar"
 
 # system
 alias pse='ps -e'               # all processes with threads
