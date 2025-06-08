@@ -22,6 +22,11 @@ elif [ "$DEVICES" -gt 1 ]; then
 	exit 1
 fi
 
+# maybe in the future also:
+# - https://adguard-dns.io/en/public-dns.html
+# - https://www.dns0.eu/zero
+# - https://www.joindns4.eu/for-public
+
 IGNORE_AUTO_DNS="no"
 case $1 in
 	"default")
