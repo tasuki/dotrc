@@ -139,6 +139,9 @@ alias dust='dus | tail -20'                       # only the biggest 20
 alias flip="awk '{print \$2, \$1}' OFS='\t'"
 alias flipprint="flip | uplot bar"
 
+# nnn
+export NNN_FCOLORS="000004020006060101050000"
+
 # system
 alias pse='ps -e'               # all processes with threads
 alias psf='ps -e --forest'      # show forest tree
