@@ -32,9 +32,9 @@
 	diffFilter = git-diff-filter
 [delta]
 	syntax-theme = ansi
-	commit-decoration-style = bold yellow overline
+	commit-decoration-style = bold brightwhite overline
 	file-style = bold white
-	file-decoration-style = bold brightcyan box
+	file-decoration-style = bold brightgreen overline
 	hunk-header-decoration-style = cyan
 	plus-style = green
 	minus-style = red
