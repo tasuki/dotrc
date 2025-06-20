@@ -2,14 +2,6 @@
 
 set -euo pipefail
 
-if [ "$#" -ne 1 ]; then
-	echo "Requires exactly 1 arguments, $# supplied!"
-	echo
-	echo "Usage: $0 <profile>"
-	echo "<profile> one of: default, google, cloudflare, nextdns, hdns, hnsdns"
-	exit 1
-fi
-
 CURRENT_WIFI_UUID=$(nmcli connection show --active | grep wifi | awk '{print $2}')
 CURRENT_WIFI_DEVICE=$(nmcli connection show --active | grep wifi | awk '{print $4}')
 
@@ -22,16 +14,31 @@ elif [ "$DEVICES" -gt 1 ]; then
 	exit 1
 fi
 
+if [ "$#" -ne 1 ]; then
+	echo "Requires exactly 1 arguments, $# supplied!"
+	echo
+	echo "Usage: $0 <profile>"
+	echo "<profile> one of: default, google, cloudflare, nextdns, hdns, hnsdns"
+	echo
+	echo "Current settings:"
+	nmcli connection show "$CURRENT_WIFI_UUID" | grep -E "^ipv(4|6).dns:"
+	exit 1
+fi
+
 # maybe in the future also:
 # - https://adguard-dns.io/en/public-dns.html
 # - https://www.dns0.eu/zero
-# - https://www.joindns4.eu/for-public
 
 IGNORE_AUTO_DNS="no"
-case $1 in
+case "$1" in
 	"default")
 		IPV4=""
 		IPV6=""
+		;;
+
+	"dns4eu") # "Protective resolution ad-blocking"
+		IPV4="86.54.11.13, 86.54.11.213"
+		IPV6="2a13:1001::86:54:11:13, 2a13:1001::86:54:11:213"
 		;;
 
 	"google")
@@ -65,11 +72,10 @@ case $1 in
 		exit 1
 esac
 
-
-nmcli connection modify ${CURRENT_WIFI_UUID} \
+nmcli connection modify "$CURRENT_WIFI_UUID" \
 	ipv4.dns "$IPV4" \
 	ipv6.dns "$IPV6" \
 	ipv4.ignore-auto-dns "$IGNORE_AUTO_DNS" \
 	ipv6.ignore-auto-dns "$IGNORE_AUTO_DNS"
 nmcli general reload dns-full
-nmcli device reapply ${CURRENT_WIFI_DEVICE}
+nmcli device reapply "$CURRENT_WIFI_DEVICE"
