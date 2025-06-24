@@ -15,7 +15,7 @@
 
 # History
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=10000
+HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 HIST_STAMPS="yyyy-mm-dd"
 setopt extended_history
@@ -147,7 +147,7 @@ alias psf='ps -e --forest'      # show forest tree
 alias psa='ps aux --forest'     # show forest with details
 alias psv='ps aux --sort vsz'   # sort by memory
 alias dfh='df -Th'              # human readable df
-alias h='history'
+alias h='history -i 1'          # dates, all lines
 alias t='tail -f'               # tail logs
 alias online='ping 4.2.2.2'     # check if online
 alias s='sudo -E '              # preserve aliases when sudoing
