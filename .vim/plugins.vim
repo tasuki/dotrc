@@ -78,6 +78,7 @@ nnoremap <Leader>l :SidewaysRight<cr>
 " vimwiki
 let g:vimwiki_list = [{'path': '~/data/prog/vitwiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_key_mappings = {'lists': 0} " don't hijack gh/gl
+let g:vimwiki_conceallevel = 0 " do not hide markup
 
 
 " treesitter goodness only nvim 0.5 and up
