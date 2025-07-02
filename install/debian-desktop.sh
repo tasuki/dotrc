@@ -4,22 +4,35 @@ set -euo pipefail
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
 source "$SCRIPT_DIR/functions.sh"
 
+if [ -f /etc/os-release ]; then
+	. /etc/os-release
+else
+	echo "Can't find /etc/os-release, this won't work here"
+	exit 1
+fi
 
 # tested on Debian 12
 
 echo "1. Installing things from the main repos"
 sudo apt install curl bash git stow `# required packages for my dotrc` \
-	tmux neovim fzf `# must have cli tools` \
+	tmux neovim fzf fd-find ripgrep `# must have cli tools` \
 	zsh zsh-autosuggestions zsh-syntax-highlighting `# zsh stuff` \
-	bat cloc entr exa fd-find htop btop btm git-delta jc jq rename ripgrep rlwrap units `# cli tools` \
+	htop btop `# monitoring` \
+	exa nnn fd-find renameutils `# file ops` \
+	bat cloc git-delta jc jq miller visidata `# reading/displaying data` \
+	entr rlwrap units `# utils` \
 	kitty vim-gtk3 geeqie clementine vlc gparted xsel keepassxc `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks yaru-theme-gnome-shell yaru-theme-gtk yaru-theme-icon `# gnome` \
 	dnsmasq firehol mosh nethogs syncthing `# network tools` \
 	default-jre `# jre category by itself?` \
 	gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 `# system monitor` \
 
+if (( VERSION_ID > 12 )); then
+	sudo apt install btm lsd
+fi
+
 # tools to keep an eye on:
-# miller jless frangipanni
+# jless frangipanni
 
 if [ "$(basename "$SHELL")" != "zsh" ]; then
 	echo "Changing shell to zsh:"
