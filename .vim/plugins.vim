@@ -70,6 +70,8 @@ map <Leader>b :Git blame<CR>
 " Commentary
 nnoremap <C-/> :Commentary<CR>
 vnoremap <C-/> :Commentary<CR>
+nnoremap <C-_> :Commentary<CR>
+vnoremap <C-_> :Commentary<CR>
 
 " Sideways
 nnoremap <Leader>h :SidewaysLeft<cr>
