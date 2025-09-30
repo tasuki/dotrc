@@ -164,7 +164,7 @@ alias tmls='tmux ls'
 # kitty
 alias s='kitty +kitten ssh'
 function tab {
-	DIR=$(find "${1:-.}" -type d | fzf)
+	DIR=$(find "${1:-.}" -maxdepth 3 -type d | fzf)
 	if [[ -n "$DIR" ]]; then
 		ABS_DIR=$(realpath "$DIR")
 		TAB_TITLE=$(basename "$ABS_DIR")
