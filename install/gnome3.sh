@@ -98,31 +98,24 @@ gsettings set $TERMINAL_PROFILE palette \
 
 ### Extensions
 
-# Custom extensions
-
-function schema { echo "--schemadir $HOME/.local/share/gnome-shell/extensions/$*/schemas/"; }
-
-SCHEMA=$(schema "dash-to-dock@micxgx.gmail.com")
-gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock background-opacity 0.5
-gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock dock-fixed false
-gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock dock-position "BOTTOM"
-gsettings $SCHEMA set org.gnome.shell.extensions.dash-to-dock extend-height false
-
-SCHEMA=$(schema "system-monitor-next@paradoxxx.zero.gmail.com")
-gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor center-display false
-gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor compact-display false
-gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor icon-display false
-for SETTING in $(echo "$GNOME_SYSTEM_MONITOR_SERVICES"); do
-	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-display true
-	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-graph-width "$GNOME_SYSTEM_MONITOR_GRAPH_WIDTH"
-	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-refresh-time 1000
-	gsettings $SCHEMA set org.gnome.shell.extensions.system-monitor "$SETTING"-show-text false
-done
-
-
 # Schemaless
 # Use `dconf dump / > dump.dconf` to get the current values
 # Use `dconf reset -f /org/gnome/shell/extensions/extension-name/` to clear all settings there
+
+dconf write /org/gnome/shell/extensions/dash-to-dock/background-opacity 0.5
+dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed false
+dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "'BOTTOM'"
+dconf write /org/gnome/shell/extensions/dash-to-dock/extend-height false
+
+dconf write /org/gnome/shell/extensions/system-monitor/center-display false
+dconf write /org/gnome/shell/extensions/system-monitor/compact-display false
+dconf write /org/gnome/shell/extensions/system-monitor/icon-display false
+for SETTING in $(echo "$GNOME_SYSTEM_MONITOR_SERVICES"); do
+	dconf write /org/gnome/shell/extensions/system-monitor/"$SETTING"-display true
+	dconf write /org/gnome/shell/extensions/system-monitor/"$SETTING"-graph-width "$GNOME_SYSTEM_MONITOR_GRAPH_WIDTH"
+	dconf write /org/gnome/shell/extensions/system-monitor/"$SETTING"-refresh-time 1000
+	dconf write /org/gnome/shell/extensions/system-monitor/"$SETTING"-show-text false
+done
 
 dconf write /org/gnome/shell/extensions/wsmatrix/show-overview-grid true
 dconf write /org/gnome/shell/extensions/wsmatrix/num-columns 3
