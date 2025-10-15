@@ -57,6 +57,7 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font "Ubuntu $GNOME_FONT
 gsettings set org.gnome.nautilus.preferences click-policy "single"
 
 gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 2500
 gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 100
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type "nothing"
 
