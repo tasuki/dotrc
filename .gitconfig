@@ -24,6 +24,12 @@
 	logoutputencoding = utf8
 	commitencoding = utf8
 
+; All directories are safe,
+; fuck your security theatre,
+; this don't make anyone safer.
+[safe]
+	directory = *
+
 
 ; Diffing
 [color "diff"]
