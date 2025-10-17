@@ -1,0 +1,48 @@
+#!/bin/bash
+# backups to btrfs using rsync
+# 2025, the year of btrfs...
+
+# sudo mkfs.btrfs -f -L drive-label -m dup -d single /dev/sdX
+# or for data redundancy:
+# sudo mkfs.btrfs -f -L drive-label -m dup -d dup /dev/sdX
+
+set -euo pipefail
+
+if [[ "${BACKUP_DIR}" != */ ]]; then
+	BACKUP_DIR="${BACKUP_DIR}/"
+fi
+
+echo "Backing up to $BACKUP_DIR ..."
+
+SOURCE_DIRS=(
+	"${HOME}/Sync/"
+	"${HOME}/data/hania/"
+	"${HOME}/data/photo/"
+	"${HOME}/data/audio/"
+)
+DATETIME="$(date '+%Y-%m-%d')"
+
+for SOURCE_DIR in "${SOURCE_DIRS[@]}"; do
+	DIR=$(basename $SOURCE_DIR)
+
+	BACKUP_PATH="${BACKUP_DIR}${DIR}"
+
+	if [ ! -d "$BACKUP_PATH" ]; then
+		echo "Creating btrfs subvolume at $BACKUP_PATH"
+		sudo btrfs subvolume create "$BACKUP_PATH"
+		ME=`whoami`
+		sudo chown -R "$ME:$ME" "$BACKUP_PATH"
+	fi
+
+	rsync --progress -av \
+		--exclude '.stfolder' \
+		--exclude '.stversions' \
+		"${SOURCE_DIR}/" \
+		"${BACKUP_PATH}"
+
+	mkdir -p "${BACKUP_DIR}snapshots/"
+	SNAPSHOT_DIR="${BACKUP_DIR}snapshots/${DATETIME}-${DIR}"
+	if [ ! -d "$SNAPSHOT_DIR" ]; then
+		btrfs subvolume snapshot -r "$BACKUP_PATH" "$SNAPSHOT_DIR"
+	fi
+done
