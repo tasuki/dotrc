@@ -10,15 +10,16 @@ Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
 Plug 'tpope/vim-surround', { 'tag': 'v2.2' }
 Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
-if has("nvim-0.10")
-	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.9.3', 'do': ':TSUpdate' }
-	Plug 'stevearc/aerial.nvim', { 'tag': 'v2.5.0' }
-	Plug 'neovim/nvim-lspconfig', { 'tag': 'v1.7.0' }
-elseif has("nvim-0.5")
-	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
-	Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }
-endif
 if has("nvim-0.5")
+	if has("nvim-0.10")
+		Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.9.3', 'do': ':TSUpdate' }
+		Plug 'nvim-treesitter/nvim-treesitter-context', { 'tag': 'v1.0.0' }
+		Plug 'stevearc/aerial.nvim', { 'tag': 'v2.5.0' }
+		Plug 'neovim/nvim-lspconfig', { 'tag': 'v1.7.0' }
+	else
+		Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
+		Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }
+	endif
 	Plug 'norcalli/nvim-colorizer.lua', { 'commit': 'a065833f35' }
 	Plug 'vimpostor/vim-lumen/', { 'tag': 'v1.0' }
 endif
@@ -100,11 +101,21 @@ require'nvim-treesitter.configs'.setup {
 	sync_install = false,
 	auto_install = false,
 
-	highlight = {
+	highlight = { enable = true },
+	indent = { enable = true },
+	incremental_selection = {
 		enable = true,
+		keymaps = {
+			init_selection = "<C-space>",
+			node_incremental = "<C-space>",
+			scope_incremental = false,
+			node_decremental = "<bs>",
+		},
 	},
+}
 
-	additional_vim_regex_highlighting = false,
+require'treesitter-context'.setup {
+	enable = true,
 }
 
 require('aerial').setup {
