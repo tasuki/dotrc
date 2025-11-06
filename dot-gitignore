@@ -9,3 +9,4 @@ tags
 .vscode/
 *.egg-info
 .ipynb_checkpoints/
+.vimrc.local
