@@ -63,7 +63,7 @@ nmap <Leader>/ :execute ':RG ' . expand('<cword>')<CR>
 map <F5> :NERDTreeToggle<CR>
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>f :NERDTreeFind<CR>
-let g:NERDTreeChDirMode = 2
+let g:NERDTreeChDirMode = 0 " do not change pwd everrr
 
 " Fugitive
 map <Leader>b :Git blame<CR>
