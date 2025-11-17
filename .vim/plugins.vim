@@ -114,10 +114,6 @@ require'nvim-treesitter.configs'.setup {
 	},
 }
 
-require'treesitter-context'.setup {
-	enable = true,
-}
-
 require('aerial').setup {
 	on_attach = function(bufnr)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', '<F6>', '<cmd>AerialToggle!<CR>', {})
@@ -149,5 +145,9 @@ vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { noremap = true, silent = true 
 vim.keymap.set('n', 'gm', vim.diagnostic.open_float, { noremap = true, silent = true })
 
 require'lspconfig'.elmls.setup{}
+
+require'treesitter-context'.setup {
+	enable = true,
+}
 EOF
 endif
