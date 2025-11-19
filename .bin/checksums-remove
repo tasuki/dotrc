@@ -3,9 +3,6 @@
 # *REMOVE* files in current directory matching checksums.
 # Checksums from stdin, comparing: checksum + file size
 
-dir="."
-echo $dir
-
 input=$(cat)
 
 for i in `ls`; do
