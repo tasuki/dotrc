@@ -66,6 +66,8 @@ gsettings set org.gnome.shell disabled-extensions "['desktop-icons@csoriano']"
 gsettings set org.gnome.shell.world-clocks locations "$CLOCKS"
 gsettings set org.gnome.shell.window-switcher current-workspace-only true
 
+gsettings set org.gnome.system.locale region 'en_DK.UTF-8' # oh the sanity
+
 # Gnome Terminal; an amazing amount of effort considering I don't even use it...
 hex_to_rgb() { printf "rgb(%d,%d,%d)\n" 0x${1:0:2} 0x${1:2:2} 0x${1:4:2}; }
 TERMINAL_PROFILE_ID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
