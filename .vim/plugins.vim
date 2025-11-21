@@ -17,6 +17,7 @@ if has("nvim-0.5")
 		Plug 'nvim-treesitter/nvim-treesitter-context', { 'tag': 'v1.0.0' }
 		Plug 'stevearc/aerial.nvim', { 'tag': 'v2.5.0' }
 		Plug 'neovim/nvim-lspconfig', { 'tag': 'v1.7.0' }
+		Plug 'folke/which-key.nvim', { 'tag': '3.17.0' }
 	else
 		Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
 		Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }
