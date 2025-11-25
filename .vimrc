@@ -60,6 +60,15 @@ autocmd BufNewFile,BufRead *.md  source ~/.vim/mappings/md.vim
 autocmd BufNewFile,BufRead *.py  source ~/.vim/mappings/py.vim
 autocmd BufNewFile,BufRead *.tex source ~/.vim/mappings/tex.vim
 
+command! CloseHiddenBuffers call DeleteHiddenBuffers()
+function! DeleteHiddenBuffers()
+	let tpbl=[]
+	call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
+	for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
+		silent execute 'bwipeout' buf
+	endfor
+endfunction
+
 " sudo write
 " broken in nvim for 10 years: https://github.com/neovim/neovim/issues/1496
 cmap w!! w !sudo tee % >/dev/null
