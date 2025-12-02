@@ -87,6 +87,7 @@ let g:vimwiki_conceallevel = 0 " do not hide markup
 
 " windsurf / codeium
 let g:codeium_manual = v:true
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P%5{codeium#GetStatusString()}
 
 " treesitter goodness only nvim 0.5 and up
 if has("nvim-0.5")

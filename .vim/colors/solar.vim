@@ -224,6 +224,8 @@ if has("nvim-0.10")
 	exe "hi! @tag.delimiter"    .s:fmt_none   .s:fg_base01 .s:bg_none
 endif
 
+" Windsurf
+exe "hi! CodeiumSuggestion" .s:fmt_ital .s:fg_base00 .s:bg_none
 
 " Language support for legacy vim
 
