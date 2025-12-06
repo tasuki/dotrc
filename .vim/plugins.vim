@@ -24,7 +24,7 @@ if has("nvim-0.5")
 		Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }
 	endif
 	Plug 'norcalli/nvim-colorizer.lua', { 'commit': 'a065833f35' }
-	Plug 'vimpostor/vim-lumen/', { 'tag': 'v1.0' }
+	Plug 'vimpostor/vim-lumen', { 'tag': 'v1.0' }
 endif
 call plug#end()
 
@@ -119,8 +119,7 @@ require'nvim-treesitter.configs'.setup {
 		},
 	},
 }
-
-require('aerial').setup {
+require'aerial'.setup {
 	on_attach = function(bufnr)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', '<F6>', '<cmd>AerialToggle!<CR>', {})
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrev<CR>', {})
