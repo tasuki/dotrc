@@ -57,7 +57,6 @@ set noswapfile       " swap files are overrated
 " extras based on filename
 autocmd BufNewFile,BufRead *.{html,php} source ~/.vim/mappings/html.vim
 autocmd BufNewFile,BufRead *.md  source ~/.vim/mappings/md.vim
-autocmd BufNewFile,BufRead *.py  source ~/.vim/mappings/py.vim
 autocmd BufNewFile,BufRead *.tex source ~/.vim/mappings/tex.vim
 
 command! CloseHiddenBuffers call DeleteHiddenBuffers()
