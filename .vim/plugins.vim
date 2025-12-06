@@ -15,6 +15,7 @@ if has("nvim-0.5")
 	if has("nvim-0.10")
 		Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.9.3', 'do': ':TSUpdate' }
 		Plug 'nvim-treesitter/nvim-treesitter-context', { 'tag': 'v1.0.0' }
+		Plug 'windwp/nvim-ts-autotag', { 'commit': 'c4ca798ab9' }
 		Plug 'stevearc/aerial.nvim', { 'tag': 'v2.5.0' }
 		Plug 'neovim/nvim-lspconfig', { 'tag': 'v1.7.0' }
 		Plug 'folke/which-key.nvim', { 'tag': '3.17.0' }
@@ -154,5 +155,7 @@ require'lspconfig'.elmls.setup{}
 require'treesitter-context'.setup {
 	enable = true,
 }
+require'nvim-ts-autotag'.setup()
+
 EOF
 endif
