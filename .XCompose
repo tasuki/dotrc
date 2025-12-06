@@ -10,32 +10,31 @@ include "%L"
 <Multi_key> <B> <parenright>           : "😎"
 <Multi_key> <o> <colon> <parenright>   : "😇"
 <Multi_key> <j> <o> <y>                : "😂"
-<Multi_key> <t> <h> <i> <n> <k>        : "🤔"
+<Multi_key> <t> <h> <i>                : "🤔"
 <Multi_key> <s> <e> <e>                : "🙈"
-<Multi_key> <h> <e> <a> <r>            : "🙉"
+<Multi_key> <h> <e> <a>                : "🙉"
 <Multi_key> <s> <p> <e> <a>            : "🙊"
 <Multi_key> <s> <c> <r> <e> <a>        : "😱"
 <Multi_key> <t> <h> <u>                : "👍"
 <Multi_key> <r> <o> <c>                : "🚀"  # deployment
 <Multi_key> <c> <o> <n> <f>            : "🎉"
+<Multi_key> <t> <a> <d> <a>            : "🎉"
 <Multi_key> <f> <i> <r>                : "🔥"  # remove
 <Multi_key> <s> <h> <r> <g>            : "🤷"
 <Multi_key> <s> <h> <r> <u> <g>        : "¯\_(ツ)_/¯"
-<Multi_key> <c> <o> <n> <f>            : "🎉"
-<Multi_key> <t> <a> <d> <a>            : "🎉"
 <Multi_key> <a> <r> <t>                : "🎨"  # structure
 <Multi_key> <z> <a> <p>                : "⚡️"  # performance
 <Multi_key> <b> <u> <g>                : "🐛"  # bugfix
-<Multi_key> <s> <p> <a> <r> <k>        : "✨"  # feature
+<Multi_key> <s> <p> <a> <r>            : "✨"  # feature
 <Multi_key> <d> <o> <c> <s>            : "📝"  # docs
 <Multi_key> <l> <i> <p> <s>            : "💄"  # ui
-<Multi_key> <c> <h> <e> <c> <k>        : "✅"  # tests
-<Multi_key> <l> <o> <c> <k>            : "🔒️"  # security
-<Multi_key> <w> <o> <k> <k>            : "👷"  # CI
-<Multi_key> <p> <l> <u> <s>            : "➕"  # + deps
-<Multi_key> <m> <i> <n> <u> <s>        : "➖"  # - deps
-<Multi_key> <w> <r> <e> <n> <c> <h>    : "🔧"  # config
-<Multi_key> <h> <a> <m> <m> <e> <r>    : "🔨"  # development
-<Multi_key> <g> <l> <o> <b> <e>        : "🌐"  # i18n & l10n
+<Multi_key> <c> <h> <e> <c>            : "✅"  # tests
+<Multi_key> <l> <o> <c>                : "🔒️"  # security
+<Multi_key> <w> <o> <r>                : "👷"  # CI
+<Multi_key> <p> <l> <u>                : "➕"  # + deps
+<Multi_key> <m> <i> <n> <u>            : "➖"  # - deps
+<Multi_key> <w> <r> <e> <n>            : "🔧"  # config
+<Multi_key> <h> <a> <m> <m>            : "🔨"  # development
+<Multi_key> <g> <l> <o> <b>            : "🌐"  # i18n & l10n
 <Multi_key> <p> <o> <o> <p>            : "💩"  # bad
-<Multi_key> <a> <l> <i> <e> <n>        : "👽️"  # external
+<Multi_key> <a> <l> <i> <e>            : "👽️"  # external
