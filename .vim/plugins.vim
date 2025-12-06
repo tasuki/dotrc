@@ -97,7 +97,7 @@ require'colorizer'.setup()
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
 		"bash", "vim", "lua", -- the system
-		"elm", "haskell", "scala", -- the good
+		"elm", "haskell", "scala", "gleam", -- the good
 		"php", "python", "ruby", -- the bad
 		"html", "css", "javascript", "typescript", -- the ugly
 		"c", "cpp", -- the old skool
