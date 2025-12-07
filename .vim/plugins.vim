@@ -9,6 +9,7 @@ Plug 'preservim/nerdtree', { 'tag': '7.1.2' }
 Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
 Plug 'tpope/vim-surround', { 'tag': 'v2.2' }
+Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
 Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
 Plug 'Exafunction/windsurf.vim', { 'commit': 'a8d47ec' }
 if has("nvim-0.5")
