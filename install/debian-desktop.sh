@@ -68,6 +68,7 @@ install_binary mise \
 	"https://github.com/jdx/mise/releases/download/v2025.4.1/mise-v2025.4.1-linux-x64" \
 	"670b182430d20a5c9dbfcce0af7ff64b87f62938b62663c5ca5f7661c067fe9b"
 mise use -g usage@2.1.1
+mise use -g watchexec@2.3.2
 mise use -g jless@0.9.0
 mise use -g aqua:sinclairtarget/git-who@1.2
 mise use -g ubi:birchb1024/frangipanni@0.5.0
