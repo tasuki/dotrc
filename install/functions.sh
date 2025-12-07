@@ -8,7 +8,13 @@ function repo_with_gpg_key {
 	[ -f "$KEYRING" ] ||
 		sudo wget -O "$KEYRING" "$2"
 	[ -f "$APT_SOURCE" ] ||
-		echo "deb [signed-by=$KEYRING] $4" | sudo tee "$APT_SOURCE"
+		cat << EOF | sudo tee "$APT_SOURCE"
+Types: deb
+URIs: ${4}
+Suites: ${5}
+Components: ${6}
+Signed-By: ${KEYRING}
+EOF
 }
 
 function repo_with_asc_key {
