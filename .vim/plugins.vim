@@ -135,9 +135,13 @@ endif
 if has("nvim-0.10")
 lua << EOF
 vim.keymap.set('n', '<leader>a', function()
+	local accepted_actions = {
+		'Add inferred annotation', -- Elm
+		'Add type annotation', -- Gleam
+	}
 	vim.lsp.buf.code_action({
 		filter = function(action)
-			return action.title:match('Add inferred annotation')
+			return vim.tbl_contains(accepted_actions, action.title)
 		end,
 		apply = true
 	})
