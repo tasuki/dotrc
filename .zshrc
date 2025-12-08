@@ -93,25 +93,19 @@ function ff {
 		)
 		local key=$(head -n1 <<< "$out")
 		local selection=$(tail -n +2 <<< "$out")
-
 		if [[ -z "$selection" ]]; then
 			return 1
 		fi
 
-		local clean_selection="${selection%/}"
-		local full_path="$dir$clean_selection"
-
+		local full_path="$dir${selection%/}"
 		if [[ "$key" == "alt-enter" ]]; then
-			# User forced acceptance (works on dirs or files)
 			echo "$full_path"
 			return 0
 		fi
 		if [[ -d "$full_path" ]]; then
-			# It's a directory and user pressed normal Enter -> Descend
 			dir="$full_path/"
 			continue
 		else
-			# It's a file and user pressed normal Enter -> Select
 			echo "$full_path"
 			return 0
 		fi
@@ -119,7 +113,27 @@ function ff {
 }
 
 function fzf-ff-widget {
-	LBUFFER="${LBUFFER}$(ff)"
+	local token
+	if [[ "$LBUFFER" =~ [^[:space:]]+$ ]]; then
+		token=$MATCH
+	fi
+
+	local expanded_token=${~token}
+	local result
+	if [[ -n "$token" && -d "$expanded_token" ]]; then
+		result=$(ff "$expanded_token")
+		local ret=$?
+		if [[ -n "$result" ]]; then
+			LBUFFER="${LBUFFER%$token}$result"
+		fi
+	else
+		result=$(ff)
+		local ret=$?
+		if [[ -n "$result" ]]; then
+			LBUFFER="${LBUFFER}$result"
+		fi
+	fi
+
 	local ret=$?
 	zle reset-prompt
 	return $ret
