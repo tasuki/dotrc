@@ -32,8 +32,10 @@ call plug#end()
 
 delc PlugUpgrade	" don't accidentally upgrade vim-plug
 
+
 " editorconfig: exclude fzf
 let g:EditorConfig_exclude_patterns = ['term://.*']
+
 
 " FZF
 
@@ -63,6 +65,18 @@ nmap <Leader>. :Files<CR>
 nmap <Leader>r :RG<CR>
 nmap <Leader>g :GG<CR>
 nmap <Leader>/ :execute ':RG ' . expand('<cword>')<CR>
+
+" path completion
+function! FF(fd_args)
+	let line_prefix = strpart(getline('.'), 0, col('.') - 1)
+	let path = matchstr(line_prefix, '\f*$')
+	let search_path = empty(path) ? '.' : path
+	let expanded_path = expand(search_path)
+	return 'cd ' . shellescape(expanded_path) . ' && fd . ' . a:fd_args
+endfunction
+inoremap <expr> <C-f> fzf#vim#complete(FF('--max-depth=4'))
+inoremap <expr> <C-g> fzf#vim#complete(FF('--max-depth=4 --hidden'))
+
 
 " nerdtree
 map <F5> :NERDTreeToggle<CR>
