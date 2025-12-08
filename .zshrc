@@ -81,6 +81,68 @@ export FZF_DEFAULT_OPTS='
 --color info:9,prompt:6,pointer:6,marker:6,spinner:6
 '
 
+function ff {
+	local dir="${1:-$(pwd)}"
+	[[ "$dir" != */ ]] && dir="$dir/"
+
+	while true; do
+		local out=$(ls -1p "$dir" | fzf \
+			--prompt "$dir " \
+			--header "Enter: Descend/Select | Alt-Enter: Force Accept Dir" \
+			--expect=alt-enter
+		)
+		local key=$(head -n1 <<< "$out")
+		local selection=$(tail -n +2 <<< "$out")
+		if [[ -z "$selection" ]]; then
+			return 1
+		fi
+
+		local full_path="$dir${selection%/}"
+		if [[ "$key" == "alt-enter" ]]; then
+			echo "$full_path"
+			return 0
+		fi
+		if [[ -d "$full_path" ]]; then
+			dir="$full_path/"
+			continue
+		else
+			echo "$full_path"
+			return 0
+		fi
+	done
+}
+
+function fzf-ff-widget {
+	local token
+	if [[ "$LBUFFER" =~ [^[:space:]]+$ ]]; then
+		token=$MATCH
+	fi
+
+	local expanded_token=${~token}
+	local result
+	if [[ -n "$token" && -d "$expanded_token" ]]; then
+		result=$(ff "$expanded_token")
+		local ret=$?
+		if [[ -n "$result" ]]; then
+			LBUFFER="${LBUFFER%$token}$result"
+		fi
+	else
+		result=$(ff)
+		local ret=$?
+		if [[ -n "$result" ]]; then
+			LBUFFER="${LBUFFER}$result"
+		fi
+	fi
+
+	local ret=$?
+	zle reset-prompt
+	return $ret
+}
+zle     -N            fzf-ff-widget
+bindkey -M emacs '^F' fzf-ff-widget
+bindkey -M vicmd '^F' fzf-ff-widget
+bindkey -M viins '^F' fzf-ff-widget
+
 
 ## Aliases
 
