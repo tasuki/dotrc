@@ -130,7 +130,8 @@ alias lx="$LS_CMD -lX"                            # sort by extension
 alias lh="$LS_CMD -lSrh"                          # sort by size, human readable
 alias lt="$LS_CMD -ltr"                           # sort by date
 alias biggest="find . -type f -printf '%s\t%p\n' | sort -g" # find biggest files
-alias duh='du -h --max-depth=1 | sort -h'         # disk usage - human readable
+alias duh='du -h | sort -h'                       # disk usage - human readable
+alias dumh='du -h --max-depth=1 | sort -h'        # disk usage - readable and not too many
 alias dus='du | sort -h'                          # disk usage - sort by size
 alias dust='dus | tail -20'                       # only the biggest 20
 
