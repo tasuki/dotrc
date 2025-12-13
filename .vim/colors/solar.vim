@@ -216,8 +216,8 @@ if has("nvim-0.10")
 	exe "hi! @markup.heading.2" .s:fmt_bold   .s:fg_yellow .s:bg_none
 	exe "hi! @markup.quote"     .s:fmt_none   .s:fg_green  .s:bg_none
 	exe "hi! @markup.raw"       .s:fmt_none   .s:fg_green  .s:bg_none
-	exe "hi! @markup.raw.block" .s:fmt_none   .s:fg_green  .s:bg_none
-	exe "hi! @markup.link"      .s:fmt_undr   .s:fg_blue   .s:bg_none
+	exe "hi! @markup.list"      .s:fmt_none   .s:fg_magenta.s:bg_none
+	exe "hi! @markup.link"      .s:fmt_none   .s:fg_blue   .s:bg_none
 	exe "hi! @tag"              .s:fmt_none   .s:fg_blue   .s:bg_none
 	exe "hi! @tag.builtin"      .s:fmt_none   .s:fg_blue   .s:bg_none
 	exe "hi! @tag.attribute"    .s:fmt_none   .s:fg_yellow .s:bg_none

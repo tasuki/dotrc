@@ -135,6 +135,8 @@ require'nvim-treesitter.configs'.setup {
 		},
 	},
 }
+vim.treesitter.language.register('markdown', 'vimwiki')
+
 require'aerial'.setup {
 	on_attach = function(bufnr)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', '<F6>', '<cmd>AerialToggle!<CR>', {})
