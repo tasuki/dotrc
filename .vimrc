@@ -42,7 +42,8 @@ map <F7> :nohlsearch<CR>
 map <F8> :cd %:p:h<CR>
 map <F12> :set paste!<CR>
 
-map <Leader>w :set wrap!<CR>
+map gw :set wrap!<CR>
+map <Leader>w :w<CR>
 map <Leader>q :q<CR>
 map <Leader>x :wq<CR>
 
