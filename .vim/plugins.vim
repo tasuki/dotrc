@@ -48,12 +48,6 @@ if filereadable("/usr/share/doc/fzf/examples/plugin/fzf.vim")
 	source /usr/share/doc/fzf/examples/plugin/fzf.vim
 endif
 
-" git grep
-command! -bang -nargs=* GG
-	\ call fzf#vim#grep2(
-	\ 'git grep --ignore-case --line-number -- ',
-	\ <q-args>, 0, fzf#vim#with_preview(), <bang>0)
-
 " rip grep
 command! -bang -nargs=* RG
 	\ call fzf#vim#grep2(
@@ -63,7 +57,6 @@ command! -bang -nargs=* RG
 nmap <Leader><Enter> :GFiles<CR>
 nmap <Leader>. :Files<CR>
 nmap <Leader>r :RG<CR>
-nmap <Leader>g :GG<CR>
 nmap <Leader>/ :execute ':RG ' . expand('<cword>')<CR>
 
 " path completion
