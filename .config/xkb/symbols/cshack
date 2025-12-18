@@ -1,6 +1,7 @@
 // Dle http://xakru.com/cshack/
 // Akorát po vzoru polské klávesnice, diakritika = AltGr + příslušné písmeno
 
+default partial alphanumeric_keys
 xkb_symbols "hack" {
 	name[Group1]="Czech (hack)";
 
