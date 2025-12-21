@@ -43,10 +43,10 @@
 	file-style = bold white
 	file-decoration-style = bold brightgreen overline
 	hunk-header-decoration-style = cyan
-	minus-style = normal "#f6e2e2"
-	minus-emph-style = normal "#eecccc"
-	plus-style = syntax "#ecf0a9"
-	plus-emph-style = syntax "#d0e066"
+	minus-style = normal "#FEDBDA"
+	minus-emph-style = normal "#FEB9B8"
+	plus-style = syntax "#E4F4B8"
+	plus-emph-style = syntax "#CEE38F"
 	zero-style = normal
 [diff]
 	algorithm = histogram
