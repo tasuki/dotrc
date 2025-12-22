@@ -19,7 +19,7 @@ sudo apt install curl bash git stow `# required packages for my dotrc` \
 	tmux neovim fzf fd-find ripgrep `# must have cli tools` \
 	zsh zsh-autosuggestions zsh-syntax-highlighting `# zsh stuff` \
 	htop btop `# monitoring` \
-	nnn fd-find renameutils `# file ops` \
+	zoxide nnn fd-find renameutils `# file ops` \
 	bat cloc jc jq miller visidata `# reading/displaying data` \
 	entr rlwrap units `# utils` \
 	kitty vim-gtk3 geeqie clementine vlc gparted xsel keepassxc `# gui tools` \

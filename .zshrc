@@ -230,6 +230,10 @@ ZSH_HIGHLIGHT_STYLES[comment]='fg=11'
 maybe_source /usr/share/doc/fzf/examples/key-bindings.zsh
 maybe_source /usr/share/doc/fzf/examples/completion.zsh
 
+# zoxide
+command -v zoxide > /dev/null && \
+	eval "$(zoxide init zsh)"
+
 # mise
 command -v mise > /dev/null && \
 	eval "$(mise activate zsh)" && \
