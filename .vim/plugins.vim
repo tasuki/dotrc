@@ -39,10 +39,22 @@ let g:EditorConfig_exclude_patterns = ['term://.*']
 
 " FZF
 
-" copy-paste fzf solar colors, from .zshrc, for when running without shell
-let $FZF_DEFAULT_OPTS = "" .
-	\ "--color fg:12,bg:0,hl:3,fg+:15,bg+:0,hl+:1 " .
-	\ "--color info:9,prompt:6,pointer:6,marker:6,spinner:6"
+let g:fzf_colors = {
+	\ 'fg':      ['fg', 'Normal'],
+	\ 'bg':      ['bg', 'Normal'],
+	\ 'query':   ['fg', 'Normal'],
+	\ 'hl':      ['fg', 'Type'],
+	\ 'fg+':     ['fg', 'StatusLine'],
+	\ 'bg+':     ['bg', 'StatusLine'],
+	\ 'hl+':     ['fg', 'Special'],
+	\ 'info':    ['fg', 'PreProc'],
+	\ 'border':  ['fg', 'Comment'],
+	\ 'prompt':  ['fg', 'String'],
+	\ 'pointer': ['fg', 'String'],
+	\ 'marker':  ['fg', 'Todo'],
+	\ 'spinner': ['fg', 'String'],
+	\ 'header':  ['fg', 'Todo'],
+	\ }
 
 if filereadable("/usr/share/doc/fzf/examples/plugin/fzf.vim")
 	source /usr/share/doc/fzf/examples/plugin/fzf.vim
