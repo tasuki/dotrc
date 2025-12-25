@@ -25,7 +25,7 @@ if has("nvim-0.5")
 		Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
 		Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }
 	endif
-	Plug 'norcalli/nvim-colorizer.lua', { 'commit': 'a065833f35' }
+	Plug 'catgoose/nvim-colorizer.lua', { 'commit': '81e676d320' }
 	Plug 'vimpostor/vim-lumen', { 'tag': 'v1.0' }
 endif
 call plug#end()
