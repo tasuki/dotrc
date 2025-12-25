@@ -8,33 +8,45 @@ let g:colors_name="solar"
 
 " The colors
 if &background == "dark"
-	let s:base03 = "#002b36"
-	let s:base02 = "#073642"
-	let s:base01 = "#37565e"
-	let s:base00 = "#62797a"
-	let s:base0  = "#8f9c98"
-	let s:base1  = "#bec2b6"
-	let s:base2  = "#eee8d5"
-	let s:base3  = "#fdf6e3"
+	let s:base0 = "#002A31"
+	let s:base1 = "#0D3A3C"
+	let s:base2 = "#375B53"
+	let s:base3 = "#617C6D"
+	let s:base4 = "#8D9E8A"
+	let s:base5 = "#BBC1AB"
+	let s:base6 = "#D2D3BE"
+	let s:base7 = "#E8E5D1"
+	let s:base8 = "#FFF8E6"
+
+	let s:red     = "#FC4257"
+	let s:orange  = "#EC7C0E"
+	let s:yellow  = "#C7A01E"
+	let s:green   = "#98B224"
+	let s:cyan    = "#21BFA0"
+	let s:blue    = "#249FF3"
+	let s:violet  = "#8082F7"
+	let s:magenta = "#DD56B8"
 else
-	let s:base03 = "#fdf6e3"
-	let s:base02 = "#eee8d5"
-	let s:base01 = "#bec2b6"
-	let s:base00 = "#8f9c98"
-	let s:base0  = "#62797a"
-	let s:base1  = "#37565e"
-	let s:base2  = "#073642"
-	let s:base3  = "#002b36"
+	let s:base0 = "#FFF8E6"
+	let s:base1 = "#E8E5D1"
+	let s:base2 = "#D2D3BE"
+	let s:base3 = "#BBC1AB"
+	let s:base4 = "#8D9E8A"
+	let s:base5 = "#617C6D"
+	let s:base6 = "#375B53"
+	let s:base7 = "#0D3A3C"
+	let s:base8 = "#002A31"
+
+	let s:red     = "#DE1D3F"
+	let s:orange  = "#C9690C"
+	let s:yellow  = "#AB8704"
+	let s:green   = "#819808"
+	let s:cyan    = "#05A388"
+	let s:blue    = "#1F86CD"
+	let s:violet  = "#6A69DB"
+	let s:magenta = "#C13B9F"
 endif
 
-let s:red     = "#dd2244"
-let s:orange  = "#cc6600"
-let s:yellow  = "#aa8800"
-let s:green   = "#889900"
-let s:cyan    = "#22aa99"
-let s:blue    = "#2288cc"
-let s:violet  = "#7777dd"
-let s:magenta = "#cc3399"
 
 " Highlight Helper
 function! s:h(group, fg, bg, attr, sp)
@@ -47,10 +59,8 @@ endfunction
 
 " Basic highlighting
 " :h group-name  :h highlight-groups
-" Normal with bg none breaks in older tmuxes
-" Normal with bg base03 breaks in gvim, choose
-call s:h("Normal", s:base0, s:base03, "", "")
-call s:h("Comment", s:base00, "", "", "")
+call s:h("Normal", s:base5, s:base0, "", "")
+call s:h("Comment", s:base4, "", "", "")
 call s:h("Constant", s:magenta, "", "", "")
 call s:h("String", s:cyan, "", "", "")
 call s:h("Identifier", s:violet, "", "", "")
@@ -60,76 +70,77 @@ hi! link Operator Statement
 call s:h("PreProc", s:orange, "", "", "")
 call s:h("Type", s:yellow, "", "", "")
 call s:h("Special", s:red, "", "", "")
-call s:h("Delimiter", s:base2, "", "", "")
-call s:h("Underlined", s:base0, "", "underline", "")
-call s:h("Ignore", "", "", "", "")
+call s:h("Delimiter", s:base7, "", "", "")
+call s:h("Underlined", s:base5, "", "underline", "")
+call s:h("Ignore", s:base3, "", "", "")
 call s:h("Error", s:red, "", "bold", "")
 call s:h("Todo", s:magenta, "", "bold", "")
-call s:h("Added", s:green, s:base02, "bold", s:green)
-call s:h("Changed", s:yellow, s:base02, "bold", s:yellow)
-call s:h("Removed", s:red, s:base02, "bold", s:red)
+call s:h("Added", s:green, s:base1, "", s:green)
+call s:h("Changed", s:yellow, s:base1, "", s:yellow)
+call s:h("Removed", s:red, s:base1, "", s:red)
 
 " Extended highlighting
-call s:h("SpecialKey", s:base00, s:base02, "bold", "")
-call s:h("NonText", s:base00, "", "bold", "")
-call s:h("StatusLine", s:base3, s:base02, "bold", "")
-call s:h("StatusLineNC", s:base1, s:base02, "", "")
-call s:h("Visual", s:base03, s:base00, "", "")
+call s:h("SpecialKey", s:base4, s:base1, "bold", "")
+call s:h("NonText", s:base4, "", "bold", "")
+call s:h("StatusLine", s:base8, s:base1, "bold", "")
+call s:h("StatusLineNC", s:base6, s:base1, "", "")
+call s:h("Visual", s:base0, s:base4, "", "")
 call s:h("Directory", s:blue, "", "", "")
-call s:h("ErrorMsg", "", s:red, "", "")
-call s:h("CurSearch", s:base02, s:orange, "", "")
-call s:h("IncSearch", s:base02, s:orange, "", "")
-call s:h("Search", s:base02, s:yellow, "", "")
+call s:h("ErrorMsg", s:base0, s:red, "", "")
+call s:h("CurSearch", s:base1, s:orange, "", "")
+call s:h("IncSearch", s:base1, s:orange, "", "")
+call s:h("Search", s:base1, s:yellow, "", "")
 call s:h("MoreMsg", s:blue, "", "", "")
 call s:h("ModeMsg", s:blue, "", "", "")
-call s:h("LineNr", s:base01, s:base02, "", "")
+call s:h("LineNr", s:base3, s:base1, "", "")
 call s:h("Question", s:cyan, "", "bold", "")
-call s:h("QuickFixLine", s:base0, "", "bold", "")
-call s:h("VertSplit", s:base00, s:base02, "bold", "")
-call s:h("WinSeparator", s:base01, s:base03, "", "")
-call s:h("Title", s:base00, "", "bold", "")
-call s:h("VisualNOS", s:base02, "", "bold", "")
+call s:h("QuickFixLine", s:base5, "", "bold", "")
+call s:h("VertSplit", s:base4, s:base1, "bold", "")
+call s:h("WinSeparator", s:base3, s:base0, "", "")
+call s:h("Title", s:base4, "", "bold", "")
+call s:h("VisualNOS", s:base1, "", "bold", "")
 call s:h("WarningMsg", s:red, "", "bold", "")
-call s:h("WildMenu", s:base02, s:base2, "bold", "")
-call s:h("Folded", s:base0, s:base02, "bold,underline", s:base03)
-call s:h("FoldColumn", s:base0, s:base02, "", "")
+call s:h("WhiteSpace", s:base2, "", "", "")
+call s:h("WildMenu", s:base1, s:base7, "bold", "")
+call s:h("Folded", s:base5, s:base1, "bold,underline", s:base0)
+call s:h("FoldColumn", s:base5, s:base1, "", "")
 hi! link DiffAdd Added
 hi! link DiffChange Changed
 hi! link DiffDelete Removed
-call s:h("DiffText", s:blue, s:base02, "bold", s:blue)
-call s:h("SignColumn", s:base0, "", "", "")
+call s:h("DiffText", s:blue, s:base1, "bold", s:blue)
+call s:h("SignColumn", s:base5, "", "", "")
 call s:h("Conceal", s:blue, "", "", "")
 call s:h("SpellBad", "", "", "undercurl", s:red)
 call s:h("SpellCap", "", "", "undercurl", s:violet)
 call s:h("SpellRare", "", "", "undercurl", s:cyan)
 call s:h("SpellLocal", "", "", "undercurl", s:yellow)
-call s:h("Pmenu", s:base02, s:base0, "bold", "")
-call s:h("PmenuSel", s:base2, s:base01, "bold", "")
-call s:h("PmenuSbar", s:base0, s:base2, "bold", "")
-call s:h("PmenuThumb", s:base03, s:base0, "bold", "")
-call s:h("TabLine", s:base2, s:base02, "bold", "")
+call s:h("Pmenu", s:base1, s:base5, "bold", "")
+call s:h("PmenuSel", s:base7, s:base3, "bold", "")
+call s:h("PmenuSbar", s:base5, s:base7, "bold", "")
+call s:h("PmenuThumb", s:base0, s:base5, "bold", "")
+call s:h("TabLine", s:base7, s:base1, "bold", "")
 hi! link TabLineFill TabLine
-call s:h("TabLineSel", s:base02, s:base2, "bold", "")
-call s:h("CursorColumn", "", s:base02, "", "")
-call s:h("CursorLine", "", s:base02, "", s:base1)
-call s:h("ColorColumn", "", s:base02, "", "")
-call s:h("Cursor", s:base03, s:base0, "", "")
+call s:h("TabLineSel", s:base1, s:base7, "bold", "")
+call s:h("CursorColumn", "", s:base1, "", "")
+call s:h("CursorLine", "", s:base1, "", s:base6)
+call s:h("ColorColumn", "", s:base1, "", "")
+call s:h("Cursor", s:base0, s:base5, "", "")
 hi! link lCursor Cursor
-call s:h("MatchParen", s:red, s:base01, "bold", "")
-call s:h("NormalFloat", s:base1, s:base02, "italic", "")
-call s:h("WinBar", s:base2, s:base02, "bold", "")
-call s:h("WinBarNC", s:base2, s:base02, "", "")
+call s:h("MatchParen", s:red, s:base3, "bold", "")
+call s:h("NormalFloat", s:base6, s:base1, "italic", "")
+call s:h("WinBar", s:base7, s:base1, "bold", "")
+call s:h("WinBarNC", s:base7, s:base1, "", "")
 
 " :h diagnostic-highlights
 call s:h("DiagnosticError", s:red, "", "italic", "")
 call s:h("DiagnosticWarn", s:orange, "", "italic", "")
 call s:h("DiagnosticInfo", s:yellow, "", "italic", "")
-call s:h("DiagnosticHint", s:base0, "", "italic", "")
+call s:h("DiagnosticHint", s:base5, "", "italic", "")
 call s:h("DiagnosticOk", s:green, "", "italic", "")
 call s:h("DiagnosticUnderlineError", s:red, "", "underline,italic", "")
 call s:h("DiagnosticUnderlineWarn", s:orange, "", "underline,italic", "")
 call s:h("DiagnosticUnderlineInfo", s:yellow, "", "underline,italic", "")
-call s:h("DiagnosticUnderlineHint", s:base0, "", "underline,italic", "")
+call s:h("DiagnosticUnderlineHint", s:base5, "", "underline,italic", "")
 call s:h("DiagnosticUnderlineOk", s:green, "", "underline,italic", "")
 
 if has("nvim-0.10")
@@ -148,23 +159,23 @@ if has("nvim-0.10")
 	call s:h("@tag", s:blue, "", "", "")
 	call s:h("@tag.builtin", s:blue, "", "", "")
 	call s:h("@tag.attribute", s:yellow, "", "", "")
-	call s:h("@tag.delimiter", s:base01, "", "", "")
+	call s:h("@tag.delimiter", s:base3, "", "", "")
 endif
 
 " Windsurf
-call s:h("CodeiumSuggestion", s:base00, "", "italic", "")
+call s:h("CodeiumSuggestion", s:base4, "", "italic", "")
 
 
 " Language support for legacy vim
 
 " HTML
-call s:h("htmlTag", s:base01, "", "", "")
-call s:h("htmlEndTag", s:base01, "", "", "")
+call s:h("htmlTag", s:base3, "", "", "")
+call s:h("htmlEndTag", s:base3, "", "", "")
 hi! link htmlEndTag htmlTag
 call s:h("htmlTagName", s:blue, "", "", "")
 call s:h("HtmlH1", s:orange, "", "bold", "")
 call s:h("HtmlH2", s:yellow, "", "bold", "")
-call s:h("HtmlH3", s:base00, "", "bold", "")
+call s:h("HtmlH3", s:base3, "", "bold", "")
 
 " Markdown
 call s:h("markdownLinkText", s:blue, "", "", "")
