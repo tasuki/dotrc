@@ -114,7 +114,9 @@ set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P%5{codeium#GetStatusString()}
 " treesitter goodness only nvim 0.5 and up
 if has("nvim-0.5")
 lua << EOF
-require'colorizer'.setup()
+require'colorizer'.setup {
+	user_default_options = { names = false }
+}
 
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
