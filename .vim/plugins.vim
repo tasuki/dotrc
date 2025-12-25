@@ -178,13 +178,11 @@ vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, { noremap = true, silen
 vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { noremap = true, silent = true })
 vim.keymap.set('n', 'gm', vim.diagnostic.open_float, { noremap = true, silent = true })
 
-require'lspconfig'.elmls.setup{}
+require'lspconfig'.elmls.setup {}
 
-require'treesitter-context'.setup {
-	enable = true,
-}
-require'nvim-ts-autotag'.setup()
-require'nvim-autopairs'.setup({ check_ts = true })
+require'treesitter-context'.setup { enable = true }
+require'nvim-ts-autotag'.setup {}
+require'nvim-autopairs'.setup { check_ts = true }
 
 EOF
 endif
