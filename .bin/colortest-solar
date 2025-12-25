@@ -6,6 +6,10 @@ COLOR_CFS="30 90 92 93 94 96 37 97"
 WRAP_COLOR_FGS="031 091 033 032 036 034 095 035 031"
 WRAP_COLOR_BGS="041 101 043 042 046 044 105 045 041"
 
+OPT_BACKGROUNDS_256="17 25 19 18 22 20 29 21 17"
+OPT_HI_VIS_BACKGROUNDS_256="33 41 35 34 38 36 45 37 33"
+
+
 echo "Bases:"
 for BG in $BASE_BGS; do
 	echo -n "[0m${BG}: [${BG};91m "
@@ -34,3 +38,25 @@ for FG in $COLOR_CFS; do
 	done
 	echo
 done
+
+echo "[0m"
+echo "Optional 256 color-cube backgrounds:"
+for i in $OPT_BACKGROUNDS_256; do
+	printf " \e[48;5;%dm%03d\e[0m" "$i" "$i"
+done
+echo "[0m"
+for i in $OPT_HI_VIS_BACKGROUNDS_256; do
+	printf " \e[48;5;%dm%03d\e[0m" "$i" "$i"
+done
+echo "[0m"
+echo
+for i in $OPT_BACKGROUNDS_256; do
+	FG=$(( i - 16 ))
+	printf " \e[48;5;%dm\e[38;5;%dm%03d\e[0m" "$i" "$FG" "$i"
+done
+echo
+for i in $OPT_HI_VIS_BACKGROUNDS_256; do
+	FG=$(( i - 32 ))
+	printf " \e[48;5;%dm\e[38;5;%dm%03d\e[0m" "$i" "$FG" "$i"
+done
+echo

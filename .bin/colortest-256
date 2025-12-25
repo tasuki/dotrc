@@ -1,0 +1,15 @@
+#!/bin/bash
+
+for i in {0..255}; do
+	printf "\e[48;5;%dm\e[38;5;15m %03d " "$i" "$i" # bg
+	# printf "\e[48;5;0m\e[38;5;%dm %03d " "$i" "$i" # fg
+	num=$((i + 1))
+	if [ "$num" -le 16 ]; then
+		(( num % 8 == 0 )) && printf "\e[0m\n"
+		(( num % 16 == 0 )) && printf "\e[0m\n"
+	else
+		offset=$((num - 16))
+		(( offset % 6 == 0 )) && printf "\e[0m\n"
+		(( offset % 36 == 0 )) && printf "\e[0m\n"
+	fi
+done
