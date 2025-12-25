@@ -37,16 +37,22 @@
 [interactive]
 	diffFilter = git-diff-filter
 [delta]
-	syntax-theme = GitHub
-	navigate = true
+	; line-numbers = true
+	; side-by-side = true
+	syntax-theme = ansi
 	commit-decoration-style = bold brightwhite overline
 	file-style = bold white
 	file-decoration-style = bold brightgreen overline
-	hunk-header-decoration-style = cyan
-	minus-style = normal "#FEDBDA"
-	minus-emph-style = normal "#FEB9B8"
-	plus-style = syntax "#E4F4B8"
-	plus-emph-style = syntax "#CEE38F"
+	hunk-header-style = bold cyan line-number
+	hunk-header-line-number-style = bold blue
+	hunk-header-decoration-style = omit
+	blame-palette = 16 17 18 19 20 21 22 25 29
+	minus-style = normal 17
+	minus-emph-style = normal 33
+	minus-empty-line-marker-style = normal 17
+	plus-style = normal 18
+	plus-emph-style = normal 34
+	plus-empty-line-marker-style = normal 18
 	zero-style = normal
 [diff]
 	algorithm = histogram
