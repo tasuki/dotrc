@@ -22,6 +22,11 @@ done
 [ ! -d .vim ] && ln -s dotrc/.vim/ .
 [ ! -d .zsh-custom ] && ln -s dotrc/.zsh-custom/ .
 
+# kitty
+echo "include solar-dark.conf" > ~/.config/kitty/dark-theme.auto.conf
+echo "include solar-light.conf" > ~/.config/kitty/light-theme.auto.conf
+echo "include solar-light.conf" > ~/.config/kitty/no-preference-theme.auto.conf
+
 # link individual files for the rest
 cd "$DOTRC_DIR"
 stow --no-folding --verbose --dotfiles --ignore=".sh$|^install$|^.git$|^.editorconfig$|^.vim$|^.zsh-custom$" .
