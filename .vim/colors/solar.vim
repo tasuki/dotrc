@@ -26,6 +26,25 @@ if &background == "dark"
 	let s:blue    = "#249FF3"
 	let s:violet  = "#8082F7"
 	let s:magenta = "#DD56B8"
+
+	let s:bg_red     = "#542526"
+	let s:bg_orange  = "#4D2C15"
+	let s:bg_yellow  = "#3F3414"
+	let s:bg_green   = "#3A460B"
+	let s:bg_cyan    = "#044E40"
+	let s:bg_blue    = "#05436C"
+	let s:bg_violet  = "#2F3058"
+	let s:bg_magenta = "#4D2641"
+
+	let s:bg_hi_red     = "#742D31"
+	let s:bg_hi_orange  = "#6C380D"
+	let s:bg_hi_yellow  = "#584503"
+	let s:bg_hi_green   = "#4B5A00"
+	let s:bg_hi_cyan    = "#006752"
+	let s:bg_hi_blue    = "#00568F"
+	let s:bg_hi_violet  = "#3E3F7C"
+	let s:bg_hi_magenta = "#6A2F58"
+
 else
 	let s:base0 = "#FFF8E6"
 	let s:base1 = "#E8E5D1"
@@ -45,6 +64,24 @@ else
 	let s:blue    = "#1F86CD"
 	let s:violet  = "#6A69DB"
 	let s:magenta = "#C13B9F"
+
+	let s:bg_red     = "#FFE4E3"
+	let s:bg_orange  = "#FFE5D2"
+	let s:bg_yellow  = "#FEEEC1"
+	let s:bg_green   = "#E7F7BB"
+	let s:bg_cyan    = "#C5FCEC"
+	let s:bg_blue    = "#DBEEFF"
+	let s:bg_violet  = "#E7EAFF"
+	let s:bg_magenta = "#FFE1F4"
+
+	let s:bg_hi_red     = "#FAC5C4"
+	let s:bg_hi_orange  = "#F9C9A9"
+	let s:bg_hi_yellow  = "#EED692"
+	let s:bg_hi_green   = "#CEE38F"
+	let s:bg_hi_cyan    = "#95EBD4"
+	let s:bg_hi_blue    = "#B4D9FA"
+	let s:bg_hi_violet  = "#CCD1FC"
+	let s:bg_hi_magenta = "#F5C3E3"
 endif
 
 
@@ -73,11 +110,11 @@ call s:h("Special", s:red, "", "", "")
 call s:h("Delimiter", s:base7, "", "", "")
 call s:h("Underlined", s:base5, "", "underline", "")
 call s:h("Ignore", s:base3, "", "", "")
-call s:h("Error", s:red, "", "bold", "")
+call s:h("Error", s:base0, s:red, "", "")
 call s:h("Todo", s:magenta, "", "bold", "")
-call s:h("Added", s:green, s:base1, "", s:green)
-call s:h("Changed", s:yellow, s:base1, "", s:yellow)
-call s:h("Removed", s:red, s:base1, "", s:red)
+call s:h("Added", s:green, s:bg_green, "", "")
+call s:h("Changed", s:yellow, s:bg_yellow, "", "")
+call s:h("Removed", s:red, s:bg_red, "", "")
 
 " Extended highlighting
 call s:h("SpecialKey", s:base4, s:base1, "bold", "")
@@ -134,14 +171,15 @@ call s:h("WinBarNC", s:base7, s:base1, "", "")
 " :h diagnostic-highlights
 call s:h("DiagnosticError", s:red, "", "italic", "")
 call s:h("DiagnosticWarn", s:orange, "", "italic", "")
-call s:h("DiagnosticInfo", s:yellow, "", "italic", "")
-call s:h("DiagnosticHint", s:base5, "", "italic", "")
+call s:h("DiagnosticInfo", s:cyan, "", "italic", "")
+call s:h("DiagnosticHint", s:blue, "", "italic", "")
 call s:h("DiagnosticOk", s:green, "", "italic", "")
-call s:h("DiagnosticUnderlineError", s:red, "", "underline,italic", "")
-call s:h("DiagnosticUnderlineWarn", s:orange, "", "underline,italic", "")
-call s:h("DiagnosticUnderlineInfo", s:yellow, "", "underline,italic", "")
-call s:h("DiagnosticUnderlineHint", s:base5, "", "underline,italic", "")
-call s:h("DiagnosticUnderlineOk", s:green, "", "underline,italic", "")
+
+call s:h("DiagnosticUnderlineError", s:red, "", "underline,italic", s:red)
+call s:h("DiagnosticUnderlineWarn", s:orange, "", "underline,italic", s:orange)
+call s:h("DiagnosticUnderlineInfo", s:cyan, "", "underline,italic", s:cyan)
+call s:h("DiagnosticUnderlineHint", s:blue, "", "underline,italic", s:blue)
+call s:h("DiagnosticUnderlineOk", s:green, "", "underline,italic", s:green)
 
 if has("nvim-0.10")
 	" :h treesitter-highlight-groups
