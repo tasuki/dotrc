@@ -120,6 +120,7 @@ require'colorizer'.setup {
 
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
+		"comment", "regex", -- the utils
 		"bash", "vim", "lua", -- the system
 		"elm", "haskell", "scala", "gleam", -- the good
 		"php", "python", "ruby", -- the bad
