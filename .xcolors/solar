@@ -7,14 +7,14 @@
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
 
-#define S_yellow        #aa8800
+#define S_red           #ee3344
 #define S_orange        #cc6600
-#define S_red           #dd2244
-#define S_magenta       #cc3399
-#define S_violet        #7777dd
-#define S_blue          #2288cc
-#define S_cyan          #22aa99
+#define S_yellow        #aa8800
 #define S_green         #889900
+#define S_cyan          #22aa99
+#define S_blue          #2288cc
+#define S_violet        #7777dd
+#define S_magenta       #cc44bb
 
 *background:            S_base3
 *foreground:            S_base00

@@ -81,11 +81,11 @@ gsettings set $TERMINAL_PROFILE background-color $(hex_to_rgb "fdf6e3")
 gsettings set $TERMINAL_PROFILE foreground-color $(hex_to_rgb "62797a")
 gsettings set $TERMINAL_PROFILE palette \
 	"['"$(hex_to_rgb "eee8d5")"'
-	, '"$(hex_to_rgb "dd2244")"'
+	, '"$(hex_to_rgb "ee3344")"'
 	, '"$(hex_to_rgb "889900")"'
 	, '"$(hex_to_rgb "aa8800")"'
 	, '"$(hex_to_rgb "2288cc")"'
-	, '"$(hex_to_rgb "cc3399")"'
+	, '"$(hex_to_rgb "cc44bb")"'
 	, '"$(hex_to_rgb "22aa99")"'
 	, '"$(hex_to_rgb "073642")"'
 	, '"$(hex_to_rgb "bec2b6")"'
