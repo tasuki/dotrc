@@ -28,7 +28,7 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'pl'), ('xkb', '
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps', 'grp:shifts_toggle', 'compose:rctrl']"
 gsettings set org.gnome.desktop.input-sources show-all-sources true
 gsettings set org.gnome.desktop.interface accent-color "orange"
-gsettings set org.gnome.desktop.interface clock-format "12h"
+gsettings set org.gnome.desktop.interface clock-format "24h"
 gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.desktop.interface cursor-blink false
 gsettings set org.gnome.desktop.interface cursor-theme "Yaru"
