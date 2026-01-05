@@ -79,23 +79,25 @@ gsettings set $TERMINAL_PROFILE scrollbar-policy 'never'
 
 COLOR_SCHEME=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
 if [ "$COLOR_SCHEME" = "prefer-dark" ]; then
-	SOLAR_3="#FFE"
-	SOLAR_2="#EED"
-	SOLAR_1="#CCB"
-	SOLAR_0="#AA9"
-	SOLAR_00="#577"
-	SOLAR_01="#355"
-	SOLAR_02="#133"
-	SOLAR_03="#022"
+	SOLAR_0="#022"
+	SOLAR_1="#133"
+	SOLAR_2="#355"
+	SOLAR_3="#577"
+	SOLAR_4="#898"
+	SOLAR_5="#AA9"
+	SOLAR_6="#CCB"
+	SOLAR_7="#EED"
+	SOLAR_8="#FFE"
 else
-	SOLAR_03="#FFE"
-	SOLAR_02="#EED"
-	SOLAR_01="#CCB"
-	SOLAR_00="#AA9"
-	SOLAR_0="#577"
-	SOLAR_1="#355"
-	SOLAR_2="#133"
-	SOLAR_3="#022"
+	SOLAR_0="#FFE"
+	SOLAR_1="#EED"
+	SOLAR_2="#CCB"
+	SOLAR_3="#AA9"
+	SOLAR_4="#898"
+	SOLAR_5="#577"
+	SOLAR_6="#355"
+	SOLAR_7="#133"
+	SOLAR_8="#022"
 fi
 
 SOLAR_RED="#E34"
@@ -108,25 +110,25 @@ SOLAR_VIO="#77D"
 SOLAR_MAG="#C4B"
 
 gsettings set $TERMINAL_PROFILE use-theme-colors false
-gsettings set $TERMINAL_PROFILE background-color $(hex_to_rgb "$SOLAR_03")
-gsettings set $TERMINAL_PROFILE foreground-color $(hex_to_rgb "$SOLAR_0")
+gsettings set $TERMINAL_PROFILE background-color $(hex_to_rgb "$SOLAR_0")
+gsettings set $TERMINAL_PROFILE foreground-color $(hex_to_rgb "$SOLAR_5")
 gsettings set $TERMINAL_PROFILE palette \
-	"['"$(hex_to_rgb "$SOLAR_03")"'
+	"['"$(hex_to_rgb "$SOLAR_0")"'
 	, '"$(hex_to_rgb "$SOLAR_RED")"'
 	, '"$(hex_to_rgb "$SOLAR_GRN")"'
 	, '"$(hex_to_rgb "$SOLAR_YEL")"'
 	, '"$(hex_to_rgb "$SOLAR_BLU")"'
 	, '"$(hex_to_rgb "$SOLAR_MAG")"'
 	, '"$(hex_to_rgb "$SOLAR_CYA")"'
-	, '"$(hex_to_rgb "$SOLAR_2")"'
-	, '"$(hex_to_rgb "$SOLAR_02")"'
-	, '"$(hex_to_rgb "$SOLAR_ORA")"'
-	, '"$(hex_to_rgb "$SOLAR_01")"'
-	, '"$(hex_to_rgb "$SOLAR_00")"'
-	, '"$(hex_to_rgb "$SOLAR_0")"'
-	, '"$(hex_to_rgb "$SOLAR_VIO")"'
+	, '"$(hex_to_rgb "$SOLAR_7")"'
 	, '"$(hex_to_rgb "$SOLAR_1")"'
+	, '"$(hex_to_rgb "$SOLAR_ORA")"'
+	, '"$(hex_to_rgb "$SOLAR_2")"'
 	, '"$(hex_to_rgb "$SOLAR_3")"'
+	, '"$(hex_to_rgb "$SOLAR_4")"'
+	, '"$(hex_to_rgb "$SOLAR_VIO")"'
+	, '"$(hex_to_rgb "$SOLAR_6")"'
+	, '"$(hex_to_rgb "$SOLAR_8")"'
 	]"
 
 
