@@ -51,6 +51,11 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab
 gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
+for i in 1 2 3 4 5 6 7 8 9; do
+	gsettings set org.gnome.shell.keybindings "switch-to-application-$i" "[]"
+	gsettings set org.gnome.desktop.wm.keybindings "switch-to-workspace-$i" "['<Super>$i']"
+	gsettings set org.gnome.desktop.wm.keybindings "move-to-workspace-$i" "['<Super><Shift>$i']"
+done
 gsettings set org.gnome.desktop.wm.preferences focus-mode "sloppy"
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
 gsettings set org.gnome.desktop.wm.preferences titlebar-font "Ubuntu $GNOME_FONT_SIZE"
@@ -63,7 +68,6 @@ gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 100
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type "nothing"
 
 gsettings set org.gnome.shell.app-switcher current-workspace-only false
-gsettings set org.gnome.shell disabled-extensions "['desktop-icons@csoriano']"
 gsettings set org.gnome.shell.world-clocks locations "$CLOCKS"
 gsettings set org.gnome.shell.window-switcher current-workspace-only true
 
@@ -142,21 +146,18 @@ gsettings set $TERMINAL_PROFILE palette \
 dconf write /org/gnome/shell/extensions/dash-to-dock/background-opacity 0.5
 dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed false
 dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "'BOTTOM'"
+dconf write /org/gnome/shell/extensions/dash-to-dock/hot-keys false
 dconf write /org/gnome/shell/extensions/dash-to-dock/extend-height false
 
-dconf write /org/gnome/shell/extensions/system-monitor/center-display false
-dconf write /org/gnome/shell/extensions/system-monitor/compact-display false
-dconf write /org/gnome/shell/extensions/system-monitor/icon-display false
+dconf write /org/gnome/shell/extensions/system-monitor-next-applet/center-display false
+dconf write /org/gnome/shell/extensions/system-monitor-next-applet/compact-display false
+dconf write /org/gnome/shell/extensions/system-monitor-next-applet/icon-display false
 for SETTING in $(echo "$GNOME_SYSTEM_MONITOR_SERVICES"); do
-	dconf write /org/gnome/shell/extensions/system-monitor/"$SETTING"-display true
-	dconf write /org/gnome/shell/extensions/system-monitor/"$SETTING"-graph-width "$GNOME_SYSTEM_MONITOR_GRAPH_WIDTH"
-	dconf write /org/gnome/shell/extensions/system-monitor/"$SETTING"-refresh-time 1000
-	dconf write /org/gnome/shell/extensions/system-monitor/"$SETTING"-show-text false
+	dconf write /org/gnome/shell/extensions/system-monitor-next-applet/"$SETTING"-display true
+	dconf write /org/gnome/shell/extensions/system-monitor-next-applet/"$SETTING"-graph-width "$GNOME_SYSTEM_MONITOR_GRAPH_WIDTH"
+	dconf write /org/gnome/shell/extensions/system-monitor-next-applet/"$SETTING"-refresh-time 1000
+	dconf write /org/gnome/shell/extensions/system-monitor-next-applet/"$SETTING"-show-text false
 done
-
-dconf write /org/gnome/shell/extensions/wsmatrix/show-overview-grid true
-dconf write /org/gnome/shell/extensions/wsmatrix/num-columns 3
-dconf write /org/gnome/shell/extensions/wsmatrix/num-rows 2
 
 dconf write /org/gnome/desktop/notifications/application/kitty/enable true
 dconf write /org/gnome/desktop/notifications/application/org-gnome-shell-extensions/enable false
