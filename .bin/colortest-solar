@@ -12,43 +12,43 @@ OPT_HI_VIS_BACKGROUNDS_256="33 41 35 34 38 36 45 37 33"
 
 echo "Bases:"
 for BG in $BASE_BGS; do
-	echo -n "[0m${BG}: [${BG};91m "
+	echo -n "\e[0m${BG}: \e[${BG};91m "
 	for FG in $COLOR_CFS; do
-		echo -n "[${FG}m ${FG} "
+		echo -n "\e[${FG}m ${FG} "
 	done
-	echo "[0m"
+	echo "\e[0m"
 done
 
-echo "[0m"
+echo "\e[0m"
 echo "(Wrapping) colorful foregrounds:"
 for BG in $BASE_BGS; do
-	echo -n "[0;${BG}m"
+	echo -n "\e[0;${BG}m"
 	for FG in $WRAP_COLOR_FGS; do
-		echo -n "[${FG}m ${FG} "
+		echo -n "\e[${FG}m ${FG} "
 	done
-	echo "[0m"
+	echo "\e[0m"
 done
 
-echo "[0m"
+echo "\e[0m"
 echo "(Wrapping) colorful backgrounds:"
 for FG in $COLOR_CFS; do
-	echo -n "[0;${FG}m"
+	echo -n "\e[0;${FG}m"
 	for BG in $WRAP_COLOR_BGS; do
-		echo -n "[${BG}m ${BG} "
+		echo -n "\e[${BG}m ${BG} "
 	done
-	echo "[0m"
+	echo "\e[0m"
 done
 
-echo "[0m"
+echo "\e[0m"
 echo "Optional 256 color-cube backgrounds:"
 for i in $OPT_BACKGROUNDS_256; do
 	printf " \e[48;5;%dm%03d\e[0m" "$i" "$i"
 done
-echo "[0m"
+echo "\e[0m"
 for i in $OPT_HI_VIS_BACKGROUNDS_256; do
 	printf " \e[48;5;%dm%03d\e[0m" "$i" "$i"
 done
-echo "[0m"
+echo "\e[0m"
 echo
 for i in $OPT_BACKGROUNDS_256; do
 	FG=$(( i - 16 ))

@@ -80,7 +80,7 @@ get_bg_str() {
 
 CMD='echo -n'
 
-$CMD "[0m"
+$CMD "\e[0m"
 $CMD "Font        Fg        "
 for BG in $BG_CODES; do
 	bcolor=$(get_bg_str $BG)
@@ -101,12 +101,12 @@ for AT in 0 1 2 3; do
 	for FG in $FG_CODES; do
 		fcolor=$(get_fg_str $FG)
 
-		$CMD "[0;${AT}m[0;${AT}m $attr  "
-		$CMD "[${FG}m[${FG}m $fcolor "
+		$CMD "\e[0;${AT}m[0;${AT}m $attr  "
+		$CMD "\e[${FG}m[${FG}m $fcolor "
 
 		for BG in $BG_CODES; do
-			$CMD "[${BG}m [${BG}m "
+			$CMD "\e[${BG}m [${BG}m "
 		done
-		echo "[0m"
+		echo "\e[0m"
 	done
 done

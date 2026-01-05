@@ -11,37 +11,37 @@ WRAP_BRGHT_BGS="101 103 102 106 104 105 101"
 
 echo "Bases:"
 for BG in $BASE_BGS; do
-	echo -n "[0m${BG}: [${BG};91m "
+	echo -n "\e[0m${BG}: \e[${BG};91m "
 	for FG in $BASE_CFS; do
-		echo -n "[${FG}m ${FG} "
+		echo -n "\e[${FG}m ${FG} "
 	done
-	echo
+	echo "\e[0m"
 done
 
-echo "[0m"
+echo ""
 echo "(Wrapping) colorful foregrounds:"
 for BG in $BASE_BGS; do
-	echo -n "[0;${BG}m"
+	echo -n "\e[0;${BG}m"
 	for FG in $WRAP_COLOR_FGS; do
-		echo -n "[${FG}m ${FG} "
+		echo -n "\e[${FG}m ${FG} "
 	done
-	echo
+	echo "\e[0m"
 	for FG in $WRAP_BRGHT_FGS; do
-		echo -n "[${FG}m ${FG} "
+		echo -n "\e[${FG}m ${FG} "
 	done
-	echo
+	echo "\e[0m"
 done
 
-echo "[0m"
+echo ""
 echo "(Wrapping) colorful backgrounds:"
 for FG in $BASE_CFS; do
-	echo -n "[0;${FG}m"
+	echo -n "\e[0;${FG}m"
 	for BG in $WRAP_COLOR_BGS; do
-		echo -n "[${BG}m ${BG} "
+		echo -n "\e[${BG}m ${BG} "
 	done
-	echo
+	echo "\e[0m"
 	for BG in $WRAP_BRGHT_BGS; do
-		echo -n "[${BG}m ${BG} "
+		echo -n "\e[${BG}m ${BG} "
 	done
-	echo
+	echo "\e[0m"
 done
