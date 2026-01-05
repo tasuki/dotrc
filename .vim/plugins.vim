@@ -21,6 +21,7 @@ if has("nvim-0.5")
 		Plug 'stevearc/aerial.nvim', { 'tag': 'v2.5.0' }
 		Plug 'neovim/nvim-lspconfig', { 'tag': 'v1.7.0' }
 		Plug 'folke/which-key.nvim', { 'tag': '3.17.0' }
+		Plug 'RRethy/vim-illuminate', { 'commit': '0d1e93684d' }
 	else
 		Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
 		Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }

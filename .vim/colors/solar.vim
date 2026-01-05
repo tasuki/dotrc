@@ -203,6 +203,11 @@ endif
 " Windsurf
 call s:h("CodeiumSuggestion", s:base4, "", "italic", "")
 
+" Illuminate
+call s:h("IlluminatedWordText", "", s:base1, "", "")
+hi! link IlluminatedWordRead IlluminatedWordText
+hi! link IlluminatedWordWrite IlluminatedWordText
+
 
 " Language support for legacy vim
 
