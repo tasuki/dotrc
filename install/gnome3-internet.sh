@@ -11,9 +11,7 @@ echo "This is semi-working... requires pressing enter very fast"
 # https://extensions.gnome.org/extension/307/dash-to-dock/
 
 EXTENSIONS="
-wsmatrix@martin.zurowietz.de
 system-monitor-next@paradoxxx.zero.gmail.com
-dash-to-dock@micxgx.gmail.com
 "
 
 for EXTENSION in $EXTENSIONS; do

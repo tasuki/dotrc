@@ -23,7 +23,7 @@ sudo apt install curl bash git stow `# required packages for my dotrc` \
 	bat cloc jc jq miller visidata `# reading/displaying data` \
 	entr rlwrap units `# utils` \
 	kitty vim-gtk3 geeqie clementine vlc gparted xsel keepassxc `# gui tools` \
-	dconf-editor gnome-tweaks gnome-clocks yaru-theme-gnome-shell yaru-theme-gtk yaru-theme-icon `# gnome` \
+	dconf-editor gnome-tweaks gnome-clocks gnome-shell-extension-dashtodock yaru-theme-gnome-shell yaru-theme-gtk yaru-theme-icon `# gnome` \
 	dnsmasq firehol mosh nethogs syncthing `# network tools` \
 	default-jre `# jre category by itself?` \
 	gir1.2-gtop-2.0 gir1.2-nm-1.0 gir1.2-clutter-1.0 `# system monitor` \
