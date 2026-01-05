@@ -69,33 +69,64 @@ gsettings set org.gnome.shell.window-switcher current-workspace-only true
 gsettings set org.gnome.system.locale region 'en_DK.UTF-8' # oh the sanity
 
 # Gnome Terminal; an amazing amount of effort considering I don't even use it...
-hex_to_rgb() { printf "rgb(%d,%d,%d)\n" 0x${1:0:2} 0x${1:2:2} 0x${1:4:2}; }
+hex_to_rgb() { printf "rgb(%d,%d,%d)\n" 0x${1:1:1}${1:1:1} 0x${1:2:1}${1:2:1} 0x${1:3:1}${1:3:1}; }
+
 TERMINAL_PROFILE_ID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
 TERMINAL_PROFILE="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$TERMINAL_PROFILE_ID/"
 gsettings set $TERMINAL_PROFILE use-system-font false
 gsettings set $TERMINAL_PROFILE font 'Rec Mono Duotone 14'
 gsettings set $TERMINAL_PROFILE scrollbar-policy 'never'
 
+COLOR_SCHEME=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
+if [ "$COLOR_SCHEME" = "prefer-dark" ]; then
+	SOLAR_3="#FFE"
+	SOLAR_2="#EED"
+	SOLAR_1="#CCB"
+	SOLAR_0="#AA9"
+	SOLAR_00="#577"
+	SOLAR_01="#355"
+	SOLAR_02="#133"
+	SOLAR_03="#022"
+else
+	SOLAR_03="#FFE"
+	SOLAR_02="#EED"
+	SOLAR_01="#CCB"
+	SOLAR_00="#AA9"
+	SOLAR_0="#577"
+	SOLAR_1="#355"
+	SOLAR_2="#133"
+	SOLAR_3="#022"
+fi
+
+SOLAR_RED="#E34"
+SOLAR_ORA="#C60"
+SOLAR_YEL="#A80"
+SOLAR_GRN="#890"
+SOLAR_CYA="#2A9"
+SOLAR_BLU="#28C"
+SOLAR_VIO="#77D"
+SOLAR_MAG="#C4B"
+
 gsettings set $TERMINAL_PROFILE use-theme-colors false
-gsettings set $TERMINAL_PROFILE background-color $(hex_to_rgb "fdf6e3")
-gsettings set $TERMINAL_PROFILE foreground-color $(hex_to_rgb "62797a")
+gsettings set $TERMINAL_PROFILE background-color $(hex_to_rgb "$SOLAR_03")
+gsettings set $TERMINAL_PROFILE foreground-color $(hex_to_rgb "$SOLAR_0")
 gsettings set $TERMINAL_PROFILE palette \
-	"['"$(hex_to_rgb "eee8d5")"'
-	, '"$(hex_to_rgb "ee3344")"'
-	, '"$(hex_to_rgb "889900")"'
-	, '"$(hex_to_rgb "aa8800")"'
-	, '"$(hex_to_rgb "2288cc")"'
-	, '"$(hex_to_rgb "cc44bb")"'
-	, '"$(hex_to_rgb "22aa99")"'
-	, '"$(hex_to_rgb "073642")"'
-	, '"$(hex_to_rgb "bec2b6")"'
-	, '"$(hex_to_rgb "cc6600")"'
-	, '"$(hex_to_rgb "bec2b6")"'
-	, '"$(hex_to_rgb "8f9c98")"'
-	, '"$(hex_to_rgb "62797a")"'
-	, '"$(hex_to_rgb "7777dd")"'
-	, '"$(hex_to_rgb "37565e")"'
-	, '"$(hex_to_rgb "002b36")"'
+	"['"$(hex_to_rgb "$SOLAR_03")"'
+	, '"$(hex_to_rgb "$SOLAR_RED")"'
+	, '"$(hex_to_rgb "$SOLAR_GRN")"'
+	, '"$(hex_to_rgb "$SOLAR_YEL")"'
+	, '"$(hex_to_rgb "$SOLAR_BLU")"'
+	, '"$(hex_to_rgb "$SOLAR_MAG")"'
+	, '"$(hex_to_rgb "$SOLAR_CYA")"'
+	, '"$(hex_to_rgb "$SOLAR_2")"'
+	, '"$(hex_to_rgb "$SOLAR_02")"'
+	, '"$(hex_to_rgb "$SOLAR_ORA")"'
+	, '"$(hex_to_rgb "$SOLAR_01")"'
+	, '"$(hex_to_rgb "$SOLAR_00")"'
+	, '"$(hex_to_rgb "$SOLAR_0")"'
+	, '"$(hex_to_rgb "$SOLAR_VIO")"'
+	, '"$(hex_to_rgb "$SOLAR_1")"'
+	, '"$(hex_to_rgb "$SOLAR_3")"'
 	]"
 
 
