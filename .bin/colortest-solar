@@ -16,7 +16,7 @@ for BG in $BASE_BGS; do
 	for FG in $COLOR_CFS; do
 		echo -n "[${FG}m ${FG} "
 	done
-	echo
+	echo "[0m"
 done
 
 echo "[0m"
@@ -26,7 +26,7 @@ for BG in $BASE_BGS; do
 	for FG in $WRAP_COLOR_FGS; do
 		echo -n "[${FG}m ${FG} "
 	done
-	echo
+	echo "[0m"
 done
 
 echo "[0m"
@@ -36,7 +36,7 @@ for FG in $COLOR_CFS; do
 	for BG in $WRAP_COLOR_BGS; do
 		echo -n "[${BG}m ${BG} "
 	done
-	echo
+	echo "[0m"
 done
 
 echo "[0m"
