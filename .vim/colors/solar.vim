@@ -1,10 +1,10 @@
 " Solarized, brought down to something more manageable
 
 hi clear
+let g:colors_name="solar"
 if exists("syntax_on")
 	syntax reset
 endif
-let g:colors_name="solar"
 
 " The colors
 if &background == "dark"
@@ -89,7 +89,7 @@ endif
 function! s:h(group, fg, bg, attr, sp)
 	let l:f = a:fg != "" ? " guifg=".a:fg : ""
 	let l:b = a:bg != "" ? " guibg=".a:bg : ""
-	let l:a = a:attr != "" ? " gui=".a:attr : " gui=NONE"
+	let l:a = a:attr != "" ? " cterm=".a:attr." gui=".a:attr : " cterm=NONE gui=NONE"
 	let l:s = a:sp != "" ? " guisp=".a:sp : ""
 	exe "hi! " . a:group . l:f . l:b . l:a . l:s
 endfunction
