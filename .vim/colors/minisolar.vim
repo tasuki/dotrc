@@ -1,5 +1,8 @@
 hi clear
 let g:colors_name = 'minisolar'
+if exists("syntax_on")
+	syntax reset
+endif
 if has("nvim-0.10")
 	source $VIMRUNTIME/colors/vim.lua
 end
@@ -103,10 +106,10 @@ call s:h("SpellCap", s:violet, s:base1, "underline")
 call s:h("SpellLocal", s:cyan, s:base1, "underline")
 call s:h("SpellRare", s:yellow, s:base1, "underline")
 call s:h("StatusLine", s:base8, s:base1, "bold")
-call s:h("StatusLineNC", s:base8, s:base1, "")
-call s:h("TabLine", s:base8, s:base2, "bold")
+call s:h("StatusLineNC", s:base6, s:base1, "")
+call s:h("TabLine", s:base8, s:base1, "bold")
 hi! link TabLineFill TabLine
-call s:h("TabLineSel", s:base1, s:base7, "bold")
+call s:h("TabLineSel", s:base1, s:base8, "bold")
 call s:h("Title", s:base5, "", "bold")
 call s:h("Visual", s:base0, s:base5, "")
 call s:h("WarningMsg", s:orange, "", "")
