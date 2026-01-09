@@ -8,6 +8,7 @@ set -euo pipefail
 GNOME_FONT_SIZE=${GNOME_FONT_SIZE:-'12'}
 GNOME_SYSTEM_MONITOR_SERVICES=${GNOME_SYSTEM_MONITOR_SERVICES:-'cpu memory swap net disk thermal fan'}
 GNOME_SYSTEM_MONITOR_GRAPH_WIDTH=${GNOME_SYSTEM_MONITOR_GRAPH_WIDTH:-'70'}
+GNOME_INPUT_SOURCES=${GNOME_INPUT_SOURCES:-"[('xkb', 'pl'), ('xkb', 'cshack')]"}
 
 # Preferences
 CLOCKS="[
@@ -24,7 +25,7 @@ WORLD_CLOCKS=$(echo "$CLOCKS" | sed "s/\(<(.*)>)>\)/{'location': \1}/g")
 ### Gnome
 
 gsettings set org.gnome.clocks world-clocks "$WORLD_CLOCKS"
-gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'pl'), ('xkb', 'cshack')]"
+gsettings set org.gnome.desktop.input-sources sources "$GNOME_INPUT_SOURCES"
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps', 'grp:shifts_toggle', 'compose:rctrl']"
 gsettings set org.gnome.desktop.input-sources show-all-sources true
 gsettings set org.gnome.desktop.interface accent-color "orange"
