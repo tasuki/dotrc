@@ -23,6 +23,7 @@ done
 [ ! -d .zsh-custom ] && ln -s dotrc/.zsh-custom/ .
 
 # kitty
+mkdir -p ~/.config/kitty/
 echo "include solar-dark.conf" > ~/.config/kitty/dark-theme.auto.conf
 echo "include solar-light.conf" > ~/.config/kitty/light-theme.auto.conf
 echo "include solar-light.conf" > ~/.config/kitty/no-preference-theme.auto.conf
