@@ -18,7 +18,7 @@ if [ "$#" -ne 1 ]; then
 	echo "Requires exactly 1 arguments, $# supplied!"
 	echo
 	echo "Usage: $0 <profile>"
-	echo "<profile> one of: default, google, cloudflare, nextdns, hdns, hnsdns"
+	echo "<profile> one of: default, dns4eu, google, cloudflare, nextdns, hdns, hnsdns"
 	echo
 	echo "Current settings:"
 	nmcli connection show "$CURRENT_WIFI_UUID" | grep -E "^ipv(4|6).dns:"
