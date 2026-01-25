@@ -22,6 +22,7 @@ if has("nvim-0.5")
 		Plug 'neovim/nvim-lspconfig', { 'tag': 'v1.7.0' }
 		Plug 'folke/which-key.nvim', { 'tag': '3.17.0' }
 		Plug 'RRethy/vim-illuminate', { 'commit': '0d1e93684d' }
+		Plug 'petertriho/nvim-scrollbar/'
 	else
 		Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
 		Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }
@@ -186,6 +187,8 @@ require'lspconfig'.gleam.setup {}
 require'treesitter-context'.setup { enable = true }
 require'nvim-ts-autotag'.setup {}
 require'nvim-autopairs'.setup { check_ts = true }
+
+require("scrollbar").setup({})
 
 EOF
 endif
