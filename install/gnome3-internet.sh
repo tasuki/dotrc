@@ -11,7 +11,7 @@ echo "This is semi-working... requires pressing enter very fast"
 # https://extensions.gnome.org/extension/307/dash-to-dock/
 
 EXTENSIONS="
-system-monitor-next@paradoxxx.zero.gmail.com
+monitor@astraext.github.io
 paperwm@paperwm.github.com
 "
 

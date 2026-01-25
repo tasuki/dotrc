@@ -5,9 +5,7 @@ set -euo pipefail
 
 ### Customizable preferences
 
-GNOME_FONT_SIZE=${GNOME_FONT_SIZE:-'12'}
-GNOME_SYSTEM_MONITOR_SERVICES=${GNOME_SYSTEM_MONITOR_SERVICES:-'cpu memory swap net disk thermal fan'}
-GNOME_SYSTEM_MONITOR_GRAPH_WIDTH=${GNOME_SYSTEM_MONITOR_GRAPH_WIDTH:-'70'}
+GNOME_FONT_SIZE=${GNOME_FONT_SIZE:-'14'}
 GNOME_INPUT_SOURCES=${GNOME_INPUT_SOURCES:-"[('xkb', 'pl'), ('xkb', 'cshack')]"}
 
 # Preferences
@@ -154,16 +152,6 @@ dconf write /org/gnome/shell/extensions/paperwm/vertical-margin 0
 dconf write /org/gnome/shell/extensions/paperwm/vertical-margin-bottom 0
 dconf write /org/gnome/shell/extensions/paperwm/use-default-background false
 dconf write /org/gnome/shell/extensions/paperwm/window-gap 10
-
-dconf write /org/gnome/shell/extensions/system-monitor-next-applet/center-display false
-dconf write /org/gnome/shell/extensions/system-monitor-next-applet/compact-display false
-dconf write /org/gnome/shell/extensions/system-monitor-next-applet/icon-display false
-for SETTING in $(echo "$GNOME_SYSTEM_MONITOR_SERVICES"); do
-	dconf write /org/gnome/shell/extensions/system-monitor-next-applet/"$SETTING"-display true
-	dconf write /org/gnome/shell/extensions/system-monitor-next-applet/"$SETTING"-graph-width "$GNOME_SYSTEM_MONITOR_GRAPH_WIDTH"
-	dconf write /org/gnome/shell/extensions/system-monitor-next-applet/"$SETTING"-refresh-time 1000
-	dconf write /org/gnome/shell/extensions/system-monitor-next-applet/"$SETTING"-show-text false
-done
 
 dconf write /org/gnome/desktop/notifications/application/kitty/enable true
 dconf write /org/gnome/desktop/notifications/application/org-gnome-shell-extensions/enable false

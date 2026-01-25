@@ -18,7 +18,7 @@ echo "${ITEM_NO}. Installing things from the main repos..."
 sudo apt install curl bash git stow `# required packages for my dotrc` \
 	tmux neovim fzf fd-find ripgrep `# must have cli tools` \
 	zsh zsh-autosuggestions zsh-syntax-highlighting `# zsh stuff` \
-	htop btop `# monitoring` \
+	htop btop iotop-c `# monitoring` \
 	zoxide nnn fd-find renameutils `# file ops` \
 	bat cloc jc jq miller visidata `# reading/displaying data` \
 	entr rlwrap units `# utils` \
