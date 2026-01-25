@@ -149,6 +149,12 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "'BOTTOM'"
 dconf write /org/gnome/shell/extensions/dash-to-dock/hot-keys false
 dconf write /org/gnome/shell/extensions/dash-to-dock/extend-height false
 
+dconf write /org/gnome/shell/extensions/paperwm/horizontal-margin 0
+dconf write /org/gnome/shell/extensions/paperwm/vertical-margin 0
+dconf write /org/gnome/shell/extensions/paperwm/vertical-margin-bottom 0
+dconf write /org/gnome/shell/extensions/paperwm/use-default-background false
+dconf write /org/gnome/shell/extensions/paperwm/window-gap 10
+
 dconf write /org/gnome/shell/extensions/system-monitor-next-applet/center-display false
 dconf write /org/gnome/shell/extensions/system-monitor-next-applet/compact-display false
 dconf write /org/gnome/shell/extensions/system-monitor-next-applet/icon-display false

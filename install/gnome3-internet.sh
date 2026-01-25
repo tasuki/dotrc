@@ -12,6 +12,7 @@ echo "This is semi-working... requires pressing enter very fast"
 
 EXTENSIONS="
 system-monitor-next@paradoxxx.zero.gmail.com
+paperwm@paperwm.github.com
 "
 
 for EXTENSION in $EXTENSIONS; do
