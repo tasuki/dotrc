@@ -202,9 +202,6 @@ if has("nvim-0.10")
 	call s:h("@tag.delimiter", s:base3, "", "", "")
 endif
 
-" Windsurf
-call s:h("CodeiumSuggestion", s:base4, "", "italic", "")
-
 " Illuminate
 call s:h("IlluminatedWordText", "", s:base1, "", "")
 hi! link IlluminatedWordRead IlluminatedWordText

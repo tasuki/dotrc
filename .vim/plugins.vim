@@ -11,7 +11,6 @@ Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
 Plug 'tpope/vim-surround', { 'tag': 'v2.2' }
 Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
 Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
-Plug 'Exafunction/windsurf.vim', { 'commit': 'a8d47ec' }
 if has("nvim-0.5")
 	if has("nvim-0.10")
 		Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.9.3', 'do': ':TSUpdate' }
@@ -109,10 +108,6 @@ nnoremap <Leader>l :SidewaysRight<cr>
 let g:vimwiki_list = [{'path': '~/data/prog/vitwiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_key_mappings = {'lists': 0} " don't hijack gh/gl
 let g:vimwiki_conceallevel = 0 " do not hide markup
-
-" windsurf / codeium
-let g:codeium_manual = v:true
-set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P%5{codeium#GetStatusString()}
 
 " treesitter goodness only nvim 0.5 and up
 if has("nvim-0.5")
