@@ -31,3 +31,6 @@ echo "include solar-light.conf" > ~/.config/kitty/no-preference-theme.auto.conf
 # link individual files for the rest
 cd "$DOTRC_DIR"
 stow --no-folding --verbose --dotfiles --ignore=".sh$|^install$|^.git$|^.editorconfig$|^.vim$|^.zsh-custom$" .
+
+# btop
+chmod 444 ./.config/btop/btop.conf
