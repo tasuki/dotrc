@@ -6,6 +6,10 @@
   (upper_case_identifier) @name
   (#set! "kind" "Enum")) @symbol
 
+(union_variant
+  (upper_case_identifier) @name
+  (#set! "kind" "EnumMember")) @symbol
+
 (type_alias_declaration
   (upper_case_identifier) @name
   (#set! "kind" "Struct")) @symbol

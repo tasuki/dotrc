@@ -144,6 +144,17 @@ require'nvim-treesitter.configs'.setup {
 vim.treesitter.language.register('markdown', 'vimwiki')
 
 require'aerial'.setup {
+	filter_kind = {
+		"Class",
+		"Constructor",
+		"Enum",
+		"EnumMember",
+		"Function",
+		"Interface",
+		"Module",
+		"Method",
+		"Struct",
+	},
 	on_attach = function(bufnr)
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', '<F6>', '<cmd>AerialToggle!<CR>', {})
 		vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrev<CR>', {})
