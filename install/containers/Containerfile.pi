@@ -1,0 +1,12 @@
+FROM debian:trixie
+RUN apt-get update \
+	&& apt-get install -y fd-find ripgrep nodejs npm \
+	&& apt-get clean \
+	&& rm -rf /var/lib/apt/lists/*
+
+RUN ln -s /usr/bin/fdfind /usr/bin/fd
+RUN npm install -g @mariozechner/pi-coding-agent \
+	&& npm cache clean --force
+
+WORKDIR /src/
+CMD ["pi"]

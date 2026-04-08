@@ -196,6 +196,15 @@ alias grep='grep --color=auto'  # if stuck with grep, colorize
 alias dockerrm='docker ps -a -q | xargs docker rm'
 alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs docker rmi'
 
+# podman
+alias podmanrm='podman ps -a -q | xargs podman rm'
+alias podmanrmi='podman images -a | grep "<none>" | awk "{print \$3}" | xargs podman rmi'
+pi-dev() {
+	podman run -it --rm --network host \
+		-v "$(pwd):/src" -v "$HOME/.pi/:/root/.pi/" pi \
+		pi --session-dir "/root/.pi/agent/sessions/$(basename "$PWD")" "$@"
+}
+
 # programming
 export PYTHONDONTWRITEBYTECODE=1
 alias g='git'
