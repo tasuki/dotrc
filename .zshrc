@@ -200,8 +200,16 @@ alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs do
 alias podmanrm='podman ps -a -q | xargs podman rm'
 alias podmanrmi='podman images -a | grep "<none>" | awk "{print \$3}" | xargs podman rmi'
 pi-dev() {
+	local project image
+	project="$(basename "$PWD")"
+	image="pi-$project"
+	if ! podman image exists "$image"; then
+		image="pi"
+	fi
 	podman run -it --rm --network host \
-		-v "$(pwd):/src" -v "$HOME/.pi/:/root/.pi/" pi \
+		-v "$(pwd):/src" \
+		-v "$HOME/.pi/:/root/.pi/" \
+		"$image" \
 		pi --session-dir "/root/.pi/agent/sessions/$(basename "$PWD")" "$@"
 }
 

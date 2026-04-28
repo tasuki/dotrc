@@ -1,12 +1,19 @@
 FROM debian:trixie
+
 RUN apt-get update \
-	&& apt-get install -y fd-find ripgrep nodejs npm \
+	&& apt-get install -y curl fd-find ripgrep \
+		git build-essential autoconf libssl-dev libncurses-dev unzip \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
-
 RUN ln -s /usr/bin/fdfind /usr/bin/fd
-RUN npm install -g @mariozechner/pi-coding-agent \
-	&& npm cache clean --force
+
+RUN curl https://mise.run | MISE_INSTALL_PATH=/usr/local/bin/mise sh
+RUN true \
+	&& mise use -g usage@2.1.1 \
+	&& mise use -g watchexec@2.3.2 \
+	&& mise use -g jless@0.9.0 \
+	&& mise use -g pi@0.70.5
+ENV PATH="/root/.local/share/mise/shims:${PATH}"
 
 WORKDIR /src/
 CMD ["pi"]
