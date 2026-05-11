@@ -206,6 +206,7 @@ pi-dev() {
 	if ! podman image exists "$image"; then
 		image="pi"
 	fi
+	echo "running in $image"
 	podman run -it --rm --network host \
 		-v "$(pwd):/src" \
 		-v "$HOME/.pi/:/root/.pi/" \
