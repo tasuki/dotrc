@@ -93,6 +93,10 @@ let g:NERDTreeChDirMode = 0 " do not change pwd everrr
 
 " Fugitive
 map <Leader>b :Git blame<CR>
+augroup FugitiveMappings
+  autocmd!
+  autocmd FileType fugitive nmap <buffer> <Tab> =
+augroup END
 
 " Commentary
 nnoremap <C-/> :Commentary<CR>
