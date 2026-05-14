@@ -1,0 +1,7 @@
+gui:
+  showCommandLog: false
+  sidePanelWidth: 0.25
+  mainPanelSplitMode: horizontal
+  theme:
+    selectedLineBgColor:
+      - black

@@ -1,0 +1,5 @@
+[style]
+diff_highlight.changed_old = { bg = "17", fg = "red" }
+diff_highlight.changed_new = { bg = "18", fg = "green" }
+# diff_highlight.unchanged_old = { fg = "light green", mods = "" }
+# diff_highlight.unchanged_new = { fg = "light green", mods = "" }
