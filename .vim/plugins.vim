@@ -11,21 +11,16 @@ Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
 Plug 'tpope/vim-surround', { 'tag': 'v2.2' }
 Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
 Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
-if has("nvim-0.5")
-	if has("nvim-0.10")
-		Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.9.3', 'do': ':TSUpdate' }
-		Plug 'nvim-treesitter/nvim-treesitter-context', { 'tag': 'v1.0.0' }
-		Plug 'windwp/nvim-ts-autotag', { 'commit': 'c4ca798ab9' }
-		Plug 'windwp/nvim-autopairs', { 'tag': '0.10.0' }
-		Plug 'stevearc/aerial.nvim', { 'tag': 'v2.5.0' }
-		Plug 'neovim/nvim-lspconfig', { 'tag': 'v1.7.0' }
-		Plug 'folke/which-key.nvim', { 'tag': '3.17.0' }
-		Plug 'RRethy/vim-illuminate', { 'commit': '0d1e93684d' }
-		Plug 'petertriho/nvim-scrollbar', { 'commit': 'f8e87b96cd' }
-	else
-		Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.7.2', 'do': ':TSUpdate' }
-		Plug 'stevearc/aerial.nvim', { 'commit': 'ee8d7c8ece' }
-	endif
+if has("nvim-0.10")
+	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.9.3', 'do': ':TSUpdate' }
+	Plug 'nvim-treesitter/nvim-treesitter-context', { 'tag': 'v1.0.0' }
+	Plug 'windwp/nvim-ts-autotag', { 'commit': 'c4ca798ab9' }
+	Plug 'windwp/nvim-autopairs', { 'tag': '0.10.0' }
+	Plug 'stevearc/aerial.nvim', { 'tag': 'v2.5.0' }
+	Plug 'neovim/nvim-lspconfig', { 'tag': 'v1.7.0' }
+	Plug 'folke/which-key.nvim', { 'tag': '3.17.0' }
+	Plug 'RRethy/vim-illuminate', { 'commit': '0d1e93684d' }
+	Plug 'petertriho/nvim-scrollbar', { 'commit': 'f8e87b96cd' }
 	Plug 'catgoose/nvim-colorizer.lua', { 'commit': '81e676d320' }
 	Plug 'vimpostor/vim-lumen', { 'tag': 'v1.0' }
 endif
