@@ -123,6 +123,7 @@ require'nvim-treesitter.configs'.setup {
 		"php", "python", "ruby", -- the bad
 		"html", "css", "javascript", "typescript", -- the ugly
 		"c", "cpp", -- the old skool
+		"xml", -- the others
 	},
 
 	sync_install = false,
@@ -191,7 +192,11 @@ require'lspconfig'.elmls.setup {}
 require'lspconfig'.gleam.setup {}
 
 require'treesitter-context'.setup { enable = true }
-require'nvim-ts-autotag'.setup {}
+require'nvim-ts-autotag'.setup {
+	aliases = {
+		["svg"] = "xml",
+	}
+}
 require'nvim-autopairs'.setup { check_ts = true }
 
 require("scrollbar").setup({})
