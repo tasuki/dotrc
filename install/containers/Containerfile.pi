@@ -15,5 +15,7 @@ RUN true \
 	&& mise use -g pi@0.70.5
 ENV PATH="/root/.local/share/mise/shims:${PATH}"
 
+COPY .pi/agent/themes /root/dotrc/.pi/agent/themes
+
 WORKDIR /src/
 CMD ["pi"]
