@@ -218,6 +218,8 @@ pi-dev() {
 export PYTHONDONTWRITEBYTECODE=1
 alias g='git'
 alias m='make'
+relive() { git remote set-url live "${$(git remote get-url live)//$1/$2}"; }
+
 
 # geo
 export GDAL_NUM_THREADS=ALL_CPUS
