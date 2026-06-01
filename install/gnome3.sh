@@ -31,12 +31,12 @@ gsettings set org.gnome.desktop.interface clock-format "24h"
 gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.desktop.interface cursor-blink false
 gsettings set org.gnome.desktop.interface cursor-theme "Yaru"
-gsettings set org.gnome.desktop.interface document-font-name "Ubuntu $GNOME_FONT_SIZE"
+gsettings set org.gnome.desktop.interface document-font-name "Recursive Sans Casual Static $GNOME_FONT_SIZE"
 gsettings set org.gnome.desktop.interface enable-hot-corners false
-gsettings set org.gnome.desktop.interface font-name "Ubuntu $GNOME_FONT_SIZE"
+gsettings set org.gnome.desktop.interface font-name "Recursive Sans Casual Static $GNOME_FONT_SIZE"
 gsettings set org.gnome.desktop.interface gtk-theme "Yaru"
 gsettings set org.gnome.desktop.interface icon-theme "Yaru"
-gsettings set org.gnome.desktop.interface monospace-font-name "Ubuntu Mono $((GNOME_FONT_SIZE + 2))"
+gsettings set org.gnome.desktop.interface monospace-font-name "Recursive Mono Casual Static $((GNOME_FONT_SIZE))"
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.desktop.peripherals.keyboard delay 250
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 25
@@ -56,7 +56,7 @@ for i in 1 2 3 4 5 6 7 8 9; do
 done
 gsettings set org.gnome.desktop.wm.preferences focus-mode "sloppy"
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
-gsettings set org.gnome.desktop.wm.preferences titlebar-font "Ubuntu $GNOME_FONT_SIZE"
+gsettings set org.gnome.desktop.wm.preferences titlebar-font "Recursive Sans Casual Static $GNOME_FONT_SIZE"
 
 gsettings set org.gnome.nautilus.preferences click-policy "single"
 
