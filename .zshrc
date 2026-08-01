@@ -211,7 +211,12 @@ pi-dev() {
 		-v "$(pwd):/src" \
 		-v "$HOME/.pi/:/root/.pi/" \
 		"$image" \
-		pi --session-dir "/root/.pi/agent/sessions/$(basename "$PWD")" "$@"
+		pi --session-dir "/root/.pi/agent/sessions/$project" "$@"
+}
+pi-danger() {
+	local project image
+	project="$(basename "$PWD")"
+	pi --session-dir "$HOME/.pi/agent/sessions/$project" "$@"
 }
 
 # programming

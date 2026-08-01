@@ -65,14 +65,16 @@ echo
 echo "${ITEM_NO}. Installing custom binaries"
 
 install_binary mise \
-	"https://github.com/jdx/mise/releases/download/v2025.4.1/mise-v2025.4.1-linux-x64" \
-	"670b182430d20a5c9dbfcce0af7ff64b87f62938b62663c5ca5f7661c067fe9b"
+	"https://github.com/jdx/mise/releases/download/v2026.7.14/mise-v2026.7.14-linux-x64" \
+	"fc96308f4fa085d7359892ac6351ededb35ecfabf1ddc34f5757bc755a2af8a6"
 mise use -g usage@2.1.1
 mise use -g watchexec@2.3.2
 mise use -g jless@0.9.0
 mise use -g aqua:sinclairtarget/git-who@1.2
 mise use -g ubi:birchb1024/frangipanni@0.5.0
 mise use -g gitu@0.41.0
+mise use -g aqua:earendil-works/pi@0.82.1
+
 
 install_binary sabaki \
 	"https://github.com/SabakiHQ/Sabaki/releases/download/v0.52.2/sabaki-v0.52.2-linux-x64.AppImage" \
