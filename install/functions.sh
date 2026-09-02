@@ -41,21 +41,29 @@ function install_binary {
 	mkdir -p "$HOME/.local/bin/"
 	DEST="$HOME/.local/bin/$1"
 	TMP_DEST="/tmp/$1"
-	if [ -f "$DEST" ]; then
-		echo "$1 is already in $DEST"
-	else
-		echo "Installing $1..."
-		wget -O "$TMP_DEST" "$2"
-		HASH=$(sha256sum "$TMP_DEST" | awk '{print $1}')
 
-		if [[ "$HASH" != "$3" ]]; then
-			echo "Checksum verification failed!" >&2
-			exit 1
+	if [ -f "$DEST" ]; then
+		HASH=$(sha256sum "$DEST" | awk '{print $1}')
+		if [[ "$HASH" == "$3" ]]; then
+			echo "$1 is already in $DEST"
+			return
 		fi
 
-		mv "$TMP_DEST" "$DEST"
-		chmod 755 "$DEST"
+		echo "$1 is already in $DEST, but has the wrong checksum. Reinstalling..."
+	else
+		echo "Installing $1..."
 	fi
+
+	wget -O "$TMP_DEST" "$2"
+	HASH=$(sha256sum "$TMP_DEST" | awk '{print $1}')
+
+	if [[ "$HASH" != "$3" ]]; then
+		echo "Checksum verification failed!" >&2
+		exit 1
+	fi
+
+	mv "$TMP_DEST" "$DEST"
+	chmod 755 "$DEST"
 }
 
 # Links the second parameter to the first one.
