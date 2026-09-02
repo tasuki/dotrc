@@ -189,6 +189,14 @@ function icat {
 	fi
 }
 
+function notify {
+	if [[ -n $TMUX ]]; then
+		printf '\ePtmux;\e\e]99;;%s\e\e\\\e\\' "$*"
+	else
+		printf '\e]99;;%s\e\\' "$*"
+	fi
+}
+
 # searching
 alias grep='grep --color=auto'  # if stuck with grep, colorize
 
