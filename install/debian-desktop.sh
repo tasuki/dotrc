@@ -79,6 +79,7 @@ mise use -g aqua:earendil-works/pi@0.82.1
 install_binary sabaki \
 	"https://github.com/SabakiHQ/Sabaki/releases/download/v0.52.2/sabaki-v0.52.2-linux-x64.AppImage" \
 	"c2e0a3e47bcd65cd8a39d7393b8f6ea4d4e81432a230c59ec7291cb478b9d446"
+xdg-mime default sabaki.desktop application/x-go-sgf
 
 install_binary cgoban.jar \
 	"https://files.gokgs.com/javaBin/cgoban.jar" \
