@@ -204,6 +204,9 @@ alias grep='grep --color=auto'  # if stuck with grep, colorize
 alias dockerrm='docker ps -a -q | xargs docker rm'
 alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs docker rmi'
 
+# pi: suppress startup update notifications
+export PI_SKIP_VERSION_CHECK=1
+
 # podman
 alias podmanrm='podman ps -a -q | xargs podman rm'
 alias podmanrmi='podman images -a | grep "<none>" | awk "{print \$3}" | xargs podman rmi'
@@ -216,6 +219,7 @@ pi-dev() {
 	fi
 	echo "running in $image"
 	podman run -it --rm --network host \
+		-e PI_SKIP_VERSION_CHECK \
 		-v "$(pwd):/src" \
 		-v "$HOME/.pi/:/root/.pi/" \
 		"$image" \
