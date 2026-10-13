@@ -73,7 +73,7 @@ mise use -g jless@0.9.0
 mise use -g aqua:sinclairtarget/git-who@1.2
 mise use -g ubi:birchb1024/frangipanni@0.5.0
 mise use -g gitu@0.41.0
-mise use -g aqua:earendil-works/pi@0.82.1
+mise use -g aqua:earendil-works/pi@1.2.0
 
 
 install_binary sabaki \

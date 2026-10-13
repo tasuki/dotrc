@@ -204,7 +204,7 @@ alias grep='grep --color=auto'  # if stuck with grep, colorize
 alias dockerrm='docker ps -a -q | xargs docker rm'
 alias dockerrmi='docker images -a | grep "<none>" | awk "{print \$3}" | xargs docker rmi'
 
-# pi: suppress startup update notifications
+# pi
 export PI_SKIP_VERSION_CHECK=1
 
 # podman
@@ -228,7 +228,7 @@ pi-dev() {
 pi-danger() {
 	local project image
 	project="$(basename "$PWD")"
-	pi --session-dir "$HOME/.pi/agent/sessions/$project" "$@"
+	pi --tui-mode regular --use-theme solar --session-dir "$HOME/.pi/agent/sessions/$project" "$@"
 }
 
 # programming
