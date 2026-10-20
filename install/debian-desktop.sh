@@ -67,7 +67,7 @@ echo "${ITEM_NO}. Installing custom binaries"
 install_binary mise \
 	"https://github.com/jdx/mise/releases/download/v2026.7.14/mise-v2026.7.14-linux-x64" \
 	"fc96308f4fa085d7359892ac6351ededb35ecfabf1ddc34f5757bc755a2af8a6"
-mise use -g usage@2.1.1
+mise use -g usage@7.1.0
 mise use -g watchexec@2.3.2
 mise use -g jless@0.9.0
 mise use -g aqua:sinclairtarget/git-who@1.2
