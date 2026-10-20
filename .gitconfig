@@ -94,7 +94,9 @@
 	cob = checkout -b
 	cop = checkout --patch
 	d  = diff --no-prefix
+	ds = diff --no-prefix --stat
 	dc = diff --no-prefix --cached
+	dcs = diff --no-prefix --cached --stat
 	f = fetch
 	fa = fetch --all
 	fap = fetch --all --prune
