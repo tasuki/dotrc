@@ -22,6 +22,9 @@ if has("nvim-0.10")
 	Plug 'RRethy/vim-illuminate', { 'commit': '0d1e93684d' }
 	Plug 'petertriho/nvim-scrollbar', { 'commit': 'f8e87b96cd' }
 	Plug 'catgoose/nvim-colorizer.lua', { 'commit': '81e676d320' }
+	" avoid blocking startup on unavailable desktop portal
+	let g:lumen_startup_overwrite = 0
+
 	Plug 'vimpostor/vim-lumen', { 'tag': 'v1.0' }
 endif
 call plug#end()
