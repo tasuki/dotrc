@@ -133,6 +133,7 @@ function duh { du -h "$@" | sort -h; }                # disk usage - human reada
 function dumh { du -h --max-depth=1 "$@" | sort -h; } # disk usage - readable and not too many
 function dus { du "$@" | sort -h }                    # disk usage - sort by size
 function dust { dus "$@" | tail -20 }                 # only the biggest 20
+alias wcl="wc -l"
 
 # plotting
 alias flip="awk '{print \$2, \$1}' OFS='\t'"
