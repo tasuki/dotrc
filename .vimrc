@@ -54,6 +54,12 @@ filetype plugin on   " file type detection
 set autowrite        " autosave before commands like :next and :make
 set hidden           " change buffer without saving
 set noswapfile       " swap files are overrated
+set autoread         " reload externally changed files unless locally modified
+
+augroup autoreload
+	autocmd!
+	autocmd FocusGained,BufEnter,CursorHold * if mode() !=# 'c' && getcmdwintype() ==# '' | checktime | endif
+augroup END
 
 " extras based on filename
 autocmd BufNewFile,BufRead *.{html,php} source ~/.vim/mappings/html.vim
