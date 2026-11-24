@@ -5,13 +5,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/sideways.vim', { 'tag': 'v0.4.0' }
 Plug 'editorconfig/editorconfig-vim', { 'tag': 'v1.2.0' }
 Plug 'junegunn/fzf.vim', { 'commit': '87b60bb' }
-Plug 'preservim/nerdtree', { 'tag': '7.1.2' }
 Plug 'tpope/vim-commentary', { 'tag': 'v1.3' }
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.7' }
 Plug 'tpope/vim-surround', { 'tag': 'v2.2' }
 Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
 Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
 if has("nvim-0.10")
+	Plug 'nvim-tree/nvim-tree.lua', { 'tag': 'v1.19.0' }
 	Plug '3rd/image.nvim', { 'tag': 'v1.5.1' }
 	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.9.3', 'do': ':TSUpdate' }
 	Plug 'nvim-treesitter/nvim-treesitter-context', { 'tag': 'v1.0.0' }
@@ -26,6 +26,8 @@ if has("nvim-0.10")
 	" avoid blocking startup on unavailable desktop portal
 	let g:lumen_startup_overwrite = 0
 	Plug 'vimpostor/vim-lumen', { 'tag': 'v1.0' }
+else
+	Plug 'preservim/nerdtree', { 'tag': '7.1.2' }
 endif
 call plug#end()
 
@@ -83,11 +85,39 @@ inoremap <expr> <C-f> fzf#vim#complete(FF('--max-depth=4'))
 inoremap <expr> <C-g> fzf#vim#complete(FF('--max-depth=4 --hidden'))
 
 
-" nerdtree
-map <F5> :NERDTreeToggle<CR>
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>f :NERDTreeFind<CR>
-let g:NERDTreeChDirMode = 0 " do not change pwd everrr
+" file tree
+if has("nvim-0.10")
+lua << EOF
+require'nvim-tree'.setup {
+	filters = { git_ignored = false },
+	renderer = {
+		group_empty = true,
+		icons = { git_placement = "signcolumn" },
+	},
+	on_attach = function(bufnr)
+		local api = require'nvim-tree.api'
+		api.config.mappings.default_on_attach(bufnr)
+		local opts = { buffer = bufnr, noremap = true, silent = true, nowait = true }
+		vim.keymap.set('n', 'I', api.tree.toggle_hidden_filter, opts)
+		vim.keymap.set('n', 'gi', api.tree.toggle_gitignore_filter, opts)
+		vim.keymap.set('n', 'C', api.tree.change_root_to_node, opts)
+		vim.keymap.set('n', 'u', api.tree.change_root_to_parent, opts)
+		vim.keymap.set('n', 'p', api.node.navigate.parent, opts)
+		vim.keymap.set('n', 'P', function() vim.cmd('normal! gg') end, opts)
+		vim.keymap.set('n', 'i', api.node.open.horizontal, opts)
+		vim.keymap.set('n', 's', api.node.open.vertical, opts)
+	end,
+}
+EOF
+	map <F5> :NvimTreeToggle<CR>
+	map <Leader>n :NvimTreeToggle<CR>
+	map <Leader>f :NvimTreeFindFile<CR>
+else
+	map <F5> :NERDTreeToggle<CR>
+	map <Leader>n :NERDTreeToggle<CR>
+	map <Leader>f :NERDTreeFind<CR>
+	let g:NERDTreeChDirMode = 0 " do not change pwd everrr
+endif
 
 " Fugitive
 map <Leader>b :Git blame<CR>

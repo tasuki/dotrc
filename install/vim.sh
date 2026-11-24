@@ -14,4 +14,6 @@ else
 fi
 
 # hnng, don't want to fork this, but damn are the all caps tab names annoying
-sed --in-place 's/NERD_tree_/tree_/g' "$HOME/.vim/plugged/nerdtree/lib/nerdtree/creator.vim"
+if [ -f "$HOME/.vim/plugged/nerdtree/lib/nerdtree/creator.vim" ]; then
+	sed --in-place 's/NERD_tree_/tree_/g' "$HOME/.vim/plugged/nerdtree/lib/nerdtree/creator.vim"
+fi
