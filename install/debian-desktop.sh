@@ -21,7 +21,7 @@ sudo apt install curl bash git stow `# required packages for my dotrc` \
 	htop btop iotop-c `# monitoring` \
 	zoxide nnn fd-find renameutils `# file ops` \
 	bat cloc jc jq miller visidata `# reading/displaying data` \
-	entr rlwrap units `# utils` \
+	entr rlwrap units imagemagick `# utils` \
 	kitty vim-gtk3 geeqie clementine vlc gparted xsel keepassxc `# gui tools` \
 	dconf-editor gnome-tweaks gnome-clocks gnome-shell-extension-dashtodock yaru-theme-gnome-shell yaru-theme-gtk yaru-theme-icon `# gnome` \
 	dnsmasq firehol mosh nethogs syncthing `# network tools` \

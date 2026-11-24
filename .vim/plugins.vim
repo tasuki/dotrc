@@ -12,6 +12,7 @@ Plug 'tpope/vim-surround', { 'tag': 'v2.2' }
 Plug 'tpope/vim-repeat', { 'tag': 'v1.2' }
 Plug 'vimwiki/vimwiki', { 'tag': 'v2.5' }
 if has("nvim-0.10")
+	Plug '3rd/image.nvim', { 'tag': 'v1.5.1' }
 	Plug 'nvim-treesitter/nvim-treesitter', { 'tag': 'v0.9.3', 'do': ':TSUpdate' }
 	Plug 'nvim-treesitter/nvim-treesitter-context', { 'tag': 'v1.0.0' }
 	Plug 'windwp/nvim-ts-autotag', { 'commit': 'c4ca798ab9' }
@@ -24,7 +25,6 @@ if has("nvim-0.10")
 	Plug 'catgoose/nvim-colorizer.lua', { 'commit': '81e676d320' }
 	" avoid blocking startup on unavailable desktop portal
 	let g:lumen_startup_overwrite = 0
-
 	Plug 'vimpostor/vim-lumen', { 'tag': 'v1.0' }
 endif
 call plug#end()
@@ -193,6 +193,10 @@ vim.keymap.set('n', 'gm', vim.diagnostic.open_float, { noremap = true, silent = 
 
 require'lspconfig'.elmls.setup {}
 require'lspconfig'.gleam.setup {}
+
+require'image'.setup {
+	max_height_window_percentage = 100,
+}
 
 require'treesitter-context'.setup { enable = true }
 require'nvim-ts-autotag'.setup {
